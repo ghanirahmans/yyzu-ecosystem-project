@@ -511,8 +511,11 @@ export default function Home() {
               Contact
             </h3>
             <div className="mt-4 grid gap-3 text-sm text-slate-300">
-              <a href="mailto:hello@yyzu.id" className="hover:text-white">
-                hello@yyzu.id
+              <a
+                href="mailto:yyzucommunity@gmail.com"
+                className="hover:text-white"
+              >
+                yyzucommunity@gmail.com
               </a>
               <span>LinkedIn: coming soon</span>
               <span>
