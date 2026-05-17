@@ -9,6 +9,7 @@ const navigation = [
   { label: "Fokus", href: "#fokus" },
   { label: "Aktivitas", href: "#aktivitas" },
   { label: "Ekosistem", href: "#ekosistem" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function SiteHeader() {

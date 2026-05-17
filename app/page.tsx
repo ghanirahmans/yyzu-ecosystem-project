@@ -107,6 +107,84 @@ const missionPoints = [
   "Menghubungkan mahasiswa, kampus, praktisi, dan partner industri dalam ekosistem pertumbuhan yang saling memberi nilai.",
 ];
 
+const faqs: CardItem[] = [
+  {
+    title: "Apa itu YYZU?",
+    description:
+      "YYZU adalah ekosistem pengembangan talenta IT yang menjadi jembatan antara kampus, mahasiswa, dan industri melalui project nyata, teamwork, mentoring, simulasi workflow industri, dan collaborative learning.",
+  },
+  {
+    title: "Apakah YYZU hanya komunitas IT biasa?",
+    description:
+      "Tidak. YYZU dibangun sebagai environment untuk membangun pengalaman engineering nyata dan kesiapan industri, bukan hanya tempat berkumpul atau belajar teori.",
+  },
+  {
+    title: "Apa tujuan utama YYZU?",
+    description:
+      "YYZU membantu mahasiswa dan talenta IT berkembang, membangun engineer yang siap industri, serta menjembatani dunia kampus dengan kebutuhan industri modern.",
+  },
+  {
+    title: "Apa saja aktivitas di YYZU?",
+    description:
+      "Aktivitas YYZU meliputi study group, mentoring, technical discussion, mini project, collaborative project, code review, simulasi workflow industri, workshop, open-source contribution, dan real-world project.",
+  },
+  {
+    title: "Apakah harus sudah jago coding untuk join?",
+    description:
+      "Tidak. YYZU terbuka untuk orang yang ingin belajar, berkembang, dan berkontribusi bersama. Yang penting adalah kemauan belajar, konsistensi, dan mindset untuk berkembang.",
+  },
+  {
+    title: "Fokus teknologi di YYZU apa?",
+    description:
+      "Untuk tahap awal, fokus akan diarahkan secara bertahap sesuai kebutuhan dan perkembangan komunitas. Secara umum YYZU berfokus pada skill engineering dan workflow industri modern.",
+  },
+  {
+    title: "Apakah nanti ada project nyata?",
+    description:
+      "Ya. YYZU dirancang untuk membangun project nyata sebagai media belajar, kolaborasi, dan pengembangan pengalaman industri.",
+  },
+  {
+    title: "Apakah member bisa mendapatkan pengalaman industri?",
+    description:
+      "Itu salah satu tujuan utama YYZU. Melalui simulasi workflow industri, collaborative project, mentoring, dan relasi industri, member dibantu membangun pengalaman yang lebih relevan dengan dunia kerja.",
+  },
+  {
+    title: "Apakah YYZU akan bekerja sama dengan industri?",
+    description:
+      "Target jangka panjangnya iya. YYZU ingin menjadi jembatan kolaborasi antara kampus, talenta IT, dan industri teknologi.",
+  },
+  {
+    title: "Apakah nantinya industri bisa merekrut member YYZU?",
+    description:
+      "Kemungkinan itu sangat terbuka. Namun fokus utama YYZU adalah membangun kualitas member dan pengalaman nyata terlebih dahulu agar peluang internship, collaboration, maupun recruitment terbentuk secara natural.",
+  },
+  {
+    title: "Apakah YYZU bersifat nonprofit?",
+    description:
+      "YYZU berfokus pada pengembangan talenta dan ekosistem belajar kolaboratif. Ke depannya, project nyata atau kolaborasi dapat dikembangkan untuk mendukung sustainability komunitas dan pengembangan member.",
+  },
+  {
+    title: "Kenapa YYZU dibuat?",
+    description:
+      "Karena banyak mahasiswa belajar teknologi, tetapi masih kesulitan mendapatkan pengalaman nyata dan kesiapan industri. YYZU hadir untuk menjembatani gap tersebut melalui lingkungan belajar yang kolaboratif, praktikal, dan industry-oriented.",
+  },
+  {
+    title: "Apa bedanya YYZU dengan komunitas lain?",
+    description:
+      "YYZU berfokus pada engineering culture, collaborative growth, real-world experience, dan simulasi workflow industri. Fokusnya bukan hanya belajar teknologi, tetapi membangun engineer yang siap berkembang di dunia profesional.",
+  },
+  {
+    title: "Apakah YYZU hanya untuk mahasiswa?",
+    description:
+      "Tidak. YYZU terbuka untuk siapa saja yang ingin belajar, berkembang, dan membangun bersama di bidang teknologi.",
+  },
+  {
+    title: "Bagaimana cara join atau berkolaborasi?",
+    description:
+      "Informasi terkait open member dan collaboration akan diumumkan melalui platform resmi YYZU.",
+  },
+];
+
 function SectionHeader({
   eyebrow,
   title,
@@ -438,6 +516,45 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="faq" className="bg-white py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+            <SectionHeader
+              eyebrow="FAQ"
+              title="Pertanyaan umum tentang YYZU."
+              description="Ringkasan jawaban untuk memahami tujuan, aktivitas, dan arah pengembangan YYZU sebagai ekosistem engineering dan talent bridge."
+              align="center"
+            />
+            <div className="mt-12 grid gap-4 lg:grid-cols-2">
+              {faqs.map((faq, index) => (
+                <details
+                  key={faq.title}
+                  className="group rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm open:bg-white open:shadow-md open:shadow-slate-200/70"
+                >
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-5 text-left">
+                    <span className="flex gap-4">
+                      <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-slate-950 text-xs font-bold text-white">
+                        {index + 1}
+                      </span>
+                      <span className="text-base font-bold leading-7 text-slate-950">
+                        {faq.title}
+                      </span>
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 flex size-7 shrink-0 items-center justify-center rounded-full border border-slate-300 text-lg leading-none text-slate-600 transition group-open:rotate-45 group-open:border-[#006A67] group-open:text-[#006A67]"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-5 pl-12 text-sm leading-7 text-slate-600">
+                    {faq.description}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="kontak" className="bg-white py-20 sm:py-24">
           <div className="mx-auto max-w-5xl px-5 text-center sm:px-6 lg:px-8">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">
@@ -493,7 +610,7 @@ export default function Home() {
               Navigation
             </h3>
             <div className="mt-4 grid gap-3">
-              {["Tentang", "Visi", "Fokus", "Aktivitas", "Ekosistem"].map(
+              {["Tentang", "Visi", "Fokus", "Aktivitas", "Ekosistem", "FAQ"].map(
                 (item) => (
                   <a
                     key={item}
