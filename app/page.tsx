@@ -515,7 +515,7 @@ export default function Home() {
                 href="mailto:yyzucommunity@gmail.com"
                 className="hover:text-white"
               >
-                yyzucommunity@gmail.com
+                Email: yyzucommunity@gmail.com
               </a>
               <span>LinkedIn: coming soon</span>
               <span>
