@@ -515,7 +515,16 @@ export default function Home() {
                 hello@yyzu.id
               </a>
               <span>LinkedIn: coming soon</span>
-              <span>Instagram: coming soon</span>
+              <span>
+                Instagram:{" "}
+                <a
+                  href="http://instagram.com/yyzucommunity"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  yyzucommunity
+                </a>
+              </span>
             </div>
           </div>
         </div>
