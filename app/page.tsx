@@ -453,7 +453,7 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <a
-                href="mailto:hello@yyzu.id"
+                href="mailto:yyzucommunity@gmail.com"
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0015A5] px-7 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#00118a]"
               >
                 Kontak YYZU
