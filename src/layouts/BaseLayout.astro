@@ -1,0 +1,27 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "YYZU | Engineering Ecosystem & Talent Bridge",
+  description = "YYZU adalah ekosistem engineering dan jembatan talenta antara kampus, mahasiswa, dan industri.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="h-full antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  </head>
+  <body class="flex min-h-full flex-col">
+    <slot />
+  </body>
+</html>
