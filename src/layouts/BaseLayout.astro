@@ -10,6 +10,10 @@ const {
   title = "YYZU | Engineering Ecosystem & Talent Bridge",
   description = "YYZU adalah ekosistem engineering dan jembatan talenta antara kampus, mahasiswa, dan industri.",
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL("https://yyzucommunity.netlify.app");
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageUrl = new URL("/og-image.svg", siteUrl).toString();
 ---
 
 <!doctype html>
@@ -20,6 +24,22 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="YYZU" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta
+      property="og:image:alt"
+      content="YYZU engineering ecosystem and talent bridge"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body class="flex min-h-full flex-col">
     <slot />

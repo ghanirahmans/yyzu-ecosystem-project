@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect width="1200" height="630" fill="url(#paint0_linear)"/>
+  <path d="M0 130H1200M0 260H1200M0 390H1200M0 520H1200M160 0V630M320 0V630M480 0V630M640 0V630M800 0V630M960 0V630M1120 0V630" stroke="white" stroke-opacity="0.08"/>
+  <g transform="translate(96 84)">
+    <rect width="112" height="112" rx="28" fill="white"/>
+    <rect x="28" y="92.9258" width="90.3168" height="9.03168" rx="4.51584" transform="rotate(-60 28 92.9258)" fill="#006A67"/>
+    <rect x="50.5791" y="58.3315" width="45.1584" height="9.03168" rx="4.51584" transform="rotate(-120 50.5791 58.3315)" fill="#006A67"/>
+    <rect x="46.0645" y="86.4209" width="60.2112" height="9.03168" rx="4.51584" transform="rotate(-60 46.0645 86.4209)" fill="#0015A5"/>
+    <rect x="46.1445" y="14.672" width="17.92" height="8.96" rx="4.48" fill="#0015A5"/>
+    <rect x="65.5195" y="82.32" width="18.368" height="9.184" rx="4.592" fill="#0015A5"/>
+  </g>
+  <text x="96" y="272" fill="white" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="0">YYZU</text>
+  <text x="96" y="350" fill="#ccfbf1" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Engineering Ecosystem &amp; Talent Bridge</text>
+  <text x="96" y="422" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="30">Jembatan talenta antara kampus, mahasiswa, dan industri.</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0015A5"/>
+      <stop offset="0.54" stop-color="#006A67"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -137,10 +137,10 @@ Website MVP saat ini berupa single-page landing page dengan bagian utama:
 
 ## Tech Stack
 
-- Next.js
+- Astro
 - TypeScript
 - Tailwind CSS
-- Static export untuk deployment Netlify
+- Static output untuk deployment Netlify
 
 ## Development
 
@@ -159,7 +159,7 @@ npm run dev
 Buka:
 
 ```txt
-http://localhost:3000
+http://localhost:4321
 ```
 
 Lint:
@@ -174,10 +174,10 @@ Build production:
 npm run build
 ```
 
-Project ini dikonfigurasi menggunakan static export. Setelah build, output production tersedia di folder:
+Project ini dikonfigurasi sebagai static site Astro. Setelah build, output production tersedia di folder:
 
 ```txt
-out
+dist
 ```
 
 ## Deployment Netlify
@@ -193,7 +193,7 @@ npm run build
 Publish directory:
 
 ```txt
-out
+dist
 ```
 
 ## Catatan
