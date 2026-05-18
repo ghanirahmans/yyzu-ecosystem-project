@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 import "../styles/global.css";
 
 export interface Props {
@@ -8,7 +10,7 @@ export interface Props {
 
 const {
   title = "YYZU | Engineering Ecosystem & Talent Bridge",
-  description = "YYZU adalah ekosistem engineering dan jembatan talenta antara kampus, mahasiswa, dan industri.",
+  description = "YYZU adalah engineering ecosystem dan talent bridge untuk pengembangan talenta IT melalui collaborative learning, project collaboration, mentoring teknologi, dan pengalaman engineering nyata.",
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL("https://yyzucommunity.netlify.app");
@@ -42,6 +44,12 @@ const ogImageUrl = new URL("/og-image.svg", siteUrl).toString();
     <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body class="flex min-h-full flex-col">
-    <slot />
+    <div class="min-h-screen bg-[#f7f9fb] text-slate-900">
+      <SiteHeader />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

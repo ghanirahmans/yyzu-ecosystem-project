@@ -1,0 +1,59 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const {
+  eyebrow = "Build With YYZU",
+  title,
+  description,
+  primaryLabel = "Join YYZU",
+  primaryHref = "/join/",
+  secondaryLabel,
+  secondaryHref,
+} = Astro.props;
+---
+
+<section class="bg-white py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+    <div class="relative isolate overflow-hidden rounded-lg bg-slate-950 px-6 py-12 text-white sm:px-10">
+      <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(0,21,165,0.78)_0%,rgba(0,106,103,0.64)_48%,rgba(15,23,42,0.96)_100%)]"></div>
+      <div class="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:38px_38px] opacity-20"></div>
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-[0.22em] text-teal-200">
+          {eyebrow}
+        </p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          {title}
+        </h2>
+        <p class="mt-5 text-base leading-8 text-slate-300 sm:text-lg">
+          {description}
+        </p>
+      </div>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a
+          href={primaryHref}
+          class="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] transition hover:bg-slate-100"
+        >
+          {primaryLabel}
+        </a>
+        {
+          secondaryLabel && secondaryHref && (
+            <a
+              href={secondaryHref}
+              class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/24 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+            >
+              {secondaryLabel}
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

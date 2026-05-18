@@ -1,79 +1,85 @@
 ---
+import CtaBand from "../components/CtaBand.astro";
 import InfoCard from "../components/InfoCard.astro";
-import Footer from "../components/Footer.astro";
-import RoleCard from "../components/RoleCard.astro";
 import Section from "../components/Section.astro";
-import SiteHeader from "../components/SiteHeader.astro";
 import {
-  aboutHighlights,
   activities,
   bridgeCards,
+  currentFocus,
   ecosystemRoles,
-  faqs,
-  focusAreas,
-  missionPoints,
   modelSteps,
-  values,
+  whyYYZU,
 } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout>
-  <div class="min-h-screen bg-[#f7f9fb] text-slate-900">
-    <SiteHeader />
-
-    <main>
-      <section
-        id="beranda"
-        class="relative isolate overflow-hidden bg-slate-950 text-white"
-      >
-        <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(0,21,165,0.92)_0%,rgba(0,106,103,0.86)_54%,rgba(15,23,42,0.96)_100%)]"></div>
-        <div class="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.09)_1px,transparent_1px)] bg-[size:42px_42px] opacity-25"></div>
-        <div class="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-          <div class="mx-auto max-w-5xl text-center">
-            <div class="mx-auto mb-8 flex size-20 items-center justify-center rounded-2xl bg-white/95 shadow-2xl shadow-slate-950/25 ring-1 ring-white/30">
-              <img
-                src="/yyz-project-logo_ft.svg"
-                alt="Logo YYZU"
-                width="58"
-                height="58"
-                decoding="async"
-              />
-            </div>
-            <p class="text-sm font-bold uppercase tracking-[0.26em] text-teal-100">
-              Engineering Ecosystem & Talent Bridge
-            </p>
-            <h1 class="mt-5 text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
-              YYZU
-            </h1>
-            <p class="mx-auto mt-6 max-w-4xl text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-10">
-              Jembatan talenta antara kampus, mahasiswa, dan industri.
-            </p>
-            <p class="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-100 sm:text-lg">
-              YYZU membantu pelajar dan talenta IT berkembang dari tahap
-              belajar menuju kesiapan industri melalui kolaborasi, mentoring,
-              budaya engineering, simulasi workflow, dan proyek nyata.
-            </p>
-            <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="#kontak"
-                class="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] shadow-lg shadow-slate-950/20 transition hover:bg-slate-100 sm:w-auto"
-              >
-                Bergabung dengan YYZU
-              </a>
-              <a
-                href="#ekosistem"
-                class="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10 sm:w-auto"
-              >
-                Lihat Ekosistem
-              </a>
-            </div>
+<BaseLayout
+  title="YYZU | Engineering Ecosystem & Talent Bridge"
+  description="YYZU adalah engineering ecosystem dan talent bridge untuk pengembangan talenta IT melalui collaborative learning, project collaboration, mentoring teknologi, dan pengalaman engineering nyata."
+>
+  <section class="relative isolate overflow-hidden bg-slate-950 text-white">
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(0,21,165,0.9)_0%,rgba(0,106,103,0.78)_48%,rgba(15,23,42,0.96)_100%)]"></div>
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.11)_1px,transparent_1px)] bg-[size:42px_42px] opacity-20"></div>
+    <div class="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <div class="mb-8 flex size-18 items-center justify-center rounded-lg bg-white shadow-2xl shadow-slate-950/25 ring-1 ring-white/30">
+            <img
+              src="/yyz-project-logo_ft.svg"
+              alt="Logo YYZU"
+              width="52"
+              height="52"
+              decoding="async"
+            />
           </div>
+          <p class="text-sm font-bold uppercase tracking-[0.22em] text-teal-100">
+            Engineering Ecosystem & Talent Bridge
+          </p>
+          <h1 class="mt-5 text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+            YYZU
+          </h1>
+          <p class="mt-6 max-w-3xl text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-10">
+            Engineering ecosystem untuk talenta teknologi belajar, membangun,
+            dan tumbuh menuju kesiapan industri.
+          </p>
+          <p class="mt-5 max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
+            YYZU menjembatani campus learning, self-learning, dan real-world
+            engineering practice melalui collaborative learning, project
+            collaboration, teamwork engineering, mentoring teknologi, simulasi
+            workflow industri, dan kontribusi nyata.
+          </p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/join/"
+              class="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] shadow-lg shadow-slate-950/20 transition hover:bg-slate-100"
+            >
+              Join & Grow Together
+            </a>
+            <a
+              href="/about/"
+              class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+            >
+              Pahami Ekosistem
+            </a>
+          </div>
+        </div>
 
-          <div class="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 text-left sm:grid-cols-5">
+        <div class="rounded-lg border border-white/12 bg-white/[0.06] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur">
+          <p class="text-sm font-bold uppercase tracking-[0.22em] text-teal-100">
+            Growth Model
+          </p>
+          <h2 class="mt-4 text-2xl font-bold tracking-tight text-white">
+            Learn, build, collaborate, contribute, grow.
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-slate-300">
+            Model pertumbuhan YYZU membantu learner bergerak dari belajar
+            programming dan software engineering menuju pengalaman engineering
+            yang lebih kolaboratif, praktis, dan industry-oriented.
+          </p>
+          <div class="mt-6 grid gap-3 sm:grid-cols-5 lg:grid-cols-1 xl:grid-cols-5">
             {
               modelSteps.map((step, index) => (
-                <div class="rounded-lg border border-white/14 bg-white/8 px-4 py-3 backdrop-blur">
+                <div class="rounded-lg border border-white/12 bg-slate-950/30 px-4 py-3">
                   <span class="text-xs font-bold text-teal-100">
                     0{index + 1}
                   </span>
@@ -83,239 +89,120 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             }
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section id="tentang" class="bg-white py-20 sm:py-24">
-        <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
-          <Section
-            eyebrow="Tentang YYZU"
-            title="Bukan hanya komunitas belajar, tetapi lingkungan pertumbuhan engineering."
-            description="YYZU hadir sebagai ekosistem yang membantu talenta muda belajar dengan konteks kerja nyata: memahami masalah, membangun solusi, bekerja dalam tim, menerima review, dan meningkatkan kualitas kontribusi."
-          />
-          <div class="grid gap-4 sm:grid-cols-2">
-            {
-              aboutHighlights.map((item) => (
-                <div class="rounded-lg border border-slate-200 bg-slate-50 p-5">
-                  <p class="text-sm font-semibold leading-7 text-slate-700">
-                    {item}
-                  </p>
-                </div>
-              ))
-            }
-          </div>
+  <section class="bg-white py-16 sm:py-20">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <Section
+        eyebrow="Positioning"
+        title="YYZU adalah engineering ecosystem, collaborative growth environment, dan talent bridge."
+        description="YYZU bukan bootcamp atau seminar organization. YYZU adalah environment untuk membiasakan talenta teknologi dengan cara kerja engineering: memahami masalah, membangun solusi, bekerja dalam tim, menerima review, dan ikut bertanggung jawab pada hasil."
+      />
+      <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+        {
+          currentFocus.map((item) => (
+            <article class="rounded-lg border border-slate-200 bg-slate-50 p-5">
+              <h3 class="font-bold text-slate-950">{item.title}</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">
+                {item.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#f7f9fb] py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <Section
+        eyebrow="Why YYZU Exists"
+        title="Ada gap antara belajar teknologi dan siap ikut project nyata."
+        description="Banyak orang bisa belajar syntax dan tools, tetapi belum terbiasa dengan komunikasi tim, ownership, code review, dokumentasi, prioritas, deployment, dan proses delivery. Di gap itulah YYZU dibangun sebagai jembatan pengembangan engineer."
+        align="center"
+      />
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {whyYYZU.map((item) => <InfoCard {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-950 py-16 text-white sm:py-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <Section
+        eyebrow="Bridge Model"
+        title="Dari learning menuju real engineering experience."
+        description="YYZU menempatkan dirinya sebagai jembatan praktis, bukan shortcut. Growth dibangun lewat proses collaborative learning, project-based development, dan engineering workflow yang dilatih bersama."
+        align="center"
+        tone="dark"
+      />
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {
+          bridgeCards.map((item) => (
+            <article class="rounded-lg border border-white/12 bg-white/[0.06] p-7">
+              <h3 class="text-xl font-bold text-white">{item.title}</h3>
+              <p class="mt-4 text-sm leading-7 text-slate-300">{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <Section
+          eyebrow="Activities Preview"
+          title="Belajar lewat study group, technical discussion, mentoring, dan collaborative project."
+          description="Aktivitas YYZU dirancang untuk membangun kebiasaan engineering secara bertahap. Bukan event ramai sesaat, tetapi proses yang bisa diulang dan ditingkatkan."
+        />
+        <div class="grid gap-4 sm:grid-cols-2">
+          {
+            activities.slice(0, 4).map((activity) => (
+              <article class="rounded-lg border border-slate-200 bg-slate-50 p-5">
+                <h3 class="font-bold text-slate-950">{activity.title}</h3>
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  {activity.description}
+                </p>
+              </article>
+            ))
+          }
         </div>
-      </section>
+      </div>
+      <div class="mt-8">
+        <a
+          href="/activities/"
+          class="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-800 transition hover:border-[#0015A5] hover:text-[#0015A5]"
+        >
+          Lihat Aktivitas
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <section class="bg-slate-950 py-20 text-white sm:py-24">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <Section
-            eyebrow="Why YYZU Exists"
-            title="Ada jarak antara pembelajaran akademik dan ekspektasi kerja industri."
-            description="Banyak talenta memahami teori dan dasar teknis, tetapi belum cukup terbiasa dengan ritme kerja proyek, komunikasi tim, review kode, dokumentasi, prioritas produk, dan tanggung jawab terhadap hasil. YYZU dibangun untuk menjadi ruang transisi yang terstruktur."
-            tone="dark"
-          />
-          <div class="mt-12 grid gap-5 lg:grid-cols-3">
-            {
-              bridgeCards.map((item) => (
-                <article class="rounded-lg border border-white/12 bg-white/[0.06] p-7">
-                  <h3 class="text-xl font-bold text-white">{item.title}</h3>
-                  <p class="mt-4 text-sm leading-7 text-slate-300">
-                    {item.body}
-                  </p>
-                </article>
-              ))
-            }
-          </div>
-        </div>
-      </section>
+  <section class="bg-[#f7f9fb] py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <Section
+        eyebrow="Ecosystem"
+        title="Ekosistem untuk learner, campus, community, mentor, dan partner industri."
+        description="YYZU menghubungkan orang dan institusi yang ingin memperkuat pengembangan talenta IT melalui kultur engineering, project nyata, mentoring, dan kontribusi konsisten."
+        align="center"
+      />
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {ecosystemRoles.map((role) => <InfoCard {...role} />)}
+      </div>
+    </div>
+  </section>
 
-      <section id="visi" class="bg-[#f7f9fb] py-20 sm:py-24">
-        <div class="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <article class="rounded-lg bg-white p-8 shadow-sm ring-1 ring-slate-200 sm:p-10">
-            <p class="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">
-              Vision
-            </p>
-            <h2 class="mt-5 text-3xl font-bold tracking-tight text-slate-950">
-              Menjadi ekosistem pengembangan talenta engineering yang
-              menghubungkan pembelajaran, kontribusi, dan kebutuhan industri.
-            </h2>
-          </article>
-          <article class="rounded-lg bg-white p-8 shadow-sm ring-1 ring-slate-200 sm:p-10">
-            <p class="text-sm font-bold uppercase tracking-[0.22em] text-[#0015A5]">
-              Mission
-            </p>
-            <ul class="mt-6 space-y-5">
-              {
-                missionPoints.map((point) => (
-                  <li class="flex gap-4">
-                    <span class="mt-2 size-2.5 shrink-0 rounded-full bg-[#006A67]"></span>
-                    <span class="text-sm leading-7 text-slate-600">
-                      {point}
-                    </span>
-                  </li>
-                ))
-              }
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="bg-white py-20 sm:py-24">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <Section
-            eyebrow="Core Values"
-            title="Nilai yang membentuk cara YYZU belajar dan membangun."
-            description="Nilai ini menjaga YYZU tetap praktis, kolaboratif, dan berorientasi pada pertumbuhan yang bisa dibuktikan melalui karya."
-            align="center"
-          />
-          <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {values.map((item) => <InfoCard {...item} />)}
-          </div>
-        </div>
-      </section>
-
-      <section id="fokus" class="bg-[#f7f9fb] py-20 sm:py-24">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <Section
-            eyebrow="Focus Areas"
-            title="Area pertumbuhan yang langsung mendukung kesiapan industri."
-            description="YYZU memadukan pembelajaran teknis dengan praktik kolaborasi agar peserta tidak hanya memahami konsep, tetapi juga mampu bekerja dalam proses engineering yang nyata."
-          />
-          <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {focusAreas.map((item) => <InfoCard {...item} />)}
-          </div>
-        </div>
-      </section>
-
-      <section id="aktivitas" class="bg-white py-20 sm:py-24">
-        <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-          <Section
-            eyebrow="Activities"
-            title="Aktivitas yang membentuk ritme belajar, membangun, dan berkontribusi."
-            description="Setiap aktivitas dirancang untuk mempertemukan praktik teknis, komunikasi, review, dan kebiasaan delivery secara bertahap."
-          />
-          <div class="grid gap-3 sm:grid-cols-2">
-            {
-              activities.map((activity) => (
-                <div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
-                  <span class="size-2.5 shrink-0 rounded-full bg-[linear-gradient(135deg,#0015A5_0%,#006A67_100%)]"></span>
-                  <span class="text-sm font-semibold text-slate-700">
-                    {activity}
-                  </span>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-slate-950 py-20 text-white sm:py-24">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <Section
-            eyebrow="Development Model"
-            title="Learn -> Build -> Collaborate -> Contribute -> Grow"
-            description="Model ini membantu peserta bergerak dari pemahaman dasar menuju kontribusi yang lebih matang melalui proses yang bisa dilatih dan diulang."
-            align="center"
-            tone="dark"
-          />
-          <div class="mt-12 grid gap-4 sm:grid-cols-5">
-            {
-              modelSteps.map((step, index) => (
-                <div class="relative rounded-lg border border-white/12 bg-white/[0.06] p-5 text-center">
-                  <span class="mx-auto flex size-10 items-center justify-center rounded-full bg-white text-sm font-black text-[#0015A5]">
-                    {index + 1}
-                  </span>
-                  <h3 class="mt-4 text-base font-bold text-white">{step}</h3>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </section>
-
-      <section id="ekosistem" class="bg-[#f7f9fb] py-20 sm:py-24">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <Section
-            eyebrow="Ecosystem Roles"
-            title="Satu ekosistem untuk talenta, kampus, dan industri."
-            description="YYZU memposisikan setiap pihak sebagai bagian dari jembatan yang sama: belajar lebih relevan, membangun lebih nyata, dan berkolaborasi lebih terarah."
-            align="center"
-          />
-          <div class="mt-12 grid gap-5 lg:grid-cols-3">
-            {ecosystemRoles.map((role) => <RoleCard {...role} />)}
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" class="bg-white py-20 sm:py-24">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <Section
-            eyebrow="FAQ"
-            title="Pertanyaan umum tentang YYZU."
-            description="Ringkasan jawaban untuk memahami tujuan, aktivitas, dan arah pengembangan YYZU sebagai ekosistem engineering dan talent bridge."
-            align="center"
-          />
-          <div class="mt-12 grid gap-4 lg:grid-cols-2">
-            {
-              faqs.map((faq, index) => (
-                <details class="group rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm open:bg-white open:shadow-md open:shadow-slate-200/70">
-                  <summary class="flex cursor-pointer list-none items-start justify-between gap-5 text-left">
-                    <span class="flex gap-4">
-                      <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-slate-950 text-xs font-bold text-white">
-                        {index + 1}
-                      </span>
-                      <span class="text-base font-bold leading-7 text-slate-950">
-                        {faq.title}
-                      </span>
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      class="mt-1 flex size-7 shrink-0 items-center justify-center rounded-full border border-slate-300 text-lg leading-none text-slate-600 transition group-open:rotate-45 group-open:border-[#006A67] group-open:text-[#006A67]"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <p class="mt-5 pl-12 text-sm leading-7 text-slate-600">
-                    {faq.description}
-                  </p>
-                </details>
-              ))
-            }
-          </div>
-        </div>
-      </section>
-
-      <section id="kontak" class="bg-white py-20 sm:py-24">
-        <div class="mx-auto max-w-5xl px-5 text-center sm:px-6 lg:px-8">
-          <p class="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">
-            Join & Collaborate
-          </p>
-          <h2 class="mt-5 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-            Bangun lingkungan engineering yang lebih siap untuk industri.
-          </h2>
-          <p class="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-            YYZU terbuka untuk pelajar, mentor, kampus, komunitas, dan partner
-            industri yang ingin berkontribusi dalam pengembangan talenta
-            teknologi secara lebih praktis dan kolaboratif.
-          </p>
-          <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="mailto:yyzucommunity@gmail.com"
-              class="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0015A5] px-7 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#00118a]"
-            >
-              Kontak YYZU
-            </a>
-            <a
-              href="#tentang"
-              class="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-300 px-7 py-3 text-sm font-bold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50"
-            >
-              Pelajari Dulu
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <Footer />
-  </div>
+  <CtaBand
+    title="Kalau kamu ingin tumbuh sebagai future engineer, YYZU adalah tempat untuk belajar dengan cara membangun."
+    description="Join YYZU untuk berkembang lewat kolaborasi, project-based learning, engineering workflow, dan kontribusi yang bisa dipertanggungjawabkan."
+    primaryLabel="Join YYZU"
+    primaryHref="/join/"
+    secondaryLabel="Pelajari Culture"
+    secondaryHref="/culture/"
+  />
 </BaseLayout>

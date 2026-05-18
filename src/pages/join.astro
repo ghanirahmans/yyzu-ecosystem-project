@@ -1,0 +1,78 @@
+---
+import InfoCard from "../components/InfoCard.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import { joinExpectations, joinPaths } from "../data/site";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Join YYZU"
+  description="Join YYZU sebagai learner, builder, core contributor, mentor, atau partner untuk tumbuh lewat collaborative learning, project collaboration, dan engineering culture."
+>
+  <PageHero
+    eyebrow="Join YYZU"
+    title="Join YYZU untuk tumbuh lewat belajar, build, kolaborasi, dan kontribusi."
+    description="YYZU terbuka untuk orang yang align dengan kultur belajar serius, collaborative learning, ownership, dan real contribution. Tidak harus sudah jago, tetapi harus siap tumbuh lewat proses."
+    note="YYZU sedang mengembangkan fondasi ekosistem, jadi kontribusi yang konsisten dan mindset yang sehat sangat penting."
+  />
+
+  <section class="bg-white py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <Section
+        eyebrow="Expectations"
+        title="Ekspektasi sebelum bergabung."
+        description="YYZU ingin menjaga kultur engineering yang sehat. Karena itu, ekspektasi dibuat jelas agar orang yang bergabung memahami cara belajar, bekerja, dan berkontribusi di dalam ekosistem."
+        align="center"
+      />
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {joinExpectations.map((item) => <InfoCard {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#f7f9fb] py-16 sm:py-20">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+      <Section
+        eyebrow="Join Paths"
+        title="Ada beberapa cara untuk ikut tumbuh dan berkontribusi."
+        description="Pilih peran sesuai kapasitas sekarang. Peran bisa berkembang seiring kontribusi, skill, dan kebutuhan ekosistem."
+      />
+      <div class="grid gap-5">
+        {joinPaths.map((item) => <InfoCard {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-950 py-16 text-white sm:py-20">
+    <div class="mx-auto max-w-5xl px-5 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[0.22em] text-teal-200">
+        Contact
+      </p>
+      <h2 class="mt-5 text-3xl font-bold tracking-tight sm:text-5xl">
+        Ceritakan kamu ingin tumbuh atau kontribusi di bagian apa.
+      </h2>
+      <p class="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+        Untuk saat ini YYZU menggunakan kontak sederhana. Kirim pesan singkat:
+        siapa kamu, pengalaman belajar coding atau building kamu sejauh ini,
+        dan bagian apa yang ingin kamu bantu atau pelajari.
+      </p>
+      <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+        <a
+          href="mailto:yyzucommunity@gmail.com"
+          class="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-bold text-[#0015A5] transition hover:bg-slate-100"
+        >
+          Email YYZU
+        </a>
+        <a
+          href="https://instagram.com/yyzucommunity"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/24 px-7 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+        >
+          Instagram YYZU
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,16 +1,16 @@
 # YYZU Website MVP
 
-Website ini adalah MVP landing page resmi untuk YYZU.
+Website ini adalah MVP multi-page resmi untuk YYZU.
 
-YYZU adalah ekosistem pengembangan talenta IT yang berfungsi sebagai jembatan antara kampus, mahasiswa, dan industri melalui pembelajaran kolaboratif, simulasi workflow industri, mentoring, dan pengerjaan project nyata.
+YYZU adalah engineering ecosystem dan talent bridge untuk pengembangan talenta IT yang menghubungkan kampus, mahasiswa, komunitas, mentor, dan industri melalui collaborative learning, simulasi workflow industri, mentoring teknologi, project collaboration, dan project nyata.
 
-Website ini dibuat untuk memperkenalkan YYZU secara jelas, membangun kredibilitas awal, menjelaskan visi dan ekosistem YYZU, serta menarik minat mahasiswa, kampus, collaborator, mentor, dan partner industri.
+Website ini dibuat untuk memperkenalkan YYZU secara jelas, menjelaskan visi dan ekosistem YYZU, memperkuat engineering culture, serta menarik minat mahasiswa, kampus, collaborator, mentor, dan partner industri yang ingin membangun talent growth secara praktis.
 
 ## Positioning
 
-YYZU adalah engineering ecosystem dan talent bridge yang membantu mahasiswa serta talenta IT berkembang dari tahap pembelajaran menuju kesiapan industri.
+YYZU adalah engineering ecosystem, collaborative growth environment, dan talent bridge yang membantu mahasiswa serta talenta IT berkembang dari tahap pembelajaran menuju pengalaman engineering nyata dan kesiapan industri.
 
-YYZU tidak hanya berfokus pada pembelajaran teori, tetapi juga pada pengalaman praktik nyata melalui project berbasis tim, standar kerja industri, problem solving, code review, system design, deployment, dan workflow engineering yang digunakan di dunia profesional.
+YYZU tidak hanya berfokus pada pembelajaran teori, tetapi juga pada pengalaman praktik nyata melalui collaborative project, teamwork engineering, standar kerja industri, problem solving, code review, system design, deployment, dan engineering workflow yang digunakan di dunia profesional.
 
 ## Tujuan Website
 
@@ -120,20 +120,21 @@ YYZU diarahkan untuk menjadi:
 
 ## Struktur Website MVP
 
-Website MVP saat ini berupa single-page landing page dengan bagian utama:
+Website MVP saat ini berupa multi-page ecosystem website dengan halaman utama:
 
-- Navbar
-- Hero section
-- Tentang YYZU
-- Why YYZU Exists
-- Vision & Mission
-- Core Values
-- Focus Areas
+- Home
+- About YYZU
+- Culture & Engineering Mindset
 - Activities
-- Development Model
-- Ecosystem Roles
-- Final CTA
-- Footer
+- Projects & Build Logs
+- Join YYZU
+- FAQ
+
+Fokus komunikasi website:
+
+- 70% visi, ecosystem identity, dan talent bridge
+- 20% engineering culture dan mindset
+- 10% konteks fase pengembangan ekosistem saat ini
 
 ## Tech Stack
 
