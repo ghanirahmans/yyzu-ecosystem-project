@@ -21,7 +21,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(0,21,165,0.9)_0%,rgba(0,106,103,0.78)_48%,rgba(15,23,42,0.96)_100%)]"></div>
     <div class="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.11)_1px,transparent_1px)] bg-[size:42px_42px] opacity-20"></div>
     <div class="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <div class="mb-8 flex size-18 items-center justify-center rounded-lg bg-white shadow-2xl shadow-slate-950/25 ring-1 ring-white/30">
             <img
@@ -76,14 +76,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             programming dan software engineering menuju pengalaman engineering
             yang lebih kolaboratif, praktis, dan industry-oriented.
           </p>
-          <div class="mt-6 grid gap-3 sm:grid-cols-5 lg:grid-cols-1 xl:grid-cols-5">
+          <div class="mt-6 grid gap-3 sm:grid-cols-5 lg:grid-cols-1 xl:grid-cols-5 xl:gap-2 2xl:gap-3">
             {
               modelSteps.map((step, index) => (
-                <div class="rounded-lg border border-white/12 bg-slate-950/30 px-4 py-3">
+                <div class="min-w-0 rounded-lg border border-white/12 bg-slate-950/30 px-4 py-3 xl:px-2.5 xl:py-2.5 2xl:px-4 2xl:py-3">
                   <span class="text-xs font-bold text-teal-100">
                     0{index + 1}
                   </span>
-                  <p class="mt-1 text-sm font-bold text-white">{step}</p>
+                  <p class="mt-1 whitespace-nowrap text-sm font-bold leading-5 text-white xl:text-xs 2xl:text-sm">
+                    {step}
+                  </p>
                 </div>
               ))
             }
