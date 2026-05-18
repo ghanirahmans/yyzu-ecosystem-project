@@ -15,7 +15,7 @@ const {
 
 const siteUrl = Astro.site ?? new URL("https://yyzucommunity.netlify.app");
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
-const ogImageUrl = new URL("/og-image.svg", siteUrl).toString();
+const ogImageUrl = new URL("/og-image.jpg", siteUrl).toString();
 const ogImageWidth = "1200";
 const ogImageHeight = "630";
 ---
