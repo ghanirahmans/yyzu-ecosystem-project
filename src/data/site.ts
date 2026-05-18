@@ -119,7 +119,7 @@ export const values: CardItem[] = [
   {
     title: "Engineering Mindset",
     description:
-      "Berpikir jelas, memahami masalah sebelum solusi, menimbang tradeoff, dan peduli pada kualitas hasil kerja software engineering.",
+      "Membiasakan cara berpikir yang jelas: memahami masalah sebelum solusi, menimbang tradeoff, dan menjaga kualitas hasil kerja software engineering.",
   },
   {
     title: "Collaboration",
@@ -134,7 +134,7 @@ export const values: CardItem[] = [
   {
     title: "Discipline",
     description:
-      "Menjaga konsistensi kecil: hadir, membaca konteks, menyelesaikan komitmen, dan memperbaiki hal yang belum rapi.",
+      "Menjaga ritme kerja yang bisa dipercaya: membaca konteks, menyelesaikan komitmen, memberi update, dan memperbaiki hal yang belum rapi.",
   },
   {
     title: "Contribution",
@@ -188,7 +188,7 @@ export const activities: CardItem[] = [
   {
     title: "Study Groups",
     description:
-      "Sesi belajar programming dan software engineering secara terarah untuk membangun fondasi teknis, membaca dokumentasi, mencoba tools, dan saling menjelaskan konsep.",
+      "Sesi belajar programming dan software engineering secara terarah untuk memperkuat pemahaman teknis, membaca dokumentasi, mencoba tools, dan saling menjelaskan konsep.",
   },
   {
     title: "Technical Discussions",
@@ -198,7 +198,7 @@ export const activities: CardItem[] = [
   {
     title: "Mini Projects",
     description:
-      "Project kecil untuk melatih end-to-end delivery: scope, task breakdown, implementation, code review, deployment, demo, dan retrospective.",
+      "Project terarah untuk melatih end-to-end delivery: scope, task breakdown, implementation, code review, deployment, demo, dan retrospective.",
   },
   {
     title: "Team Collaboration",
@@ -218,12 +218,12 @@ export const activities: CardItem[] = [
   {
     title: "Open-source Contributions",
     description:
-      "Latihan kontribusi terbuka melalui dokumentasi, issue triage, bug fix kecil, atau project internal yang dibuka untuk belajar bersama.",
+      "Latihan kontribusi terbuka melalui dokumentasi, issue triage, bug fix, atau project internal yang dibuka untuk belajar bersama.",
   },
   {
     title: "Collaborative Product Development",
     description:
-      "Latihan membangun produk kecil secara kolaboratif, dari memahami user need, menyusun scope, membangun fitur, sampai demo dan evaluasi.",
+      "Latihan membangun produk secara kolaboratif, dari memahami user need, menyusun scope, membangun fitur, sampai demo dan evaluasi.",
   },
   {
     title: "Learning Logs",
@@ -253,31 +253,31 @@ export const activityRhythm: CardItem[] = [
 export const buildLogs: BuildLog[] = [
   {
     period: "Foundation",
-    title: "Merapikan identitas engineering ecosystem",
+    title: "Engineering ecosystem identity",
     description:
       "Menyusun positioning, nilai, bahasa komunikasi, dan arah website agar YYZU jelas sebagai engineering ecosystem, talent bridge, dan ruang collaborative engineering growth.",
-    status: "In progress",
+    status: "Active",
   },
   {
     period: "Community",
-    title: "Mengembangkan aligned contributors",
+    title: "Aligned contributor growth",
     description:
       "Mengundang orang yang align dengan kultur ownership, konsistensi, dan kontribusi untuk ikut mengembangkan aktivitas dan standar komunitas.",
     status: "Open",
   },
   {
     period: "Activities",
-    title: "Menyiapkan ritme learning dan build",
+    title: "Learning and build rhythm",
     description:
-      "Membentuk format study group, technical discussion, mentoring teknologi, mini project, dan learning logs yang mudah dijalankan secara konsisten.",
-    status: "Drafting",
+      "Mengembangkan format study group, technical discussion, mentoring teknologi, mini project, dan learning logs yang mudah dijalankan secara konsisten.",
+    status: "Active",
   },
   {
     period: "Projects",
-    title: "Project internal sebagai ruang engineering practice",
+    title: "Internal projects for engineering practice",
     description:
       "Menggunakan kebutuhan YYZU sendiri sebagai media belajar: website, dokumentasi, workflow, tooling komunitas, dan simulasi kolaborasi.",
-    status: "Starting",
+    status: "Open",
   },
 ];
 
@@ -285,12 +285,12 @@ export const projectPrinciples: CardItem[] = [
   {
     title: "Small, real, reviewable",
     description:
-      "Project tidak perlu selalu besar. Yang penting nyata, bisa dipakai, bisa direview, dan meninggalkan pembelajaran engineering yang jelas.",
+      "Project harus punya scope yang jelas, bisa dipakai, bisa direview, dan meninggalkan pembelajaran engineering yang bisa dijelaskan.",
   },
   {
     title: "Logs before claims",
     description:
-      "YYZU memilih menunjukkan proses dan progress daripada mengklaim sudah besar. Build logs menjadi catatan perjalanan.",
+      "YYZU memilih menunjukkan proses, keputusan, dan progress kerja. Build logs menjadi bukti praktik, bukan sekadar klaim.",
   },
   {
     title: "Contribution stories",
@@ -326,7 +326,7 @@ export const joinPaths: CardItem[] = [
   {
     title: "Core Contributor",
     description:
-      "Untuk orang yang ingin membantu membangun sistem, aktivitas, dokumentasi, dan kultur YYZU dari awal.",
+      "Untuk orang yang ingin membantu mengembangkan sistem, aktivitas, dokumentasi, dan kultur YYZU secara konsisten.",
   },
   {
     title: "Mentor / Partner",
