@@ -29,40 +29,39 @@ export const modelSteps = [
   "Learn",
   "Build",
   "Collaborate",
-  "Contribute",
   "Grow",
 ];
 
 export const currentFocus: CardItem[] = [
   {
-    title: "Engineering culture",
+    title: "Collaborative learning",
     description:
-      "Membangun kebiasaan kerja yang sehat: problem solving, ownership, code review, dokumentasi, komunikasi, dan kualitas delivery.",
+      "Membantu member belajar secara aktif melalui diskusi, peer learning, review, mentoring, dan proses berbagi pengetahuan yang terarah.",
   },
   {
-    title: "Collaborative activities",
+    title: "Real-world experience",
     description:
-      "Mengembangkan study group, mentoring teknologi, technical discussion, mini project, dan project collaboration yang relevan dengan praktik industri.",
+      "Member tidak hanya mempelajari teori, tetapi ikut membangun mini project, collaborative project, dan real project development berbasis tim.",
   },
   {
-    title: "Aligned members",
+    title: "Industry workflow",
     description:
-      "Mengajak mahasiswa, self-taught learner, beginner developer, dan aspiring engineer yang ingin belajar programming sambil membangun pengalaman engineering.",
+      "Melatih cara kerja yang relevan dengan industri: task planning, ownership, communication, review, documentation, dan continuous improvement.",
   },
 ];
 
 export const bridgeCards: BridgeCard[] = [
   {
-    title: "Academic & Self Learning",
-    body: "Banyak talenta sudah belajar konsep, tools, dan dasar coding, tetapi masih sering belajar sendirian tanpa konteks kerja tim.",
+    title: "Campus & Self Learning",
+    body: "Mahasiswa dan talenta teknologi sering punya fondasi belajar yang baik, tetapi masih membutuhkan ruang untuk mengubah pemahaman menjadi pengalaman kolaboratif.",
   },
   {
     title: "YYZU Bridge",
-    body: "YYZU menjadi talent bridge untuk latihan collaborative learning, project ownership, mentoring, code review, system design, deployment, dan engineering workflow.",
+    body: "YYZU menjadi collaborative technology ecosystem yang mempertemukan learning, mentoring, workflow simulation, project-based growth, dan kontribusi berbasis tim.",
   },
   {
-    title: "Real Engineering Readiness",
-    body: "Targetnya bukan sekadar terlihat aktif, tetapi siap menjelaskan keputusan teknis, bekerja dalam teamwork engineering, dan mengirimkan kontribusi yang bisa dipercaya.",
+    title: "Industry Readiness",
+    body: "Arah akhirnya adalah talenta yang lebih siap menghadapi industri: mampu problem solving, berkomunikasi, bekerja dalam tim, membangun portfolio, dan menjaga kualitas kontribusi.",
   },
 ];
 
@@ -70,17 +69,17 @@ export const whyYYZU: CardItem[] = [
   {
     title: "Learning tidak otomatis menjadi experience",
     description:
-      "Menguasai materi belajar coding atau software engineering belum tentu membuat seseorang siap bekerja dalam project nyata. Perlu latihan komunikasi, koordinasi, review, dan pengambilan keputusan.",
+      "Menguasai materi, tools, atau syntax belum tentu membuat seseorang siap bekerja dalam project nyata. Talenta perlu latihan problem solving, teamwork, communication, review, dan pengambilan keputusan.",
   },
   {
-    title: "Portfolio butuh konteks",
+    title: "Portfolio butuh proses",
     description:
-      "Project yang baik bukan hanya tampilan akhir. Ada proses, issue, tradeoff, dokumentasi, perbaikan, dan cerita kontribusi yang bisa dipertanggungjawabkan.",
+      "Project yang kuat bukan hanya hasil akhir. Ada proses memahami masalah, membagi scope, memilih solusi, memperbaiki feedback, dan menjelaskan kontribusi secara bertanggung jawab.",
   },
   {
-    title: "Industry readiness perlu dibangun bertahap",
+    title: "Industry readiness dibangun bertahap",
     description:
-      "Kesiapan industri lahir dari kebiasaan yang diulang: memahami masalah, mengerjakan task, menerima feedback, dan meningkatkan kualitas hasil dalam engineering workflow.",
+      "Kesiapan industri lahir dari kebiasaan yang diulang: belajar, build, berkolaborasi, menerima feedback, menjaga ownership, dan meningkatkan standar kerja secara konsisten.",
   },
 ];
 
@@ -88,86 +87,86 @@ export const ecosystemRoles: CardItem[] = [
   {
     title: "Students & IT Learners",
     description:
-      "Ruang untuk memperkuat pengembangan skill teknologi, membangun project nyata, terbiasa kerja tim, dan menyiapkan diri menuju lingkungan engineering profesional.",
+      "Ruang untuk mahasiswa, learner, dan talenta teknologi yang ingin memperkuat technical skill, portfolio, teamwork, communication, dan pengalaman project nyata.",
   },
   {
-    title: "Campuses & Communities",
+    title: "Campuses",
     description:
-      "Partner untuk memperkuat komunitas teknologi Indonesia, pengembangan talenta IT, mentoring, dan kegiatan belajar coding bersama yang lebih dekat dengan praktik industri.",
+      "Partner pengembangan talenta untuk membangun learning environment yang lebih dekat dengan kebutuhan industri, workflow modern, dan budaya kolaborasi.",
   },
   {
-    title: "Mentors & Partners",
+    title: "Industry & Partners",
     description:
-      "Praktisi dan industri yang ingin mendukung talent growth lewat mentoring teknologi, collaborative project, exposure industri, dan talent pipeline yang lebih siap.",
+      "Ruang kolaborasi untuk praktisi, mentor, organisasi, dan industri yang ingin mendukung mentoring, project collaboration, talent development, internship, atau recruitment pipeline.",
   },
 ];
 
 export const visionMission: CardItem[] = [
   {
-    title: "Vision",
+    title: "Visi",
     description:
-      "Menjadi engineering ecosystem dan talent bridge yang membantu talenta teknologi tumbuh dari fase belajar menuju pengalaman engineering nyata, kontribusi, dan kesiapan industri.",
+      "Membangun ecosystem teknologi yang membantu talenta berkembang menjadi individu yang adaptif, kolaboratif, dan siap menghadapi dunia industri modern.",
   },
   {
-    title: "Mission",
+    title: "Misi",
     description:
-      "Membangun kultur engineering, menyediakan ruang belajar berbasis project, melatih simulasi workflow industri, dan membuka jembatan antara talenta, kampus, mentor, komunitas, serta industri.",
+      "Membangun environment belajar teknologi yang aktif, menjembatani kampus, talenta, dan industri, serta membantu member tumbuh melalui pengalaman nyata dan project berbasis tim.",
   },
 ];
 
 export const values: CardItem[] = [
   {
-    title: "Engineering Mindset",
+    title: "Build Together",
     description:
-      "Membiasakan cara berpikir yang jelas: memahami masalah sebelum solusi, menimbang tradeoff, dan menjaga kualitas hasil kerja software engineering.",
-  },
-  {
-    title: "Collaboration",
-    description:
-      "Belajar bekerja bersama melalui diskusi teknis, pembagian peran, review, dan komunikasi yang bisa diikuti orang lain.",
-  },
-  {
-    title: "Ownership",
-    description:
-      "Mengambil tanggung jawab atas task, keputusan, dokumentasi, dan kualitas kontribusi, bukan sekadar menunggu instruksi.",
-  },
-  {
-    title: "Discipline",
-    description:
-      "Menjaga ritme kerja yang bisa dipercaya: membaca konteks, menyelesaikan komitmen, memberi update, dan memperbaiki hal yang belum rapi.",
-  },
-  {
-    title: "Contribution",
-    description:
-      "Mengutamakan real contribution dibanding status member pasif. Progres dilihat dari hal yang dikerjakan, dipelajari, direview, dan dibagikan.",
+      "Berkembang melalui kolaborasi, kontribusi bersama, peer learning, dan kemampuan membangun solusi teknologi sebagai tim.",
   },
   {
     title: "Continuous Growth",
     description:
-      "Terbuka pada feedback, belajar dari kegagalan project, dan meningkatkan standar diri secara bertahap.",
+      "Mendorong proses belajar dan pengembangan yang berkelanjutan melalui feedback, review, refleksi, dan peningkatan standar secara bertahap.",
+  },
+  {
+    title: "Real Experience",
+    description:
+      "Belajar melalui praktik langsung, collaborative project, workflow simulation, open-source contribution, dan real-world project development.",
+  },
+  {
+    title: "Industry-Oriented",
+    description:
+      "Mengarahkan skill, mindset, komunikasi, dan workflow agar relevan dengan kebutuhan industri teknologi modern.",
+  },
+  {
+    title: "Ownership & Consistency",
+    description:
+      "Menanamkan tanggung jawab, disiplin, komitmen, dan kebiasaan menyelesaikan kontribusi dengan kualitas yang bisa dipercaya.",
+  },
+  {
+    title: "Product & Engineering Mindset",
+    description:
+      "Membiasakan member memahami masalah, user need, scope, tradeoff, kualitas teknis, dan dampak solusi yang dibangun.",
   },
 ];
 
 export const philosophy: CardItem[] = [
   {
-    title: "Culture over hype",
+    title: "Collaboration over competition",
     description:
-      "YYZU tidak mengejar kesan ramai. Yang lebih penting adalah kebiasaan belajar, membangun, dan saling menguatkan dalam komunitas IT yang sehat.",
+      "Fokus utama YYZU bukan kompetisi internal, tetapi berkembang bersama melalui kontribusi, diskusi, dan problem solving kolektif.",
   },
   {
     title: "Contribution over passive membership",
     description:
-      "Menjadi bagian dari YYZU berarti ikut bergerak sesuai kapasitas: bertanya dengan serius, membantu dokumentasi, mengerjakan task, atau memandu diskusi.",
+      "Menjadi bagian dari YYZU berarti ikut bergerak sesuai kapasitas: bertanya dengan serius, membantu dokumentasi, mengerjakan task, review, atau memandu diskusi.",
   },
   {
     title: "Consistency over popularity",
     description:
-      "Kultur yang kuat dibangun dari ritme stabil: belajar, build, review, dokumentasi, dan refleksi, bukan acara besar yang tidak meninggalkan kebiasaan.",
+      "Kultur yang kuat dibangun dari ritme stabil: learning, build, collaboration, review, dokumentasi, dan refleksi yang terus diperbaiki.",
   },
   {
     title: "Growth over vanity metrics",
     description:
-      "Ukuran pertumbuhan bukan sekadar angka, tetapi kualitas proses belajar, kedalaman diskusi, pengalaman engineering, dan kontribusi yang benar-benar tumbuh.",
+      "Ukuran pertumbuhan bukan sekadar angka, tetapi kualitas proses belajar, kedalaman diskusi, pengalaman project, dan kontribusi yang benar-benar tumbuh.",
   },
 ];
 
@@ -175,12 +174,12 @@ export const fitPeople: CardItem[] = [
   {
     title: "Cocok untuk",
     description:
-      "Orang yang ingin belajar serius, membangun portfolio dengan project nyata, terbuka pada feedback, dan mau kontribusi lewat proses collaborative learning.",
+      "Orang yang ingin belajar serius, membangun portfolio lewat project nyata, terbuka pada feedback, dan mau tumbuh melalui proses kolaboratif.",
   },
   {
     title: "Kurang cocok untuk",
     description:
-      "Orang yang hanya mencari sertifikat, ingin hasil instan, pasif menunggu materi, atau tidak ingin terlibat dalam proses kolaborasi.",
+      "Orang yang hanya mencari sertifikat, ingin hasil instan, pasif menunggu materi, atau tidak ingin terlibat dalam teamwork dan kontribusi.",
   },
 ];
 
@@ -188,27 +187,27 @@ export const activities: CardItem[] = [
   {
     title: "Study Groups",
     description:
-      "Sesi belajar programming dan software engineering secara terarah untuk memperkuat pemahaman teknis, membaca dokumentasi, mencoba tools, dan saling menjelaskan konsep.",
+      "Sesi belajar terarah untuk memperkuat fundamental, tools, workflow dasar, membaca dokumentasi, mencoba teknologi, dan saling menjelaskan konsep.",
   },
   {
-    title: "Technical Discussions",
+    title: "Mentoring & Technical Discussions",
     description:
-      "Diskusi ringan tetapi serius tentang architecture, debugging, product thinking, tooling, dan keputusan teknis di project.",
+      "Ruang mentoring dan diskusi tentang software development, UI/UX, product thinking, debugging, tooling, architecture, dan keputusan teknis di project.",
   },
   {
     title: "Mini Projects",
     description:
-      "Project terarah untuk melatih end-to-end delivery: scope, task breakdown, implementation, code review, deployment, demo, dan retrospective.",
+      "Project terarah untuk melatih scope, task breakdown, implementation, review, demo, retrospective, dan kerja lintas peran dalam skala kecil.",
   },
   {
     title: "Team Collaboration",
     description:
-      "Latihan teamwork engineering dalam role berbeda, menggunakan issue, branch, pull request, dokumentasi, dan komunikasi progress.",
+      "Latihan teamwork dalam role berbeda, menggunakan issue, branch, review, dokumentasi, update progress, dan handoff antar anggota.",
   },
   {
-    title: "Engineering Simulation",
+    title: "Workflow Simulation",
     description:
-      "Simulasi workflow industri seperti task planning, code review, QA sederhana, release note, dan handoff antar anggota.",
+      "Simulasi workflow industri seperti planning, review, QA sederhana, release note, product handoff, dan evaluasi hasil kerja.",
   },
   {
     title: "Workshops",
@@ -218,12 +217,12 @@ export const activities: CardItem[] = [
   {
     title: "Open-source Contributions",
     description:
-      "Latihan kontribusi terbuka melalui dokumentasi, issue triage, bug fix, atau project internal yang dibuka untuk belajar bersama.",
+      "Latihan kontribusi terbuka melalui dokumentasi, issue triage, bug fix, improvement kecil, atau project internal yang dibuka untuk belajar bersama.",
   },
   {
-    title: "Collaborative Product Development",
+    title: "Real-world Project Development",
     description:
-      "Latihan membangun produk secara kolaboratif, dari memahami user need, menyusun scope, membangun fitur, sampai demo dan evaluasi.",
+      "Latihan membangun solusi nyata secara kolaboratif, dari memahami user need, menyusun scope, membangun fitur, sampai demo dan evaluasi.",
   },
   {
     title: "Learning Logs",
@@ -234,28 +233,33 @@ export const activities: CardItem[] = [
 
 export const activityRhythm: CardItem[] = [
   {
-    title: "Plan",
+    title: "Learn",
     description:
-      "Menentukan topik, scope, role, dan ekspektasi kontribusi yang realistis untuk project atau aktivitas yang sedang berjalan.",
+      "Memahami fundamental, tools, konteks masalah, role, dan workflow dasar sesuai bidang yang diminati.",
   },
   {
     title: "Build",
     description:
-      "Mengerjakan task secara terbuka dengan dokumentasi, diskusi, review, dan perhatian pada kualitas delivery.",
+      "Mengerjakan task dan project secara bertahap dengan dokumentasi, diskusi, review, dan perhatian pada kualitas delivery.",
   },
   {
-    title: "Reflect",
+    title: "Collaborate",
     description:
-      "Mencatat apa yang berhasil, apa yang perlu diperbaiki, dan langkah berikutnya.",
+      "Bekerja dalam tim, melakukan review, memberi update, menyelesaikan masalah bersama, dan memahami cara handoff yang jelas.",
+  },
+  {
+    title: "Grow",
+    description:
+      "Mencatat pembelajaran, memperkuat portfolio, meningkatkan standar, dan berkembang menjadi contributor, mentor, atau collaborator.",
   },
 ];
 
 export const buildLogs: BuildLog[] = [
   {
     period: "Foundation",
-    title: "Engineering ecosystem identity",
+    title: "Collaborative technology ecosystem identity",
     description:
-      "Menyusun positioning, nilai, bahasa komunikasi, dan arah website agar YYZU jelas sebagai engineering ecosystem, talent bridge, dan ruang collaborative engineering growth.",
+      "Menyusun positioning, nilai, bahasa komunikasi, dan arah website agar YYZU jelas sebagai collaborative technology ecosystem dan talent bridge.",
     status: "Active",
   },
   {
@@ -267,9 +271,9 @@ export const buildLogs: BuildLog[] = [
   },
   {
     period: "Activities",
-    title: "Learning and build rhythm",
+    title: "Learn, build, collaborate, grow rhythm",
     description:
-      "Mengembangkan format study group, technical discussion, mentoring teknologi, mini project, dan learning logs yang mudah dijalankan secara konsisten.",
+      "Mengembangkan format study group, mentoring, workshop, technical discussion, mini project, workflow simulation, dan learning logs yang mudah dijalankan secara konsisten.",
     status: "Active",
   },
   {
@@ -285,7 +289,7 @@ export const projectPrinciples: CardItem[] = [
   {
     title: "Small, real, reviewable",
     description:
-      "Project harus punya scope yang jelas, bisa dipakai, bisa direview, dan meninggalkan pembelajaran engineering yang bisa dijelaskan.",
+      "Project harus punya scope yang jelas, bisa dipakai, bisa direview, dan meninggalkan pembelajaran yang bisa dijelaskan.",
   },
   {
     title: "Logs before claims",
@@ -295,7 +299,7 @@ export const projectPrinciples: CardItem[] = [
   {
     title: "Contribution stories",
     description:
-      "Setiap kontribusi penting jika bisa dijelaskan: masalahnya apa, keputusan apa yang diambil, dan apa dampaknya.",
+      "Setiap kontribusi penting jika bisa dijelaskan: masalahnya apa, peran yang diambil, keputusan yang dibuat, dan dampaknya bagi project atau ecosystem.",
   },
 ];
 
@@ -303,17 +307,17 @@ export const joinExpectations: CardItem[] = [
   {
     title: "Datang dengan mindset belajar dan kontribusi",
     description:
-      "Tidak harus sudah senior. Yang dibutuhkan adalah keseriusan untuk belajar, mencoba, bertanya dengan jelas, dan membantu sesuai kapasitas.",
+      "Tidak harus sudah senior. Yang dibutuhkan adalah keseriusan untuk belajar, mencoba, bertanya dengan jelas, menerima feedback, dan membantu sesuai kapasitas.",
   },
   {
     title: "Siap bekerja secara kolaboratif",
     description:
-      "YYZU menekankan teamwork, komunikasi, dokumentasi, review, dan tanggung jawab terhadap task yang diambil.",
+      "YYZU menekankan teamwork, komunikasi, dokumentasi, review, dan tanggung jawab terhadap task atau role yang diambil.",
   },
   {
-    title: "Menghargai proses engineering",
+    title: "Menghargai proses growth",
     description:
-      "Progres tidak selalu cepat. Kita membangun kebiasaan problem solving, review, komunikasi, dan delivery secara bertahap.",
+      "Progres tidak selalu cepat. Kita membangun technical skill, problem solving, ownership, communication, dan delivery secara bertahap.",
   },
 ];
 
@@ -321,7 +325,7 @@ export const joinPaths: CardItem[] = [
   {
     title: "Learner / Builder",
     description:
-      "Untuk mahasiswa, beginner developer, self-taught learner, atau aspiring engineer yang ingin tumbuh lewat belajar coding bersama, project, dan kolaborasi.",
+      "Untuk mahasiswa, beginner developer, self-taught learner, designer, atau aspiring technologist yang ingin tumbuh lewat belajar, project, dan kolaborasi.",
   },
   {
     title: "Core Contributor",
@@ -331,7 +335,7 @@ export const joinPaths: CardItem[] = [
   {
     title: "Mentor / Partner",
     description:
-      "Untuk praktisi, kampus, komunitas, atau industri yang ingin mendukung mentoring, exposure, dan kolaborasi engineering.",
+      "Untuk praktisi, kampus, komunitas, atau industri yang ingin mendukung mentoring, workshop, project collaboration, talent development, atau exposure industri.",
   },
 ];
 
@@ -339,22 +343,22 @@ export const faqs: CardItem[] = [
   {
     title: "Apa itu YYZU?",
     description:
-      "YYZU adalah engineering ecosystem dan talent bridge yang membantu talenta teknologi tumbuh dari fase belajar menuju pengalaman engineering nyata, project collaboration, dan kesiapan industri.",
+      "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, dan industri melalui collaborative learning, workflow simulation, mentoring, dan project nyata berbasis tim.",
   },
   {
     title: "Apakah YYZU komunitas coding biasa?",
     description:
-      "Tidak. YYZU bukan sekadar tempat berkumpul atau berbagi materi. Fokusnya adalah membangun kultur engineering, kolaborasi, ownership, project-based growth, dan kontribusi nyata.",
+      "Tidak. YYZU bukan sekadar tempat berkumpul atau berbagi materi. Fokusnya adalah collaborative growth, real-world experience, ownership, teamwork, dan pembentukan engineering serta product mindset.",
   },
   {
     title: "Apa kondisi YYZU saat ini?",
     description:
-      "YYZU sedang berada dalam fase ecosystem-building. Fokusnya adalah memperkuat engineering culture, mengembangkan aktivitas kolaboratif, dan menumbuhkan member yang align dengan arah jangka panjang.",
+      "YYZU sedang berada dalam fase ecosystem-building. Fokusnya adalah memperkuat kualitas environment, mengembangkan aktivitas kolaboratif, dan membangun pengalaman member terlebih dahulu.",
   },
   {
     title: "YYZU untuk siapa?",
     description:
-      "YYZU terbuka untuk mahasiswa, beginner developer, self-taught learner, aspiring engineer, dan siapa pun yang ingin belajar, berkontribusi, dan membangun bersama di teknologi.",
+      "YYZU terbuka untuk mahasiswa, IT learner, beginner developer, designer, product learner, creative technologist, dan siapa pun yang ingin belajar, berkontribusi, dan membangun solusi teknologi bersama.",
   },
   {
     title: "Apakah harus sudah jago coding?",
@@ -364,7 +368,7 @@ export const faqs: CardItem[] = [
   {
     title: "Apa yang membedakan YYZU dari bootcamp?",
     description:
-      "YYZU bukan program kelas berbayar dengan kurikulum instan. YYZU adalah lingkungan pertumbuhan yang menekankan kultur, kolaborasi, project, mentoring, dan kontribusi.",
+      "YYZU bukan program kelas instan. YYZU adalah environment pertumbuhan yang menekankan kolaborasi, project-based growth, mentoring, workflow industri, portfolio, dan kontribusi nyata.",
   },
   {
     title: "Apakah YYZU hanya untuk mahasiswa?",
@@ -374,12 +378,12 @@ export const faqs: CardItem[] = [
   {
     title: "Aktivitas YYZU apa saja?",
     description:
-      "Aktivitas YYZU mencakup study group, technical discussion, mentoring teknologi, mini project, team project, engineering simulation, workshop, learning logs, collaborative product development, dan open-source contribution.",
+      "Aktivitas YYZU mencakup study group, mentoring, workshop, technical discussion, mini project, code review, design review, workflow simulation, open-source contribution, dan real-world project development.",
   },
   {
     title: "Apakah YYZU menyediakan sertifikat?",
     description:
-      "Sertifikat bukan fokus utama. YYZU lebih menekankan bukti kontribusi, portfolio, learning logs, pengalaman kerja tim, dan kemampuan menjelaskan proses engineering.",
+      "Sertifikat bukan fokus utama. YYZU lebih menekankan bukti kontribusi, portfolio, learning logs, pengalaman kerja tim, dan kemampuan menjelaskan proses serta keputusan yang dibuat.",
   },
   {
     title: "Bagaimana cara join?",

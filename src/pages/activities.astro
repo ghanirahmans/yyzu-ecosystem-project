@@ -9,21 +9,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Activities | YYZU"
-  description="Aktivitas YYZU: study group, technical discussion, mini project, team collaboration, engineering simulation, workshop, dan learning logs."
+  description="Aktivitas YYZU: study group, mentoring, workshop, technical discussion, mini project, code review, design review, workflow simulation, dan real-world project development."
 >
   <PageHero
     eyebrow="Activities"
-    title="Aktivitas YYZU menghubungkan belajar programming dengan praktik engineering nyata."
-    description="Setiap aktivitas diarahkan agar learner tidak hanya menerima materi, tetapi ikut membaca konteks, mencoba, berdiskusi, membangun, menerima feedback, deploy, dan mencatat pembelajaran."
-    note="Ritme aktivitas mencakup study group, technical discussion, mentoring, mini project, team project, workshop, engineering simulation, dan open-source contribution."
+    title="Aktivitas YYZU menghubungkan belajar teknologi dengan pengalaman project nyata."
+    description="Setiap aktivitas diarahkan agar member tidak hanya menerima materi, tetapi ikut membaca konteks, mencoba, berdiskusi, membangun, menerima feedback, melakukan review, dan mencatat pembelajaran."
+    note="Ritme aktivitas mencakup study group, mentoring, workshop, technical discussion, mini project, code review, design review, workflow simulation, dan open-source contribution."
   />
 
   <section class="bg-white py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Activity Types"
-        title="Ruang belajar yang dekat dengan teamwork engineering dan project nyata."
-        description="Aktivitas dibuat agar peserta terbiasa dengan project collaboration, dokumentasi, review, delivery, dan refleksi yang relevan dengan software engineering modern."
+        title="Ruang belajar yang dekat dengan teamwork, workflow, dan project nyata."
+        description="Aktivitas dibuat agar peserta terbiasa dengan collaborative learning, project collaboration, dokumentasi, review, delivery, dan refleksi yang relevan dengan industri modern."
         align="center"
       />
       <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -36,12 +36,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Working Rhythm"
-        title="Plan, build, reflect."
-        description="YYZU menggunakan ritme yang mudah diikuti, tetapi cukup serius untuk membentuk kebiasaan engineering dan kesiapan industri."
+        title="Learn, build, collaborate, grow."
+        description="YYZU menggunakan ritme yang mudah diikuti, tetapi cukup serius untuk membentuk technical skill, teamwork, communication, ownership, dan kesiapan industri."
         align="center"
         tone="dark"
       />
-      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+      <div class="mt-12 grid gap-5 lg:grid-cols-4">
         {
           activityRhythm.map((item, index) => (
             <article class="rounded-lg border border-white/12 bg-white/[0.06] p-7">
@@ -61,7 +61,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <CtaBand
     title="Aktivitas YYZU adalah ruang latihan untuk tumbuh lewat real practice."
-    description="Kamu bisa mulai sebagai learner, builder, dokumentator, fasilitator diskusi, mentor, atau contributor di project internal."
+    description="Kamu bisa mulai sebagai learner, builder, designer, dokumentator, fasilitator diskusi, mentor, atau contributor di project internal."
     primaryLabel="Join Sebagai Builder"
     primaryHref="/join/"
     secondaryLabel="Lihat Build Logs"
