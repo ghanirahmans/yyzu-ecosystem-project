@@ -21,6 +21,7 @@ export const navigation = [
   { label: "Culture", href: "/culture/" },
   { label: "Activities", href: "/activities/" },
   { label: "Build Logs", href: "/projects/" },
+  { label: "Mentor & Partnership", href: "/mentor-partnership/" },
   { label: "Join", href: "/join/" },
   { label: "FAQ", href: "/faq/" },
 ];
