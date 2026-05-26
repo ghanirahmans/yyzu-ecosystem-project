@@ -11,7 +11,7 @@ const ecosystemNeeds = [
   "Insight nyata dari dunia industri.",
   "Feedback terhadap proses dan hasil kerja.",
   "Real case atau problem statement.",
-  "Kesempatan belajar melalui project berbasis kebutuhan nyata.",
+  "Kesempatan belajar melalui real project dengan scope yang realistis.",
 ];
 
 const mentorProfiles = [
@@ -120,7 +120,7 @@ const yyzuNeeds = [
 ];
 
 const notAcceptable = [
-  "Mengeksploitasi member sebagai tenaga kerja gratis.",
+  "Meminta kontribusi member tanpa arahan, pembelajaran, dan penghargaan yang jelas.",
   "Tidak memiliki nilai pembelajaran.",
   "Memiliki scope project yang tidak realistis.",
   "Tidak memberikan feedback atau arahan yang jelas.",
@@ -142,7 +142,7 @@ const collaborationSteps = [
   {
     title: "Program Mapping",
     description:
-      "YYZU menyesuaikan bentuk kontribusi dengan kebutuhan ecosystem dan member, seperti sesi sharing, review project, project brief, workshop, event collaboration, atau talent development program.",
+      "YYZU menyesuaikan bentuk kontribusi dengan kebutuhan ecosystem dan member, seperti sesi sharing, review project, project brief, workshop, event collaboration, internship opportunity, atau talent development program.",
   },
   {
     title: "Execution",
@@ -170,7 +170,7 @@ const collaborationModels = [
   {
     title: "Project Brief / Real Case",
     description:
-      "Partner memberikan problem statement atau project brief yang dikerjakan member sebagai pengalaman nyata, dengan scope yang tetap realistis, terarah, dan bernilai pembelajaran.",
+      "Partner memberikan problem statement atau project brief sebagai pengalaman nyata bagi member, dengan scope yang realistis, terarah, bernilai pembelajaran, dan memiliki feedback yang jelas.",
   },
   {
     title: "Workshop Collaboration",
@@ -180,7 +180,7 @@ const collaborationModels = [
   {
     title: "Community / Institution Partnership",
     description:
-      "YYZU berkolaborasi dengan komunitas, kampus, organisasi, atau institusi untuk sharing session, event, mini bootcamp, collaborative project, mentoring program, atau talent development initiative.",
+      "YYZU berkolaborasi dengan komunitas, kampus, organisasi, atau institusi untuk sharing session, event, workshop, collaborative project, mentoring program, internship opportunity, atau talent development initiative.",
   },
 ];
 
@@ -247,7 +247,7 @@ const faqs = [
   {
     question: "Apakah partner bisa memberikan project untuk dikerjakan member?",
     answer:
-      "Bisa. Partner dapat memberikan project brief, real case, problem statement, atau challenge. Scope project perlu disesuaikan agar tetap realistis, edukatif, dan tidak mengeksploitasi member sebagai tenaga kerja gratis.",
+      "Bisa. Partner dapat memberikan project brief, real case, problem statement, atau challenge. Scope project perlu disesuaikan agar realistis, edukatif, memiliki arahan yang jelas, dan tetap menghargai kontribusi member.",
   },
   {
     question: "Apakah kolaborasi ini berbayar?",
@@ -262,7 +262,7 @@ const faqs = [
   {
     question: "Apakah project dari partner boleh bersifat komersial?",
     answer:
-      "Bisa didiskusikan, tetapi harus memiliki scope, ekspektasi, benefit, dan skema yang jelas. Jika digunakan langsung untuk kebutuhan bisnis, perlu ada kesepakatan khusus agar kontribusi member tetap dihargai secara adil.",
+      "Bisa didiskusikan, tetapi harus memiliki scope, ekspektasi, benefit, dan skema yang jelas. Jika output digunakan langsung untuk kebutuhan bisnis, perlu ada kesepakatan khusus agar kontribusi member tetap dihargai secara adil.",
   },
   {
     question: "Apa yang terjadi setelah mengisi form?",
@@ -274,13 +274,13 @@ const faqs = [
 
 <BaseLayout
   title="Mentor & Partnership | YYZU"
-  description="YYZU membuka ruang bagi mentor, praktisi industri, komunitas, lembaga, institusi, dan partner untuk ikut membangun future builders melalui mentoring, project, real case, workshop, dan kolaborasi teknologi."
+  description="YYZU membuka ruang bagi mentor, praktisi industri, komunitas, kampus, organisasi, dan partner untuk ikut membangun talenta teknologi melalui mentoring, workshop, project collaboration, real case, internship opportunity, dan kolaborasi teknologi."
 >
   <PageHero
     eyebrow="Mentor & Partnership"
-    title="Build Future Builders with YYZU"
-    description="YYZU membuka ruang bagi mentor, praktisi industri, komunitas, lembaga, institusi, dan partner yang ingin ikut membangun ekosistem teknologi berbasis kolaborasi, mentoring, project, dan pengalaman nyata."
-    note="Kamu bisa berkontribusi sebagai mentor, project partner, atau collaboration partner untuk membantu talenta teknologi tumbuh lebih siap menghadapi dunia industri."
+    title="Bantu talenta teknologi tumbuh melalui mentoring, real case, dan kolaborasi sehat."
+    description="YYZU membuka ruang bagi mentor, praktisi industri, komunitas, kampus, organisasi, dan partner yang ingin ikut membangun collaborative technology ecosystem berbasis praktik, mentoring, workflow industri, dan real project."
+    note="Kamu bisa berkontribusi sebagai mentor, project partner, atau collaboration partner untuk membantu member tumbuh menuju industry readiness."
   />
 
   <section class="bg-white pb-16 sm:pb-20">
@@ -290,13 +290,13 @@ const faqs = [
           href={mentorFormUrl}
           class="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0015A5] px-7 py-3 text-sm font-bold text-white transition hover:bg-[#00118a]"
         >
-          Become a Mentor
+          Join as Mentor
         </a>
         <a
           href={mentorFormUrl}
           class="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-300 px-7 py-3 text-sm font-bold text-slate-950 transition hover:border-[#006A67] hover:bg-slate-50"
         >
-          Start a Partnership
+          Start Partnership
         </a>
       </div>
       <div class="mt-10 grid gap-8 lg:grid-cols-2">
@@ -308,8 +308,8 @@ const faqs = [
         <p class="text-base leading-8 text-slate-600 sm:text-lg">
           Melalui halaman ini, YYZU mengajak individu maupun institusi untuk
           berkontribusi sebagai mentor, project partner, atau collaboration
-          partner dalam membantu future builders berkembang lebih siap
-          menghadapi dunia industri.
+          partner dalam membantu talenta teknologi berkembang dari learning
+          menuju collaboration, real project experience, dan industry readiness.
         </p>
       </div>
     </div>
@@ -319,8 +319,8 @@ const faqs = [
     <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
       <Section
         eyebrow="Why It Matters"
-        title="Why We Need Mentors and Partners"
-        description="YYZU sedang membangun collaborative technology ecosystem yang menghubungkan pembelajaran, project, mentoring, dan pengalaman nyata."
+        title="Mengapa mentor dan partner penting untuk YYZU."
+        description="YYZU sedang membangun collaborative technology ecosystem yang menghubungkan pembelajaran, project, mentoring, workflow simulation, dan pengalaman nyata."
       />
       <div>
         <p class="text-base leading-8 text-slate-600">
@@ -338,7 +338,7 @@ const faqs = [
         </div>
         <p class="mt-6 text-base leading-8 text-slate-600">
           Karena itu, YYZU membuka ruang bagi mentor dan partner yang ingin ikut
-          membimbing, memberi tantangan, dan membantu talenta teknologi
+          membimbing, memberi real case, membuka insight, dan membantu talenta teknologi
           berkembang melalui pengalaman yang lebih relevan.
         </p>
       </div>
@@ -349,13 +349,13 @@ const faqs = [
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Contributors"
-        title="Who Can Contribute?"
+        title="Siapa yang bisa berkontribusi?"
         description="YYZU terbuka untuk individu maupun organisasi yang ingin ikut berkontribusi dalam pengembangan talenta teknologi."
         align="center"
       />
       <div class="mt-12 grid gap-5 lg:grid-cols-2">
         <article class="rounded-lg border border-slate-200 bg-slate-50 p-7">
-          <h3 class="text-xl font-bold text-slate-950">For Mentors</h3>
+          <h3 class="text-xl font-bold text-slate-950">Untuk Mentor</h3>
           <p class="mt-3 text-sm leading-7 text-slate-600">
             Kamu bisa menjadi mentor jika kamu adalah:
           </p>
@@ -364,7 +364,7 @@ const faqs = [
           </div>
         </article>
         <article class="rounded-lg border border-slate-200 bg-slate-50 p-7">
-          <h3 class="text-xl font-bold text-slate-950">For Partners</h3>
+          <h3 class="text-xl font-bold text-slate-950">Untuk Partner</h3>
           <p class="mt-3 text-sm leading-7 text-slate-600">
             YYZU juga terbuka untuk kolaborasi dengan:
           </p>
@@ -380,20 +380,20 @@ const faqs = [
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Role 1"
-        title="As a Mentor"
-        description="Sebagai mentor, kamu membantu future builders memahami proses belajar, membangun, dan berkembang di bidang teknologi dengan lebih terarah. Mentor dapat berkontribusi melalui sesi berbagi pengalaman, review, feedback, diskusi, maupun arahan terhadap project member."
+        title="Sebagai Mentor"
+        description="Sebagai mentor, kamu membantu member memahami proses belajar, membangun, dan berkembang di bidang teknologi dengan lebih terarah. Mentor dapat berkontribusi melalui sesi berbagi pengalaman, review, feedback, diskusi, maupun arahan terhadap project member."
         align="center"
         tone="dark"
       />
       <div class="mt-12 grid gap-5 lg:grid-cols-2">
         <article class="rounded-lg border border-white/12 bg-white/[0.06] p-7">
-          <h3 class="text-xl font-bold text-white">What Mentors Can Do</h3>
+          <h3 class="text-xl font-bold text-white">Kontribusi Mentor</h3>
           <div class="mt-6 grid gap-3 sm:grid-cols-2">
             {mentorContributions.map((item) => <p class="rounded-lg bg-white/[0.06] px-4 py-3 text-sm font-semibold leading-6 text-slate-200">{item}</p>)}
           </div>
         </article>
         <article class="rounded-lg border border-white/12 bg-white/[0.06] p-7">
-          <h3 class="text-xl font-bold text-white">Mentor Focus Areas</h3>
+          <h3 class="text-xl font-bold text-white">Area Fokus Mentor</h3>
           <div class="mt-6 flex flex-wrap gap-2">
             {mentorFocusAreas.map((item) => <span class="rounded-full bg-white text-sm font-bold text-[#0015A5] px-4 py-2">{item}</span>)}
           </div>
@@ -407,27 +407,28 @@ const faqs = [
       <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <Section
           eyebrow="Role 2"
-          title="As a Project Partner"
-          description="Kamu dapat berperan sebagai project partner atau client yang memberikan real case, problem statement, project brief, atau challenge untuk dikerjakan oleh member YYZU."
+          title="Sebagai Project Partner"
+          description="Kamu dapat berperan sebagai project partner yang memberikan real case, problem statement, project brief, atau challenge sebagai media belajar berbasis kebutuhan nyata untuk member YYZU."
         />
         <div>
           <p class="text-base leading-8 text-slate-600">
             Peran ini membantu member mendapatkan pengalaman yang lebih nyata
             dalam memahami kebutuhan, menganalisis masalah, menyusun solusi,
             membangun prototype, dan menerima feedback dari perspektif client
-            atau stakeholder.
+            atau stakeholder. Scope dan ekspektasi perlu disepakati sejak awal
+            agar tetap realistis, edukatif, dan menghargai kontribusi member.
           </p>
         </div>
       </div>
       <div class="mt-12 grid gap-5 lg:grid-cols-2">
         <article class="rounded-lg border border-slate-200 bg-slate-50 p-7">
-          <h3 class="text-xl font-bold text-slate-950">What Project Partners Can Provide</h3>
+          <h3 class="text-xl font-bold text-slate-950">Kontribusi Project Partner</h3>
           <div class="mt-6 grid gap-3 sm:grid-cols-2">
             {projectPartnerProvides.map((item) => <p class="rounded-lg bg-white px-4 py-3 text-sm font-semibold leading-6 text-slate-700 ring-1 ring-slate-200">{item}</p>)}
           </div>
         </article>
         <article class="rounded-lg border border-slate-200 bg-slate-50 p-7">
-          <h3 class="text-xl font-bold text-slate-950">Possible Project Outputs</h3>
+          <h3 class="text-xl font-bold text-slate-950">Kemungkinan Output Project</h3>
           <div class="mt-6 grid gap-3 sm:grid-cols-2">
             {projectOutputs.map((item) => <p class="rounded-lg bg-white px-4 py-3 text-sm font-semibold leading-6 text-slate-700 ring-1 ring-slate-200">{item}</p>)}
           </div>
@@ -440,7 +441,7 @@ const faqs = [
     <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
       <Section
         eyebrow="Role 3"
-        title="As a Collaboration Partner"
+        title="Sebagai Collaboration Partner"
         description="YYZU membuka ruang kolaborasi dengan komunitas, kampus, lembaga, organisasi, startup, perusahaan, atau institusi yang ingin bersama-sama mengembangkan talenta teknologi."
       />
       <div>
@@ -459,8 +460,8 @@ const faqs = [
   <section class="bg-white py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
-        eyebrow="What YYZU Needs"
-        title="What YYZU Is Looking For"
+        eyebrow="Kebutuhan YYZU"
+        title="Yang YYZU cari dari mentor dan partner."
         description="YYZU mencari mentor dan partner yang tidak hanya ingin tampil sebagai pembicara, tetapi juga ingin ikut membangun proses pertumbuhan talenta secara nyata."
         align="center"
       />
@@ -498,8 +499,8 @@ const faqs = [
           <h3 class="text-xl font-bold text-white">Batasan untuk Project Partner</h3>
           <p class="mt-4 text-sm leading-7 text-slate-300">
             Project brief atau real case harus sesuai kapasitas pembelajaran
-            member. YYZU tidak memposisikan member sebagai tenaga kerja gratis
-            untuk project komersial penuh tanpa arahan, batasan scope, dan
+            member. YYZU tidak menempatkan member untuk mengerjakan kebutuhan
+            bisnis tanpa arahan, nilai pembelajaran, batasan scope, dan
             kesepakatan yang jelas.
           </p>
         </article>
@@ -526,7 +527,7 @@ const faqs = [
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Collaboration Scheme"
-        title="How the Collaboration Works"
+        title="Cara kolaborasi berjalan."
         description="YYZU menggunakan skema kolaborasi yang sederhana, fleksibel, dan bertahap agar setiap mentor, partner, dan member memiliki ekspektasi yang jelas sejak awal."
         align="center"
       />
@@ -552,7 +553,7 @@ const faqs = [
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Models"
-        title="Collaboration Models"
+        title="Model kolaborasi."
         description="Bentuk kolaborasi dapat dimulai dari kontribusi ringan sampai program yang lebih terstruktur sesuai kapasitas mentor, partner, dan kebutuhan ecosystem."
         align="center"
       />
@@ -576,7 +577,7 @@ const faqs = [
       <div>
         <Section
           eyebrow="Partner Value"
-          title="What Mentors and Partners Get"
+          title="Nilai untuk mentor dan partner."
           description="YYZU ingin membangun kolaborasi yang saling memberi nilai. Kontribusi di YYZU dapat menjadi ruang berbagi pengalaman, membangun impact, terhubung dengan talenta muda, dan ikut membentuk ekosistem teknologi yang lebih produktif."
         />
         <div class="mt-8 grid gap-3">
@@ -586,7 +587,7 @@ const faqs = [
       <div>
         <Section
           eyebrow="YYZU Support"
-          title="What YYZU Provides"
+          title="Dukungan dari YYZU."
           description="YYZU akan membantu memfasilitasi proses kolaborasi agar berjalan lebih terarah dan sesuai dengan kapasitas ecosystem."
         />
         <div class="mt-8 grid gap-3">
@@ -600,7 +601,7 @@ const faqs = [
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Values"
-        title="Our Collaboration Values"
+        title="Nilai kolaborasi YYZU."
         description="Setiap kolaborasi di YYZU dibangun di atas nilai yang sama: growth, real experience, mutual value, clear scope, respect, dan ownership."
         align="center"
       />
@@ -624,7 +625,7 @@ const faqs = [
     <div class="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="FAQ"
-        title="Frequently Asked Questions"
+        title="Pertanyaan umum mentor dan partner."
         description="Jawaban singkat untuk mentor, project partner, dan collaboration partner sebelum memulai diskusi dengan YYZU."
         align="center"
       />
@@ -643,11 +644,11 @@ const faqs = [
 
   <CtaBand
     eyebrow="Mentor & Partnership"
-    title="Ready to Build Future Builders with Us?"
-    description="Jika kamu adalah mentor, praktisi, komunitas, lembaga, institusi, atau partner yang ingin ikut membangun ekosistem teknologi yang kolaboratif dan berdampak, YYZU terbuka untuk berdiskusi."
-    primaryLabel="Register as Mentor / Partner"
+    title="Siap ikut membangun future builders bersama YYZU?"
+    description="Jika kamu adalah mentor, praktisi, komunitas, kampus, organisasi, institusi, atau partner yang ingin ikut membangun ecosystem teknologi yang kolaboratif dan berdampak, YYZU terbuka untuk berdiskusi."
+    primaryLabel="Join as Mentor / Partner"
     primaryHref={mentorFormUrl}
-    secondaryLabel="Discuss Collaboration with YYZU"
+    secondaryLabel="Diskusi Kolaborasi"
     secondaryHref={mentorFormUrl}
   />
 </BaseLayout>

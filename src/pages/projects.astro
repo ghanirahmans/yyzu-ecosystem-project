@@ -3,19 +3,19 @@ import CtaBand from "../components/CtaBand.astro";
 import InfoCard from "../components/InfoCard.astro";
 import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
-import { buildLogs, projectPrinciples } from "../data/site";
+import { buildLogs, projectPrinciples, upcomingBuildLogs } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
   title="Projects & Build Logs | YYZU"
-  description="Projects dan build logs YYZU: collaborative projects, learning projects, workflow logs, progress updates, dan contribution stories."
+  description="Projects dan build logs YYZU menjelaskan project sebagai media real-world experience, workflow simulation, progress updates, dan contribution stories."
 >
   <PageHero
     eyebrow="Projects / Build Logs"
-    title="Project YYZU menjadi ruang praktik untuk belajar, build, collaborate, dan grow."
-    description="Halaman ini mencatat collaborative projects, learning projects, workflow logs, progress updates, dan contribution stories yang menunjukkan proses kerja secara transparan."
-    note="Build logs membantu menjelaskan konteks, keputusan, proses review, pembelajaran, dan peran tiap kontribusi."
+    title="Project YYZU adalah media untuk real-world experience, bukan hanya showcase."
+    description="Halaman ini mencatat collaborative projects, workflow logs, progress updates, dan contribution stories yang menunjukkan proses kerja, keputusan, review, dan pembelajaran secara transparan."
+    note="Build logs membantu member menjelaskan konteks, role, ownership, feedback, keputusan, dan dampak tiap kontribusi."
     tone="dark"
   />
 
@@ -23,8 +23,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Current Logs"
-        title="Workflow logs dan cerita kontribusi."
-        description="Catatan ini dibuat agar proses belajar, project collaboration, keputusan teknis, product thinking, dan kontribusi YYZU bisa dipahami dengan jelas."
+        title="Timeline pengembangan YYZU yang sedang berjalan."
+        description="Catatan ini dibuat agar proses pengembangan konsep, pembukaan member, project collaboration, workflow industri, keputusan, dan kontribusi YYZU bisa dipahami dengan jelas."
         align="center"
       />
       <div class="mt-12 grid gap-5 lg:grid-cols-2">
@@ -32,6 +32,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           buildLogs.map((log) => (
             <article class="rounded-lg border border-slate-200 bg-slate-50 p-7">
               <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-white px-3 py-1 text-xs font-bold text-slate-700 ring-1 ring-slate-200">
+                  {log.date}
+                </span>
                 <span class="rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#006A67] ring-1 ring-slate-200">
                   {log.period}
                 </span>
@@ -52,12 +55,47 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
+  <section class="bg-slate-950 py-16 text-white sm:py-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <Section
+        eyebrow="Upcoming"
+        title="Next focus YYZU."
+        description="Upcoming digunakan sebagai roadmap ringan. Bagian ini menunjukkan arah yang sedang disiapkan, tanpa mengklaim bahwa program sudah berjalan penuh."
+        align="center"
+        tone="dark"
+      />
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {
+          upcomingBuildLogs.map((log) => (
+            <article class="rounded-lg border border-white/12 bg-white/[0.06] p-7">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-white px-3 py-1 text-xs font-bold text-[#0015A5]">
+                  {log.date}
+                </span>
+                <span class="rounded-full border border-white/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100">
+                  {log.period}
+                </span>
+                <span class="rounded-full bg-white/[0.08] px-3 py-1 text-xs font-bold text-white">
+                  {log.status}
+                </span>
+              </div>
+              <h2 class="mt-5 text-xl font-bold text-white">{log.title}</h2>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                {log.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <section class="bg-[#f7f9fb] py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
       <Section
         eyebrow="Project Principles"
-        title="Project harus realistis, nyata, reviewable, dan bisa dipelajari."
-        description="Yang penting project membantu orang belajar workflow, ownership, komunikasi, product thinking, software quality, dan kualitas kontribusi."
+        title="Project harus realistis, nyata, reviewable, dan membangun industry readiness."
+        description="Yang penting project membantu member belajar workflow, ownership, komunikasi, product thinking, software quality, documentation, dan kualitas kontribusi."
         align="center"
       />
       <div class="mt-12 grid gap-5 lg:grid-cols-3">
@@ -67,7 +105,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <CtaBand
-    title="Build logs menjadi bukti proses belajar, kolaborasi, dan growth di YYZU."
+    title="Build logs menjadi bukti proses belajar, kolaborasi, real experience, dan growth di YYZU."
     description="Jika kamu ingin membantu menulis, membangun, mendokumentasikan, mendesain, atau mengelola project, ada ruang untuk kontribusi yang jelas."
     primaryLabel="Ikut Kontribusi"
     primaryHref="/join/"
