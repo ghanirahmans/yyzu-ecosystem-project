@@ -1,28 +1,42 @@
-# AGENTS.md
+# AGENT.md
 
 # YYZU Website MVP
 
 ## Overview
 
-This project is the official MVP website for YYZU.
+This project is the official MVP website for YYZU Community.
 
-YYZU is an engineering ecosystem and talent bridge that helps students and IT talents grow from the learning stage into industry readiness through collaborative learning, engineering culture, mentoring, workflow simulation, and real-world projects.
+YYZU is a collaborative technology ecosystem and talent bridge that helps students, IT learners, and technology talents grow from the learning stage into real experience and industry readiness through collaborative learning, mentoring, workflow simulation, project-based growth, and real-world projects.
 
-The purpose of this website is to clearly introduce YYZU to students, campuses, industry partners, and the broader technology community.
+YYZU is not only a learning community. It is a growth environment for future builders who want to learn, build, collaborate, receive feedback, develop portfolios, understand real technology workflows, and grow through practical experience.
 
-This project focuses on building a professional, modern, and credible landing page experience that communicates the identity, mission, values, and ecosystem of YYZU.
+The purpose of this website is to clearly introduce YYZU to:
+
+- students and IT learners,
+- campuses,
+- mentors,
+- technology communities,
+- organizations,
+- industry partners,
+- and the broader technology ecosystem.
+
+This project focuses on building a professional, modern, credible, and easy-to-understand landing page experience that communicates the identity, mission, values, ecosystem, activities, and participation paths of YYZU.
 
 ---
 
-# Main Objective
+## Main Objective
 
-The primary objective of this MVP is:
+The primary objective of this MVP is to help first-time visitors understand:
 
-- introducing YYZU clearly,
-- building credibility,
-- explaining YYZU’s ecosystem,
-- showing the value proposition,
-- and creating interest for collaboration or participation.
+- what YYZU is,
+- who YYZU is for,
+- what value YYZU offers,
+- what activities YYZU provides,
+- how YYZU helps members grow,
+- how members can join,
+- how mentors can contribute,
+- how partners can collaborate,
+- and why YYZU is different from a regular technology community.
 
 The MVP should prioritize:
 
@@ -30,100 +44,131 @@ The MVP should prioritize:
 - readability,
 - responsiveness,
 - maintainability,
+- trust,
+- practical explanation,
 - and strong presentation.
 
 Avoid unnecessary complexity.
 
+The website should not only explain YYZU as a concept. It must answer practical questions from new visitors and guide them toward the right action.
+
 ---
 
-# Core Positioning
+## Core Positioning
 
 YYZU is:
 
-> an engineering ecosystem and talent bridge between campus, students, and industry.
+> a collaborative technology ecosystem and talent bridge for future builders who want to learn, build, collaborate, and grow through real experience.
 
-The website should consistently communicate that YYZU is not only a learning community, but also a practical engineering growth environment focused on collaboration, industry workflow, and real contribution.
+YYZU connects:
 
----
+- campus,
+- students,
+- technology talents,
+- mentors,
+- partners,
+- and industry.
 
-# Target Audience
+The website should consistently communicate that YYZU is not only a learning community, but also a practical growth environment focused on:
 
-The website targets:
+- collaborative learning,
+- mini projects,
+- mentoring,
+- workflow simulation,
+- real case / project brief,
+- team-based growth,
+- portfolio development,
+- real-world experience,
+- and industry-oriented growth.
 
-## 1. Students & IT Learners
+Use the tagline:
 
-People who want to:
+> Bridging Campus, Talent, and Industry.
 
-- improve technical skills,
-- gain real project experience,
-- build portfolios,
-- collaborate in teams,
-- and prepare for industry careers.
+Supporting lines:
 
-## 2. Campuses
-
-Institutions looking for:
-
-- talent development support,
-- industry-aligned learning ecosystems,
-- and collaboration opportunities.
-
-## 3. Industry & Partners
-
-Organizations or professionals looking for:
-
-- talent pipelines,
-- engineering collaboration,
-- mentoring opportunities,
-- and technology partnerships.
+- Learn • Build • Grow
+- Building Future Builders
+- From Learning to Real Experience
+- Grow Through Collaboration
 
 ---
 
-# Tech Stack
+## Target Audience
 
-Use the existing stack unless explicitly changed.
+YYZU has three main audience paths.
 
-## Current Stack
+### 1. Members
 
-- Astro
-- TypeScript
-- Tailwind CSS
+People who want to learn and grow in technology through projects, collaboration, mentoring, and real experience.
 
-## Development Principles
+Target members include:
 
-- Keep implementation clean and maintainable.
-- Use reusable Astro components.
-- Follow good engineering practices.
-- Prefer simplicity over unnecessary abstraction.
+- developers,
+- UI/UX designers,
+- students,
+- technology enthusiasts,
+- problem solvers,
+- future builders,
+- and individuals who want to learn and grow through a collaborative process.
+
+Members do not need to be experts.
+
+Main message for members:
+
+- You do not need to already be an expert.
+- You do not need to have a perfect portfolio.
+- You do not need to have a lot of experience.
+- What matters is willingness to learn, receive feedback, collaborate, and grow together from the beginning.
+
+### 2. Mentors
+
+Practitioners, professionals, or experienced individuals in technology, design, product, business, or digital ecosystems who want to guide future builders.
+
+Mentors can contribute through:
+
+- mentoring sessions,
+- sharing experience,
+- technical review,
+- design review,
+- product review,
+- workflow insight,
+- career and industry perspective,
+- feedback on member projects,
+- real case,
+- and project brief.
+
+### 3. Collaboration / Partnership
+
+Communities, campuses, organizations, institutions, startups, companies, or partners that want to collaborate with YYZU.
+
+Partnership opportunities include:
+
+- workshops,
+- sharing sessions,
+- mentoring programs,
+- project collaboration,
+- talent development,
+- real case collaboration,
+- community events,
+- internship / career opportunities,
+- sponsorship / support programs,
+- and other technology-related programs.
 
 ---
 
-# Design Direction
+## Website Flow
 
-The visual style should feel:
+The website functions as a landing page and trust builder.
 
-- modern,
-- professional,
-- engineering-oriented,
-- collaborative,
-- structured,
-- and trustworthy.
+Main user flow:
 
-The design should balance:
-
-- professionalism,
-- technical identity,
-- and community warmth.
-
-Avoid designs that feel:
-
-- childish,
-- overly corporate,
-- messy,
-- overly futuristic,
-- or excessively animated.
-
----
+````txt
+Instagram / WhatsApp / Story
+→ YYZU Website
+→ Choose participation path
+→ Google Form
+```
 
 # Brand Colors
 
@@ -132,4 +177,4 @@ Primary colors:
 ```txt
 #0015A5
 #006A67
-```
+````
