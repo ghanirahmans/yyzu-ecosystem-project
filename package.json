@@ -12,13 +12,10 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^20",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.3.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
