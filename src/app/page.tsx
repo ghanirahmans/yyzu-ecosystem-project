@@ -11,8 +11,32 @@ import {
 } from "../data/site";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "YYZU Community",
+    "url": "https://yyzucommunity.netlify.app",
+    "logo": "https://yyzucommunity.netlify.app/yyz-project-logo_ft.svg",
+    "description": "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, komunitas, mentor, dan industri.",
+    "sameAs": [
+      "https://instagram.com/yyzucommunity"
+    ],
+    "knowsAbout": [
+      "Software Development",
+      "UI/UX Design",
+      "Product Management",
+      "Collaborative Learning",
+      "Team Collaboration",
+      "Mentoring"
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="relative isolate overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(0,21,165,0.9)_0%,rgba(0,106,103,0.78)_48%,rgba(15,23,42,0.96)_100%)]"></div>
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.11)_1px,transparent_1px)] bg-[size:42px_42px] opacity-20"></div>

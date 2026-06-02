@@ -14,6 +14,36 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
   },
+  keywords: [
+    "YYZU",
+    "YYZU Community",
+    "collaborative technology ecosystem",
+    "talent bridge",
+    "belajar coding",
+    "portofolio IT",
+    "mentoring IT",
+    "workflow simulasi",
+    "mahasiswa IT",
+    "belajar pemrograman",
+    "real project IT",
+    "tech community Indonesia",
+    "learning coding together",
+    "pemrograman kolaboratif",
+    "mentoring coding",
+    "kerja praktek IT",
+    "future builders"
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: "./",
   },
