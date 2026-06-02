@@ -15,8 +15,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "YYZU Community",
-    "url": "https://yyzucommunity.netlify.app",
-    "logo": "https://yyzucommunity.netlify.app/yyz-project-logo_ft.svg",
+    "url": "https://yyzu.tech",
+    "logo": "https://yyzu.tech/yyz-project-logo_ft.svg",
     "description": "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, komunitas, mentor, dan industri.",
     "sameAs": [
       "https://instagram.com/yyzucommunity"

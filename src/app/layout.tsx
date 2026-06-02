@@ -4,7 +4,7 @@ import SiteHeader from "../components/SiteHeader";
 import "../styles/global.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yyzucommunity.netlify.app"),
+  metadataBase: new URL("https://yyzu.tech"),
   title: {
     default: "YYZU | Collaborative Technology Ecosystem & Talent Bridge",
     template: "%s | YYZU",
