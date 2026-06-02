@@ -1,3 +1,117 @@
+import type { Metadata } from "next";
+import CtaBand from "../../components/CtaBand";
+import InfoCard from "../../components/InfoCard";
+import PageHero from "../../components/PageHero";
+import Section from "../../components/Section";
+import { bridgeCards, visionMission, whyYYZU } from "../../data/site";
+
+export const metadata: Metadata = {
+  title: "About YYZU | Collaborative Technology Ecosystem",
+  description:
+    "Tentang YYZU sebagai collaborative technology ecosystem dan talent bridge antara kampus, talenta teknologi, komunitas, mentor, dan industri.",
+};
+
 export default function AboutPage() {
-  return <div>About YYZU</div>;
+  return (
+    <>
+      <PageHero
+        eyebrow="About YYZU"
+        title="YYZU dibangun sebagai collaborative technology ecosystem dan talent bridge."
+        description="YYZU membantu talenta teknologi berkembang dari tahap belajar menuju pengalaman nyata, industry readiness, dan kontribusi profesional melalui pembelajaran berbasis praktik, workflow simulation, mentoring, serta real project berbasis tim."
+        note="Fokus YYZU bukan hanya teori, tetapi pembentukan technical skill, problem solving, teamwork, communication, ownership, dan pengalaman kerja kolaboratif."
+      />
+
+      <section className="bg-[#f7f9fb] py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+          <Section
+            eyebrow="The Gap"
+            title="Masalahnya bukan kurang belajar, tetapi kurang ruang untuk praktik kolaboratif."
+            description="Academic learning dan self-learning memberi fondasi penting. Namun untuk siap masuk lingkungan industri, talenta juga perlu berlatih bekerja dengan orang lain, mengelola task, menerima review, memahami kebutuhan produk, dan menjaga kualitas delivery."
+          />
+          <div className="grid gap-5">
+            {whyYYZU.map((item) => (
+              <InfoCard key={item.title} {...item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 py-16 text-white sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <Section
+            eyebrow="Bridge Direction"
+            title="YYZU menjadi talent bridge dari learning menuju industry readiness."
+            description="YYZU bukan sekadar komunitas belajar, bukan sekadar tempat project, dan bukan sekadar talent pool. Yang dibangun adalah environment pengembangan talenta teknologi yang menumbuhkan kebiasaan kerja kolaboratif secara bertahap."
+            align="center"
+            tone="dark"
+          />
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {bridgeCards.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-lg border border-white/12 bg-white/[0.06] p-7"
+              >
+                <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-5 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
+          {visionMission.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-lg border border-slate-200 bg-slate-50 p-8"
+            >
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">
+                {item.title}
+              </p>
+              <p className="mt-5 text-xl font-bold leading-8 text-slate-950">
+                {item.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#f7f9fb] py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <Section
+            eyebrow="Long-Term Direction"
+            title="Membangun ecosystem teknologi yang produktif, kredibel, dan sustainable."
+            description="Arah jangka panjang YYZU adalah membangun learning path, collaborative project system, mentoring network, project portfolio hub, talent showcase, industry partnership, internal product development, dan sustainable community operation."
+            align="center"
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {[
+              "Ruang latihan engineering workflow",
+              "Project-based growth environment",
+              "Jembatan kampus, talenta, dan industri",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-lg border border-slate-200 bg-white p-6 text-center shadow-sm"
+              >
+                <p className="text-base font-bold text-slate-950">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBand
+        title="Arah YYZU sederhana: tumbuh lewat kolaborasi dan pengalaman nyata."
+        description="Jika arah ini relevan, langkah berikutnya adalah memahami culture, nilai, dan mindset yang membentuk cara YYZU bekerja."
+        primaryLabel="Lihat Culture"
+        primaryHref="/culture/"
+        secondaryLabel="Join YYZU"
+        secondaryHref="/join/"
+      />
+    </>
+  );
 }

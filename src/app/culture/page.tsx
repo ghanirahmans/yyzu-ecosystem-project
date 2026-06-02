@@ -1,3 +1,97 @@
+import type { Metadata } from "next";
+import CtaBand from "../../components/CtaBand";
+import InfoCard from "../../components/InfoCard";
+import PageHero from "../../components/PageHero";
+import Section from "../../components/Section";
+import { fitPeople, philosophy, values } from "../../data/site";
+
+export const metadata: Metadata = {
+  title: "Culture & Engineering Mindset | YYZU",
+  description:
+    "Culture YYZU: Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership, Collaboration Over Competition, dan Sustainable Impact.",
+};
+
 export default function CulturePage() {
-  return <div>Culture YYZU</div>;
+  return (
+    <>
+      <PageHero
+        eyebrow="Culture & Engineering Mindset"
+        title="Kultur YYZU membentuk cara belajar, bekerja, dan tumbuh bersama."
+        description="YYZU ingin menjadi environment yang serius tetapi tetap welcoming: tempat belajar, berdiskusi, membangun, menerima feedback, melatih ownership, dan mengembangkan engineering serta product mindset secara bertahap."
+        note="Fokusnya build together, collaborative problem solving, peer learning, dan collective growth."
+        tone="dark"
+      />
+
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <Section
+            eyebrow="Core Values"
+            title="Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership."
+            description="Nilai ini bukan slogan. Nilai ini dipakai untuk menentukan aktivitas, cara join, cara bekerja, cara berkolaborasi, dan cara menilai progress member."
+            align="center"
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {values.map((item) => (
+              <InfoCard key={item.title} {...item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7f9fb] py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <Section
+            eyebrow="Principles"
+            title="Kolaborasi di atas kompetisi, growth di atas status pasif."
+            description="YYZU memilih proses yang sehat: konsistensi, ownership, review, dokumentasi, problem solving, dan growth yang bisa dilihat lewat kontribusi nyata."
+          />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {philosophy.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-lg font-bold text-slate-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 py-16 text-white sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <Section
+            eyebrow="Fit"
+            title="YYZU tidak harus cocok untuk semua orang."
+            description="YYZU cocok untuk orang yang ingin belajar serius, membangun bersama, menerima feedback, dan tumbuh lewat proses kolaboratif yang praktis."
+            align="center"
+            tone="dark"
+          />
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            {fitPeople.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-lg border border-white/12 bg-white/[0.06] p-7"
+              >
+                <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBand
+        title="Culture YYZU hidup lewat cara kita belajar, build, review, dan collaborate."
+        description="Jika kamu ingin masuk ke ruang yang menuntut growth, ownership, dan kolaborasi, baca ekspektasi join sebelum menghubungi kami."
+        primaryLabel="Baca Ekspektasi Join"
+        primaryHref="/join/"
+      />
+    </>
+  );
 }
