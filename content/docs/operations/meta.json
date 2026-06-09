@@ -1,0 +1,10 @@
+{
+  "title": "Operations",
+  "defaultOpen": true,
+  "pages": [
+    "overview",
+    "collaboration-system",
+    "event-program",
+    "documentation-standard"
+  ]
+}

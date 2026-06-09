@@ -1,0 +1,52 @@
+---
+title: Standar Dokumentasi
+description: Standar penulisan berkas MDX, frontmatter, dan arsitektur dokumentasi di YYZU.
+status: active
+owner: YYZU
+lastUpdated: 2026-06-09
+---
+
+# Standar Dokumentasi (Documentation Standard)
+
+Sebagai ekosistem kolaboratif, YYZU meyakini bahwa **dokumentasi yang baik adalah investasi masa depan**. Dokumentasi memastikan transfer pengetahuan berjalan lancar ketika terjadi pergantian anggota atau pengurus.
+
+---
+
+## Standar Penulisan Berkas
+
+Setiap halaman dokumentasi wiki, berkas panduan teknis, dan SOP di YYZU wajib mengikuti pedoman penulisan berikut:
+
+1. **Memiliki Frontmatter Minimal**  
+   Setiap berkas MDX wajib diawali dengan blok metadata frontmatter yang mendefinisikan informasi dasar dokumen.
+
+2. **Gunakan Bahasa Indonesia yang Jelas**  
+   Gunakan bahasa Indonesia yang lugas, komunikatif, dan mudah dipahami. Istilah teknis bahasa Inggris (seperti *sprint*, *workflow*, *pull request*) diperbolehkan untuk dipertahankan jika lebih akrab di dunia teknologi.
+
+3. **Gunakan Struktur Hirarki Judul (Heading) yang Rapi**  
+   Gunakan hanya satu tag judul utama (`# Judul`) per halaman, diikuti oleh sub-judul (`##`, `###`) secara berurutan untuk menjaga kemudahan pembacaan.
+
+4. **Pemisahan Kategori Informasi**  
+   Bedakan penulisan dokumen antara konsep dasar (penjelasan teori/arah), prosedur standar (SOP/langkah praktis), dan template (draf dokumen siap pakai).
+
+---
+
+## Contoh Format Frontmatter Wajib
+
+Setiap halaman dokumen wiki di ekosistem YYZU wajib menyertakan blok frontmatter di bagian paling atas berkas dengan format minimal sebagai berikut:
+
+```markdown
+---
+title: Project Workflow
+description: Alur kerja pengerjaan proyek di YYZU dari tahap awal hingga rilis.
+status: active
+owner: Product & Project Management
+lastUpdated: 2026-06-09
+---
+```
+
+### Penjelasan Field:
+- **`title`**: Judul halaman yang akan tampil sebagai nama navigasi sidebar dan tajuk utama halaman.
+- **`description`**: Deskripsi singkat (1-2 kalimat) mengenai isi halaman untuk mempermudah pencarian (SEO).
+- **`status`**: Menandakan aktualitas dokumen (contoh: `active`, `deprecated`, `under-review`).
+- **`owner`**: Menunjukkan peran (*role*) kepengurusan yang bertanggung jawab memperbarui dokumen tersebut.
+- **`lastUpdated`**: Tanggal terakhir dokumen diperbarui (format: `YYYY-MM-DD`).

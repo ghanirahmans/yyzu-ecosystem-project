@@ -1,8 +1,55 @@
 @import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
 
 :root {
   --background: #f7f9fb;
   --foreground: #0f172a;
+
+  /* Fumadocs UI overrides - Light Theme (High contrast YYZU Blue & Teal highlights) */
+  --color-fd-primary: hsl(232, 100%, 32%);
+  /* YYZU Blue */
+  --color-fd-primary-foreground: hsl(0, 0%, 100%);
+  --color-fd-background: hsl(210, 30%, 98%);
+  /* Soft light slate background */
+  --color-fd-foreground: hsl(222, 50%, 10%);
+  /* High contrast near-black text */
+  --color-fd-muted: hsl(210, 30%, 94%);
+  --color-fd-muted-foreground: hsl(220, 20%, 35%);
+  /* High contrast gray-blue for secondary text */
+  --color-fd-border: hsl(215, 25%, 85%);
+  /* High contrast borders */
+  --color-fd-card: hsl(0, 0%, 100%);
+  --color-fd-card-foreground: hsl(222, 50%, 10%);
+  --color-fd-popover: hsl(0, 0%, 100%);
+  --color-fd-popover-foreground: hsl(222, 50%, 10%);
+  --color-fd-accent: hsl(232, 95%, 95%);
+  /* Very soft YYZU Blue tint for hover backgrounds */
+  --color-fd-accent-foreground: hsl(232, 100%, 25%);
+  /* Dark blue text on hover */
+
+  --fd-layout-width: 1450px;
+  --fd-nav-height: 4rem;
+}
+
+.dark {
+  --background: hsl(222, 40%, 7%); /* Pure dark background for body */
+  --foreground: hsl(210, 40%, 98%); /* Pure off-white text for body */
+
+  /* Fumadocs UI overrides - Dark Theme (High contrast premium dark mode) */
+  --color-fd-primary: hsl(225, 95%, 62%); /* Bright, legible YYZU Blue */
+  --color-fd-primary-foreground: hsl(0, 0%, 100%);
+  --color-fd-background: hsl(222, 40%, 7%); /* Clean deep slate-black content background */
+  --color-fd-foreground: hsl(210, 40%, 98%); /* Crisp white text */
+  --color-fd-muted: hsl(222, 20%, 15%); /* Legible background for code blocks, badges */
+  --color-fd-muted-foreground: hsl(215, 20%, 78%); /* Brightened description/secondary text */
+  --color-fd-border: hsl(217, 20%, 24%); /* Distinct high-contrast border lines */
+  --color-fd-card: hsl(222, 30%, 12%); /* Slightly lighter card background for depth */
+  --color-fd-card-foreground: hsl(210, 40%, 98%);
+  --color-fd-popover: hsl(222, 40%, 9%);
+  --color-fd-popover-foreground: hsl(210, 40%, 98%);
+  --color-fd-accent: hsl(225, 25%, 16%); /* Slightly brighter hover background for better visibility */
+  --color-fd-accent-foreground: hsl(210, 40%, 98%);
 }
 
 @theme inline {
@@ -29,4 +76,107 @@ section {
 ::selection {
   background: #0015a5;
   color: #ffffff;
+}
+
+/* ==========================================================================
+   CACHYOS STYLE SIDEBAR OVERRIDES
+   ========================================================================== */
+
+/* Sidebar Background styling */
+.dark aside,
+.dark [data-sidebar] {
+  background-color: hsl(222, 35%, 11%) !important; /* Elegant dark navy sidebar */
+  border-right: 1px solid hsl(222, 20%, 20%) !important;
+}
+
+/* Group labels & collapsible folder titles */
+aside summary,
+aside .fd-sidebar-group-label,
+aside button[aria-controls],
+aside button[data-state],
+aside li > button {
+  font-weight: 700 !important; /* Bold but not extremely thick */
+  font-size: 0.95rem !important; /* Slightly larger than sub-items (0.825rem) */
+  letter-spacing: 0.01em !important;
+  transition: color 0.15s ease !important;
+  color: hsl(222, 50%, 8%) !important;
+  /* High contrast dark navy for light mode */
+}
+
+.dark aside summary,
+.dark aside .fd-sidebar-group-label,
+.dark aside button[aria-controls],
+.dark aside button[data-state],
+.dark aside li > button {
+  color: hsl(0, 0%, 100%) !important;
+  /* Bold pure white folders in dark mode */
+}
+
+/* Sidebar Links */
+aside a {
+  font-size: 0.825rem !important;
+  /* Smaller text for page links to show hierarchy */
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  transition: all 0.15s ease !important;
+}
+
+/* Sub-items (regular inactive links - high contrast) */
+aside a:not([aria-current="page"]) {
+  color: hsl(222, 35%, 22%) !important;
+  /* High contrast dark slate-gray for light mode */
+  font-weight: 500 !important;
+}
+
+.dark aside a:not([aria-current="page"]) {
+  color: hsl(218, 25%, 82%) !important;
+  /* High contrast bright off-white for dark mode */
+  font-weight: 500 !important;
+}
+
+aside a:not([aria-current="page"]):hover {
+  color: hsl(232, 100%, 32%) !important;
+  /* YYZU Blue text on hover in light mode */
+}
+
+.dark aside a:not([aria-current="page"]):hover {
+  color: hsl(171, 95%, 45%) !important;
+  /* Cyan text on hover in dark mode */
+}
+
+/* Active Link in Sidebar (Teal/Cyan highlight with dark text) */
+aside a[aria-current="page"] {
+  background-color: hsl(171, 95%, 45%) !important;
+  /* CachyOS-style bright Cyan/Green */
+  color: hsl(223, 40%, 10%) !important;
+  /* Contrast dark text */
+  font-weight: 800 !important;
+  border-radius: 6px !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  box-shadow: 0 2px 8px rgba(0, 240, 194, 0.15) !important;
+}
+
+.dark aside a[aria-current="page"] {
+  background-color: hsl(171, 95%, 45%) !important;
+  color: hsl(223, 40%, 10%) !important;
+}
+
+/* Hierarchical Vertical Lines for nested lists */
+aside ul ul {
+  border-left: 1px solid hsl(220, 20%, 80%) !important;
+  margin-left: 0.85rem !important;
+  padding-left: 0.65rem !important;
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.dark aside ul ul {
+  border-left: 1px solid hsl(223, 20%, 25%) !important;
+  /* High contrast dark lines */
+}
+
+/* Spacing between MDX docs content and previous/next page navigation links */
+div[class*="@container"][class*="grid"].gap-4 {
+  margin-top: 4.5rem !important;
 }

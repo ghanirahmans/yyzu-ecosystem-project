@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Footer from "../components/Footer";
-import SiteHeader from "../components/SiteHeader";
+import { RootProvider } from "fumadocs-ui/provider/next";
+import LayoutWrapper from "./LayoutWrapper";
 import "../styles/global.css";
 
 export const metadata: Metadata = {
@@ -76,13 +76,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className="h-full antialiased">
+    <html lang="id" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex min-h-full flex-col">
-        <div className="min-h-screen bg-[#f7f9fb] text-slate-900">
-          <SiteHeader />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <RootProvider>
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </RootProvider>
       </body>
     </html>
   );
