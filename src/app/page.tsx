@@ -73,7 +73,7 @@ export default function Home() {
                 </a>
                 <a
                   href="/docs/"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#006A67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-slate-950/20 transition hover:bg-[#005250]"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
                 >
                   Read YYZU Docs
                 </a>
