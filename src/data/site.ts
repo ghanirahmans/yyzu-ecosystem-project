@@ -252,12 +252,12 @@ export const buildLogs: BuildLog[] = [
     status: "Aktif",
   },
   {
-    date: "25 Mei 2026 - Sekarang",
+    date: "25 Mei 2026 - 8 Juni 2026",
     period: "Ecosystem Onboarding",
-    title: "Penerimaan Partisipan Ekosistem",
+    title: "Pendaftaran Partisipan Ekosistem Batch 1",
     description:
       "Membuka registrasi bagi future builders, kontributor internal, mentor praktisi, dan partner industri yang memiliki keselarasan nilai dalam kolaborasi praktis.",
-    status: "Pendaftaran Dibuka",
+    status: "Pendaftaran Ditutup",
   },
   {
     date: "Mei 2026 - Sekarang",
@@ -275,6 +275,16 @@ export const buildLogs: BuildLog[] = [
       "Menggunakan kebutuhan infrastruktur ekosistem sebagai media belajar awal untuk mempraktikkan standarisasi git workflow, issue tracking, dan dokumentasi.",
     status: "Berjalan",
   },
+
+  {
+    date: "10 Juni 2026",
+    period: "Onboarding YYZU Batch 1",
+    title: "Pengumuman Onboarding YYZU Batch 1",
+    description:
+      "Pengumuman pelaksanaan onboarding bagi peserta terpilih yang akan bergabung dalam ekosistem YYZU Batch 1.",
+    status: "Berhasil",
+  }
+
 ];
 
 export const upcomingBuildLogs: BuildLog[] = [
