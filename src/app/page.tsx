@@ -1,3 +1,4 @@
+import { ArrowRight, BookOpen, Compass } from "lucide-react";
 import CtaBand from "../components/CtaBand";
 import InfoCard from "../components/InfoCard";
 import Section from "../components/Section";
@@ -64,24 +65,27 @@ export default function Home() {
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
                 YYZU mempertemukan talenta teknologi, kampus, mentor praktisi, dan industri melalui pembelajaran kolaboratif, simulasi workflow industri, mentoring, dan pengerjaan project brief terarah.
               </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-9 flex flex-wrap gap-4">
                 <a
                   href="/join/"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] shadow-lg shadow-slate-950/20 transition hover:bg-slate-100"
+                  className="group inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] shadow-lg shadow-slate-950/20 transition-all duration-300 hover:bg-slate-100 hover:scale-[1.03] active:scale-[0.97]"
                 >
-                  Join as Member
+                  <span>Join as Member</span>
+                  <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
                 <a
                   href="/docs/"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                  className="group inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-[1.03] active:scale-[0.97]"
                 >
-                  Read YYZU Docs
+                  <BookOpen className="mr-2 size-4 text-teal-300 transition-colors duration-300 group-hover:text-teal-200" />
+                  <span>Read YYZU Docs</span>
                 </a>
                 <a
                   href="/about/"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                  className="group inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-[1.03] active:scale-[0.97]"
                 >
-                  Explore the Ecosystem
+                  <Compass className="mr-2 size-4 text-blue-300 transition-colors duration-300 group-hover:text-blue-200" />
+                  <span>Explore the Ecosystem</span>
                 </a>
               </div>
             </div>
