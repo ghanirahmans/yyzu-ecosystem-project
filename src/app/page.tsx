@@ -20,7 +20,8 @@ export default function Home() {
     "logo": "https://yyzu.tech/yyz-project-logo_ft.svg",
     "description": "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri.",
     "sameAs": [
-      "https://instagram.com/yyzucommunity"
+      "https://instagram.com/yyzuecosystem",
+      "https://www.linkedin.com/in/yyzu-ecosystem"
     ],
     "knowsAbout": [
       "Software Development",

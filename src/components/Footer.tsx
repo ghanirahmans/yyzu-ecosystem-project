@@ -46,21 +46,31 @@ export default function Footer() {
           <div className="mt-4 grid gap-3 text-sm text-slate-300">
             <span>
               Email:{" "}
-              <a href="mailto:yyzucommunity@gmail.com" className="hover:text-white">
-                yyzucommunity@gmail.com
+              <a href="mailto:yyzuecosystem@gmail.com" className="hover:text-white">
+                yyzuecosystem@gmail.com
               </a>
             </span>
 
-            <span>LinkedIn: coming soon</span>
             <span>
-              Instagram:{" "}
+              LinkedIn:{" "}
               <a
-                href="https://instagram.com/yyzucommunity"
+                href="https://www.linkedin.com/in/yyzu-ecosystem"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white"
               >
-                yyzucommunity
+                yyzu-ecosystem
+              </a>
+            </span>
+            <span>
+              Instagram:{" "}
+              <a
+                href="https://instagram.com/yyzuecosystem"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                yyzuecosystem
               </a>
             </span>
           </div>
