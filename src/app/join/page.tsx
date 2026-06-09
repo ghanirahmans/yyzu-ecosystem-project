@@ -5,27 +5,30 @@ import Section from "../../components/Section";
 import { joinExpectations, joinPaths } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "Join YYZU",
+  title: "Join | YYZU",
   description:
-    "Join YYZU sebagai member, contributor, mentor, atau partner untuk tumbuh lewat collaborative learning, project collaboration, workflow industri, dan real project experience.",
+    "Bergabung ke dalam ekosistem YYZU sebagai member, kontributor internal, mentor praktisi, atau partner kolaborasi untuk tumbuh melalui real project.",
 };
+
+const memberFormUrl = "https://forms.gle/qvXuRMPRRpkhNzZ59";
+const mentorFormUrl = "https://forms.gle/a8SbEvNR8hDFE5529";
 
 export default function JoinPage() {
   return (
     <>
       <PageHero
         eyebrow="Join YYZU"
-        title="Join YYZU sebagai member, contributor, mentor, atau partner."
-        description="YYZU terbuka untuk orang dan institusi yang align dengan kultur belajar serius, collaborative learning, ownership, teamwork, dan real contribution. Tidak harus sudah jago, tetapi harus siap tumbuh lewat proses."
-        note="YYZU sedang mengembangkan aktivitas, project, dan standar ecosystem, jadi kontribusi yang konsisten dan mindset kolaboratif sangat penting."
+        title="Bergabung ke dalam ekosistem YYZU."
+        description="YYZU membuka pendaftaran bagi individu maupun organisasi yang memiliki keselarasan nilai dalam kolaborasi praktis. Kami mencari talenta yang siap belajar mandiri secara aktif dan menjaga komitmen kualitas kontribusi tim."
+        note="Ekosistem YYZU dikembangkan berdasarkan kontribusi nyata dan kebiasaan kerja yang konsisten."
       />
 
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Expectations"
-            title="Ekspektasi sebelum bergabung."
-            description="YYZU ingin menjaga culture yang sehat. Karena itu, ekspektasi dibuat jelas agar orang yang bergabung memahami cara belajar, bekerja, berkomunikasi, dan berkontribusi di dalam ecosystem."
+            title="Ekspektasi sebelum Anda bergabung."
+            description="Kami berkomitmen untuk menjaga kualitas kolaborasi. Memahami ekspektasi di awal akan membantu Anda beradaptasi dengan ritme belajar di dalam ekosistem."
             align="center"
           />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -40,42 +43,38 @@ export default function JoinPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <Section
             eyebrow="Join Paths"
-            title="Pilih jalur yang sesuai dengan kapasitas dan bentuk kontribusimu."
-            description="Peran bisa berkembang seiring kontribusi, skill, portfolio, pengalaman, dan kebutuhan ecosystem. Member dapat tumbuh menjadi contributor, mentor internal, atau project lead secara bertahap."
+            title="Pilih jalur keterlibatan yang sesuai dengan profil Anda."
+            description="Peran di YYZU dapat berkembang seiring bertambahnya skill dan kontribusi Anda. Member aktif berkesempatan mengambil peran sebagai kontributor internal atau project lead."
           />
-          <div className="grid gap-5">
-            {joinPaths.map((item) => (
-              <InfoCard key={item.title} {...item} />
-            ))}
+          <div>
+            <div className="grid gap-5">
+              {joinPaths.map((item) => (
+                <InfoCard key={item.title} {...item} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
-
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-5xl px-5 text-center sm:px-6 lg:px-8">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-200">
-            Join Now
+            Registration of Interest
           </p>
           <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-5xl">
-            Terbuka untuk yang ingin tumbuh dan berkontribusi bersama YYZU.
+            Siap untuk bertumbuh bersama ekosistem YYZU?
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-            Sejak 25 Mei 2026, YYZU Community terbuka bagi students, IT learners,
-            member, contributors, mentor, campus, community, industry, dan partner
-            yang sejalan dengan misi YYZU: membangun ecosystem pembelajaran
-            kolaboratif, budaya engineering, pengalaman real project, dan jembatan
-            talenta dari learning menuju collaboration, real project experience,
-            dan industry readiness.
+            Registrasi keterlibatan terbuka bagi mahasiswa, talenta teknologi, mentor praktisi, kampus, dan partner industri yang ingin bersama-sama memperkuat budaya engineering kolaboratif dan kesiapan industri lulusan teknologi.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="https://forms.gle/qvXuRMPRRpkhNzZ59"
+              href={memberFormUrl}
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-bold text-[#0015A5] transition hover:bg-slate-100"
             >
               Join as Member
             </a>
             <a
-              href="https://forms.gle/a8SbEvNR8hDFE5529"
+              href={mentorFormUrl}
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/24 px-7 py-3 text-sm font-bold text-white transition hover:bg-white/10"
             >
               Join as Mentor/Partnership

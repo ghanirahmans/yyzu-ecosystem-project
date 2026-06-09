@@ -10,13 +10,12 @@ export const metadata: Metadata = {
     template: "%s | YYZU",
   },
   description:
-    "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, komunitas, mentor, dan industri melalui collaborative learning, mentoring, workflow simulation, dan real project.",
+    "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui collaborative learning, mentoring, workflow simulation, dan pengerjaan project brief terarah.",
   icons: {
     icon: "/icon.svg",
   },
   keywords: [
     "YYZU",
-    "YYZU Community",
     "collaborative technology ecosystem",
     "talent bridge",
     "belajar coding",
@@ -26,11 +25,9 @@ export const metadata: Metadata = {
     "mahasiswa IT",
     "belajar pemrograman",
     "real project IT",
-    "tech community Indonesia",
     "learning coding together",
     "pemrograman kolaboratif",
     "mentoring coding",
-    "kerja praktek IT",
     "future builders"
   ],
   robots: {
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "YYZU",
     title: "YYZU | Collaborative Technology Ecosystem & Talent Bridge",
     description:
-      "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, komunitas, mentor, dan industri melalui collaborative learning, mentoring, workflow simulation, dan real project.",
+      "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui collaborative learning, mentoring, workflow simulation, dan pengerjaan project brief terarah.",
     url: "./",
     images: [
       {
@@ -68,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "YYZU | Collaborative Technology Ecosystem & Talent Bridge",
     description:
-      "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, komunitas, mentor, dan industri melalui collaborative learning, mentoring, workflow simulation, dan real project.",
+      "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui collaborative learning, mentoring, workflow simulation, dan pengerjaan project brief terarah.",
     images: ["/og-image.jpg"],
   },
 };

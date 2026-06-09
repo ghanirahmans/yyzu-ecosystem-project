@@ -8,7 +8,7 @@ import { activities, activityRhythm } from "../../data/site";
 export const metadata: Metadata = {
   title: "Activities | YYZU",
   description:
-    "Aktivitas YYZU: study group, mentoring, workshop, technical discussion, mini project, code review, design review, workflow simulation, dan real-world project development.",
+    "Rangkaian aktivitas di ekosistem YYZU: Study Groups, Mentoring & Technical Review, Mini Projects, Workflow Simulation, Real Case Collaboration, dan Portfolio Preparation.",
 };
 
 export default function ActivitiesPage() {
@@ -16,20 +16,20 @@ export default function ActivitiesPage() {
     <>
       <PageHero
         eyebrow="Activities"
-        title="Aktivitas YYZU menghubungkan belajar teknologi dengan real project experience."
-        description="Setiap aktivitas diarahkan agar member tidak hanya menerima materi, tetapi ikut membaca konteks, mencoba, berdiskusi, membangun, menerima feedback, melakukan review, dan mencatat pembelajaran."
-        note="Ritme aktivitas mencakup collaborative learning, mentoring, workshop, technical discussion, mini project, code review, design review, workflow simulation, open contribution, dan career preparation."
+        title="Aktivitas terarah untuk menjembatani teori belajar dengan praktik industri."
+        description="Setiap aktivitas di YYZU didesain agar Anda tidak sekadar menjadi penyimak pasif. Anda akan dilatih menganalisis problem statement, berkolaborasi memecahkan masalah, melakukan ulasan silang (review), dan mencatat dokumentasi proses."
+        note="Model aktivitas kami mencakup Study Groups, Mentoring & Technical Review, Mini Projects, Workflow Simulation, Real Case Collaboration, serta Career & Portfolio Preparation."
       />
 
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Activity Types"
-            title="Ruang belajar yang dekat dengan teamwork, workflow industri, dan real project."
-            description="Aktivitas dibuat agar member terbiasa dengan collaborative learning, project collaboration, dokumentasi, review, delivery, dan refleksi yang relevan dengan industri modern."
+            title="Model pembelajaran praktis yang mendekati lingkungan kerja nyata."
+            description="Kami menyusun aktivitas agar member terbiasa dengan pembagian tugas tim, pembuatan dokumentasi, pengiriman hasil kerja terukur, serta evaluasi mandiri."
             align="center"
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {activities.map((item) => (
               <InfoCard key={item.title} {...item} />
             ))}
@@ -41,8 +41,8 @@ export default function ActivitiesPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Working Rhythm"
-            title="Learn, build, collaborate, grow."
-            description="YYZU menggunakan ritme yang mudah diikuti, tetapi cukup serius untuk membentuk technical skill, teamwork, communication, ownership, dan kesiapan industri."
+            title="Ritme aktivitas Learn, Build, Collaborate, Grow."
+            description="Sebuah kerangka kerja terarah untuk memandu kemajuan belajar Anda dari pemahaman dasar hingga portofolio proses yang kredibel."
             align="center"
             tone="dark"
           />
@@ -68,8 +68,8 @@ export default function ActivitiesPage() {
       </section>
 
       <CtaBand
-        title="Aktivitas YYZU adalah ruang latihan untuk tumbuh lewat praktik nyata."
-        description="Kamu bisa mulai sebagai member, builder, designer, dokumentator, fasilitator diskusi, mentor, atau contributor di project internal."
+        title="Mulai langkah praktik nyata Anda di dalam ekosistem YYZU."
+        description="Anda dapat bergabung sebagai member untuk belajar & membangun proyek, atau berkontribusi sebagai mentor dan mitra kolaborasi industri."
         primaryLabel="Join as Member"
         primaryHref="/join/"
         secondaryLabel="Lihat Build Logs"

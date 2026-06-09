@@ -17,13 +17,13 @@ export default function PageHero({
 
   return (
     <section
-      className={`relative isolate overflow-hidden ${
-        isDark ? "bg-slate-950 text-white" : "bg-white text-slate-950"
+      className={`relative isolate overflow-hidden border-b flex flex-col justify-center min-h-[calc(100vh-4rem)] ${
+        isDark ? "bg-slate-950 text-white border-white/10" : "bg-[#f7f9fb] text-slate-950 border-slate-200"
       }`}
     >
       <div
-        className={`absolute inset-0 -z-10 bg-[linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)] bg-[size:44px_44px] ${
-          isDark ? "opacity-20" : "opacity-35"
+        className={`absolute inset-0 -z-10 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:44px_44px] ${
+          isDark ? "opacity-20" : "opacity-60"
         }`}
       ></div>
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">

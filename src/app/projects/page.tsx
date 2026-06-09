@@ -19,7 +19,6 @@ export default function ProjectsPage() {
         title="Project YYZU adalah media untuk real-world experience, bukan hanya showcase."
         description="Halaman ini mencatat collaborative projects, workflow logs, progress updates, dan contribution stories yang menunjukkan proses kerja, keputusan, review, dan pembelajaran secara transparan."
         note="Build logs membantu member menjelaskan konteks, role, ownership, feedback, keputusan, dan dampak tiap kontribusi."
-        tone="dark"
       />
 
       <section className="bg-white py-16 sm:py-20">

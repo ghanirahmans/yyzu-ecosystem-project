@@ -6,9 +6,9 @@ import Section from "../../components/Section";
 import { fitPeople, philosophy, values } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "Culture & Engineering Mindset | YYZU",
+  title: "Culture | YYZU",
   description:
-    "Culture YYZU: Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership, Collaboration Over Competition, dan Sustainable Impact.",
+    "Kultur kerja dan mindset kolaboratif di ekosistem YYZU: Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership, dan Collaboration Over Competition.",
 };
 
 export default function CulturePage() {
@@ -16,18 +16,17 @@ export default function CulturePage() {
     <>
       <PageHero
         eyebrow="Culture & Engineering Mindset"
-        title="Kultur YYZU membentuk cara belajar, bekerja, dan tumbuh bersama."
-        description="YYZU ingin menjadi environment yang serius tetapi tetap welcoming: tempat belajar, berdiskusi, membangun, menerima feedback, melatih ownership, dan mengembangkan engineering serta product mindset secara bertahap."
-        note="Fokusnya build together, collaborative problem solving, peer learning, dan collective growth."
-        tone="dark"
+        title="Kultur YYZU membentuk cara berkolaborasi dan standar bertumbuh."
+        description="Kami mendesain ekosistem yang suportif namun tetap menuntut standar tinggi: tempat Anda belajar melatih inisiatif mandiri, berani menerima ulasan kritis, serta melatih engineering & product mindset secara bertahap."
+        note="Prinsip dasar kami adalah build together, collaborative problem solving, peer learning, dan pertumbuhan kolektif yang bisa dipertanggungjawabkan."
       />
 
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Core Values"
-            title="Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership."
-            description="Nilai ini bukan slogan. Nilai ini dipakai untuk menentukan aktivitas, cara join, cara bekerja, cara berkolaborasi, dan cara menilai progress member."
+            title="Nilai-nilai inti yang memandu cara kami bekerja."
+            description="Nilai inti ini diterapkan langsung dalam menentukan format aktivitas, kriteria ulasan project, serta metode kerja tim lintas peran."
             align="center"
           />
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -42,8 +41,8 @@ export default function CulturePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <Section
             eyebrow="Principles"
-            title="Kolaborasi di atas kompetisi, growth di atas status pasif."
-            description="YYZU memilih proses yang sehat: konsistensi, ownership, review, dokumentasi, problem solving, dan growth yang bisa dilihat lewat kontribusi nyata."
+            title="Menghargai kualitas proses, konsistensi, dan kontribusi aktif."
+            description="Di YYZU, kami lebih menghargai kemauan melakukan perbaikan dan kepemilikan tugas secara bertanggung jawab dibanding klaim sepihak tanpa bukti."
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {philosophy.map((item) => (
@@ -64,9 +63,9 @@ export default function CulturePage() {
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Fit"
-            title="YYZU tidak harus cocok untuk semua orang."
-            description="YYZU cocok untuk orang yang ingin belajar serius, membangun bersama, menerima feedback, dan tumbuh lewat proses kolaboratif yang praktis."
+            eyebrow="Ecosystem Fit"
+            title="YYZU didesain untuk pertumbuhan yang terarah."
+            description="Kami ingin memastikan ekspektasi Anda selaras dengan model belajar kolaboratif yang kami jalankan."
             align="center"
             tone="dark"
           />
@@ -87,8 +86,8 @@ export default function CulturePage() {
       </section>
 
       <CtaBand
-        title="Culture YYZU hidup lewat cara kita belajar, build, review, dan collaborate."
-        description="Jika kamu ingin masuk ke ruang yang menuntut growth, ownership, dan kolaborasi, baca ekspektasi join sebelum menghubungi kami."
+        title="Kultur YYZU hidup melalui komitmen belajar dan kontribusi tim."
+        description="Sebelum memutuskan bergabung ke dalam ekosistem, pastikan Anda telah membaca ekspektasi dan jalur keterlibatan yang tersedia."
         primaryLabel="Baca Ekspektasi Join"
         primaryHref="/join/"
       />

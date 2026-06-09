@@ -14,10 +14,10 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    "name": "YYZU Community",
+    "name": "YYZU Ecosystem",
     "url": "https://yyzu.tech",
     "logo": "https://yyzu.tech/yyz-project-logo_ft.svg",
-    "description": "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, komunitas, mentor, dan industri.",
+    "description": "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri.",
     "sameAs": [
       "https://instagram.com/yyzucommunity"
     ],
@@ -37,7 +37,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="relative isolate overflow-hidden bg-slate-950 text-white">
+      <section className="relative isolate overflow-hidden bg-slate-950 text-white flex flex-col justify-center min-h-[calc(100vh-4rem)]">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(0,21,165,0.9)_0%,rgba(0,106,103,0.78)_48%,rgba(15,23,42,0.96)_100%)]"></div>
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.11)_1px,transparent_1px)] bg-[size:42px_42px] opacity-20"></div>
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -53,33 +53,29 @@ export default function Home() {
                 />
               </div>
               <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-100">
-                Collaborative Technology Ecosystem & Talent Bridge
+                Bridging Campus, Talent, and Industry
               </p>
               <h1 className="mt-5 text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
                 YYZU
               </h1>
               <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-10">
-                Jembatan antara kampus, talenta teknologi, komunitas, mentor, dan
-                industri untuk belajar, membangun, dan tumbuh melalui pengalaman
-                nyata.
+                Collaborative technology ecosystem & talent bridge untuk belajar, membangun, dan tumbuh melalui pengalaman nyata.
               </p>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
-                YYZU membantu mahasiswa dan individu di bidang teknologi berkembang
-                lebih terarah melalui collaborative learning, workflow simulation,
-                mentoring, teamwork, dan real project development berbasis tim.
+                YYZU mempertemukan talenta teknologi, kampus, mentor praktisi, dan industri melalui pembelajaran kolaboratif, simulasi workflow industri, mentoring, dan pengerjaan project brief terarah.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="/join/"
                   className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] shadow-lg shadow-slate-950/20 transition hover:bg-slate-100"
                 >
-                  Join & Grow Together
+                  Join as Member
                 </a>
                 <a
                   href="/about/"
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
                 >
-                  Pahami Ekosistem
+                  Explore the Ecosystem
                 </a>
               </div>
             </div>
@@ -92,9 +88,7 @@ export default function Home() {
                 Learn, build, collaborate, grow.
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-300">
-                Model pertumbuhan YYZU membantu member bergerak dari fundamental
-                dan tools menuju pengalaman project, teamwork, communication,
-                ownership, dan kesiapan industri yang lebih matang.
+                Sistem pertumbuhan YYZU membantu partisipan bergerak dari pemahaman fundamental dasar menuju praktik langsung, koordinasi tim lintas peran, hingga kesiapan industri yang matang.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-4 lg:grid-cols-1 xl:grid-cols-4 xl:gap-2 2xl:gap-3">
                 {modelSteps.map((step, index) => (
@@ -121,7 +115,7 @@ export default function Home() {
           <Section
             eyebrow="Positioning"
             title="YYZU adalah collaborative technology ecosystem dan talent bridge."
-            description="YYZU bukan sekadar komunitas belajar, bukan sekadar tempat project, dan bukan sekadar talent pool. YYZU adalah environment untuk membantu talenta teknologi berkembang dari learning menuju collaboration, real project experience, dan industry readiness."
+            description="YYZU bukan sekadar ruang belajar pasif atau komunitas kumpul santai. Kami adalah lingkungan tumbuh terstruktur untuk melatih kesiapan industri talenta teknologi melalui kolaborasi aktif, ulasan berkala, dan project-based growth."
           />
           <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
             {currentFocus.map((item) => (
@@ -143,8 +137,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Why YYZU Exists"
-            title="Ada gap antara belajar teknologi dan siap bekerja dalam real project."
-            description="Banyak talenta sudah belajar tools dan konsep, tetapi belum terbiasa dengan teamwork, communication, ownership, review, dokumentasi, prioritas, dan proses delivery. Di gap itulah YYZU dibangun sebagai jembatan pertumbuhan."
+            title="Menjembatani celah antara teori belajar dan realitas dunia kerja."
+            description="Banyak talenta memiliki fondasi akademis yang baik, tetapi belum terbiasa dengan sprint planning, version control, dokumentasi teknis, ulasan kritis (review), dan ownership tugas. YYZU hadir untuk melatih habits industri tersebut."
             align="center"
           />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -159,8 +153,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Bridge Model"
-            title="Dari learning menuju collaboration, real project experience, dan industry readiness."
-            description="YYZU menempatkan dirinya sebagai jembatan praktis, bukan shortcut. Growth dibangun lewat collaborative learning, project-based growth, workflow industri, mentoring, dan proses review yang dilatih bersama."
+            title="Dari tahap belajar menuju kolaborasi aktif dan kesiapan industri."
+            description="Tumbuh di YYZU bukanlah jalan pintas. Kesiapan industri dibangun melalui interaksi nyata dengan mentor praktisi, pembagian peran tim, dan ulasan hasil kerja yang transparan."
             align="center"
             tone="dark"
           />
@@ -183,8 +177,8 @@ export default function Home() {
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <Section
               eyebrow="Activities Preview"
-              title="Belajar lewat study group, mentoring, workshop, review, dan collaborative project."
-              description="Aktivitas YYZU dirancang untuk membentuk technical skill, problem solving, teamwork, communication, ownership, serta pengalaman kerja kolaboratif yang bisa diulang dan ditingkatkan."
+              title="Latihan langsung lewat simulasi workflow dan kolaborasi proyek."
+              description="Aktivitas kami dirancang agar partisipan terbiasa menyelesaikan tugas sesuai scope, berani mempresentasikan solusi, menerima masukan teknis, dan mendokumentasikan proses."
             />
             <div className="grid gap-4 sm:grid-cols-2">
               {activities.slice(0, 4).map((activity) => (
@@ -215,8 +209,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Ecosystem"
-            title="Ekosistem untuk member, kampus, komunitas, mentor, partner, dan industri."
-            description="YYZU menghubungkan orang dan institusi yang ingin memperkuat pengembangan talenta teknologi melalui collaborative learning, real project, mentoring, workflow simulation, dan kontribusi konsisten."
+            title="Menghubungkan future builders, kampus, mentor, dan industri."
+            description="YYZU memfasilitasi kolaborasi multi-pihak untuk mendukung penyelarasan kompetensi talenta dengan standar kebutuhan industri digital."
             align="center"
           />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -228,8 +222,8 @@ export default function Home() {
       </section>
 
       <CtaBand
-        title="Grow through collaboration, real project, dan workflow industri."
-        description="Join YYZU untuk berkembang lewat learning, build, teamwork, mentoring, project-based growth, dan kontribusi yang bisa dipertanggungjawabkan."
+        title="Kembangkan portofolio proses dan kesiapan industri Anda."
+        description="Mulai bergabung ke dalam ekosistem YYZU untuk tumbuh lewat pembelajaran kolaboratif, simulasi workflow industri, dan kontribusi nyata."
         primaryLabel="Join YYZU"
         primaryHref="/join/"
         secondaryLabel="Pelajari Culture"

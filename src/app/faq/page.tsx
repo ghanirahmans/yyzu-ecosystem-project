@@ -5,9 +5,9 @@ import Section from "../../components/Section";
 import { faqs } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "FAQ | YYZU",
+  title: "FAQ",
   description:
-    "FAQ YYZU tentang collaborative technology ecosystem, talent bridge, collaborative learning, project collaboration, aktivitas, ekspektasi, dan cara bergabung.",
+    "FAQ YYZU tentang collaborative technology ecosystem, talent bridge, model belajar kolaboratif, aktivitas, ekspektasi, dan cara bergabung.",
 };
 
 export default function FaqPage() {
@@ -16,22 +16,22 @@ export default function FaqPage() {
       <PageHero
         eyebrow="FAQ"
         title="Pertanyaan umum tentang YYZU."
-        description="Jawaban singkat untuk memahami posisi YYZU sebagai collaborative technology ecosystem dan talent bridge, pendekatan belajar, sistem kolaborasi, aktivitas, ekspektasi kontribusi, dan siapa yang cocok bergabung."
+        description="Temukan jawaban singkat mengenai positioning YYZU sebagai collaborative technology ecosystem dan talent bridge, model belajar praktis, ritme kolaborasi, aktivitas, ekspektasi kontribusi, serta kriteria pendaftaran."
       />
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Questions"
-            title="Pahami YYZU sebelum bergabung."
-            description="YYZU ingin orang yang bergabung memahami arah ecosystem, cara belajar, culture, dan ekspektasi kontribusi sebelum masuk."
+            title="Pahami YYZU sebelum mendaftarkan diri."
+            description="Kami ingin memastikan setiap pembelajar, mentor, dan partner memahami arah ekosistem, kultur kolaboratif, dan ekspektasi peran sebelum memutuskan bergabung."
             align="center"
           />
-          <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <div className="mt-12 divide-y divide-slate-200 rounded-xl border border-slate-200 bg-slate-50">
             {faqs.map((faq, index) => (
               <details
                 key={faq.title}
-                className="group rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm open:bg-white open:shadow-md open:shadow-slate-200/70"
+                className="group p-6 open:bg-white first:rounded-t-xl last:rounded-b-xl transition-colors"
               >
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-5 text-left">
                   <span className="flex gap-4">
@@ -49,7 +49,7 @@ export default function FaqPage() {
                     +
                   </span>
                 </summary>
-                <p className="mt-5 pl-12 text-sm leading-7 text-slate-600">
+                <p className="mt-5 pl-4 sm:pl-12 text-sm leading-7 text-slate-600">
                   {faq.description}
                 </p>
               </details>
@@ -59,8 +59,8 @@ export default function FaqPage() {
       </section>
 
       <CtaBand
-        title="Siap memilih jalur yang sesuai di YYZU?"
-        description="Gunakan form Join untuk member atau contributor, dan form Mentor/Partnership untuk mentor, kampus, komunitas, organisasi, atau partner industri."
+        title="Siap menentukan jalur kontribusi Anda di ekosistem YYZU?"
+        description="Gunakan formulir pendaftaran Join untuk bergabung sebagai member/kontributor internal, atau ajukan registrasi minat untuk menjadi mentor praktisi dan mitra partner."
         primaryLabel="Buka Halaman Join"
         primaryHref="/join/"
       />

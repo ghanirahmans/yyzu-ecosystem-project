@@ -18,9 +18,9 @@ export default function Footer() {
             <span className="font-bold tracking-[0.18em]">YYZU</span>
           </div>
           <p className="mt-5 max-w-md text-sm leading-7 text-slate-300">
-            Collaborative technology ecosystem dan talent bridge yang membantu
-            kampus, talenta teknologi, komunitas, mentor, dan industri tumbuh lewat
-            learning, project, mentoring, workflow industri, dan kolaborasi nyata.
+            Collaborative technology ecosystem dan talent bridge yang menghubungkan
+            kampus, talenta teknologi, mentor praktisi, dan industri untuk tumbuh bersama lewat
+            pembelajaran kolaboratif, mentoring, simulasi workflow, dan pengerjaan project brief terarah.
           </p>
         </div>
         <div>

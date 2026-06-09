@@ -6,9 +6,9 @@ import Section from "../../components/Section";
 import { bridgeCards, visionMission, whyYYZU } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "About YYZU | Collaborative Technology Ecosystem",
+  title: "About",
   description:
-    "Tentang YYZU sebagai collaborative technology ecosystem dan talent bridge antara kampus, talenta teknologi, komunitas, mentor, dan industri.",
+    "Tentang YYZU sebagai collaborative technology ecosystem dan talent bridge antara kampus, talenta teknologi, mentor praktisi, dan industri.",
 };
 
 export default function AboutPage() {
@@ -17,16 +17,16 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About YYZU"
         title="YYZU dibangun sebagai collaborative technology ecosystem dan talent bridge."
-        description="YYZU membantu talenta teknologi berkembang dari tahap belajar menuju pengalaman nyata, industry readiness, dan kontribusi profesional melalui pembelajaran berbasis praktik, workflow simulation, mentoring, serta real project berbasis tim."
-        note="Fokus YYZU bukan hanya teori, tetapi pembentukan technical skill, problem solving, teamwork, communication, ownership, dan pengalaman kerja kolaboratif."
+        description="Kami memfasilitasi talenta teknologi untuk bertransformasi dari tahap belajar mandiri menuju pengalaman dunia kerja dan kesiapan industri melalui pengerjaan project brief, simulasi workflow, bimbingan mentor, serta kolaborasi lintas peran."
+        note="Fokus kami adalah membentuk habits kerja yang profesional: technical skill, pemecahan masalah secara terstruktur, kolaborasi aktif, komunikasi tim, dan kepemilikan (ownership) tugas."
       />
 
-      <section className="bg-[#f7f9fb] py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <Section
             eyebrow="The Gap"
-            title="Masalahnya bukan kurang belajar, tetapi kurang ruang untuk praktik kolaboratif."
-            description="Academic learning dan self-learning memberi fondasi penting. Namun untuk siap masuk lingkungan industri, talenta juga perlu berlatih bekerja dengan orang lain, mengelola task, menerima review, memahami kebutuhan produk, dan menjaga kualitas delivery."
+            title="Masalahnya bukan kurang materi belajar, tetapi kurang ruang untuk praktik kolaboratif."
+            description="Pendidikan akademis dan belajar mandiri memberikan fondasi teori yang krusial. Namun untuk siap masuk ke industri, talenta wajib berlatih mengelola tugas tim, menerima masukan teknis (review), beradaptasi dengan kebutuhan produk, dan menjaga komitmen kualitas hasil kerja."
           />
           <div className="grid gap-5">
             {whyYYZU.map((item) => (
@@ -40,8 +40,8 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Bridge Direction"
-            title="YYZU menjadi talent bridge dari learning menuju industry readiness."
-            description="YYZU bukan sekadar komunitas belajar, bukan sekadar tempat project, dan bukan sekadar talent pool. Yang dibangun adalah environment pengembangan talenta teknologi yang menumbuhkan kebiasaan kerja kolaboratif secara bertahap."
+            title="Talent bridge dari pemahaman teori menuju kesiapan industri."
+            description="YYZU bukan sekadar tempat mengobrol santai atau talent pool biasa. Yang kami bangun adalah lingkungan tumbuh yang membiasakan talenta bekerja secara terstruktur sesuai standar kebutuhan kerja profesional."
             align="center"
             tone="dark"
           />
@@ -83,13 +83,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
             eyebrow="Long-Term Direction"
-            title="Membangun ecosystem teknologi yang produktif, kredibel, dan sustainable."
-            description="Arah jangka panjang YYZU adalah membangun learning path, collaborative project system, mentoring network, project portfolio hub, talent showcase, industry partnership, internal product development, dan sustainable community operation."
+            title="Membangun ekosistem teknologi kolaboratif yang terarah dan berkelanjutan."
+            description="Arah pengembangan YYZU mencakup standarisasi learning path praktis, sistem pengelolaan project brief terintegrasi, jaringan mentor profesional, hub portofolio proses, hingga kolaborasi riset & pengembangan bersama mitra industri."
             align="center"
           />
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {[
-              "Ruang latihan engineering workflow",
+              "Latihan workflow industri nyata",
               "Project-based growth environment",
               "Jembatan kampus, talenta, dan industri",
             ].map((item) => (
@@ -105,8 +105,8 @@ export default function AboutPage() {
       </section>
 
       <CtaBand
-        title="Arah YYZU sederhana: tumbuh lewat kolaborasi dan pengalaman nyata."
-        description="Jika arah ini relevan, langkah berikutnya adalah memahami culture, nilai, dan mindset yang membentuk cara YYZU bekerja."
+        title="Tumbuh nyata melalui kolaborasi tim dan pengerjaan project brief."
+        description="Langkah berikutnya adalah memahami culture, nilai inti, dan prinsip engineering yang membentuk cara kerja di dalam ekosistem YYZU."
         primaryLabel="Lihat Culture"
         primaryHref="/culture/"
         secondaryLabel="Join YYZU"
