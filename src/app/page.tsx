@@ -1,4 +1,5 @@
 import { ArrowRight, BookOpen, Compass } from "lucide-react";
+import Link from "next/link";
 import CtaBand from "../components/CtaBand";
 import InfoCard from "../components/InfoCard";
 import Section from "../components/Section";
@@ -67,27 +68,30 @@ export default function Home() {
                 YYZU mempertemukan talenta teknologi, kampus, mentor praktisi, dan industri melalui pembelajaran kolaboratif, simulasi workflow industri, mentoring, dan pengerjaan project brief terarah.
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
-                <a
+                <Link
                   href="/join/"
+                  prefetch={false}
                   className="group inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] shadow-lg shadow-slate-950/20 transition-all duration-300 hover:bg-slate-100 hover:scale-[1.03] active:scale-[0.97]"
                 >
                   <span>Join as Member</span>
                   <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/docs/"
+                  prefetch={false}
                   className="group inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-[1.03] active:scale-[0.97]"
                 >
                   <BookOpen className="mr-2 size-4 text-teal-300 transition-colors duration-300 group-hover:text-teal-200" />
                   <span>Read YYZU Docs</span>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/about/"
+                  prefetch={false}
                   className="group inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-[1.03] active:scale-[0.97]"
                 >
                   <Compass className="mr-2 size-4 text-blue-300 transition-colors duration-300 group-hover:text-blue-200" />
                   <span>Explore the Ecosystem</span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -206,12 +210,13 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8">
-            <a
+            <Link
               href="/activities/"
+              prefetch={false}
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-800 transition hover:border-[#0015A5] hover:text-[#0015A5]"
             >
               Lihat Aktivitas
-            </a>
+            </Link>
           </div>
         </div>
       </section>

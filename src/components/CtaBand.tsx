@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export interface CtaBandProps {
   eyebrow?: string;
   title: string;
@@ -8,6 +10,8 @@ export interface CtaBandProps {
   secondaryHref?: string;
 }
 
+const isInternal = (href: string) => href.startsWith("/") && !href.startsWith("//");
+
 export default function CtaBand({
   eyebrow = "Build With YYZU",
   title,
@@ -17,6 +21,21 @@ export default function CtaBand({
   secondaryLabel,
   secondaryHref,
 }: CtaBandProps) {
+  const renderLink = (href: string, label: string, className: string) => {
+    if (isInternal(href)) {
+      return (
+        <Link href={href} prefetch={false} className={className}>
+          {label}
+        </Link>
+      );
+    }
+    return (
+      <a href={href} className={className}>
+        {label}
+      </a>
+    );
+  };
+
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -35,20 +54,18 @@ export default function CtaBand({
             </p>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={primaryHref}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] transition hover:bg-slate-100"
-            >
-              {primaryLabel}
-            </a>
-            {secondaryLabel && secondaryHref && (
-              <a
-                href={secondaryHref}
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/24 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
-              >
-                {secondaryLabel}
-              </a>
+            {renderLink(
+              primaryHref,
+              primaryLabel,
+              "inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0015A5] transition hover:bg-slate-100"
             )}
+            {secondaryLabel &&
+              secondaryHref &&
+              renderLink(
+                secondaryHref,
+                secondaryLabel,
+                "inline-flex min-h-12 items-center justify-center rounded-full border border-white/24 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+              )}
           </div>
         </div>
       </div>

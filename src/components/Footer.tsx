@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { navigation } from "../data/site";
 
 export default function Footer() {
@@ -29,13 +30,14 @@ export default function Footer() {
           </h3>
           <div className="mt-4 grid gap-3">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
+                prefetch={false}
                 className="text-sm text-slate-300 transition hover:text-white"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

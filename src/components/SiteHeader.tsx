@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navigation } from "../data/site";
@@ -30,11 +31,12 @@ export default function SiteHeader() {
         aria-label="Navigasi utama"
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
       >
-        <a
+        <Link
           href="/"
           className="flex items-center gap-3 text-slate-950"
           aria-label="YYZU beranda"
           onClick={closeMenu}
+          prefetch={false}
         >
           <span className="flex size-9 items-center justify-center rounded-lg bg-white shadow-sm ring-1 ring-slate-200">
             <img
@@ -46,29 +48,31 @@ export default function SiteHeader() {
             />
           </span>
           <span className="text-base font-bold tracking-[0.18em]">YYZU</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-6 lg:flex">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
+              prefetch={false}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={`text-sm font-medium transition hover:text-[#0015A5] ${
                 isActive(item.href) ? "text-[#0015A5]" : "text-slate-600"
               }`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
-        <a
+        <Link
           href="/join/"
+          prefetch={false}
           className="hidden rounded-full bg-[#0015A5] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#00118a] lg:inline-flex"
         >
           Join
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -105,9 +109,10 @@ export default function SiteHeader() {
       >
         <div className="mx-auto flex max-w-7xl flex-col gap-1">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
+              prefetch={false}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={`rounded-lg px-3 py-3 text-sm font-semibold transition hover:bg-slate-50 hover:text-[#0015A5] ${
                 isActive(item.href)
@@ -117,15 +122,16 @@ export default function SiteHeader() {
               onClick={closeMenu}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="/join/"
+            prefetch={false}
             className="mt-2 rounded-lg bg-[#0015A5] px-3 py-3 text-center text-sm font-semibold text-white"
             onClick={closeMenu}
           >
             Join YYZU
-          </a>
+          </Link>
         </div>
       </div>
     </header>
