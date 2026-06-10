@@ -5,6 +5,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <DocsLayout
       tree={source.pageTree}
+      sidebar={{
+        prefetch: false,
+      }}
       themeSwitch={{
         enabled: false,
       }}
