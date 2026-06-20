@@ -4,11 +4,11 @@
 
 ## Overview
 
-This project is the official MVP website for YYZU Community.
+This project is the official MVP website for YYZU Ecosystem.
 
 YYZU is a collaborative technology ecosystem and talent bridge that helps students, IT learners, and technology talents grow from the learning stage into real experience and industry readiness through collaborative learning, mentoring, workflow simulation, project-based growth, and real-world projects.
 
-YYZU is not only a learning community. It is a growth environment for future builders who want to learn, build, collaborate, receive feedback, develop portfolios, understand real technology workflows, and grow through practical experience.
+YYZU is not only a learning Ecosystem. It is a growth environment for future builders who want to learn, build, collaborate, receive feedback, develop portfolios, understand real technology workflows, and grow through practical experience.
 
 The purpose of this website is to clearly introduce YYZU to:
 
@@ -36,7 +36,7 @@ The primary objective of this MVP is to help first-time visitors understand:
 - how members can join,
 - how mentors can contribute,
 - how partners can collaborate,
-- and why YYZU is different from a regular technology community.
+- and why YYZU is different from a regular technology Ecosystem.
 
 The MVP should prioritize:
 
@@ -69,7 +69,7 @@ YYZU connects:
 - partners,
 - and industry.
 
-The website should consistently communicate that YYZU is not only a learning community, but also a practical growth environment focused on:
+The website should consistently communicate that YYZU is not only a learning Ecosystem, but also a practical growth environment focused on:
 
 - collaborative learning,
 - mini projects,
@@ -150,7 +150,7 @@ Partnership opportunities include:
 - project collaboration,
 - talent development,
 - real case collaboration,
-- community events,
+- Ecosystem events,
 - internship / career opportunities,
 - sponsorship / support programs,
 - and other technology-related programs.
