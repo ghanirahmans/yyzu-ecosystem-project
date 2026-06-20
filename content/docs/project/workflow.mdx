@@ -3,54 +3,32 @@ title: Alur Kerja Proyek
 description: Workflow atau alur kerja pengerjaan proyek dari tahap ideasi hingga rilis di YYZU.
 status: active
 owner: YYZU
-lastUpdated: 2026-06-09
+lastUpdated: 2026-06-19
 ---
 
 # Alur Kerja Proyek (Project Workflow)
 
-Untuk memastikan proyek berjalan dengan tertib, terukur, dan menyerupai standar industri digital, YYZU menerapkan alur kerja yang terbagi menjadi sembilan tahapan utama:
+## Pembentukan Kelompok
+Terdapat dua opsi pembentukan kelompok: self-form, yaitu anggota memilih sendiri rekan kelompoknya, atau assigned, yaitu kelompok disusun langsung oleh Divisi Product & Project Management. Pendekatan yang direkomendasikan adalah hybrid: anggota melakukan self-form terlebih dahulu, kemudian Divisi Product & Project Management memvalidasi apakah komposisi setiap kelompok cukup proporsional terhadap kebutuhan project yang berjalan. Kriteria proporsionalitas ditentukan oleh Divisi Product & Project Management pada tahap planning, disesuaikan dengan jenis project yang dijalankan.
 
-```
-Idea ──> Proposal ──> Planning ──> Team Setup ──> Development ──> Review ──> Demo ──> Documentation ──> Release/Archive
-```
+Apabila ditemukan kelompok dengan komposisi yang tidak seimbang, reshuffle dilakukan sebelum project dimulai, bukan pada saat proses eksekusi sedang berjalan.
 
 ---
 
-## Tahap 1: Idea (Ideasi)
-Proses pencarian ide solusi, analisis masalah, serta riset awal kegunaan produk. Ide proyek dapat berasal dari kebutuhan internal komunitas, inisiatif member, maupun permintaan dari pihak luar/mitra industri.
+## Alur Kerja Project
 
-## Tahap 2: Proposal (Penyusunan Proposal)
-Ide yang telah disepakati dituangkan dalam proposal singkat yang menjelaskan:
-- Masalah yang diselesaikan.
-- Deskripsi fitur produk.
-- Target pengguna.
-- Teknologi yang direncanakan.
-- Estimasi waktu pengerjaan kasar.
+| Fase | Yang Terjadi |
+| :--- | :--- |
+| **Foundation** | Anggota kelompok belajar dengan arahan PIC; Mentor (instructor) memberikan konsultasi; Divisi Product & Project Management memeriksa kesiapan setiap kelompok |
+| **Planning** | Mentor (client) menyampaikan brief; Divisi Product & Project Management menerjemahkan brief menjadi draf scope dan timeline; dilakukan validasi balik ke Mentor; hasil didistribusikan ke PIC; PIC melakukan breakdown task kepada anggota |
+| **Execution** | PIC melakukan koordinasi harian dan melaporkan progres secara berkala kepada Divisi Product & Project Management; Mentor (instructor) melakukan checkpoint sesuai jadwal |
+| **Review** | Dilakukan demo kepada Mentor, mencakup acceptance review (client) dan technical review (instructor); PIC mengumpulkan dokumentasi; Divisi Product & Project Management menyusun evaluasi lintas kelompok |
 
-## Tahap 3: Planning (Perencanaan & Lingkup Kerja)
-Penyusunan rencana pengerjaan proyek secara mendalam. Pada tahap ini, tugas-tugas dipecah (*task breakdown*), prioritas pengerjaan ditentukan, dan penentuan batas waktu (*milestones*) disepakati untuk menghindari pelebaran lingkup kerja (*scope creep*).
+---
 
-## Tahap 4: Team Setup (Pembentukan Tim)
-Proses pembagian peran anggota tim yang terlibat. Tim ideal terdiri atas kolaborasi lintas peran (misal: 1 Product Manager, 1 UI/UX Designer, dan 2-3 Developers) dengan pembagian tugas yang jelas untuk masing-masing peran.
-
-## Tahap 5: Development (Pengembangan Aktif)
-Tahap pengerjaan teknis dimulai. Designer merancang wireframe dan visual interface di Figma, sementara Developer menulis kode pemrograman berdasarkan rancangan tersebut secara berkala menggunakan version control (seperti Git).
-
-## Tahap 6: Review (Proses Peninjauan)
-Karya yang sedang atau telah selesai dibangun wajib melewati proses peninjauan sebelum digabungkan. Developer melakukan *code review* melalui Pull Request, desainer antarmuka menguji kesesuaian visual, dan manajer produk memastikan fitur sesuai dengan kriteria yang ditentukan.
-
-## Tahap 7: Demo (Demonstrasi Produk)
-Setiap tim proyek mendemonstrasikan hasil aplikasi yang telah dibangun kepada sesama member dan mentor. Sesi ini ditujukan untuk memvalidasi fungsi aplikasi, melatih kemampuan presentasi teknis, serta mengumpulkan umpan balik dari audiens.
-
-## Tahap 8: Documentation (Dokumentasi Akhir)
-Setelah aplikasi berfungsi dengan baik, tim wajib menyusun dokumentasi akhir yang rapi, meliputi:
-- Panduan pemasangan (*installation guide*).
-- Dokumentasi API (jika ada).
-- Struktur basis data atau arsitektur kode.
-- Rangkuman tantangan dan pembelajaran tim selama proyek berlangsung.
-
-## Tahap 9: Release / Archive / Continue (Peluncuran, Pengarsipan, atau Kelanjutan)
-Keputusan akhir terhadap status proyek:
-- **Release**: Aplikasi dideploy secara publik agar dapat digunakan oleh pengguna asli.
-- **Archive**: Proyek diarsipkan dengan rapi jika cakupan kerja telah selesai seluruhnya dan tidak ada rencana pengembangan lanjutan.
-- **Continue**: Proyek dilanjutkan ke fase/sprint berikutnya untuk pengembangan fitur tambahan.
+## Standardisasi Tools Kolaborasi Ekosistem YYZU
+Untuk mendukung kolaborasi yang efisien dan menyimulasikan alur kerja industri nyata secara optimal, seluruh tim project YYZU wajib menggunakan perkakas (tools) digital standar berikut:
+- **GitHub:** Repositori kode utama, review pull request (PR), dan pengelolaan codebase terintegrasi. Seluruh kontributor teknis wajib menggunakan workflow branch YYZU.
+- **Figma:** Workspace desain antarmuka (UI/UX) kolaboratif, penerapan design system YYZU, prototyping interaktif, dan serah terima (handoff) aset desain ke tim developer.
+- **Discord / Slack:** Saluran komunikasi utama ekosistem. Digunakan untuk sinkronisasi harian (asinkron), diskusi divisi, mentoring live, serta koordinasi insidental.
+- **Linear / Trello / Notion Board:** Manajemen tugas berbasis Kanban Board untuk memantau status pengerjaan (Backlog, To Do, In Progress, In Review, Done) yang dikelola oleh PIC kelompok secara berkala.

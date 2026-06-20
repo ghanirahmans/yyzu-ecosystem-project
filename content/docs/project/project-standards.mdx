@@ -3,51 +3,61 @@ title: Standar Proyek
 description: Standar kualitas, kelayakan, peran, dan kriteria Definition of Done proyek di YYZU.
 status: active
 owner: YYZU
-lastUpdated: 2026-06-09
+lastUpdated: 2026-06-19
 ---
 
 # Standar Proyek YYZU
 
-Setiap proyek di YYZU wajib memenuhi standar operasional tertentu untuk menjaga kualitas pembelajaran, akuntabilitas pengerjaan, dan kesesuaian dengan workflow industri profesional.
+## KPI Framework
+
+### KPI Umum
+KPI berikut berlaku untuk seluruh project dan dinilai pada level kelompok.
+
+| Kategori | Yang Diukur | Penilai |
+| :--- | :--- | :--- |
+| **Delivery** | Ketepatan waktu dan kelengkapan scope sesuai timeline planning | PIC melaporkan, Divisi Product & Project Management memverifikasi |
+| **Quality (Instructor)** | Standar teknis atau desain sesuai best practice bidang terkait | Mentor, dalam peran instructor |
+| **Client Acceptance** | Brief terpenuhi sesuai requirement awal | Mentor, dalam peran client |
+| **Process** | Partisipasi anggota, kelengkapan dokumentasi, dan pelaksanaan demo | PIC dan Divisi Product & Project Management |
+| **Member Growth** | Bukti pendukung transisi Stage individu | Mentor dan SDM Management |
+
+### Template KPI Spesifik
+Elemen berikut ditentukan ulang pada setiap project, disepakati bersama oleh Mentor dan Divisi Product & Project Management pada tahap Planning, dan tidak memerlukan revisi terhadap dokumen framework ini.
+
+| Elemen | Sumber/Cara Menentukan |
+| :--- | :--- |
+| **Output yang diharapkan** | Diturunkan dari brief Mentor selaku client pada fase Planning |
+| **Kriteria Quality Check** | Diturunkan dari standar teknis bidang project, disepakati bersama Mentor selaku instructor |
+| **Kriteria Client Acceptance** | Disusun dalam bentuk pertanyaan dari sudut pandang pemilik produk, misalnya: "Apakah deliverable ini siap digunakan atau dilanjutkan?" |
+
+### Dependency Antar Project
+Apabila terdapat project lanjutan yang bergantung pada output project sebelumnya, perlu ditetapkan minimum deliverable dari project sebelumnya yang wajib selesai sebelum project lanjutan dapat dimulai, sehingga project lanjutan tidak perlu menunggu project sebelumnya selesai secara keseluruhan. Detail minimum deliverable ditentukan berdasarkan kasus masing-masing, bukan ditetapkan secara baku pada framework ini.
+
+### Evaluasi Level Peran
+
+| Peran | Dievaluasi Dari |
+| :--- | :--- |
+| **PIC** | Delivery dan process pada kelompoknya sendiri |
+| **Divisi Product & Project Management** | Konsistensi koordinasi lintas kelompok, akurasi translasi brief Mentor, serta ketepatan dalam mendeteksi gap sebelum eksekusi berjalan |
 
 ---
 
-## Standar Kelayakan Proyek
+## Batasan & Eskalasi
 
-Sebelum proyek dapat dijalankan secara aktif, pengurus dan tim proyek wajib memastikan aspek-aspek berikut telah terpenuhi dengan jelas:
-
-1. **Scope (Ruang Lingkup) Jelas**  
-   Batasan fitur yang akan dibuat harus tertulis dengan rinci untuk mencegah pelebaran cakupan kerja (*scope creep*).
-
-2. **Timeline (Tenggat Waktu) Realistis**  
-   Menyusun jadwal pengerjaan yang mempertimbangkan kapasitas waktu luang dari setiap anggota tim yang terlibat.
-
-3. **Peran (Roles) Jelas**  
-   Setiap anggota tim wajib memiliki kejelasan peran serta tanggung jawab spesifik atas modul fitur yang akan mereka kerjakan.
-
-4. **Task Management (Pencatatan Tugas) Terdokumentasi**  
-   Seluruh tugas dipecah dan dicatat menggunakan alat manajemen tugas (seperti Trello atau GitHub Projects) secara transparan.
-
-5. **Ada Review (Proses Peninjauan)**  
-   Proses pengerjaan wajib melewati review berkala, seperti peninjauan desain antarmuka (*design critique*) atau peninjauan kode (*code review*).
-
-6. **Ada Demo (Demonstrasi)**  
-   Tim wajib menyelenggarakan sesi demonstrasi langsung untuk membuktikan berfungsinya aplikasi secara fungsional.
-
-7. **Ada Dokumentasi Akhir**  
-   Menyusun catatan instalasi, struktur kode, dan rangkuman evaluasi tim sebelum proyek dianggap selesai sepenuhnya.
-
-8. **Ada Retro (Retrospeksi Tim)**  
-   Melakukan sesi diskusi pasca-proyek untuk membahas apa yang berjalan baik, apa kendalanya, dan bagaimana perbaikannya di masa mendatang.
+| Isu | Diselesaikan pada Level | Eskalasi Apabila Tidak Selesai |
+| :--- | :--- | :--- |
+| **Task harian dalam kelompok** | PIC | Divisi Product & Project Management |
+| **Gap antara brief Mentor dan realita timeline/kapasitas** | Divisi Product & Project Management berkoordinasi dengan Mentor, sebelum planning ditutup | — |
+| **Konflik internal kelompok** | PIC | Divisi Product & Project Management, diteruskan ke SDM Management apabila bersifat serius |
+| **Perubahan scope di tengah eksekusi** | Tidak diizinkan secara langsung pada level PIC maupun anggota | Harus melalui Divisi Product & Project Management untuk dinegosiasikan kepada Mentor |
 
 ---
 
-## Definition of Done (Kriteria Selesai)
-
-Di YYZU, sebuah proyek atau tugas dianggap benar-benar selesai (**Done**) apabila telah memenuhi seluruh kriteria wajib berikut:
-
-- **Fitur Utama Selesai**: Seluruh fitur utama (*core features*) yang disepakati di awal telah berhasil diimplementasikan dan berfungsi tanpa kendala kritis.
-- **Dapat Dijalankan & Didemokan**: Aplikasi dapat dideploy ke lingkungan pementasan (*staging/production*) dan dapat dioperasikan dengan lancar saat demonstrasi.
-- **Dokumentasi Tersedia**: Berkas panduan penggunaan, arsitektur sistem dasar, dan instruksi instalasi telah ditulis dengan rapi di dalam berkas README proyek.
-- **Issue Utama Dicatat**: Jika ada kendala minor atau fitur tertunda, semuanya harus dicatat sebagai isu (*issues*) masa depan secara transparan.
-- **Pembelajaran Tim Dirangkum**: Rangkuman evaluasi dan poin pembelajaran dari proses retrospeksi tim telah didokumentasikan dengan baik.
+## Kebijakan Kontribusi Aktif & Penanganan Anggota Pasif (Free Rider Policy)
+Untuk menjaga keadilan kontribusi dan efektivitas kerja tim dalam proyek nirlaba YYZU, diberlakukan kebijakan tegas berikut terhadap keaktifan anggota kelompok:
+1. **Komitmen Keaktifan Mandiri:** Setiap anggota kelompok wajib berkontribusi aktif secara substantif pada tugas (tasks) yang telah disepakati dan didelegasikan oleh PIC selama fase perencanaan (Planning).
+2. **Prosedur Penanganan Anggota Pasif:**
+   - **Langkah 1 (Teguran Internal PIC):** Jika seorang anggota tidak memberikan kabar/perkembangan tugas selama **2 hari berturut-turut** atau melewatkan checkpoint tanpa alasan yang sah, PIC kelompok wajib memberikan teguran pribadi langsung secara tertulis.
+   - **Langkah 2 (Eskalasi SP1):** Apabila tidak ada respons positif atau perbaikan kontribusi dalam waktu 24 jam setelah teguran PIC, masalah ini akan dieskalasi ke divisi Product & Project Management untuk penerbitan **Surat Peringatan Pertama (SP1)** tertulis.
+   - **Langkah 3 (SP2 & Mediasi SDM):** Jika anggota tetap tidak memberikan kontribusi nyata dalam 3 hari setelah SP1, divisi SDM Management YYZU akan menerbitkan **Surat Peringatan Kedua (SP2)** dan memanggil anggota yang bersangkutan untuk sesi mediasi/klarifikasi khusus.
+   - **Langkah 4 (Sanksi & Pencabutan Hak):** Apabila proses klarifikasi gagal, anggota terus bersikap pasif, atau mangkir (*ghosting*) tanpa penjelasan rasional hingga akhir siklus proyek, YYZU berhak mencabut hak keanggotaan aktif dalam batch tersebut, menghapus namanya dari atribusi portofolio produk, serta menolak memberikan **e-Certificate of Completion** untuk batch yang bersangkutan.
