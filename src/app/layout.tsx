@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   description:
     "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui kolaborasi aktif, mentoring, simulasi alur kerja, dan project-based growth.",
   applicationName: "YYZU Ecosystem",
-  authors: [{ name: "YYZU Ecosystem", url: "https://yyzu.tech" }],
-  creator: "YYZU Ecosystem",
+  authors: [{ name: "Ghaniyyir Rahman Sudarsono", url: "https://github.com/ghanirahmans" }],
+  creator: "Ghaniyyir Rahman Sudarsono",
   publisher: "YYZU Ecosystem",
   category: "Education & Technology",
   icons: {

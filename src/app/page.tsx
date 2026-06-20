@@ -18,6 +18,11 @@ export default function Home() {
     "@type": "EducationalOrganization",
     "name": "YYZU Ecosystem",
     "alternateName": "YYZU",
+    "founder": {
+      "@type": "Person",
+      "name": "Ghaniyyir Rahman Sudarsono",
+      "url": "https://github.com/ghanirahmans"
+    },
     "url": "https://yyzu.tech",
     "logo": "https://yyzu.tech/yyz-project-logo_ft.svg",
     "description": "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui kolaborasi aktif, mentoring, simulasi alur kerja, dan project-based growth.",
