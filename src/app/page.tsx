@@ -17,20 +17,31 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "YYZU Ecosystem",
+    "alternateName": "YYZU",
     "url": "https://yyzu.tech",
     "logo": "https://yyzu.tech/yyz-project-logo_ft.svg",
-    "description": "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri.",
+    "description": "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui kolaborasi aktif, mentoring, simulasi alur kerja, dan project-based growth.",
+    "slogan": "Bridging Campus, Talent, and Industry",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Medan",
+      "addressRegion": "Sumatera Utara",
+      "addressCountry": "ID"
+    },
     "sameAs": [
       "https://instagram.com/yyzuecosystem",
-      "https://www.linkedin.com/in/yyzu-ecosystem"
+      "https://www.linkedin.com/in/yyzu-ecosystem",
+      "https://github.com/ghanirahmans/yyzu-ecosystem-project"
     ],
     "knowsAbout": [
-      "Software Development",
+      "Software Engineering",
       "UI/UX Design",
       "Product Management",
       "Collaborative Learning",
-      "Team Collaboration",
-      "Mentoring"
+      "Agile Workflow Simulation",
+      "Talent Development",
+      "Tech Mentorship",
+      "Industry Readiness"
     ]
   };
 

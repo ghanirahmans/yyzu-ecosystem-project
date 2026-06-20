@@ -6,29 +6,59 @@ import "../styles/global.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://yyzu.tech"),
   title: {
-    default: "YYZU | Collaborative Technology Ecosystem & Talent Bridge",
+    default: "YYZU Ecosystem — Bridging Campus, Talent, and Industry",
     template: "%s | YYZU",
   },
   description:
-    "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui collaborative learning, mentoring, workflow simulation, dan pengerjaan project brief terarah.",
+    "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui kolaborasi aktif, mentoring, simulasi alur kerja, dan project-based growth.",
+  applicationName: "YYZU Ecosystem",
+  authors: [{ name: "YYZU Ecosystem", url: "https://yyzu.tech" }],
+  creator: "YYZU Ecosystem",
+  publisher: "YYZU Ecosystem",
+  category: "Education & Technology",
   icons: {
     icon: "/icon.svg",
   },
   keywords: [
+    // Brand keywords
     "YYZU",
+    "YYZU Ecosystem",
+    "YYZU Community",
+    "Yeyzu",
+    "yyzu.tech",
+    // Core keywords
     "collaborative technology ecosystem",
-    "talent bridge",
-    "belajar coding",
-    "portofolio IT",
-    "mentoring IT",
-    "workflow simulasi",
-    "mahasiswa IT",
-    "belajar pemrograman",
+    "talent bridge indonesia",
+    "jembatan talenta digital",
+    "komunitas belajar IT",
+    "ekosistem teknologi kolaboratif",
+    "future builders",
+    // Student/Learner keywords
+    "belajar software engineering kolaboratif",
+    "belajar UI/UX design kelompok",
+    "portfolio project IT nyata",
+    "simulasi workflow industri digital",
+    "belajar product management pemula",
+    "belajar coding bersama",
     "real project IT",
-    "learning coding together",
-    "pemrograman kolaboratif",
+    "portofolio developer",
+    // Mentor keywords
+    "mentor IT volunteer",
+    "berbagi pengalaman industri teknologi",
+    "bimbingan portfolio IT",
+    "komunitas praktisi software engineer",
+    "reviewer coding",
     "mentoring coding",
-    "future builders"
+    // Partnership keywords
+    "mbkm partner teknologi",
+    "penyaluran talenta digital siap kerja",
+    "studi kasus industri proyek mahasiswa",
+    "sponsorship program edukasi IT",
+    // Regional keywords
+    "komunitas IT Medan",
+    "ekosistem digital Medan",
+    "talent bridge Medan",
+    "komunitas developer Medan"
   ],
   robots: {
     index: true,
@@ -42,16 +72,16 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "./",
+    canonical: "https://yyzu.tech",
   },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    siteName: "YYZU",
-    title: "YYZU | Collaborative Technology Ecosystem & Talent Bridge",
+    siteName: "YYZU Ecosystem",
+    title: "YYZU Ecosystem — Bridging Campus, Talent, and Industry",
     description:
-      "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui collaborative learning, mentoring, workflow simulation, dan pengerjaan project brief terarah.",
-    url: "./",
+      "Kembangkan skill teknologi Anda melalui kolaborasi proyek nyata, mentoring langsung dari praktisi industri, dan simulasi alur kerja tim modern.",
+    url: "https://yyzu.tech",
     images: [
       {
         url: "/og-image.jpg",
@@ -63,9 +93,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "YYZU | Collaborative Technology Ecosystem & Talent Bridge",
+    title: "YYZU Ecosystem — Bridging Campus, Talent, and Industry",
     description:
-      "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui collaborative learning, mentoring, workflow simulation, dan pengerjaan project brief terarah.",
+      "Ekosistem teknologi kolaboratif dan jembatan talenta digital untuk mempersiapkan karir industri masa depan.",
     images: ["/og-image.jpg"],
   },
 };

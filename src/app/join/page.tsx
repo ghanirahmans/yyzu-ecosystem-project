@@ -5,7 +5,7 @@ import Section from "../../components/Section";
 import { joinExpectations, joinPaths } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "Join | YYZU",
+  title: "Bergabung Ekosistem",
   description:
     "Bergabung ke dalam ekosistem YYZU sebagai member, kontributor internal, mentor praktisi, atau partner kolaborasi untuk tumbuh melalui real project.",
 };

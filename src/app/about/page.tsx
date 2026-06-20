@@ -6,9 +6,9 @@ import Section from "../../components/Section";
 import { bridgeCards, visionMission, whyYYZU } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Tentang Kami",
   description:
-    "Tentang YYZU sebagai collaborative technology ecosystem dan talent bridge antara kampus, talenta teknologi, mentor praktisi, dan industri.",
+    "Pelajari misi YYZU sebagai jembatan talenta digital dan ekosistem kolaboratif yang menghubungkan mahasiswa, mentor praktisi, dan mitra industri.",
 };
 
 export default function AboutPage() {

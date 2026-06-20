@@ -5,7 +5,7 @@ import Section from "../../components/Section";
 import { faqs } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Pertanyaan Umum (FAQ)",
   description:
     "FAQ YYZU tentang collaborative technology ecosystem, talent bridge, model belajar kolaboratif, aktivitas, ekspektasi, dan cara bergabung.",
 };

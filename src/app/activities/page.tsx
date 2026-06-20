@@ -6,7 +6,7 @@ import Section from "../../components/Section";
 import { activities, activityRhythm } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "Activities | YYZU",
+  title: "Aktivitas & Program",
   description:
     "Rangkaian aktivitas di ekosistem YYZU: Study Groups, Mentoring & Technical Review, Mini Projects, Workflow Simulation, Real Case Collaboration, dan Portfolio Preparation.",
 };

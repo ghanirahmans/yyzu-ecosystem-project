@@ -3,7 +3,7 @@ import CtaBand from "../../components/CtaBand";
 import Section from "../../components/Section";
 
 export const metadata: Metadata = {
-  title: "Mentor & Partner | YYZU",
+  title: "Mentor & Kemitraan",
   description:
     "YYZU membuka kolaborasi bagi mentor praktisi, kampus, startup, dan industri untuk bersama-sama mengakselerasi kesiapan kerja talenta melalui mentoring, penyusunan project brief, R&D, dan talent pipeline.",
 };

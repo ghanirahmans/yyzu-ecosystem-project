@@ -6,7 +6,7 @@ import Section from "../../components/Section";
 import { buildLogs, projectPrinciples, upcomingBuildLogs } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "Projects & Build Logs | YYZU",
+  title: "Proyek & Catatan Pengembangan (Build Logs)",
   description:
     "Projects dan build logs YYZU menjelaskan project sebagai media real-world experience, workflow simulation, progress updates, dan contribution stories.",
 };

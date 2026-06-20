@@ -6,7 +6,7 @@ import Section from "../../components/Section";
 import { fitPeople, philosophy, values } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "Culture | YYZU",
+  title: "Kultur & Nilai Kolaborasi",
   description:
     "Kultur kerja dan mindset kolaboratif di ekosistem YYZU: Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership, dan Collaboration Over Competition.",
 };
