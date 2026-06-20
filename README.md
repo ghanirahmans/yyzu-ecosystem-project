@@ -2,13 +2,13 @@
 
 Website ini adalah MVP multi-page resmi untuk YYZU.
 
-YYZU adalah engineering ecosystem dan talent bridge untuk pengembangan talenta IT yang menghubungkan kampus, mahasiswa, komunitas, mentor, dan industri melalui collaborative learning, simulasi workflow industri, mentoring teknologi, project collaboration, dan project nyata.
+YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi (future builders), mentor praktisi, dan industri melalui kolaborasi aktif, mentoring, simulasi alur kerja, dan project-based growth.
 
 Website ini dibuat untuk memperkenalkan YYZU secara jelas, menjelaskan visi dan ekosistem YYZU, memperkuat engineering culture, serta menarik minat mahasiswa, kampus, collaborator, mentor, dan partner industri yang ingin membangun talent growth secara praktis.
 
 ## Positioning
 
-YYZU adalah engineering ecosystem, collaborative growth environment, dan talent bridge yang membantu mahasiswa serta talenta IT berkembang dari tahap pembelajaran menuju pengalaman engineering nyata dan kesiapan industri.
+YYZU adalah sebuah ecosystem, collaborative growth environment, dan talent bridge yang membantu mahasiswa serta talenta IT berkembang dari tahap pembelajaran menuju pengalaman engineering nyata dan kesiapan industri.
 
 YYZU tidak hanya berfokus pada pembelajaran teori, tetapi juga pada pengalaman praktik nyata melalui collaborative project, teamwork engineering, standar kerja industri, problem solving, code review, system design, deployment, dan engineering workflow yang digunakan di dunia profesional.
 
@@ -18,7 +18,7 @@ YYZU tidak hanya berfokus pada pembelajaran teori, tetapi juga pada pengalaman p
 - Menjelaskan peran YYZU sebagai jembatan antara dunia akademik dan dunia industri.
 - Mengomunikasikan visi, misi, nilai inti, fokus, aktivitas, dan model pengembangan YYZU.
 - Menarik mahasiswa dan talenta IT untuk bergabung dan berkembang bersama.
-- Membuka peluang kolaborasi dengan kampus, komunitas, mentor, dan partner industri.
+- Membuka peluang kolaborasi dengan kampus, mentor, dan partner industri.
 - Membangun first impression yang modern, profesional, bersih, dan terpercaya.
 
 ## Tujuan Utama YYZU
@@ -31,83 +31,53 @@ YYZU tidak hanya berfokus pada pembelajaran teori, tetapi juga pada pengalaman p
 
 ## Visi
 
-Membangun ekosistem pengembangan talenta IT yang mampu mencetak engineer berkualitas, kolaboratif, dan siap industri melalui budaya belajar, membangun, dan berkembang bersama.
+Membangun ekosistem teknologi kolaboratif yang menjembatani talenta berkembang menjadi individu yang adaptif, ber-mindset produk, dan siap menghadapi kebutuhan industri digital modern.
 
 ## Misi
 
-1. Membangun kultur engineering yang mendorong disiplin, problem solving, teamwork, ownership, dan continuous learning.
-2. Menyediakan pembelajaran berbasis praktik melalui project nyata, mentoring, diskusi teknikal, dan simulasi workflow industri.
-3. Menjadi jembatan kampus dan industri melalui kolaborasi, pelatihan, dan pengembangan skill yang relevan.
-4. Mengembangkan talenta siap industri melalui skill teknis, pengalaman kolaborasi, portfolio, dan profesionalisme kerja.
-5. Membangun sustainability ecosystem melalui project, produk, dan kerja sama yang mendukung pertumbuhan komunitas secara berkelanjutan.
+Menciptakan environment pertumbuhan teknologi yang aktif, mempertemukan kampus, talenta, mentor, dan partner, serta mendidik member melalui real-world project dan workflow kolaboratif.
 
-## Nilai Inti
+## Nilai Inti (Core Values)
 
-- Build Together: belajar dan berkembang melalui kolaborasi, kontribusi, dan pembangunan bersama.
-- Industry-Oriented: berfokus pada skill, workflow, dan standar yang relevan dengan kebutuhan industri.
-- Continuous Growth: mendorong setiap individu untuk terus berkembang secara teknis maupun personal.
-- Real Contribution: menghasilkan karya, project, solusi, dan dampak nyata.
-- Discipline & Ownership: menanamkan tanggung jawab, konsistensi, dan rasa memiliki terhadap proses dan hasil kerja.
+- **Build Together**: Berkembang melalui kolaborasi aktif, peer learning, dan kemampuan memecahkan masalah sebagai satu tim perangkat lunak.
+- **Continuous Growth**: Mendorong peningkatan standar kompetensi secara bertahap melalui siklus feedback, review berkala, dan refleksi pembelajaran.
+- **Real Experience**: Belajar langsung dari praktik, simulasi workflow industri, open contribution, dan pengerjaan project brief.
+- **Industry-Oriented**: Mengarahkan skill teknis, metode komunikasi, dokumentasi, dan kualitas delivery agar relevan dengan kebutuhan industri digital.
+- **Ownership**: Menumbuhkan tanggung jawab penuh terhadap proses belajar pribadi, tugas yang diambil, serta kualitas kontribusi yang dikirimkan.
+- **Collaboration Over Competition**: Memprioritaskan kesuksesan bersama melalui kultur feedback yang sehat, peer review, dan dukungan tim yang mutual.
 
 ## Fokus Utama
 
-YYZU berfokus pada:
-
-- pengembangan skill teknis,
-- simulasi workflow industri,
-- project collaboration,
-- mentoring,
-- teamwork,
-- pengembangan portfolio,
-- kesiapan kerja industri.
+- **Collaborative learning**: Mengaktifkan proses belajar mandiri melalui study group terarah, peer discussion, mentoring, dan culture saling berbagi pengetahuan secara kolektif.
+- **Project-based growth**: Mengakselerasi pemahaman melalui pengerjaan mini project, open contribution, internal product development, dan simulasi project berbasis tim.
+- **Industry-oriented development**: Membiasakan workflow standar industri seperti task breakdown, review, documentation, quality control, dan pembentukan engineering mindset.
 
 ## Aktivitas
 
-Aktivitas yang dapat dijalankan di dalam YYZU meliputi:
+Aktivitas yang dijalankan di dalam YYZU meliputi:
 
-- study group,
-- mentoring,
-- workshop,
-- mini project,
-- team project,
-- code review,
-- technical discussion,
-- open-source contribution,
-- hackathon,
-- engineering simulation,
-- collaborative product development,
-- pengerjaan project nyata bersama partner atau client.
+- **Study Groups**: Sesi belajar terarah untuk memperkuat fundamental teknologi, mempelajari dokumentasi alat, dan mendiskusikan konsep secara mendalam bersama rekan sejawat.
+- **Mentoring & Technical Review**: Sesi bimbingan interaktif bersama praktisi mengenai software development, UI/UX design, product management, architectural decisions, dan debugging.
+- **Mini Projects**: Pengerjaan proyek berskala kecil untuk melatih koordinasi tim, breakdown tugas, implementasi fitur dasar, dan proses demonstrasi produk.
+- **Workflow Simulation**: Simulasi langsung workflow kerja industri seperti sprint planning, code/design review, version control management, QA, dan pembuatan release notes.
+- **Real Case Collaboration**: Penyelesaian problem statement dan project brief nyata dari partner ekosistem, memberikan pengalaman kolaborasi yang edukatif dan menantang.
+- **Career & Portfolio Prep**: Persiapan karier melalui portfolio review, simulasi komunikasi profesional, pencatatan learning logs, dan penyelarasan standar industry readiness.
 
 ## Model Pengembangan
 
 YYZU menggunakan pendekatan:
 
 ```txt
-Learn -> Build -> Collaborate -> Contribute -> Grow
+Learn -> Build -> Collaborate -> Grow
 ```
 
 Member tidak hanya belajar teknologi, tetapi juga dilatih untuk bekerja dalam tim, menghadapi masalah nyata, membangun solusi, memahami workflow engineering, dan berkembang sebagai individu profesional.
 
 ## Peran dalam Ekosistem
 
-### Bagi Mahasiswa
-
-- Tempat berkembang.
-- Ruang membangun pengalaman.
-- Kesempatan memperluas relasi.
-- Persiapan menuju industri.
-
-### Bagi Kampus
-
-- Partner pengembangan talenta.
-- Penguatan kualitas mahasiswa.
-- Penghubung dengan industri.
-
-### Bagi Industri
-
-- Talent pipeline.
-- Partner pengembangan skill.
-- Ruang kolaborasi bersama talenta muda teknologi.
+- **Member & Future Builders**: Untuk mahasiswa, IT learner, developer, designer, dan product enthusiast yang ingin memperkuat portofolio proses, kerja tim, dan kesiapan industri.
+- **Kampus & Komunitas Pendukung**: Sebagai mitra strategis untuk mempersempit gap akademis dengan industri melalui penyelarasan program belajar praktis dan workflow kolaboratif.
+- **Mentor & Partner Industri**: Ruang kontribusi praktisi dan organisasi untuk membimbing talenta melalui sharing session, review, penyediaan project brief, hingga akses rekrutmen.
 
 ## Tujuan Jangka Panjang
 
@@ -122,13 +92,15 @@ YYZU diarahkan untuk menjadi:
 
 Website MVP saat ini berupa multi-page ecosystem website dengan halaman utama:
 
-- Home
-- About YYZU
-- Culture & Engineering Mindset
-- Activities
-- Projects & Build Logs
-- Join YYZU
-- FAQ
+- **Home** (`/`) — Halaman utama perkenalan YYZU Ecosystem.
+- **About YYZU** (`/about/`) — Penjelasan visi, misi, dan detail tentang ekosistem.
+- **Culture & Mindset** (`/culture/`) — Filosofi kerja, core values, dan culture fit.
+- **Activities** (`/activities/`) — Sesi belajar, mini projects, dan ritme aktivitas.
+- **Build Logs / Projects** (`/projects/`) — Log perkembangan proyek internal dan ekosistem.
+- **Mentor & Partner** (`/mentor-partnership/`) — Informasi kolaborasi kampus, mentor, dan industri.
+- **Wiki Docs** (`/docs/`) — Dokumentasi detail operasional dan panduan ekosistem.
+- **Join YYZU** (`/join/`) — Akses pendaftaran sebagai member, mentor, atau partner.
+- **FAQ** (`/faq/`) — Pertanyaan umum seputar YYZU.
 
 Fokus komunikasi website:
 
@@ -138,10 +110,15 @@ Fokus komunikasi website:
 
 ## Tech Stack
 
-- Astro
-- TypeScript
-- Tailwind CSS
-- Static output untuk deployment Netlify
+- **Framework**: Next.js (App Router)
+- **Documentation Engine**: Fumadocs
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **SEO & Discovery**:
+  - **Dynamic XML Sitemap**: Dibuat secara otomatis (`sitemap.ts`) menggunakan loader Fumadocs, mengindeks seluruh 39+ halaman dokumentasi/wiki secara dinamis.
+  - **Structured Data**: Skema JSON-LD `EducationalOrganization` kaya data pada beranda untuk mendeskripsikan logo, slogan, daerah lokal (Medan, ID), jejaring sosial, dan data pendiri/founder (`Ghaniyyir Rahman Sudarsono`).
+  - **Metadata Optimization**: Optimasi kata kunci global untuk target audiens mahasiswa, mentor, kampus, dan partner bisnis serta perapian judul halaman agar terbebas dari duplikasi brand.
+- **Output**: Static HTML Export (`dist/` output)
 
 ## Development
 
@@ -160,7 +137,7 @@ npm run dev
 Buka:
 
 ```txt
-http://localhost:4321
+http://localhost:3000
 ```
 
 Lint:
@@ -175,27 +152,16 @@ Build production:
 npm run build
 ```
 
-Project ini dikonfigurasi sebagai static site Astro. Setelah build, output production tersedia di folder:
+Project ini dikonfigurasi untuk melakukan static export (`output: "export"`). Setelah build, output production tersedia di folder:
 
 ```txt
 dist
 ```
 
-## Deployment Netlify
+## Deployment
 
-Konfigurasi Netlify berada di `netlify.toml`.
+Layanan static hosting (Netlify, Vercel, Cloudflare Pages, atau GitHub Pages) dapat digunakan dengan mengarahkan folder publikasi ke `dist`.
 
-Build command:
-
-```bash
-npm run build
-```
-
-Publish directory:
-
-```txt
-dist
-```
 
 ## Catatan
 
