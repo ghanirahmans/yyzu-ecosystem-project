@@ -5,7 +5,7 @@
 // Props-based layout without Zustand. Supports mobile bottom nav.
 // ============================================================
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
@@ -14,6 +14,7 @@ import {
   Shield,
   LogOut,
   User,
+  UserRound,
   Settings,
   ChevronRight,
   Bell,
@@ -22,6 +23,8 @@ import {
   Layers,
   Calendar,
   Briefcase,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { cn, getInitials, stringToColor } from "@/lib/utils";
 
@@ -48,6 +51,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/dashboard/divisions", label: "Divisions", icon: <Layers size={18} /> },
   { href: "/dashboard/programs", label: "Programs", icon: <Calendar size={18} /> },
   { href: "/dashboard/partnerships", label: "Partnerships", icon: <Briefcase size={18} /> },
+  { href: "/dashboard/members", label: "Members", icon: <UserRound size={18} /> },
   { href: "/dashboard/team", label: "My Team", icon: <Users size={18} /> },
   { href: "/dashboard/teams", label: "Browse Teams", icon: <Home size={18} /> },
   { href: "/dashboard/profile", label: "My Profile", icon: <User size={18} /> },
@@ -60,6 +64,29 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
   const pathname = usePathname();
   const router = useRouter();
   const isAdmin = user.role === "SYSTEM_ADMIN";
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const initialTheme = savedTheme || (document.documentElement.classList.contains("dark") ? "dark" : "light");
+    setTheme(initialTheme);
+    if (initialTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    if (nextTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
 
   const handleLogout = async () => {
     try {
@@ -84,7 +111,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
   const avatarColor = stringToColor(user.username);
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-white flex flex-col md:flex-row">
+    <div className="yyzu-dashboard min-h-screen bg-[#0d1117] text-white flex flex-col md:flex-row">
       {/* ── Sidebar (Desktop only, >=768px) ─────────────────── */}
       <aside className="hidden md:flex md:w-64 md:flex-col bg-[#161b22] border-r border-white/8 flex-shrink-0 h-screen sticky top-0">
         {/* Brand */}
@@ -212,6 +239,15 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
           </div>
 
           <div className="flex items-center gap-3">
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-white/40 hover:text-white hover:bg-white/5 transition-all cursor-pointer"
+              title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            >
+              {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
+            </button>
+
             {/* Notification bell */}
             <button className="relative p-2 rounded-lg text-white/40 hover:text-white hover:bg-white/5 transition-all">
               <Bell size={17} />
@@ -275,6 +311,16 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
         >
           <User size={20} />
           <span className="text-[10px] mt-1">Profile</span>
+        </Link>
+        <Link
+          href="/dashboard/members"
+          className={cn(
+            "flex flex-col items-center justify-center flex-1 py-1 text-center transition-colors",
+            isActive("/dashboard/members") ? "text-indigo-400" : "text-white/40 hover:text-white"
+          )}
+        >
+          <UserRound size={20} />
+          <span className="text-[10px] mt-1">Members</span>
         </Link>
         {isAdmin && (
           <Link

@@ -148,7 +148,7 @@ export default function LoginPage() {
 
           {/* Demo accounts */}
           <div className="mt-6 pt-5 border-t border-white/8">
-            <p className="text-xs text-white/30 text-center mb-3 font-medium uppercase tracking-wider">
+             <p className="text-xs text-white/55 text-center mb-3 font-semibold uppercase tracking-wider">
               Demo accounts (click to fill)
             </p>
             <div className="grid grid-cols-2 gap-2">
@@ -162,10 +162,10 @@ export default function LoginPage() {
                   }}
                   className="text-left px-3 py-2 rounded-lg bg-white/4 hover:bg-white/8 border border-white/6 transition-all group"
                 >
-                  <span className="text-xs font-semibold text-white/65 group-hover:text-white/95 block transition-colors truncate">
+                  <span className="text-xs font-semibold text-white/80 group-hover:text-white/95 block transition-colors truncate">
                     {acc.label}
                   </span>
-                  <span className="text-[10px] text-white/35 font-mono truncate block">@{acc.username}</span>
+                  <span className="text-[10px] text-white/50 font-mono truncate block">@{acc.username}</span>
                 </button>
               ))}
             </div>

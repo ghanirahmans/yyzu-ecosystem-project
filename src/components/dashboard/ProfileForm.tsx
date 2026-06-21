@@ -12,10 +12,27 @@ import {
   Mail,
   CheckCircle2,
   AlertCircle,
+  Users,
+  Star,
 } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate, getInitials, stringToColor } from "@/lib/utils";
 import { updateProfileAction } from "@/app/actions/profile";
+
+const DIVISION_LABELS: Record<string, string> = {
+  PARTNERSHIP: "Partnership",
+  SDM_MANAGEMENT: "SDM & Management",
+  EVENT_ORGANIZER: "Event Organizer",
+  PRODUCT_PROJECT_MANAGEMENT: "Product & PM",
+  LEARNING_CURRICULUM: "Learning & Curriculum",
+  MEDIA_BRANDING: "Media & Branding",
+  KOORDINATOR_UMUM: "Koordinator Umum",
+};
+
+interface DivisionMembershipInfo {
+  divisionName: string;
+  role: string;
+}
 
 interface ProfileFormProps {
   user: {
@@ -33,10 +50,17 @@ interface ProfileFormProps {
   };
   teamName: string | null;
   teamRole: string | null;
+  divisionMemberships: DivisionMembershipInfo[];
   session: any;
 }
 
-export default function ProfileForm({ user, teamName, teamRole, session }: ProfileFormProps) {
+export default function ProfileForm({
+  user,
+  teamName,
+  teamRole,
+  divisionMemberships,
+  session,
+}: ProfileFormProps) {
   const [editing, setEditing] = useState(false);
   const [saved, setSaved] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -102,12 +126,37 @@ export default function ProfileForm({ user, teamName, teamRole, session }: Profi
     });
   };
 
-  const roleBadge =
-    user.role === "SYSTEM_ADMIN"
-      ? { label: "System Admin", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" }
-      : teamRole === "TEAM_LEADER"
-      ? { label: "Team Leader", color: "bg-indigo-500/15 text-indigo-400 border-indigo-500/20" }
-      : { label: "Member", color: "bg-white/8 text-white/50 border-white/10" };
+  // Build role badges
+  const roleBadges: { label: string; color: string }[] = [];
+
+  if (user.role === "SYSTEM_ADMIN") {
+    roleBadges.push({ label: "System Admin", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" });
+  } else if (user.role === "MENTOR") {
+    roleBadges.push({ label: "Mentor", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" });
+  } else {
+    roleBadges.push({ label: "Member", color: "bg-white/8 text-white/50 border-white/10" });
+  }
+
+  if (teamRole === "TEAM_LEADER") {
+    roleBadges.push({ label: "Team Leader", color: "bg-indigo-500/15 text-indigo-400 border-indigo-500/20" });
+  } else if (teamRole === "MEMBER" && teamName) {
+    roleBadges.push({ label: "Team Member", color: "bg-blue-500/15 text-blue-400 border-blue-500/20" });
+  }
+
+  for (const dm of divisionMemberships) {
+    const divLabel = DIVISION_LABELS[dm.divisionName] ?? dm.divisionName;
+    if (dm.role === "HEAD") {
+      roleBadges.push({
+        label: `Head of ${divLabel}`,
+        color: "bg-violet-500/15 text-violet-400 border-violet-500/20",
+      });
+    } else {
+      roleBadges.push({
+        label: divLabel,
+        color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/20",
+      });
+    }
+  }
 
   return (
     <DashboardShell user={session}>
@@ -150,7 +199,7 @@ export default function ProfileForm({ user, teamName, teamRole, session }: Profi
           </div>
 
           <div className="pt-12 px-6 pb-6">
-            <div className="flex items-start justify-between mb-5">
+            <div className="flex items-start justify-between mb-4">
               <div>
                 {!editing ? (
                   <>
@@ -177,9 +226,6 @@ export default function ProfileForm({ user, teamName, teamRole, session }: Profi
                 )}
               </div>
               <div className="flex items-center gap-2">
-                <span className={cn("text-xs px-3 py-1 rounded-full border font-medium", roleBadge.color)}>
-                  {roleBadge.label}
-                </span>
                 {!editing ? (
                   <button
                     onClick={() => setEditing(true)}
@@ -215,8 +261,20 @@ export default function ProfileForm({ user, teamName, teamRole, session }: Profi
               </div>
             </div>
 
+            {/* Role badges */}
+            <div className="flex flex-wrap gap-2 mb-5">
+              {roleBadges.map((badge, i) => (
+                <span
+                  key={i}
+                  className={cn("text-xs px-2.5 py-1 rounded-full border font-medium", badge.color)}
+                >
+                  {badge.label}
+                </span>
+              ))}
+            </div>
+
             {/* Meta row */}
-            <div className="flex flex-wrap gap-4 text-xs text-white/40 mb-5">
+            <div className="flex flex-wrap gap-4 text-xs text-white/50 mb-5">
               <span className="flex items-center gap-1.5">
                 <AtSign size={12} /> {user.username}
               </span>
@@ -230,14 +288,14 @@ export default function ProfileForm({ user, teamName, teamRole, session }: Profi
               </span>
               {teamName && (
                 <span className="flex items-center gap-1.5">
-                  <User size={12} /> {teamName}
+                  <Users size={12} /> {teamName}
                 </span>
               )}
             </div>
 
             {/* Bio */}
             <div className="mb-5">
-              <p className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-2">Bio</p>
+              <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">Bio</p>
               {!editing ? (
                 <p className="text-sm text-white/70 leading-relaxed">
                   {form.bio || <span className="italic text-white/30">No bio yet.</span>}
@@ -263,7 +321,7 @@ export default function ProfileForm({ user, teamName, teamRole, session }: Profi
             {/* Avatar URL */}
             {editing && (
               <div>
-                <p className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-2">Avatar URL</p>
+                <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">Avatar URL</p>
                 <input
                   value={form.avatarUrl}
                   onChange={(e) => setForm((f) => ({ ...f, avatarUrl: e.target.value }))}
@@ -292,6 +350,7 @@ export default function ProfileForm({ user, teamName, teamRole, session }: Profi
             <InfoRow label="Username" value={`@${user.username}`} note="Cannot be changed" />
             {user.email && <InfoRow label="Email" value={user.email} note="Cannot be changed" />}
             <InfoRow label="Status" value={user.status} />
+            <InfoRow label="Account Role" value={user.role} />
             <InfoRow label="Account Created" value={formatDate(user.createdAt)} />
           </div>
         </div>

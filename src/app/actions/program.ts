@@ -29,6 +29,13 @@ export async function createProgramAction(data: {
         status: ProgramStatus.DRAFT,
         startDate: data.startDate ? new Date(data.startDate) : null,
         endDate: data.endDate ? new Date(data.endDate) : null,
+        // divisions will be connected after creation
+      },
+    });
+
+    await prisma.program.update({
+      where: { id: program.id },
+      data: {
         divisions: {
           connect: data.divisionIds.map((id) => ({ id })),
         },
@@ -81,7 +88,7 @@ export async function updateProgramAction(
     });
 
     const isAnyDivMember = memberships.length > 0;
-    const existingDivisionIds = existing.divisions.map((d) => d.id);
+    const existingDivisionIds = existing.divisions.map((d: { id: string }) => d.id);
     const isInvolvedDivMember = memberships.some((m) => existingDivisionIds.includes(m.divisionId));
 
     // Can edit if Admin, Author, or Division Member (of involved division, or any if empty)
@@ -107,15 +114,27 @@ export async function updateProgramAction(
       updateData.picUserId = data.picUserId || null;
       updateData.startDate = data.startDate ? new Date(data.startDate) : null;
       updateData.endDate = data.endDate ? new Date(data.endDate) : null;
-      updateData.divisions = {
-        set: data.divisionIds.map((id) => ({ id })),
-      };
+      
+      // Update divisions separately after main update
+      await prisma.program.update({
+        where: { id: programId },
+        data: updateData,
+      });
+      // Connect updated divisions
+      await prisma.program.update({
+        where: { id: programId },
+        data: {
+          divisions: {
+            set: data.divisionIds.map((id) => ({ id })),
+          },
+        },
+      });
+    } else {
+      await prisma.program.update({
+        where: { id: programId },
+        data: updateData,
+      });
     }
-
-    await prisma.program.update({
-      where: { id: programId },
-      data: updateData,
-    });
 
     await createAuditLog(session.userId, "PROGRAM_UPDATE", "Program", programId, { title: data.title });
 
@@ -201,7 +220,7 @@ export async function approveProgramAction(
       const membership = await prisma.divisionMembership.findFirst({
         where: {
           userId: session.userId,
-          divisionId: { in: program.divisions.map((d) => d.id) },
+          divisionId: { in: program.divisions.map((d: { id: string }) => d.id) },
           role: DivisionRole.HEAD,
           leftAt: null,
           user: {

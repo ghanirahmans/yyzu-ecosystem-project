@@ -85,7 +85,7 @@ export default async function DivisionsPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-white tracking-tight">Divisi & Kepengurusan</h1>
-          <p className="text-sm text-white/40 mt-1">Struktur organisasi Badan Pengurus Harian (BPH) YYZU.</p>
+          <p className="text-sm text-white/60 mt-1">Struktur organisasi Badan Pengurus Harian (BPH) YYZU.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -106,7 +106,7 @@ export default async function DivisionsPage() {
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-start">
-                    <span className={`text-[10px] font-bold tracking-wide uppercase px-2 py-0.5 rounded border ${meta.color.split(" ").slice(2, 4).join(" ")} bg-white/3`}>
+                    <span className={`text-[10px] font-bold tracking-wide uppercase px-2 py-0.5 rounded border ${meta.color.split(" ").slice(2, 4).join(" ")} bg-white/10`}>
                       {meta.label}
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export default async function DivisionsPage() {
                     <h2 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
                       {meta.label}
                     </h2>
-                    <p className="text-xs text-white/55 mt-1.5 leading-relaxed">
+                    <p className="text-xs text-white/70 mt-1.5 leading-relaxed">
                       {div.description || meta.description}
                     </p>
                   </div>
@@ -123,24 +123,24 @@ export default async function DivisionsPage() {
 
                 <div className="mt-5 pt-4 border-t border-white/5 space-y-3">
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-white/30 block font-semibold mb-1">
+                    <span className="text-[10px] uppercase tracking-wider text-white/50 block font-semibold mb-1">
                       Division Head
                     </span>
                     {heads.length > 0 ? (
                       <div className="flex flex-col gap-1">
                         {heads.map((h) => (
-                          <span key={h.id} className="text-xs text-white/80 font-medium">
+                          <span key={h.id} className="text-xs text-white font-medium">
                             👑 {h.user.fullName}
                           </span>
                         ))}
                       </div>
                     ) : (
-                      <span className="text-xs text-white/30 italic">Belum ada Koordinator</span>
+                      <span className="text-xs text-white/50 italic">Belum ada Koordinator</span>
                     )}
                   </div>
 
                   <div className="flex justify-between items-center pt-1">
-                    <div className="flex items-center gap-1 text-xs text-white/40">
+                    <div className="flex items-center gap-1 text-xs text-white/60">
                       <Users size={12} />
                       <span>{staffCount} Staff</span>
                     </div>

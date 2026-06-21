@@ -104,6 +104,9 @@ export async function toggleTeamSuspensionAction(teamId: string) {
     const team = await prisma.team.findUnique({ where: { id: teamId } });
     if (!team) return { success: false, error: "TEAM_NOT_FOUND" };
 
+    if (team.status === TeamStatus.ARCHIVED) {
+      return { success: false, error: "TEAM_ARCHIVED_CANNOT_SUSPEND" };
+    }
     const nextStatus = team.status === TeamStatus.SUSPENDED ? TeamStatus.ACTIVE : TeamStatus.SUSPENDED;
 
     await prisma.team.update({

@@ -178,7 +178,7 @@ export default function PartnershipDetailView({ partnership, users, canEdit, ses
 
           <div className="relative">
             <div className="absolute top-1/2 left-4 right-4 h-0.5 bg-white/5 -translate-y-1/2 z-0 hidden md:block" />
-            
+
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3 relative z-10">
               {PARTNERSHIP_STATUSES.map((s) => {
                 const isCurrent = partnership.status === s;
@@ -188,11 +188,10 @@ export default function PartnershipDetailView({ partnership, users, canEdit, ses
                     key={s}
                     disabled={!canEdit || loading}
                     onClick={() => handleUpdateStatus(s)}
-                    className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all ${
-                      isCurrent
-                        ? `${meta.color} bg-white/3 ring-2 ring-indigo-500/20 font-bold`
-                        : "bg-white/2 border-white/5 text-white/30 hover:border-white/12 hover:text-white/60 disabled:hover:border-white/5 disabled:hover:text-white/30"
-                    } ${canEdit ? "cursor-pointer" : "cursor-default"}`}
+                    className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all ${isCurrent
+                      ? `${meta.color} bg-white/3 ring-2 ring-indigo-500/20 font-bold`
+                      : "bg-white/2 border-white/5 text-white/30 hover:border-white/12 hover:text-white/60 disabled:hover:border-white/5 disabled:hover:text-white/30"
+                      } ${canEdit ? "cursor-pointer" : "cursor-default"}`}
                   >
                     <span className="text-xs font-semibold">{meta.label}</span>
                     {isCurrent && <span className="text-[9px] mt-1 font-medium animate-pulse">Current</span>}
@@ -386,7 +385,7 @@ export default function PartnershipDetailView({ partnership, users, canEdit, ses
                   <span className="text-sm font-medium text-white/80">
                     {canEdit ? (
                       <>
-                        {partnership.contactName || "—"}{" "}
+                        {partnership.contactName || "disembunyikan"}{" "}
                         {partnership.contactInfo && <span className="text-white/40 font-normal">({partnership.contactInfo})</span>}
                       </>
                     ) : (

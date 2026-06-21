@@ -4,7 +4,7 @@
 
 :root {
   --background: #f7f9fb;
-  --foreground: #0f172a;
+  /* --foreground tidak diset di :root agar tidak bocor ke halaman publik (hero dll) */
 
   /* Fumadocs UI overrides - Light Theme (High contrast YYZU Blue & Teal highlights) */
   --color-fd-primary: hsl(232, 100%, 32%);
@@ -62,7 +62,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  /* color dibiarkan inherit dari elemen masing-masing, tidak diforce global */
 }
 
 html {
@@ -72,6 +72,17 @@ html {
 section {
   scroll-margin-top: 5rem;
 }
+
+/* Teks gelap hanya untuk halaman publik non-hero (section bg-white, bg-slate dll) */
+/* Hero sudah pakai text-white eksplisit, jadi tidak perlu global color */
+/* Fumadocs docs layout butuh teks gelap di light mode */
+:where([data-docs-page], .fd-page, [class*="fd-"]) {
+  color: #0f172a;
+}
+.dark :where([data-docs-page], .fd-page, [class*="fd-"]) {
+  color: hsl(210, 40%, 98%);
+}
+
 
 ::selection {
   background: #0015a5;
@@ -179,4 +190,257 @@ aside ul ul {
 /* Spacing between MDX docs content and previous/next page navigation links */
 div[class*="@container"][class*="grid"].gap-4 {
   margin-top: 4.5rem !important;
+}
+
+/* ==========================================================================
+   LIGHT MODE DASHBOARD OVERRIDES (Scoped to dashboard only)
+   Seluruh override ini hanya berlaku di dalam .yyzu-dashboard wrapper,
+   sehingga halaman publik (hero, landing page, dll) tidak terdampak.
+   ========================================================================== */
+
+/* Wrapper class yang ditambahkan di DashboardShell */
+html:not(.dark) .yyzu-dashboard {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Header dan Sidebar */
+html:not(.dark) .yyzu-dashboard header.bg-\[\#0d1117\]\/80,
+html:not(.dark) .yyzu-dashboard aside.bg-\[\#161b22\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Sidebars & lists */
+html:not(.dark) .yyzu-dashboard aside summary,
+html:not(.dark) .yyzu-dashboard aside .fd-sidebar-group-label,
+html:not(.dark) .yyzu-dashboard aside button[aria-controls],
+html:not(.dark) .yyzu-dashboard aside button[data-state],
+html:not(.dark) .yyzu-dashboard aside li > button {
+  color: #0f172a !important;
+}
+
+/* Collapsible folder lines in sidebar */
+html:not(.dark) .yyzu-dashboard aside ul ul {
+  border-left: 1px solid #cbd5e1 !important;
+}
+
+/* Inactive sidebar links */
+html:not(.dark) .yyzu-dashboard aside a:not([aria-current="page"]) {
+  color: #475569 !important;
+}
+html:not(.dark) .yyzu-dashboard aside a:not([aria-current="page"]):hover {
+  color: #4f46e5 !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* Cards, Forms, Panels, & workspace items */
+html:not(.dark) .yyzu-dashboard .bg-\[\#161b22\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Inputs, selects, and textareas */
+html:not(.dark) .yyzu-dashboard input.bg-\[\#0d1117\],
+html:not(.dark) .yyzu-dashboard select.bg-\[\#0d1117\],
+html:not(.dark) .yyzu-dashboard textarea.bg-\[\#0d1117\],
+html:not(.dark) .yyzu-dashboard div.bg-\[\#0d1117\] {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .yyzu-dashboard input,
+html:not(.dark) .yyzu-dashboard select,
+html:not(.dark) .yyzu-dashboard textarea {
+  color: #0f172a !important;
+}
+html:not(.dark) .yyzu-dashboard input::placeholder,
+html:not(.dark) .yyzu-dashboard textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Text color class overrides */
+html:not(.dark) .yyzu-dashboard .text-white {
+  color: #0f172a !important;
+}
+html:not(.dark) .yyzu-dashboard .text-white\/80 {
+  color: #1e293b !important;
+}
+html:not(.dark) .yyzu-dashboard .text-white\/70,
+html:not(.dark) .yyzu-dashboard .text-white\/60,
+html:not(.dark) .yyzu-dashboard .text-white\/50 {
+  color: #334155 !important;
+}
+html:not(.dark) .yyzu-dashboard .text-white\/40,
+html:not(.dark) .yyzu-dashboard .text-white\/30,
+html:not(.dark) .yyzu-dashboard .text-white\/25,
+html:not(.dark) .yyzu-dashboard .text-white\/20 {
+  color: #64748b !important;
+}
+
+/* Active Sidebar States */
+html:not(.dark) .yyzu-dashboard .bg-indigo-500\/15 {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  color: #4f46e5 !important;
+}
+html:not(.dark) .yyzu-dashboard .text-indigo-400 {
+  color: #4f46e5 !important;
+}
+html:not(.dark) .yyzu-dashboard .ml-auto.text-indigo-400 {
+  color: #4f46e5 !important;
+}
+
+/* Active Admin Sidebar States */
+html:not(.dark) .yyzu-dashboard .bg-rose-500\/15 {
+  background-color: rgba(244, 63, 94, 0.1) !important;
+  color: #e11d48 !important;
+}
+html:not(.dark) .yyzu-dashboard .text-rose-400 {
+  color: #e11d48 !important;
+}
+html:not(.dark) .yyzu-dashboard .ml-auto.text-rose-400 {
+  color: #e11d48 !important;
+}
+
+/* Borders & Dividers */
+html:not(.dark) .yyzu-dashboard .border-white\/4,
+html:not(.dark) .yyzu-dashboard .border-white\/5,
+html:not(.dark) .yyzu-dashboard .border-white\/6,
+html:not(.dark) .yyzu-dashboard .border-white\/8,
+html:not(.dark) .yyzu-dashboard .border-white\/10,
+html:not(.dark) .yyzu-dashboard .border-white\/12,
+html:not(.dark) .yyzu-dashboard .border-white\/15,
+html:not(.dark) .yyzu-dashboard .border-b.border-white\/4,
+html:not(.dark) .yyzu-dashboard .border-b.border-white\/5,
+html:not(.dark) .yyzu-dashboard .border-b.border-white\/6,
+html:not(.dark) .yyzu-dashboard .border-t.border-white\/5,
+html:not(.dark) .yyzu-dashboard .border-t.border-white\/8,
+html:not(.dark) .yyzu-dashboard .divide-white\/4,
+html:not(.dark) .yyzu-dashboard .divide-white\/5,
+html:not(.dark) .yyzu-dashboard .divide-white\/6,
+html:not(.dark) .yyzu-dashboard .divide-white\/8,
+html:not(.dark) .yyzu-dashboard .divide-white\/10,
+html:not(.dark) .yyzu-dashboard .divide-y > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+/* Buttons, badges & cards */
+html:not(.dark) .yyzu-dashboard .bg-white\/2 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-white\/3 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-white\/4 {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-white\/5 {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-white\/8 {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-white\/10 {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+html:not(.dark) .yyzu-dashboard .hover\:bg-white\/4:hover {
+  background-color: #e2e8f0 !important;
+}
+html:not(.dark) .yyzu-dashboard .hover\:bg-white\/5:hover {
+  background-color: #e2e8f0 !important;
+}
+html:not(.dark) .yyzu-dashboard .hover\:bg-white\/8:hover {
+  background-color: #cbd5e1 !important;
+}
+html:not(.dark) .yyzu-dashboard .hover\:bg-white\/10:hover {
+  background-color: #cbd5e1 !important;
+}
+html:not(.dark) .yyzu-dashboard .hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+/* Additional accent colors */
+html:not(.dark) .yyzu-dashboard .text-cyan-400 {
+  color: #0891b2 !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-cyan-500\/10 {
+  background-color: rgba(6, 182, 212, 0.1) !important;
+}
+html:not(.dark) .yyzu-dashboard .border-cyan-500\/20 {
+  border-color: rgba(6, 182, 212, 0.2) !important;
+}
+
+html:not(.dark) .yyzu-dashboard .text-emerald-400 {
+  color: #16a34a !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+html:not(.dark) .yyzu-dashboard .border-emerald-500\/20 {
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+html:not(.dark) .yyzu-dashboard .text-purple-400 {
+  color: #7c3aed !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-purple-500\/10 {
+  background-color: rgba(139, 92, 246, 0.1) !important;
+}
+html:not(.dark) .yyzu-dashboard .border-purple-500\/20 {
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+html:not(.dark) .yyzu-dashboard .text-pink-400 {
+  color: #db2777 !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-pink-500\/10 {
+  background-color: rgba(236, 72, 153, 0.1) !important;
+}
+html:not(.dark) .yyzu-dashboard .border-pink-500\/20 {
+  border-color: rgba(236, 72, 153, 0.2) !important;
+}
+
+html:not(.dark) .yyzu-dashboard .text-amber-400 {
+  color: #d97706 !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+}
+html:not(.dark) .yyzu-dashboard .border-amber-500\/20 {
+  border-color: rgba(245, 158, 11, 0.2) !important;
+}
+
+html:not(.dark) .yyzu-dashboard .text-blue-400 {
+  color: #2563eb !important;
+}
+html:not(.dark) .yyzu-dashboard .bg-blue-500\/10 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+html:not(.dark) .yyzu-dashboard .border-blue-500\/20 {
+  border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Audit logs list & users list table rows */
+html:not(.dark) .yyzu-dashboard .border-b.border-white\/5 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Custom scrollbars (hanya di dalam dashboard) */
+html:not(.dark) .yyzu-dashboard ::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+html:not(.dark) .yyzu-dashboard ::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
 }

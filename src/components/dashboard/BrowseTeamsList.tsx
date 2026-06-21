@@ -83,7 +83,7 @@ export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, se
             <h1 className="text-2xl font-bold text-white">Browse Teams</h1>
             <p className="text-sm text-white/40 mt-0.5">Discover and join an active team</p>
           </div>
-          {!currentTeam && session.role !== "SYSTEM_ADMIN" && (
+          {(session.role === "SYSTEM_ADMIN" || !currentTeam) && session.role !== "MENTOR" && (
             <Link
               href="/dashboard/teams/create"
               className="flex items-center gap-2 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl transition-colors self-start sm:self-auto"
@@ -165,10 +165,10 @@ export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, se
                             latestSub?.status === "APPROVED"
                               ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/25"
                               : latestSub?.status === "REVISION"
-                              ? "bg-rose-500/15 text-rose-400 border-rose-500/25"
-                              : latestSub?.status === "SUBMITTED"
-                              ? "bg-blue-500/15 text-blue-400 border-blue-500/25"
-                              : "bg-[#0d1117] text-white/40 border-white/5"
+                                ? "bg-rose-500/15 text-rose-400 border-rose-500/25"
+                                : latestSub?.status === "SUBMITTED"
+                                  ? "bg-blue-500/15 text-blue-400 border-blue-500/25"
+                                  : "bg-[#0d1117] text-white/40 border-white/5"
                           )}
                         >
                           {latestSub?.status === "APPROVED" && "Selesai"}

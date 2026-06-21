@@ -1,3 +1,4 @@
+// Cleaned team actions file
 "use server";
 
 import { prisma } from "@/lib/prisma";
@@ -190,6 +191,10 @@ export async function cancelJoinRequestAction(requestId: string) {
 export async function createTeamAction(data: { name: string; description?: string }) {
   const session = await getSession();
   if (!session) return { success: false, error: "UNAUTHORIZED" };
+  // Mentor role is not allowed to create a team
+  if (session.role === UserRole.MENTOR) {
+    return { success: false, error: "MENTOR_CANNOT_CREATE_TEAM" };
+  }
 
   const name = data.name.trim();
   if (!name || name.length < 3 || name.length > 60) {
@@ -202,12 +207,14 @@ export async function createTeamAction(data: { name: string; description?: strin
   }
 
   try {
-    // 1. Check if user is already in a team
-    const membership = await prisma.teamMembership.findFirst({
-      where: { userId: session.userId, leftAt: null },
-    });
-    if (membership) {
-      return { success: false, error: "ALREADY_IN_TEAM" };
+    // 1. Check if user is already in a team (skip for SYSTEM_ADMIN)
+    if (session.role !== UserRole.SYSTEM_ADMIN) {
+      const membership = await prisma.teamMembership.findFirst({
+        where: { userId: session.userId, leftAt: null },
+      });
+      if (membership) {
+        return { success: false, error: "ALREADY_IN_TEAM" };
+      }
     }
 
     // 2. Check name uniqueness
@@ -265,6 +272,7 @@ export async function createTeamAction(data: { name: string; description?: strin
   }
 }
 
+// --- Remaining actions (inviteMemberAction onward) ---
 export async function inviteMemberAction(username: string) {
   const session = await getSession();
   if (!session) return { success: false, error: "UNAUTHORIZED" };

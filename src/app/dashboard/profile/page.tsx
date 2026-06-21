@@ -30,11 +30,23 @@ export default async function ProfilePage() {
     },
   });
 
+  // Fetch current division memberships
+  const divisionMemberships = await prisma.divisionMembership.findMany({
+    where: { userId: user.id, leftAt: null },
+    include: {
+      division: true,
+    },
+  });
+
   return (
     <ProfileForm
       user={user}
       teamName={membership?.team.name ?? null}
       teamRole={membership?.role ?? null}
+      divisionMemberships={divisionMemberships.map((dm) => ({
+        divisionName: dm.division.name,
+        role: dm.role,
+      }))}
       session={session}
     />
   );
