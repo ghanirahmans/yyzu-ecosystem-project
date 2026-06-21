@@ -1,0 +1,317 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                             String               @id @default(uuid())
+  username                       String               @unique
+  email                          String?              @unique
+  passwordHash                   String
+  fullName                       String
+  status                         UserStatus           @default(PENDING_APPROVAL)
+  role                           UserRole             @default(MEMBER)
+  approvedBy                     String?
+  approvedAt                     DateTime?
+  createdAt                      DateTime             @default(now())
+  updatedAt                      DateTime             @updatedAt
+  deletedAt                      DateTime?
+  auditLogs                      AuditLog[]
+  divisionMemberships            DivisionMembership[]
+  invitationsSent                Invitation[]         @relation("InvitedBy")
+  invitationsReceived            Invitation[]         @relation("InvitedUser")
+  joinRequestsHandled            JoinRequest[]        @relation("ProcessedBy")
+  joinRequestsSent               JoinRequest[]        @relation("RequestedBy")
+  partnershipsAsPic              Partnership[]        @relation("PartnershipPic")
+  profile                        Profile?
+  programsCreated                Program[]            @relation("ProgramAuthor")
+  programsAsPic                  Program[]            @relation("ProgramPic")
+  submissions                    Submission[]
+  submissionsReviewed            Submission[]         @relation("SubmissionReviewer")
+  teamMemberships                TeamMembership[]
+  usefulLinks                    UsefulLink[]
+
+  @@index([status])
+}
+
+model Profile {
+  id        String   @id @default(uuid())
+  userId    String   @unique
+  bio       String?
+  avatarUrl String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Team {
+  id           String           @id @default(uuid())
+  name         String           @unique
+  description  String?
+  status       TeamStatus       @default(ACTIVE)
+  createdBy    String
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  deletedAt    DateTime?
+  invitations  Invitation[]
+  joinRequests JoinRequest[]
+  submissions  Submission[]
+  memberships  TeamMembership[]
+  usefulLinks  UsefulLink[]
+}
+
+model TeamMembership {
+  id       String    @id @default(uuid())
+  userId   String
+  teamId   String
+  role     TeamRole  @default(MEMBER)
+  joinedAt DateTime  @default(now())
+  leftAt   DateTime?
+  team     Team      @relation(fields: [teamId], references: [id])
+  user     User      @relation(fields: [userId], references: [id])
+
+  @@unique([userId, teamId])
+  @@index([teamId])
+}
+
+model JoinRequest {
+  id              String        @id @default(uuid())
+  userId          String
+  teamId          String
+  message         String?
+  status          RequestStatus @default(PENDING)
+  processedBy     String?
+  processedAt     DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  processedByUser User?         @relation("ProcessedBy", fields: [processedBy], references: [id])
+  team            Team          @relation(fields: [teamId], references: [id])
+  user            User          @relation("RequestedBy", fields: [userId], references: [id])
+
+  @@index([teamId, status])
+  @@index([userId, status])
+}
+
+model Invitation {
+  id            String           @id @default(uuid())
+  teamId        String
+  invitedBy     String
+  invitedUserId String
+  status        InvitationStatus @default(PENDING)
+  expiresAt     DateTime
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  invitedByUser User             @relation("InvitedBy", fields: [invitedBy], references: [id])
+  invitedUser   User             @relation("InvitedUser", fields: [invitedUserId], references: [id])
+  team          Team             @relation(fields: [teamId], references: [id])
+
+  @@index([invitedUserId, status])
+  @@index([teamId, status])
+}
+
+model UsefulLink {
+  id        String       @id @default(uuid())
+  teamId    String
+  title     String
+  url       String
+  category  LinkCategory
+  notes     String?
+  createdBy String
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  creator   User         @relation(fields: [createdBy], references: [id])
+  team      Team         @relation(fields: [teamId], references: [id])
+}
+
+model Submission {
+  id             String           @id @default(uuid())
+  teamId         String
+  submissionLink String?
+  status         SubmissionStatus @default(NOT_SUBMITTED)
+  submittedBy    String?
+  submittedAt    DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  feedback       String?
+  reviewedBy     String?
+  reviewedAt     DateTime?
+  submitter      User?            @relation(fields: [submittedBy], references: [id])
+  team           Team             @relation(fields: [teamId], references: [id])
+  reviewer       User?            @relation("SubmissionReviewer", fields: [reviewedBy], references: [id])
+}
+
+model Division {
+  id          String               @id @default(uuid())
+  name        DivisionName         @unique
+  description String?
+  memberships DivisionMembership[]
+  programs    Program[]            @relation("ProgramDivisions")
+}
+
+model DivisionMembership {
+  id         String       @id @default(uuid())
+  userId     String
+  divisionId String
+  role       DivisionRole @default(STAFF)
+  joinedAt   DateTime     @default(now())
+  leftAt     DateTime?
+  division   Division     @relation(fields: [divisionId], references: [id])
+  user       User         @relation(fields: [userId], references: [id])
+
+  @@unique([userId, divisionId])
+}
+
+model Program {
+  id                          String                @id @default(uuid())
+  title                       String
+  description                 String?
+  status                      ProgramStatus         @default(DRAFT)
+  picUserId                   String?
+  startDate                   DateTime?
+  endDate                     DateTime?
+  createdAt                   DateTime              @default(now())
+  updatedAt                   DateTime              @updatedAt
+  approvalStatus              ProgramApprovalStatus @default(PENDING)
+  authorId                    String?
+  author                      User?                 @relation("ProgramAuthor", fields: [authorId], references: [id])
+  pic                         User?                 @relation("ProgramPic", fields: [picUserId], references: [id])
+  divisions                   Division[]            @relation("ProgramDivisions")
+
+  @@index([status])
+}
+
+model Partnership {
+  id          String            @id @default(uuid())
+  name        String
+  type        PartnershipType
+  status      PartnershipStatus @default(PROSPECT)
+  contactName String?
+  contactInfo String?
+  notes       String?
+  picUserId   String?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  pic         User?             @relation("PartnershipPic", fields: [picUserId], references: [id])
+
+  @@index([status])
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  actorId    String?
+  action     String
+  entityType String
+  entityId   String
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  actor      User?    @relation(fields: [actorId], references: [id])
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+enum UserStatus {
+  PENDING_APPROVAL
+  ACTIVE
+  SUSPENDED
+  REJECTED
+}
+
+enum UserRole {
+  MEMBER
+  MENTOR
+  SYSTEM_ADMIN
+}
+
+enum TeamRole {
+  MEMBER
+  TEAM_LEADER
+}
+
+enum TeamStatus {
+  ACTIVE
+  SUSPENDED
+  ARCHIVED
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  EXPIRED
+}
+
+enum LinkCategory {
+  GITHUB
+  JIRA
+  NOTION
+  FIGMA
+  DISCORD
+  GOOGLE_DRIVE
+  DOCUMENTATION
+  OTHER
+}
+
+enum SubmissionStatus {
+  NOT_SUBMITTED
+  SUBMITTED
+  APPROVED
+  REVISION
+}
+
+enum DivisionName {
+  PARTNERSHIP
+  SDM_MANAGEMENT
+  EVENT_ORGANIZER
+  PRODUCT_PROJECT_MANAGEMENT
+  LEARNING_CURRICULUM
+  MEDIA_BRANDING
+  KOORDINATOR_UMUM
+}
+
+enum DivisionRole {
+  HEAD
+  STAFF
+}
+
+enum ProgramStatus {
+  DRAFT
+  PERSIAPAN
+  PUBLIKASI
+  EVALUASI
+  SELESAI
+  DIBATALKAN
+}
+
+enum PartnershipType {
+  KAMPUS
+  INDUSTRI
+  KOMUNITAS
+  MENTOR_INDIVIDUAL
+}
+
+enum PartnershipStatus {
+  PROSPECT
+  CONTACTED
+  NEGOTIATING
+  ACTIVE
+  INACTIVE
+}
+
+enum ProgramApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  DRAFT
+}

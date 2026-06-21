@@ -10,9 +10,9 @@ export default function LayoutWrapper({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isDocs = pathname?.startsWith("/docs");
+  const isCustomLayout = pathname?.startsWith("/docs") || pathname?.startsWith("/dashboard");
 
-  if (isDocs) {
+  if (isCustomLayout) {
     return <>{children}</>;
   }
 

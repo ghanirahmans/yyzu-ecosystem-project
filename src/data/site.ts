@@ -24,6 +24,7 @@ export const navigation = [
   { label: "Build Logs", href: "/projects/" },
   { label: "Mentor & Partner", href: "/mentor-partnership/" },
   { label: "Wiki Docs", href: "/docs/" },
+  { label: "Dashboard", href: "/dashboard/" },
   { label: "Join", href: "/join/" },
   { label: "FAQ", href: "/faq/" },
 ];
