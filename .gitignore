@@ -47,4 +47,6 @@ yarn-error.log*
 /.vscode/
 
 
+#agents skill
+.agents
 
