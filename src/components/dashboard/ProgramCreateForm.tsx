@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save, AlertCircle } from "lucide-react";
-import { createProgramAction } from "@/app/actions/program";
+import { actionCreateProgram } from "@/features/program/actions";
 import { cn } from "@/lib/utils";
 
 interface DivisionOption {
@@ -57,7 +57,7 @@ export default function ProgramCreateForm({ divisions, users, isManager, default
     setError(null);
 
     try {
-      const res = await createProgramAction({
+      const res = await actionCreateProgram({
         title,
         description,
         divisionIds,
@@ -66,7 +66,7 @@ export default function ProgramCreateForm({ divisions, users, isManager, default
         endDate,
       });
 
-      if (res.success && res.programId) {
+      if (res.success) {
         router.push(`/dashboard/programs/${res.programId}`);
         router.refresh();
       } else {

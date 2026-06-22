@@ -2,7 +2,7 @@ import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { Users, AtSign, Shield, Star } from "lucide-react";
+import { Users, AtSign, Shield, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { getInitials, stringToColor, cn } from "@/lib/utils";
 
@@ -27,25 +27,45 @@ function getRoleBadge(role: string) {
   return { label: "Member", color: "bg-white/8 text-white/50 border-white/10" };
 }
 
-export default async function MembersPage() {
+export default async function MembersPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
   const session = await getSession();
   if (!session) redirect("/dashboard/login");
 
-  const users = await prisma.user.findMany({
-    where: { status: "ACTIVE", deletedAt: null },
-    orderBy: { fullName: "asc" },
-    include: {
-      profile: { select: { bio: true, avatarUrl: true } },
-      teamMemberships: {
-        where: { leftAt: null },
-        include: { team: { select: { name: true } } },
+  const resolvedSearchParams = await searchParams;
+  const page = parseInt(resolvedSearchParams.page || "1", 10);
+  const take = 20;
+  const skip = (page - 1) * take;
+
+  const [users, total] = await Promise.all([
+    prisma.user.findMany({
+      where: { status: "ACTIVE", deletedAt: null },
+      orderBy: { fullName: "asc" },
+      skip,
+      take,
+      include: {
+        profile: { select: { bio: true, avatarUrl: true } },
+        teamMemberships: {
+          where: { leftAt: null },
+          include: { team: { select: { name: true } } },
+        },
+        divisionMemberships: {
+          where: { leftAt: null },
+          include: { division: { select: { name: true } } },
+        },
       },
-      divisionMemberships: {
-        where: { leftAt: null },
-        include: { division: { select: { name: true } } },
-      },
-    },
-  });
+    }),
+    prisma.user.count({ where: { status: "ACTIVE", deletedAt: null } }),
+  ]);
+
+  const totalPages = Math.ceil(total / take);
+
+  const buildUrl = (targetPage: number) => {
+    return `/dashboard/members?page=${targetPage}`;
+  };
 
   return (
     <DashboardShell user={session}>
@@ -54,9 +74,10 @@ export default async function MembersPage() {
         <div>
           <h1 className="text-2xl font-bold text-white tracking-tight">Anggota</h1>
           <p className="text-sm text-white/60 mt-1">
-            {users.length} anggota aktif di ekosistem YYZU
+            {total} anggota aktif di ekosistem YYZU
           </p>
         </div>
+
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -143,7 +164,36 @@ export default async function MembersPage() {
             <p className="text-sm">Belum ada anggota aktif.</p>
           </div>
         )}
+
+        {totalPages > 1 && (
+          <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#161b22]/90 backdrop-blur border border-white/10 px-4 py-2.5 rounded-xl shadow-2xl transition-all hover:border-white/15">
+            <Link
+              href={page > 1 ? buildUrl(page - 1) : "#"}
+              className={`p-1.5 rounded-lg border transition-colors ${
+                page > 1
+                  ? "border-white/10 hover:bg-white/5 text-white/80"
+                  : "border-white/5 text-white/20 pointer-events-none"
+              }`}
+            >
+              <ChevronLeft size={16} />
+            </Link>
+            <span className="text-xs font-medium text-white/60 px-1">
+              Page {page} of {totalPages}
+            </span>
+            <Link
+              href={page < totalPages ? buildUrl(page + 1) : "#"}
+              className={`p-1.5 rounded-lg border transition-colors ${
+                page < totalPages
+                  ? "border-white/10 hover:bg-white/5 text-white/80"
+                  : "border-white/5 text-white/20 pointer-events-none"
+              }`}
+            >
+              <ChevronRight size={16} />
+            </Link>
+          </div>
+        )}
       </div>
     </DashboardShell>
   );
 }
+

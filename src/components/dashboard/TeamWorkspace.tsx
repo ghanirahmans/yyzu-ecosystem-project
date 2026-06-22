@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate, formatDateTime, timeAgo, getInitials, stringToColor, isValidUrl } from "@/lib/utils";
+import type { JWTSessionPayload } from "@/lib/auth";
 import {
   inviteMemberAction,
   removeMemberAction,
@@ -167,7 +168,7 @@ interface TeamWorkspaceProps {
   usefulLinks: UsefulLinkItem[];
   submissions: SubmissionItem[];
   userRole: string | null;
-  session: any;
+  session: JWTSessionPayload;
 }
 
 export default function TeamWorkspace({

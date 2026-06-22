@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Eye, EyeOff, UserPlus, AlertCircle, CheckCircle2 } from "lucide-react";
-import { registerAction } from "@/app/actions/auth";
+import { actionRegister } from "@/features/auth/actions";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -61,7 +61,7 @@ export default function RegisterPage() {
 
     setLoading(true);
     try {
-      const res = await registerAction(form);
+      const res = await actionRegister(form);
       if (res.success) {
         setSuccess(true);
         setTimeout(() => router.push("/dashboard/login"), 2000);

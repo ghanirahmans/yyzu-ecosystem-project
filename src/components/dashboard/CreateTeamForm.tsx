@@ -7,9 +7,10 @@ import Link from "next/link";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn } from "@/lib/utils";
 import { createTeamAction } from "@/features/team/actions";
+import type { JWTSessionPayload } from "@/lib/auth";
 
 interface CreateTeamFormProps {
-  session: any;
+  session: JWTSessionPayload;
 }
 
 export default function CreateTeamForm({ session }: CreateTeamFormProps) {

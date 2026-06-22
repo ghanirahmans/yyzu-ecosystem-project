@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Edit3, Save, Phone, User, Building2, ShieldCheck, CheckCircle2, AlertCircle } from "lucide-react";
-import { updatePartnershipAction } from "@/app/actions/partnership";
+import { actionUpdatePartnership } from "@/features/partnership/actions";
 import { PartnershipType, PartnershipStatus } from "@prisma/client";
+import type { JWTSessionPayload } from "@/lib/auth";
 
 interface UserOption {
   id: string;
@@ -27,7 +28,7 @@ interface PartnershipDetailViewProps {
   };
   users: UserOption[];
   canEdit: boolean;
-  session: any;
+  session: JWTSessionPayload;
 }
 
 const PARTNERSHIP_STATUSES: PartnershipStatus[] = ["PROSPECT", "CONTACTED", "NEGOTIATING", "ACTIVE", "INACTIVE"];
@@ -70,7 +71,7 @@ export default function PartnershipDetailView({ partnership, users, canEdit, ses
     setSuccess(null);
 
     try {
-      const res = await updatePartnershipAction(partnership.id, {
+      const res = await actionUpdatePartnership(partnership.id, {
         name,
         type,
         status: newStatus,
@@ -106,7 +107,7 @@ export default function PartnershipDetailView({ partnership, users, canEdit, ses
     setSuccess(null);
 
     try {
-      const res = await updatePartnershipAction(partnership.id, {
+      const res = await actionUpdatePartnership(partnership.id, {
         name,
         type,
         status,

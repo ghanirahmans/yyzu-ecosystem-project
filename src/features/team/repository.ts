@@ -71,20 +71,34 @@ export async function dbUpdateTeam(
 }
 
 export async function dbSoftDeleteTeam(teamId: string): Promise<void> {
-  await prisma.$transaction([
-    prisma.team.update({
+  await prisma.$transaction(async (tx) => {
+    const team = await tx.team.findUnique({
       where: { id: teamId },
-      data: { deletedAt: new Date() },
-    }),
-    prisma.teamMembership.updateMany({
+      select: { name: true },
+    });
+
+    if (!team) {
+      throw new Error(`Team with ID ${teamId} not found`);
+    }
+
+    await tx.team.update({
+      where: { id: teamId },
+      data: {
+        name: `${team.name}_deleted_${Date.now()}`,
+        deletedAt: new Date(),
+      },
+    });
+
+    await tx.teamMembership.updateMany({
       where: { teamId },
       data: { leftAt: new Date() },
-    }),
-    prisma.joinRequest.updateMany({
+    });
+
+    await tx.joinRequest.updateMany({
       where: { teamId, status: RequestStatus.PENDING },
       data: { status: RequestStatus.CANCELLED },
-    }),
-  ]);
+    });
+  });
 }
 
 export async function dbArchiveTeam(teamId: string): Promise<void> {

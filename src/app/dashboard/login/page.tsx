@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Eye, EyeOff, LogIn, AlertCircle } from "lucide-react";
-import { loginAction } from "@/app/actions/auth";
+import { actionLogin } from "@/features/auth/actions";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -32,7 +32,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const result = await loginAction({ username, password });
+      const result = await actionLogin({ username, password });
       if (result.success) {
         // Refresh the router to trigger middleware state checks and redirect to dashboard
         router.push("/dashboard");

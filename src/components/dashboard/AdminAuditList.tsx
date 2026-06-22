@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ScrollText, Search, Filter } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDateTime, getInitials, stringToColor } from "@/lib/utils";
+import type { JWTSessionPayload } from "@/lib/auth";
 
 const ACTION_BADGE: Record<string, { label: string; color: string }> = {
   USER_REGISTER: { label: "User Registered", color: "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20" },
@@ -34,7 +35,7 @@ interface AuditLogItem {
   action: string;
   entityType: string;
   entityId: string;
-  metadata: any;
+  metadata: import("@prisma/client").Prisma.JsonValue;
   createdAt: Date;
   actor: {
     username: string;
@@ -44,7 +45,7 @@ interface AuditLogItem {
 
 interface AdminAuditListProps {
   logs: AuditLogItem[];
-  session: any;
+  session: JWTSessionPayload;
 }
 
 export default function AdminAuditList({ logs, session }: AdminAuditListProps) {

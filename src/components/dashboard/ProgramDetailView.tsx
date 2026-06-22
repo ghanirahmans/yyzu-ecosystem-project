@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Edit3, Save, Calendar, User, Layers, ShieldCheck, CheckCircle2, AlertCircle } from "lucide-react";
-import { updateProgramAction, updateProgramStatusAction, approveProgramAction } from "@/app/actions/program";
+import { actionUpdateProgram, actionUpdateProgramStatus, actionApproveProgram } from "@/features/program/actions";
 import { ProgramStatus, ProgramApprovalStatus } from "@prisma/client";
+import type { JWTSessionPayload } from "@/lib/auth";
 
 interface DivisionOption {
   id: string;
@@ -38,7 +39,7 @@ interface ProgramDetailViewProps {
   canEdit: boolean;
   isManager: boolean;
   canModerate: boolean;
-  session: any;
+  session: JWTSessionPayload;
 }
 
 const PROGRAM_STATUSES: ProgramStatus[] = ["DRAFT", "PERSIAPAN", "PUBLIKASI", "EVALUASI", "SELESAI", "DIBATALKAN"];
@@ -106,7 +107,7 @@ export default function ProgramDetailView({
     setSuccess(null);
 
     try {
-      const res = await updateProgramStatusAction(program.id, newStatus);
+      const res = await actionUpdateProgramStatus(program.id, newStatus);
       if (res.success) {
         setSuccess(`Status program berhasil diubah menjadi ${STATUS_DETAILS[newStatus].label}.`);
         router.refresh();
@@ -128,7 +129,7 @@ export default function ProgramDetailView({
     setSuccess(null);
 
     try {
-      const res = await approveProgramAction(program.id, newApprovalStatus);
+      const res = await actionApproveProgram(program.id, newApprovalStatus);
       if (res.success) {
         setSuccess(`Status persetujuan program berhasil diubah menjadi ${PROGRAM_APPROVAL_STATUS_LABELS[newApprovalStatus].label}.`);
         router.refresh();
@@ -158,7 +159,7 @@ export default function ProgramDetailView({
     setSuccess(null);
 
     try {
-      const res = await updateProgramAction(program.id, {
+      const res = await actionUpdateProgram(program.id, {
         title,
         description,
         divisionIds,

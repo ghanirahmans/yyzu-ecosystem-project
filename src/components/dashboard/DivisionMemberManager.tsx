@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { addDivisionMemberAction, removeDivisionMemberAction, changeDivisionRoleAction } from "@/app/actions/division";
+import { actionAddDivisionMember, actionRemoveDivisionMember, actionChangeDivisionRole } from "@/features/division/actions";
 import { Crown, Trash2, Plus, ShieldAlert, CheckCircle2 } from "lucide-react";
 import { getInitials, stringToColor } from "@/lib/utils";
 
@@ -39,7 +39,7 @@ export default function DivisionMemberManager({ divisionId, memberships, isAdmin
     setSuccess(null);
 
     try {
-      const res = await addDivisionMemberAction(divisionId, newUsername.trim(), newRole);
+      const res = await actionAddDivisionMember(divisionId, newUsername.trim(), newRole);
       if (res.success) {
         setSuccess(`User @${newUsername} berhasil ditambahkan.`);
         setNewUsername("");
@@ -62,7 +62,7 @@ export default function DivisionMemberManager({ divisionId, memberships, isAdmin
     setSuccess(null);
 
     try {
-      const res = await removeDivisionMemberAction(divisionId, membershipId);
+      const res = await actionRemoveDivisionMember(divisionId, membershipId);
       if (res.success) {
         setSuccess(`User @${username} berhasil dikeluarkan.`);
         router.refresh();
@@ -82,7 +82,7 @@ export default function DivisionMemberManager({ divisionId, memberships, isAdmin
     setSuccess(null);
 
     try {
-      const res = await changeDivisionRoleAction(divisionId, membershipId, role);
+      const res = await actionChangeDivisionRole(divisionId, membershipId, role);
       if (res.success) {
         setSuccess(`Role @${username} diubah menjadi ${role}.`);
         router.refresh();

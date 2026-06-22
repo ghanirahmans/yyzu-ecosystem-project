@@ -453,7 +453,9 @@ export async function updateTeamInfo(
   }
 
   await dbUpdateTeam(teamId, { name, description });
-  await createAuditLog(actor.id, "TEAM_UPDATED", "Team", teamId, { name, description });
+  const auditMeta: Record<string, string | number | boolean> = { name };
+  if (description) auditMeta.description = description;
+  await createAuditLog(actor.id, "TEAM_UPDATED", "Team", teamId, auditMeta);
 
   return { success: true };
 }
@@ -538,12 +540,17 @@ export async function reviewSubmission(
     await dbArchiveTeam(teamId);
   }
 
+  const auditMeta: Record<string, string | number | boolean> = {
+    submissionId: latestSubmission.id,
+  };
+  if (feedback) auditMeta.feedback = feedback;
+
   await createAuditLog(
     actor.id,
     status === "APPROVED" ? "TEAM_SUBMISSION_APPROVE" : "TEAM_SUBMISSION_REVISION",
     "Team",
     teamId,
-    { submissionId: latestSubmission.id, feedback }
+    auditMeta
   );
 
   return { success: true };

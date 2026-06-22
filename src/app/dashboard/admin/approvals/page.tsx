@@ -3,29 +3,85 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { UserRole, UserStatus } from "@prisma/client";
 import AdminUsersList from "@/components/dashboard/AdminUsersList";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default async function AdminApprovalsPage() {
+export default async function AdminApprovalsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
   const session = await getSession();
 
   if (!session || session.role !== UserRole.SYSTEM_ADMIN) {
     redirect("/dashboard");
   }
 
-  // Load only users pending approval
-  const users = await prisma.user.findMany({
-    where: { deletedAt: null, status: UserStatus.PENDING_APPROVAL },
-    include: {
-      teamMemberships: {
-        where: { leftAt: null },
-        include: {
-          team: {
-            select: { name: true },
+  const resolvedSearchParams = await searchParams;
+  const page = parseInt(resolvedSearchParams.page || "1", 10);
+  const take = 20;
+  const skip = (page - 1) * take;
+
+  // Load users pending approval with pagination and count
+  const [users, total] = await Promise.all([
+    prisma.user.findMany({
+      where: { deletedAt: null, status: UserStatus.PENDING_APPROVAL },
+      skip,
+      take,
+      include: {
+        teamMemberships: {
+          where: { leftAt: null },
+          include: {
+            team: {
+              select: { name: true },
+            },
           },
         },
       },
-    },
-    orderBy: { createdAt: "desc" },
-  });
+      orderBy: { createdAt: "desc" },
+    }),
+    prisma.user.count({
+      where: { deletedAt: null, status: UserStatus.PENDING_APPROVAL },
+    }),
+  ]);
 
-  return <AdminUsersList users={users} session={session} />;
+  const totalPages = Math.ceil(total / take);
+
+  const buildUrl = (targetPage: number) => {
+    return `/dashboard/admin/approvals?page=${targetPage}`;
+  };
+
+  return (
+    <>
+      <AdminUsersList users={users} session={session} />
+      {totalPages > 1 && (
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#161b22]/90 backdrop-blur border border-white/10 px-4 py-2.5 rounded-xl shadow-2xl transition-all hover:border-white/15">
+          <Link
+            href={page > 1 ? buildUrl(page - 1) : "#"}
+            className={`p-1.5 rounded-lg border transition-colors ${
+              page > 1
+                ? "border-white/10 hover:bg-white/5 text-white/80"
+                : "border-white/5 text-white/20 pointer-events-none"
+            }`}
+          >
+            <ChevronLeft size={16} />
+          </Link>
+          <span className="text-xs font-medium text-white/60 px-1">
+            Page {page} of {totalPages}
+          </span>
+          <Link
+            href={page < totalPages ? buildUrl(page + 1) : "#"}
+            className={`p-1.5 rounded-lg border transition-colors ${
+              page < totalPages
+                ? "border-white/10 hover:bg-white/5 text-white/80"
+                : "border-white/5 text-white/20 pointer-events-none"
+            }`}
+          >
+            <ChevronRight size={16} />
+          </Link>
+        </div>
+      )}
+    </>
+  );
 }
+

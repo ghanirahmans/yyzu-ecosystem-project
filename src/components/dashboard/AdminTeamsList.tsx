@@ -5,6 +5,7 @@ import { Search, Users, AlertTriangle, CheckCircle2, Trash2, AlertCircle, Clock 
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate } from "@/lib/utils";
 import { toggleTeamSuspensionAction, forceDeleteTeamAction } from "@/app/actions/admin";
+import type { JWTSessionPayload } from "@/lib/auth";
 
 interface TeamItem {
   id: string;
@@ -25,7 +26,7 @@ interface TeamItem {
 
 interface AdminTeamsListProps {
   teams: TeamItem[];
-  session: any;
+  session: JWTSessionPayload;
 }
 
 export default function AdminTeamsList({ teams, session }: AdminTeamsListProps) {

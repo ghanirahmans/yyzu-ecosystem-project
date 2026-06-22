@@ -17,10 +17,10 @@ import {
   ScrollText,
 } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
+import { UserStatus, UserRole, TeamRole, User, TeamMembership, UsefulLink, Submission, Invitation, AuditLog } from "@prisma/client";
 import InboundInvitations from "@/components/dashboard/InboundInvitations";
 import { cn, formatDate, getInitials, stringToColor } from "@/lib/utils";
 import Link from "next/link";
-import { UserStatus, UserRole, TeamRole } from "@prisma/client";
 
 export default async function DashboardPage() {
   const session = await getSession();
@@ -43,17 +43,26 @@ export default async function DashboardPage() {
   // ── Gather Data based on Role ───────────────────────────────
   let currentTeam = null;
   let currentTeamRole: TeamRole | null = null;
-  let members: any[] = [];
-  let links: any[] = [];
-  let submission: any = null;
+  let members: (TeamMembership & { user: User })[] = [];
+  let links: UsefulLink[] = [];
+  let submission: Submission | null = null;
   let pendingRequestsCount = 0;
-  let inboundInvites: any[] = [];
+  let inboundInvites: {
+    id: string;
+    expiresAt: Date;
+    team: {
+      name: string;
+    };
+    invitedByUser: {
+      fullName: string;
+    };
+  }[] = [];
 
   // Admin specific stats
   let totalUsers = 0;
   let totalTeams = 0;
   let pendingApprovals = 0;
-  let recentLogs: any[] = [];
+  let recentLogs: (AuditLog & { actor: { username: string; fullName: string } | null })[] = [];
 
   if (isAdmin) {
     totalUsers = await prisma.user.count({ where: { deletedAt: null } });
@@ -107,12 +116,8 @@ export default async function DashboardPage() {
       }
     } else {
       // Teamless member: fetch inbound invitations
-      inboundInvites = await prisma.invitation.findMany({
-        where: {
-          invitedUserId: user.id,
-          status: "PENDING",
-          expiresAt: { gt: new Date() },
-        },
+      const rawInvites = await prisma.invitation.findMany({
+        where: { invitedUserId: user.id, status: "PENDING", expiresAt: { gt: new Date() } },
         include: {
           team: {
             select: { name: true },
@@ -122,6 +127,12 @@ export default async function DashboardPage() {
           },
         },
       });
+      inboundInvites = rawInvites.map((invite) => ({
+        id: invite.id,
+        expiresAt: invite.expiresAt,
+        team: invite.team,
+        invitedByUser: invite.invitedByUser || { fullName: "System" },
+      }));
     }
   }
 

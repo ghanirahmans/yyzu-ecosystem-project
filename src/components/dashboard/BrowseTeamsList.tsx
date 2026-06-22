@@ -6,6 +6,7 @@ import { Search, Plus, Users, Calendar, ChevronRight, AlertTriangle, Send, Alert
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate } from "@/lib/utils";
 import { sendJoinRequestAction, cancelJoinRequestAction } from "@/features/team/actions";
+import type { JWTSessionPayload } from "@/lib/auth";
 
 interface TeamItem {
   id: string;
@@ -35,11 +36,11 @@ interface BrowseTeamsListProps {
     id: string;
     name: string;
   } | null;
-  session: any;
+  session: JWTSessionPayload;
+  searchQuery?: string;
 }
 
-export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, session }: BrowseTeamsListProps) {
-  const [query, setQuery] = useState("");
+export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, session, searchQuery = "" }: BrowseTeamsListProps) {
   const [loadingId, setLoadingId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -69,10 +70,7 @@ export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, se
     }
   };
 
-  const filtered = teams.filter((t) =>
-    t.name.toLowerCase().includes(query.toLowerCase()) ||
-    (t.description ?? "").toLowerCase().includes(query.toLowerCase())
-  );
+  // Removed client-side search filter logic
 
   return (
     <DashboardShell user={session}>
@@ -110,26 +108,26 @@ export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, se
         )}
 
         {/* Search */}
-        <div className="relative">
+        <form method="GET" action="/dashboard/teams" className="relative">
           <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" />
           <input
             type="text"
+            name="q"
             placeholder="Search teams by name or description…"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            defaultValue={searchQuery}
             className="w-full bg-[#161b22] border border-white/10 rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/50 transition-all"
           />
-        </div>
+        </form>
 
         {/* Teams list */}
-        {filtered.length === 0 ? (
+        {teams.length === 0 ? (
           <div className="text-center py-16 text-white/30 bg-[#161b22] border border-white/8 rounded-2xl">
             <Users size={32} className="mx-auto mb-3 opacity-30" />
-            <p className="text-sm">No teams found matching &quot;{query}&quot;</p>
+            <p className="text-sm">No teams found matching &quot;{searchQuery}&quot;</p>
           </div>
         ) : (
           <div className="space-y-3">
-            {filtered.map((team) => {
+            {teams.map((team) => {
               const isSuspended = team.status === "SUSPENDED";
               const isMyTeam = currentTeam?.id === team.id;
               const leader = team.memberships.find((m) => m.role === "TEAM_LEADER");

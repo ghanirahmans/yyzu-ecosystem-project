@@ -5,6 +5,7 @@ import { Search, Shield, UserX, UserCheck, ChevronDown, Check, X, AlertCircle } 
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate, getInitials, stringToColor } from "@/lib/utils";
 import { approveUserAction, rejectUserAction, toggleUserSuspensionAction } from "@/app/actions/admin";
+import type { JWTSessionPayload } from "@/lib/auth";
 
 interface UserItem {
   id: string;
@@ -24,7 +25,7 @@ interface UserItem {
 
 interface AdminUsersListProps {
   users: UserItem[];
-  session: any;
+  session: JWTSessionPayload;
 }
 
 export default function AdminUsersList({ users, session }: AdminUsersListProps) {

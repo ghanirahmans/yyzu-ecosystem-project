@@ -19,6 +19,7 @@ import {
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, getInitials, stringToColor } from "@/lib/utils";
 import { updateTeamInfoAction, transferLeadershipAction, deleteTeamAction, leaveTeamAction } from "@/features/team/actions";
+import type { JWTSessionPayload } from "@/lib/auth";
 
 interface MemberItem {
   role: string;
@@ -38,7 +39,7 @@ interface TeamSettingsFormProps {
   };
   members: MemberItem[];
   userRole: string;
-  session: any;
+  session: JWTSessionPayload;
 }
 
 export default function TeamSettingsForm({ team, members, userRole, session }: TeamSettingsFormProps) {

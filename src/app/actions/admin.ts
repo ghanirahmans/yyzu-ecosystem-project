@@ -6,12 +6,23 @@ import { createAuditLog } from "@/lib/audit";
 import { UserStatus, UserRole, TeamStatus, TeamRole } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
-// Helper to check if current user is an admin
+// Helper to check if current user is an admin — queries DB for live role + status verification
 async function requireAdmin() {
   const session = await getSession();
-  if (!session || session.role !== UserRole.SYSTEM_ADMIN) {
+  if (!session) {
     throw new Error("UNAUTHORIZED");
   }
+
+  // Live DB check — never trust JWT payload alone for sensitive operations
+  const dbUser = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { role: true, status: true },
+  });
+
+  if (!dbUser || dbUser.status !== UserStatus.ACTIVE || dbUser.role !== UserRole.SYSTEM_ADMIN) {
+    throw new Error("UNAUTHORIZED");
+  }
+
   return session;
 }
 
@@ -38,8 +49,9 @@ export async function approveUserAction(userId: string) {
     revalidatePath("/dashboard/admin/users");
     revalidatePath("/dashboard");
     return { success: true };
-  } catch (error: any) {
-    return { success: false, error: error.message || "SERVER_ERROR" };
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : "SERVER_ERROR";
+    return { success: false, error: errMsg };
   }
 }
 
@@ -66,8 +78,9 @@ export async function rejectUserAction(userId: string) {
     revalidatePath("/dashboard/admin/users");
     revalidatePath("/dashboard");
     return { success: true };
-  } catch (error: any) {
-    return { success: false, error: error.message || "SERVER_ERROR" };
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : "SERVER_ERROR";
+    return { success: false, error: errMsg };
   }
 }
 
@@ -92,8 +105,9 @@ export async function toggleUserSuspensionAction(userId: string) {
     revalidatePath("/dashboard/admin/users");
     revalidatePath("/dashboard");
     return { success: true };
-  } catch (error: any) {
-    return { success: false, error: error.message || "SERVER_ERROR" };
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : "SERVER_ERROR";
+    return { success: false, error: errMsg };
   }
 }
 
@@ -120,8 +134,9 @@ export async function toggleTeamSuspensionAction(teamId: string) {
     revalidatePath("/dashboard/admin/teams");
     revalidatePath("/dashboard");
     return { success: true };
-  } catch (error: any) {
-    return { success: false, error: error.message || "SERVER_ERROR" };
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : "SERVER_ERROR";
+    return { success: false, error: errMsg };
   }
 }
 
@@ -158,8 +173,9 @@ export async function forceDeleteTeamAction(teamId: string) {
     revalidatePath("/dashboard/admin/teams");
     revalidatePath("/dashboard");
     return { success: true };
-  } catch (error: any) {
-    return { success: false, error: error.message || "SERVER_ERROR" };
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : "SERVER_ERROR";
+    return { success: false, error: errMsg };
   }
 }
 
@@ -194,7 +210,8 @@ export async function forceTransferTeamLeadershipAction(teamId: string, newLeade
     revalidatePath("/dashboard/admin/teams");
     revalidatePath("/dashboard");
     return { success: true };
-  } catch (error: any) {
-    return { success: false, error: error.message || "SERVER_ERROR" };
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : "SERVER_ERROR";
+    return { success: false, error: errMsg };
   }
 }

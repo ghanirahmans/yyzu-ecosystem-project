@@ -15,9 +15,10 @@ import {
   Users,
   Star,
 } from "lucide-react";
+import type { JWTSessionPayload } from "@/lib/auth";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate, getInitials, stringToColor } from "@/lib/utils";
-import { updateProfileAction } from "@/app/actions/profile";
+import { actionUpdateProfile } from "@/features/profile/actions";
 
 const DIVISION_LABELS: Record<string, string> = {
   PARTNERSHIP: "Partnership",
@@ -51,7 +52,7 @@ interface ProfileFormProps {
   teamName: string | null;
   teamRole: string | null;
   divisionMemberships: DivisionMembershipInfo[];
-  session: any;
+  session: JWTSessionPayload;
 }
 
 export default function ProfileForm({
@@ -100,7 +101,7 @@ export default function ProfileForm({
     setServerError(null);
 
     try {
-      const res = await updateProfileAction(form);
+      const res = await actionUpdateProfile(form);
       if (res.success) {
         setEditing(false);
         setSaved(true);

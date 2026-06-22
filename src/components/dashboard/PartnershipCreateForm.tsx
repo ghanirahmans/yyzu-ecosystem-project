@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save, AlertCircle } from "lucide-react";
-import { createPartnershipAction } from "@/app/actions/partnership";
+import { actionCreatePartnership } from "@/features/partnership/actions";
 import { PartnershipType, PartnershipStatus } from "@prisma/client";
 
 interface UserOption {
@@ -40,7 +40,7 @@ export default function PartnershipCreateForm({ users }: PartnershipCreateFormPr
     setError(null);
 
     try {
-      const res = await createPartnershipAction({
+      const res = await actionCreatePartnership({
         name,
         type,
         status,
@@ -50,7 +50,7 @@ export default function PartnershipCreateForm({ users }: PartnershipCreateFormPr
         picUserId,
       });
 
-      if (res.success && res.partnershipId) {
+      if (res.success) {
         router.push(`/dashboard/partnerships/${res.partnershipId}`);
         router.refresh();
       } else {
