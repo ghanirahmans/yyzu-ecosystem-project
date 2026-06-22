@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Search, Plus, Users, Calendar, ChevronRight, AlertTriangle, Send, AlertCircle, XCircle } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate } from "@/lib/utils";
-import { sendJoinRequestAction, cancelJoinRequestAction } from "@/app/actions/team";
+import { sendJoinRequestAction, cancelJoinRequestAction } from "@/features/team/actions";
 
 interface TeamItem {
   id: string;

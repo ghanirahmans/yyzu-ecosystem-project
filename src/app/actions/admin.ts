@@ -129,11 +129,19 @@ export async function forceDeleteTeamAction(teamId: string) {
   try {
     const admin = await requireAdmin();
 
-    // Soft delete team and related models
+    // Fetch team first to get current name for rename
+    const team = await prisma.team.findUnique({ where: { id: teamId } });
+    if (!team) return { success: false, error: "TEAM_NOT_FOUND" };
+
+    // Rename team before soft-delete to free up the unique name constraint
+    // so the same name can be reused in the future
     await prisma.$transaction([
       prisma.team.update({
         where: { id: teamId },
-        data: { deletedAt: new Date() },
+        data: {
+          name: `${team.name}_deleted_${Date.now()}`,
+          deletedAt: new Date(),
+        },
       }),
       prisma.teamMembership.updateMany({
         where: { teamId },

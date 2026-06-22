@@ -1,4 +1,5 @@
-import { getSession, destroySession } from "@/lib/auth";
+import { getSession, setSession, destroySession } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { Clock, LogOut } from "lucide-react";
 
@@ -9,8 +10,32 @@ export default async function PendingPage() {
     redirect("/dashboard/login");
   }
 
-  if (session.status !== "PENDING_APPROVAL") {
+  // Query DB untuk status terkini — jangan percaya JWT payload saja
+  const dbUser = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { id: true, status: true, username: true, role: true, fullName: true },
+  });
+
+  // User tidak ada di DB → paksa logout
+  if (!dbUser) {
+    redirect("/dashboard/login");
+  }
+
+  // User sudah di-approve → regenerate session dengan data terbaru lalu redirect
+  if (dbUser.status === "ACTIVE") {
+    await setSession({
+      userId: dbUser.id,
+      username: dbUser.username,
+      role: dbUser.role,
+      status: dbUser.status,
+      fullName: dbUser.fullName,
+    });
     redirect("/dashboard");
+  }
+
+  // User bukan PENDING_APPROVAL (misalnya SUSPENDED/REJECTED) → redirect ke login
+  if (dbUser.status !== "PENDING_APPROVAL") {
+    redirect("/dashboard/login");
   }
 
   async function handleLogout() {
@@ -34,14 +59,14 @@ export default async function PendingPage() {
 
           <h1 className="text-2xl font-bold text-white mb-2">Approval Pending</h1>
           <p className="text-sm text-white/60 mb-6 leading-relaxed">
-            Welcome to YYZU, <span className="font-semibold text-white">@{session.username}</span>!<br />
+            Welcome to YYZU, <span className="font-semibold text-white">@{dbUser.username}</span>!<br />
             Your account is currently waiting for administrator approval. Once approved, you'll gain access to the dashboard.
           </p>
 
           <div className="bg-white/5 border border-white/5 rounded-xl p-4 mb-8 text-left text-xs font-mono space-y-1.5 text-white/50">
-            <div><span className="text-white/30">Username:</span> {session.username}</div>
-            <div><span className="text-white/30">Role:</span> {session.role}</div>
-            <div><span className="text-white/30">Status:</span> {session.status}</div>
+            <div><span className="text-white/30">Username:</span> {dbUser.username}</div>
+            <div><span className="text-white/30">Role:</span> {dbUser.role}</div>
+            <div><span className="text-white/30">Status:</span> {dbUser.status}</div>
           </div>
 
           <form action={handleLogout}>

@@ -6,7 +6,7 @@ import { Users, ArrowLeft, AlertCircle, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn } from "@/lib/utils";
-import { createTeamAction } from "@/app/actions/team";
+import { createTeamAction } from "@/features/team/actions";
 
 interface CreateTeamFormProps {
   session: any;

@@ -1,8 +1,8 @@
 import { cookies } from "next/headers";
 import argon2 from "argon2";
 import { SignJWT, jwtVerify } from "jose";
+import { JWT_SECRET } from "@/lib/config";
 
-const JWT_SECRET = process.env.JWT_SECRET || "fallback-secret-key-please-change-in-env";
 const key = new TextEncoder().encode(JWT_SECRET);
 
 export interface JWTSessionPayload {
@@ -39,7 +39,7 @@ export async function verifySessionToken(token: string): Promise<JWTSessionPaylo
       algorithms: ["HS256"],
     });
     return payload as unknown as JWTSessionPayload;
-  } catch (err) {
+  } catch {
     return null;
   }
 }
@@ -56,7 +56,7 @@ export async function setSession(payload: JWTSessionPayload) {
   const cookieStore = await cookies();
   cookieStore.set("session", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: process.env.NODE_ENV === "production", // NODE_ENV tidak perlu fatal-throw, aman
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24, // 24 hours

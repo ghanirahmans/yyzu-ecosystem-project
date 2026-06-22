@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, getInitials, stringToColor } from "@/lib/utils";
-import { updateTeamInfoAction, transferLeadershipAction, deleteTeamAction, leaveTeamAction } from "@/app/actions/team";
+import { updateTeamInfoAction, transferLeadershipAction, deleteTeamAction, leaveTeamAction } from "@/features/team/actions";
 
 interface MemberItem {
   role: string;

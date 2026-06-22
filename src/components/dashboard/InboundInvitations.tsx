@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Check, X, AlertCircle } from "lucide-react";
-import { acceptInvitationAction, rejectInvitationAction } from "@/app/actions/team";
+import { acceptInvitationAction, rejectInvitationAction } from "@/features/team/actions";
 import { formatDate } from "@/lib/utils";
 
 interface InvitationItem {

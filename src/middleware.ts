@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
+import { JWT_SECRET } from "@/lib/config";
+import type { JWTSessionPayload } from "@/lib/auth";
 
-const JWT_SECRET = process.env.JWT_SECRET || "fallback-secret-key-please-change-in-env";
 const key = new TextEncoder().encode(JWT_SECRET);
 
 export async function middleware(request: NextRequest) {
@@ -27,14 +28,14 @@ export async function middleware(request: NextRequest) {
 
   // 2. Read session cookie
   const sessionCookie = request.cookies.get("session")?.value;
-  let payload: { userId: string; username: string; role: string; status: string } | null = null;
+  let payload: JWTSessionPayload | null = null;
 
   if (sessionCookie) {
     try {
       const { payload: jwtPayload } = await jwtVerify(sessionCookie, key, {
         algorithms: ["HS256"],
       });
-      payload = jwtPayload as any;
+      payload = jwtPayload as unknown as JWTSessionPayload;
     } catch (err) {
       // Invalid token, remove cookie
       const response = NextResponse.redirect(new URL("/dashboard/login", request.url));

@@ -46,7 +46,7 @@ import {
   deleteUsefulLinkAction,
   updateSubmissionAction,
   reviewSubmissionAction,
-} from "@/app/actions/team";
+} from "@/features/team/actions";
 
 type SectionTab = "info" | "members" | "links" | "submission";
 
