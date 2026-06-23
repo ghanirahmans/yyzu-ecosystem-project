@@ -3,8 +3,8 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET() {
   try {
-    // Perform a lightweight database query to keep the connection alive
-    const userCount = await prisma.user.count();
+    // Perform a lightweight raw SQL query to keep the database active
+    await prisma.$queryRaw`SELECT 1`;
     
     return NextResponse.json({
       status: "healthy",

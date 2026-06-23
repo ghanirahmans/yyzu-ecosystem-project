@@ -9,14 +9,13 @@ export async function GET(request: Request) {
   }
 
   try {
-    // Perform a lightweight query to keep the database active
-    const userCount = await prisma.user.count();
+    // Perform a lightweight raw SQL query to keep the database active
+    await prisma.$queryRaw`SELECT 1`;
     
     return NextResponse.json({
       success: true,
       message: "Database pinged successfully",
       timestamp: new Date().toISOString(),
-      userCount,
     });
   } catch (error: any) {
     console.error("Cron Database Ping Failed:", error);
