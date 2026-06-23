@@ -47,3 +47,5 @@ yarn-error.log*
 #agents skill
 .agents
 
+
+prisma/seed-batch1.ts
