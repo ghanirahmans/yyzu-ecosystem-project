@@ -32,6 +32,7 @@ async function main() {
     create: {
       username: "ghanirahmans",
       fullName: "Ghani Rahmans",
+      email: "admin@yyzu.tech",
       passwordHash: adminPassword,
       status: UserStatus.ACTIVE,
       role: UserRole.SYSTEM_ADMIN,
@@ -137,6 +138,7 @@ async function main() {
       create: {
         username: "rizky_ramadan",
         fullName: "Rizky Ramadan",
+        email: "rizky@yyzu.tech",
         passwordHash: memberPassword,
         status: UserStatus.ACTIVE,
         approvedBy: admin.id,
@@ -150,6 +152,7 @@ async function main() {
       create: {
         username: "maya_anggraini",
         fullName: "Maya Anggraini",
+        email: "maya@yyzu.tech",
         passwordHash: memberPassword,
         status: UserStatus.ACTIVE,
         approvedBy: admin.id,
@@ -167,6 +170,7 @@ async function main() {
       create: {
         username: "pending_user_1",
         fullName: "Ahmad Fauzi",
+        email: "pending1@yyzu.tech",
         passwordHash: memberPassword,
         status: UserStatus.PENDING_APPROVAL,
         profile: { create: {} },
@@ -178,6 +182,7 @@ async function main() {
       create: {
         username: "pending_user_2",
         fullName: "Lina Kusuma",
+        email: "pending2@yyzu.tech",
         passwordHash: memberPassword,
         status: UserStatus.PENDING_APPROVAL,
         profile: { create: {} },
@@ -189,6 +194,7 @@ async function main() {
       create: {
         username: "rejected_user_1",
         fullName: "Dummy Rejected",
+        email: "rejected1@yyzu.tech",
         passwordHash: memberPassword,
         status: UserStatus.REJECTED,
         profile: { create: {} },
