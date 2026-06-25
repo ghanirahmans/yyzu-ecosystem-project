@@ -1,0 +1,136 @@
+---
+title: Templat Dokumentasi
+description: Templat dokumen wajib untuk pelaksanaan proyek di YYZU.
+status: active
+owner: YYZU
+lastUpdated: 2026-06-25
+---
+
+# Standardisasi Dokumentasi Proyek
+
+Setiap tim wajib mematuhi standar dokumentasi berikut untuk menjaga kualitas portofolio publik dan keberlanjutan kode:
+
+---
+
+## E. Template Problem Discovery Document — Diisi pada Sub-Fase 2A (Wajib untuk Mini Project & Collaborative Project)
+
+```markdown
+# [Nama Tim] - Problem Discovery Document
+
+## 1. Tema Project yang Ditetapkan
+Tuliskan tema yang diberikan oleh BPH/Mentor.
+- Contoh: Educational Technology
+
+## 2. Proses Observasi
+Jelaskan metode yang digunakan tim untuk memahami masalah.
+- Metode: [Wawancara / Survei / Observasi Langsung / Riset Literatur]
+- Jumlah responden/sumber: [angka]
+- Waktu pelaksanaan: [tanggal]
+
+## 3. Temuan Utama
+Ringkaskan apa yang tim temukan dari observasi. Gunakan data dan fakta, bukan opini.
+- Temuan 1: ...
+- Temuan 2: ...
+- Temuan 3: ...
+
+## 4. Masalah yang Dipilih
+Rumuskan satu masalah utama yang akan diselesaikan. Gunakan format:
+"[Kelompok pengguna] mengalami [masalah spesifik] ketika [konteks situasi], yang mengakibatkan [dampak nyata]."
+
+## 5. Alasan Pemilihan Masalah
+Jelaskan mengapa masalah ini diprioritaskan dibanding temuan lain.
+- Seberapa sering masalah ini terjadi?
+- Seberapa besar dampaknya bagi pengguna?
+- Apakah teknologi dapat menjadi solusi yang realistis?
+
+## 6. Solusi Awal yang Diusulkan (Hipotesis)
+Tuliskan solusi awal tim sebelum PRD dibuat. Ini bersifat hipotesis dan masih bisa berubah.
+- Solusi yang diusulkan: ...
+- Asumsi utama yang perlu divalidasi: ...
+```
+
+---
+
+## A. Template PRD (Product Requirement Document) — Diisi di Notion pada Fase Planning
+
+```markdown
+# [Nama Proyek] - PRD
+
+## 0. Referensi Problem Discovery
+- Link Problem Discovery Document: [Tautan ke Notion]
+- Masalah yang diselesaikan: [salin rumusan masalah dari Problem Discovery Document]
+
+## 1. Latar Belakang (The Why)
+Jelaskan masalah nyata yang ditemukan dari observasi dan mengapa solusi teknologi dibutuhkan.
+
+## 2. Solusi & MVP Scope (The What)
+Tuliskan fitur-fitur minimal yang WAJIB ada di proyek ini agar aplikasi bisa berfungsi.
+- [Contoh] Fitur Login & Registrasi.
+- [Contoh] Fitur Dashboard Transaksi.
+
+## 3. Batasan Proyek (Out of Scope)
+Tulis fitur yang TIDAK dibuat pada fase ini demi menjaga timeline pengerjaan.
+- [Contoh] Fitur pembayaran otomatis via e-wallet (dimasukkan ke backlog).
+
+## 4. Tautan Penting
+- Link Figma: [Tautan ke Figma]
+- Link GitHub: [Tautan ke Repositori]
+```
+
+---
+
+## B. Template README.md Repositori — Wajib di GitHub pada Fase Release
+
+```markdown
+# [Nama Aplikasi]
+
+Aplikasi ini dibuat dalam program kolaborasi proyek YYZU (Tema: [Nama Tema Proyek]).
+
+## Tech Stack
+- Frontend: Next.js / React (disesuaikan)
+- Backend/Database: PostgreSQL / SQLite (Prisma ORM) (disesuaikan)
+- Deployment: Vercel / Netlify (disesuaikan)
+
+## Cara Menjalankan Proyek Secara Lokal (Local Setup)
+1. Clone repositori ini: git clone [link-repo]
+2. Install dependensi: npm install
+3. Salin file environment:
+   Buat file `.env` di root folder dan sesuaikan variabel database Anda.
+4. Jalankan migrasi database: npx prisma db push
+5. Jalankan server lokal: npm run dev
+
+## Kontak & Kontributor
+- [Nama PIC] (Role: PIC / Frontend) - [Username GitHub]
+- [Nama Member] (Role: Backend) - [Username GitHub]
+```
+
+---
+
+## C. Dokumentasi Publik ( LinkedIn / Notion Showcase ) — Fase Release
+
+Setiap tim wajib membuat ringkasan proyek yang ramah dibaca masyarakat umum dengan format:
+1. **Screenshot / GIF Demo:** Menampilkan cuplikan aplikasi yang berjalan.
+2. **Cerita Singkat Perjalanan Tim:** Penjelasan tantangan tim selama pengerjaan dan bagaimana cara mereka mengatasinya bersama.
+3. **Link Demo Online:** URL aplikasi aktif agar pembaca bisa mencoba langsung.
+
+---
+
+## D. Catatan Retrospektif (Retrospective Notes) — Diisi Bersama pada Fase Release
+
+Setiap tim wajib mendokumentasikan hasil evaluasi internal mereka dengan format:
+
+```markdown
+# Catatan Retrospektif - Tim [Nama Tim]
+
+## 1. What Went Well (Apa yang berjalan dengan sangat baik?)
+Tuliskan keberhasilan tim yang harus dipertahankan.
+- [Contoh] Komunikasi antar frontend dan backend sangat lancar menggunakan API contract.
+
+## 2. What Went Wrong / Bottlenecks (Kendala apa saja yang dialami?)
+Tuliskan hambatan teknis atau komunikasi yang mengganggu jalannya proyek.
+- [Contoh] Estimasi pengerjaan fitur login terlalu singkat sehingga memakan waktu QA.
+
+## 3. Action Items (Apa perbaikan konkret untuk proyek berikutnya?)
+Tindakan nyata untuk mengatasi kekurangan di masa depan.
+- [Contoh] Menyediakan waktu buffer 1 hari khusus untuk integrasi API di awal.
+```
