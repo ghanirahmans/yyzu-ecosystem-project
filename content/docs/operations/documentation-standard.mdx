@@ -4,6 +4,7 @@ description: Pedoman penulisan, visual standar, metadata, dan aturan larangan ka
 status: active
 owner: Ghaniyyir Rahman Sudarsono (Founder YYZU)
 lastUpdated: 2026-06-29
+
 ---
 
 ## Daftar Isi
@@ -12,45 +13,25 @@ lastUpdated: 2026-06-29
 3. Panduan Gaya Penulisan & Karakter (Style Guide)
 4. Standar Penamaan & Tautan Halaman (Naming & Linking)
 5. Kriteria Keberhasilan & Audit
+
 ---
 ## 1. Tujuan & Ruang Lingkup
 Dokumen ini menetapkan standar penulisan (style guide) dan struktur metadata resmi untuk seluruh dokumentasi di ekosistem YYZU. Standar ini dibuat agar:
 - Seluruh dokumen memiliki konsistensi visual dan struktural yang tinggi.
 - Dokumen mudah dibaca oleh manusia (member dan mentor) serta mudah diproses secara akurat oleh AI Agent (AI Mentor & AI Assessor).
 - Kepemilikan dan riwayat pembaruan setiap dokumen terlacak dengan jelas.
+
 ---
 ## 2. Standar Metadata Dokumen (Ownership)
 Setiap dokumen resmi di ekosistem YYZU wajib memiliki tabel metadata di bagian paling atas dengan format sebagai berikut:
-<table header-row="true">
-<tr>
-<td>Field</td>
-<td>Deskripsi/Nilai yang Diizinkan</td>
-</tr>
-<tr>
-<td>**Tipe Dokumen**</td>
-<td>Kategori dokumen (contoh: Blueprint Induk, Foundational Reference, Operational Standard, Operational Guide, Framework Operasional)</td>
-</tr>
-<tr>
-<td>**Owner**</td>
-<td>Nama peran/jabatan yang bertanggung jawab atas isi dokumen (contoh: Founder YYZU, Divisi SDM YYZU, Divisi PM YYZU)</td>
-</tr>
-<tr>
-<td>**Parent**</td>
-<td>Nama dokumen induk jika merupakan child page (opsional)</td>
-</tr>
-<tr>
-<td>**Berlaku untuk**</td>
-<td>Lingkup penerapan dokumen (contoh: Seluruh member, Mentor, atau project tertentu)</td>
-</tr>
-<tr>
-<td>**Review**</td>
-<td>Frekuensi peninjauan ulang dokumen (contoh: Ulasan Tahunan, Per batch, atau Sesuai RFC)</td>
-</tr>
-<tr>
-<td>**Status**</td>
-<td>Versi dan status keaktifan dokumen (contoh: v1.0 - Active, v2.1 - Draft, Deprecated, Archived)</td>
-</tr>
-</table>
+| Field | Deskripsi/Nilai yang Diizinkan |
+| :--- | :--- |
+| **Tipe Dokumen** | Kategori dokumen (contoh: Blueprint Induk, Foundational Reference, Operational Standard, Operational Guide, Framework Operasional) |
+| **Owner** | Nama peran/jabatan yang bertanggung jawab atas isi dokumen (contoh: Founder YYZU, Divisi SDM YYZU, Divisi PM YYZU) |
+| **Parent** | Nama dokumen induk jika merupakan child page (opsional) |
+| **Berlaku untuk** | Lingkup penerapan dokumen (contoh: Seluruh member, Mentor, atau project tertentu) |
+| **Review** | Frekuensi peninjauan ulang dokumen (contoh: Ulasan Tahunan, Per batch, atau Sesuai RFC) |
+| **Status** | Versi dan status keaktifan dokumen (contoh: v1.0 - Active, v2.1 - Draft, Deprecated, Archived) |
 ---
 ## 3. Panduan Gaya Penulisan & Karakter (Style Guide)
 Untuk memastikan kompatibilitas tinggi lintas editor (Notion, GitHub, VS Code, Obsidian) dan efisiensi pemrosesan AI, kontributor wajib mengikuti aturan berikut:
@@ -68,14 +49,16 @@ Jangan menggunakan karakter dekoratif atau non-standar keyboard berikut:
 - Gunakan penomoran standar ("1. Step") untuk alur kerja atau prosedur langkah-demi-langkah.
 - Hindari penggunaan simbol unicode khusus sebagai bullet point.
 ### D. Penggunaan Callout & Emoji
-- Gunakan emoji secara minimal dan hanya untuk memberikan penanda visual pada judul bab atau peringatan penting (misal: 🧭 untuk Filosofi, 📚 untuk Kurikulum, 📐 untuk Standard/Assessment).
-- Gunakan callout block Notion secara strategis untuk informasi penting, tips, atau peringatan:
-	- Gunakan label \[!NOTE\] untuk catatan tambahan.
-	- Gunakan label \[!IMPORTANT\] atau \[!WARNING\] untuk instruksi kritis.
+- Hindari penggunaan emoji di dalam judul halaman, tautan dokumen, atau bab di dalam repository agar format tetap bersih dan profesional.
+- Gunakan callout block secara strategis untuk informasi penting, tips, atau peringatan:
+	- Gunakan label [!NOTE] untuk catatan tambahan.
+	- Gunakan label [!IMPORTANT] atau [!WARNING] untuk instruksi kritis.
+
 ---
 ## 4. Standar Penamaan & Tautan Halaman (Naming & Linking)
-- **Judul Halaman:** Gunakan format huruf kapital pada setiap awal kata (Title Case) dan awali dengan satu emoji yang relevan (contoh: "📐 Assessment Standard YYZU").
-- **Tautan (Links):** Saat mereferensikan dokumen lain di Notion, gunakan tautan Notion yang valid atau mention-page. Teks tautan harus merupakan nama resmi dokumen tanpa menggunakan format kode / backticks (contoh: [Kurikulum Member YYZU](url) - bukan [`Kurikulum Member YYZU`](url)).
+- **Judul Halaman:** Gunakan format huruf kapital pada setiap awal kata (Title Case) tanpa menyertakan emoji di depannya (contoh: "Assessment Standard YYZU").
+- **Tautan (Links):** Saat mereferensikan dokumen lain, gunakan tautan internal yang valid. Teks tautan harus merupakan nama resmi dokumen tanpa menggunakan format kode / backticks (contoh: [Kurikulum Member YYZU](url) - bukan [`Kurikulum Member YYZU`](url)).
+
 ---
 ## 5. Kriteria Keberhasilan & Audit
 Setiap dokumen yang dipublikasikan akan dievaluasi oleh Divisi PM atau Founder berdasarkan checklist berikut:

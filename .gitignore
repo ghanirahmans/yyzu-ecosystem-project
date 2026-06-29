@@ -51,3 +51,7 @@ yarn-error.log*
 prisma/seed-batch1.ts
 prisma/seed-founder.ts
 prisma/seed-divisions.ts
+
+
+.skill
+.cursor

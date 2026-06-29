@@ -4,6 +4,7 @@ description: Kerangka manajemen perubahan (RFC, ADR) dan pemetaan risiko kualita
 status: active
 owner: Ghaniyyir Rahman Sudarsono (Founder YYZU)
 lastUpdated: 2026-06-29
+
 ---
 
 ## Daftar Isi
@@ -14,9 +15,11 @@ lastUpdated: 2026-06-29
 5. Education Quality Attributes (Atribut Kualitas Pendidikan)
 6. Risk Register & Mitigasi
 7. Riwayat Perubahan
+
 ---
 ## 1. Pendahuluan
 Dokumen ini menetapkan standar tata kelola perubahan (Change Management) dan penjaminan mutu (Quality Framework) untuk seluruh ekosistem pembelajaran YYZU. Tujuannya adalah memastikan bahwa setiap modifikasi kurikulum dan kebijakan pembelajaran dilakukan secara terukur, tidak merusak konsistensi antar-dokumen, dan memitigasi risiko curriculum drift.
+
 ---
 ## 2. Change Management Standard (Prosedur RFC & Persetujuan)
 Setiap usulan perubahan pada kurikulum, skema proyek, atau standar penilaian wajib melewati alur Request for Comments (RFC) berikut:
@@ -25,6 +28,7 @@ Setiap usulan perubahan pada kurikulum, skema proyek, atau standar penilaian waj
 3. **Periode RFC Komunitas (7 Hari Kerja):** Draf dipublikasikan ke forum internal pengurus dan dewan mentor untuk mendapatkan feedback tertulis.
 4. **Kalibrasi & Konsensus (3 Hari):** Founder mensintesis masukan dan berkoordinasi dengan pengusul untuk revisi draf.
 5. **Persetujuan Akhir (Sign-off):** Pengesahan tertulis oleh Dewan Mentor YYZU. Perubahan status dari Draft ke Active dicatat di tabel riwayat dokumen.
+
 ---
 ## 3. Impact Analysis Framework (Dampak Perubahan)
 Setiap perubahan pada satu dokumen wajib menganalisis dampaknya ke dokumen lain dengan aturan penjalaran berikut:
@@ -36,6 +40,7 @@ Setiap perubahan pada satu dokumen wajib menganalisis dampaknya ke dokumen lain 
 	- *Aksi:* Update graf relasi konsep dan checklist evaluasi asinkron AI Assessor.
 - **Perubahan pada Skema Project Management**
 	- *Dampak:* Berdampak langsung ke Onboarding Pathway (sprint cycle) dan Skema Mentoring (SOP sesi).
+
 ---
 ## 4. Standar ADR (Architecture Decision Record) Pendidikan
 Setiap keputusan arsitektur pendidikan utama wajib didokumentasikan dengan format sebagai berikut:
@@ -45,6 +50,7 @@ Setiap keputusan arsitektur pendidikan utama wajib didokumentasikan dengan forma
 - **Alternatives Considered:** Opsi-opsi solusi lain yang dipertimbangkan beserta kelemahannya.
 - **Rationale:** Alasan utama memilih solusi ini dibanding alternatif lain.
 - **Consequences:** Implikasi dari keputusan ini terhadap proses operasional, beban mentor, atau sistem AI.
+
 ---
 ## 5. Education Quality Attributes (Atribut Kualitas Pendidikan)
 Untuk mengukur efektivitas sistem pendidikan, YYZU menggunakan parameter kualitas berikut:
@@ -60,73 +66,20 @@ Untuk mengukur efektivitas sistem pendidikan, YYZU menggunakan parameter kualita
 	- *Cara Mengukur:* Persentase keakuratan AI Assessor dalam mengidentifikasi kelengkapan bukti (evidence) awal dibanding keputusan mentor manusia (target minimal 95%).
 - **Traceability**
 	- *Cara Mengukur:* Kemudahan melacak asal-usul kriteria penilaian di Assessment Standard kembali ke Prinsip Pembelajaran.
+
 ---
 ## 6. Risk Register & Mitigasi
 Identifikasi risiko utama tata kelola dokumentasi dan rencana mitigasinya:
-<table header-row="true">
-<tr>
-<td>Risiko</td>
-<td>Severity</td>
-<td>Likelihood</td>
-<td>Mitigasi</td>
-<td>Owner</td>
-</tr>
-<tr>
-<td>**Knowledge Duplication**</td>
-<td>Tinggi</td>
-<td>Sedang</td>
-<td>Gunakan link referensi internal daripada menyalin-tempel teks antar-dokumen.</td>
-<td>Divisi PM</td>
-</tr>
-<tr>
-<td>**Information Overload**</td>
-<td>Sedang</td>
-<td>Tinggi</td>
-<td>Jaga agar struktur halaman tetap datar (flat) maksimal 1 level sub-halaman di Notion.</td>
-<td>Divisi SDM</td>
-</tr>
-<tr>
-<td>**Curriculum Drift**</td>
-<td>Tinggi</td>
-<td>Sedang</td>
-<td>Terapkan Impact Analysis Framework sebelum menyetujui RFC baru.</td>
-<td>Founder YYZU</td>
-</tr>
-<tr>
-<td>**Broken Links**</td>
-<td>Sedang</td>
-<td>Tinggi</td>
-<td>Lakukan audit link berkala (automated check atau manual per batch).</td>
-<td>Divisi PM</td>
-</tr>
-<tr>
-<td>**AI Misinterpretation**</td>
-<td>Tinggi</td>
-<td>Rendah</td>
-<td>Pastikan penulisan dokumen mematuhi YYZU Documentation Style Guide.</td>
-<td>Founder YYZU</td>
-</tr>
-<tr>
-<td>**Mentor Bias**</td>
-<td>Sedang</td>
-<td>Sedang</td>
-<td>Gunakan Rubrik Universal biner dan lakukan sesi Calibration minimal 1x per batch.</td>
-<td>Divisi SDM</td>
-</tr>
-</table>
+| Risiko | Severity | Likelihood | Mitigasi | Owner |
+| :--- | :--- | :--- | :--- | :--- |
+| **Knowledge Duplication** | Tinggi | Sedang | Gunakan link referensi internal daripada menyalin-tempel teks antar-dokumen. | Divisi PM |
+| **Information Overload** | Sedang | Tinggi | Jaga agar struktur halaman tetap datar (flat) maksimal 1 level sub-halaman di Notion. | Divisi SDM |
+| **Curriculum Drift** | Tinggi | Sedang | Terapkan Impact Analysis Framework sebelum menyetujui RFC baru. | Founder YYZU |
+| **Broken Links** | Sedang | Tinggi | Lakukan audit link berkala (automated check atau manual per batch). | Divisi PM |
+| **AI Misinterpretation** | Tinggi | Rendah | Pastikan penulisan dokumen mematuhi YYZU Documentation Style Guide. | Founder YYZU |
+| **Mentor Bias** | Sedang | Sedang | Gunakan Rubrik Universal biner dan lakukan sesi Calibration minimal 1x per batch. | Divisi SDM |
 ---
 ## 7. Riwayat Perubahan
-<table header-row="true">
-<tr>
-<td>Versi</td>
-<td>Tanggal</td>
-<td>Ringkasan Perubahan</td>
-<td>Oleh</td>
-</tr>
-<tr>
-<td>1.0</td>
-<td>29 Juni 2026</td>
-<td>Rilis inisial Change Management & Quality Framework</td>
-<td>Founder YYZU</td>
-</tr>
-</table>
+| Versi | Tanggal | Ringkasan Perubahan | Oleh |
+| :--- | :--- | :--- | :--- |
+| 1.0 | 29 Juni 2026 | Rilis inisial Change Management & Quality Framework | Founder YYZU |

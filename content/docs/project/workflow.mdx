@@ -4,6 +4,7 @@ description: Workflow atau alur kerja pengerjaan proyek dari tahap ideasi hingga
 status: active
 owner: YYZU
 lastUpdated: 2026-06-25
+
 ---
 
 # Alur Kerja Proyek (Project Workflow)
@@ -40,11 +41,11 @@ Seluruh task wajib dikelola di Kanban Board dengan kolom berikut:
 - **Backlog:** Seluruh task yang sudah teridentifikasi namun belum dijadwalkan ke sprint berjalan.
 - **To Do:** Task yang dikomitkan untuk dikerjakan pada sprint ini.
 - **In Progress:** Task yang sedang aktif dikerjakan. WIP Limit maksimal **2 task per anggota** pada waktu bersamaan.
-- **In Review:** Task selesai dikerjakan, menunggu review dari rekan tim atau PIC.
+- **In Review:** Task selesai dikerjakan, menunggu review dari rekan tim atau Project Leader.
 - **Done:** Task telah diverifikasi sesuai Definition of Done.
 
 ### 5.1 Sprint Ceremonies (Sesi Wajib per Sprint)
-Setiap sprint wajib menjalankan empat ceremony berikut. Seluruh sesi dipimpin oleh PIC dan dihadiri oleh seluruh anggota tim.
+Setiap sprint wajib menjalankan empat ceremony berikut. Seluruh sesi dipimpin oleh Project Leader dan dihadiri oleh seluruh anggota tim.
 
 **1. Sprint Planning**
 - Waktu: Hari pertama sprint, maksimal 60 menit.
@@ -92,7 +93,7 @@ Definition of Done adalah kriteria minimum yang harus terpenuhi agar sebuah task
 3. Tidak ada bug kritis atau error yang belum diselesaikan.
 4. Artefak hasil pekerjaan (kode, desain, dokumen) sudah tersimpan di repository atau platform resmi.
 5. Status task di Kanban Board diperbarui ke kolom **Done**.
-6. Jika task menghasilkan deliverable yang perlu diketahui Mentor, sudah dikomunikasikan kepada PIC.
+6. Jika task menghasilkan deliverable yang perlu diketahui Mentor, sudah dikomunikasikan kepada Project Leader.
 
 **Sebuah project dinyatakan selesai jika:**
 1. Seluruh deliverable utama yang disepakati dalam Project Brief/PRD sudah diserahkan atau dijelaskan statusnya secara tertulis.
@@ -107,10 +108,10 @@ Definition of Done adalah kriteria minimum yang harus terpenuhi agar sebuah task
 
 | Fase | Deskripsi Aktivitas Utama | Target Output & Milestone |
 | :--- | :--- | :--- |
-| **Foundation** (Persiapan) | Anggota kelompok mempelajari konsep dasar dan tools standar (Git flow, Figma, project setup) di bawah arahan PIC; Mentor memberikan pembekalan materi. | Kesiapan teknis seluruh anggota tim terverifikasi. |
+| **Foundation** (Persiapan) | Anggota kelompok mempelajari konsep dasar dan tools standar (Git flow, Figma, project setup) di bawah arahan Project Leader; Mentor memberikan pembekalan materi. | Kesiapan teknis seluruh anggota tim terverifikasi. |
 | **Problem Discovery** (Observasi) | Tim menerima tema dari BPH/Mentor, lalu melakukan observasi lapangan untuk menemukan masalah nyata yang akan diselesaikan. Output wajib: Problem Discovery Document. | Problem Discovery Document selesai dan siap dijadikan dasar penyusunan PRD. |
 | **Planning & Pitching** (Perencanaan) | Tim menyusun PRD dan Wireframe berdasarkan hasil observasi. Pitching dilakukan di depan Mentor sebagai simulasi komunikasi profesional ke client (Q&A Challenge). | Proposal disetujui Mentor, desain Figma handoff, repositori dibuat, dan Kanban Board siap. |
-| **Execution & QA** (Pengerjaan) | Pengerjaan task secara fokus. PIC memimpin sinkronisasi berkala. Developer menulis kode dengan Pull Request & Code Review. Deployment berkala ke staging server untuk pengujian bersama. | Aplikasi berfungsi penuh di server staging dan bebas dari bug kritis. |
+| **Execution & QA** (Pengerjaan) | Pengerjaan task secara fokus. Project Leader memimpin sinkronisasi berkala. Developer menulis kode dengan Pull Request & Code Review. Deployment berkala ke staging server untuk pengujian bersama. | Aplikasi berfungsi penuh di server staging dan bebas dari bug kritis. |
 | **Release & Closing** (Rilis & Evaluasi) | User Acceptance Testing (UAT) oleh Mentor. Deployment aplikasi ke server produksi. Presentasi demo produk akhir (Demo Day). Penyelesaian dokumentasi dan evaluasi tim (Retrospective). | Aplikasi online (live), dokumentasi lengkap, presentasi demo selesai, dan catatan retrospektif terisi. |
 
 ### Detail Penjelasan Fase Kerja:
@@ -118,7 +119,7 @@ Definition of Done adalah kriteria minimum yang harus terpenuhi agar sebuah task
 1. **Fase Foundation (Persiapan & Pembekalan):**
    - Member mempelajari tools standar (Git flow, pengenalan Figma, dasar-dasar setup project).
    - Mentor memberikan materi/kuliah fundamental yang dibutuhkan untuk tema/bidang proyek yang berjalan.
-   - Divisi PM melakukan pembentukan kelompok dan menunjuk PIC.
+   - Divisi PM melakukan pembentukan kelompok dan menunjuk Project Leader.
    - **Output:** Checkpoint kesiapan teknis seluruh anggota tim.
 
 2. **Fase Planning & Proposal Pitching (Perencanaan & Pembuktian Ide):**
@@ -137,12 +138,12 @@ Definition of Done adalah kriteria minimum yang harus terpenuhi agar sebuah task
      - **Penyusunan Proposal (PRD Awal & Wireframe UI):** Berdasarkan hasil Problem Discovery, tim menyusun draf PRD yang menjelaskan solusi yang diusulkan, fitur MVP, dan wireframe kasar antarmuka.
      - **Pitching & Defense Session (Sesi Sidang Proposal):** Kelompok mempresentasikan proposal di depan Mentor yang berperan sebagai *Client*. Tujuan sesi ini bukan sekadar mendapatkan persetujuan - melainkan melatih kemampuan komunikasi profesional: menyampaikan idenya secara terstruktur, meyakinkan stakeholder dengan data, dan merespons pertanyaan kritis di bawah tekanan. Ini adalah simulasi nyata dari situasi kerja di industri.
      - **Mentor Q&A Challenge:** Mentor mengajukan pertanyaan tajam mengenai relevansi solusi terhadap masalah yang ditemukan, urgensi masalah bagi pengguna nyata, kesiapan tim, dan kelayakan MVP dalam timeline yang tersedia. Tim wajib menjawab dengan argumen berbasis data observasi, bukan opini atau asumsi.
-     - **Revisi & Finalisasi:** Setelah mendapat persetujuan Mentor, desainer menuntaskan UI di Figma dan developer menyiapkan struktur database/API. PIC memecah fitur menjadi task di Kanban Board.
+     - **Revisi & Finalisasi:** Setelah mendapat persetujuan Mentor, desainer menuntaskan UI di Figma dan developer menyiapkan struktur database/API. Project Leader memecah fitur menjadi task di Kanban Board.
      - **Output:** Problem Discovery Document selesai, proposal disetujui Mentor, desain Figma handoff, repositori GitHub dibuat, dan Kanban Board siap.
 
 3. **Fase Execution & QA (Pengerjaan & Pengujian):**
    - Developer fokus menulis kode sesuai tugas di Kanban Board. Setiap kode baru wajib melalui proses Pull Request (PR) di GitHub dan di-review oleh rekan tim/Tech Lead.
-   - PIC melakukan sinkronisasi berkala (daily sync/standup) untuk melacak kendala.
+   - Project Leader melakukan sinkronisasi berkala (daily sync/standup) untuk melacak kendala.
    - Di pertengahan fase eksekusi akhir, aplikasi dideploy ke server uji coba (staging).
    - Tim melakukan pengujian aplikasi secara bersama-sama (QA Testing) dan memperbaiki bug yang ditemukan.
    - **Output:** Aplikasi berfungsi penuh di server staging dan bebas dari bug kritis.
@@ -162,7 +163,7 @@ Untuk mendukung kolaborasi yang efisien dan menyimulasikan alur kerja industri n
 - **GitHub:** Repositori kode utama, review pull request (PR), dan pengelolaan codebase terintegrasi. Seluruh kontributor teknis wajib menggunakan workflow branch YYZU.
 - **Figma:** Workspace desain antarmuka (UI/UX) kolaboratif, penerapan design system YYZU, prototyping interaktif, dan serah terima (handoff) aset desain ke tim developer.
 - **Discord / Slack:** Saluran komunikasi utama ekosistem. Digunakan untuk sinkronisasi harian (asinkron), diskusi divisi, mentoring live, serta koordinasi insidental.
-- **Linear / Trello / Jira / ClickUp / Notion Board:** Manajemen tugas berbasis Kanban Board untuk memantau status pengerjaan yang dikelola oleh PIC kelompok secara berkala. Kolom minimal yang harus ada:
+- **Linear / Trello / Jira / ClickUp / Notion Board:** Manajemen tugas berbasis Kanban Board untuk memantau status pengerjaan yang dikelola oleh Project Leader kelompok secara berkala. Kolom minimal yang harus ada:
   - **Backlog:** Ide fitur masa depan / di luar scope MVP.
   - **To Do:** Fitur MVP yang siap dikerjakan pada sprint berjalan.
   - **In Progress:** Fitur yang sedang dikerjakan developer.
