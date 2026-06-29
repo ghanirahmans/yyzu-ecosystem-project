@@ -3,6 +3,7 @@
   "defaultOpen": true,
   "pages": [
     "overview",
+    "onboarding",
     "development-model",
     "contribution-guide",
     "culture"

@@ -3,6 +3,11 @@
   "defaultOpen": true,
   "pages": [
     "overview",
+    "principles",
+    "mastery",
+    "curriculum",
+    "assessment",
+    "knowledge-architecture",
     "learning-model",
     "fields"
   ]
