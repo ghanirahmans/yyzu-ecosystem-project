@@ -163,9 +163,9 @@ export const philosophy: CardItem[] = [
       "Fokus utama YYZU adalah tumbuh bersama melalui kontribusi aktif dan pemecahan masalah secara kolektif, bukan persaingan nilai.",
   },
   {
-    title: "Kontribusi Aktif, Bukan Keanggotaan Pasif",
+    title: "Tongkrongan Intelektual",
     description:
-      "Menjadi bagian dari YYZU berarti ikut bergerak sesuai kapasitas: berdiskusi secara serius, membantu dokumentasi, atau mengulas hasil kerja rekan.",
+      "Mengubah budaya nongkrong kasual Anak Medan menjadi gerakan produktif: melebur sekat formal, belajar tanpa rasa takut, dan melahirkan karya yang Paten.",
   },
   {
     title: "Konsistensi di Atas Popularitas",
