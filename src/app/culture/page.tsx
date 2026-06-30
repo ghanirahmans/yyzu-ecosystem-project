@@ -3,12 +3,12 @@ import CtaBand from "../../components/CtaBand";
 import InfoCard from "../../components/InfoCard";
 import PageHero from "../../components/PageHero";
 import Section from "../../components/Section";
-import { fitPeople, philosophy, values } from "../../data/site";
+import { fitPeople, philosophy, values, learningPrinciples } from "../../data/site";
 
 export const metadata: Metadata = {
   title: "Kultur & Nilai Kolaborasi",
   description:
-    "Kultur kerja dan mindset kolaboratif di ekosistem YYZU: Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership, dan Collaboration Over Competition.",
+    "Kultur kerja dan mindset kolaboratif di ekosistem YYZU: Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership, dan Stronger Together.",
 };
 
 export default function CulturePage() {
@@ -54,6 +54,38 @@ export default function CulturePage() {
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   {item.description}
                 </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Learning Principles ────────────────────────────────── */}
+      <section className="bg-white py-16 sm:py-20 border-t border-slate-100">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <Section
+            eyebrow="Learning Principles"
+            title="Delapan Prinsip Belajar YYZU."
+            description="Acuan akademis dan praktis yang melandasi setiap keputusan kurikulum, metodologi proyek, dan standar penilaian di ekosistem kami."
+            align="center"
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {learningPrinciples.map((principle) => (
+              <article
+                key={principle.title}
+                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/50 p-6 transition hover:bg-white hover:shadow-sm"
+              >
+                <div>
+                  <h3 className="font-bold text-slate-950">{principle.title}</h3>
+                  <p className="mt-3 text-xs leading-5 text-slate-600">
+                    {principle.description}
+                  </p>
+                </div>
+                <div className="mt-5 border-t border-slate-100 pt-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#006A67]">
+                    Dasar: {principle.basis}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

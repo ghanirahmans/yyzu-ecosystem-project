@@ -109,12 +109,12 @@ export const visionMission: CardItem[] = [
   {
     title: "Visi",
     description:
-      "Membangun ekosistem teknologi kolaboratif yang menjembatani talenta berkembang menjadi individu yang adaptif, ber-mindset produk, dan siap menghadapi kebutuhan industri digital modern.",
+      "Membangun ekosistem teknologi kolaboratif yang membantu talenta berkembang menjadi individu yang adaptif, produktif, kolaboratif, dan siap menghadapi kebutuhan industri digital modern.",
   },
   {
     title: "Misi",
     description:
-      "Menciptakan environment pertumbuhan teknologi yang aktif, mempertemukan kampus, talenta, mentor, dan partner, serta mendidik member melalui real-world project dan workflow kolaboratif.",
+      "Menciptakan environment belajar teknologi yang aktif, kolaboratif, dan berkelanjutan; membantu talenta berkembang melalui project nyata dan pengalaman berbasis tim; menjembatani kampus, talenta, mentor, komunitas, dan industri; mendorong terbentuknya skill teknis, problem solving, communication, dan ownership; serta membangun portfolio, pengalaman kolaboratif, dan kesiapan kerja.",
   },
 ];
 
@@ -145,9 +145,14 @@ export const values: CardItem[] = [
       "Menumbuhkan tanggung jawab penuh terhadap proses belajar pribadi, tugas yang diambil, serta kualitas kontribusi yang dikirimkan.",
   },
   {
-    title: "Collaboration Over Competition",
+    title: "Stronger Together",
     description:
       "Memprioritaskan kesuksesan bersama melalui kultur feedback yang sehat, peer review, dan dukungan tim yang mutual.",
+  },
+  {
+    title: "Sustainable Impact",
+    description:
+      "Setiap aktivitas, project, dan kontribusi diarahkan agar memiliki manfaat jangka panjang bagi member dan ekosistem.",
   },
 ];
 
@@ -414,5 +419,153 @@ export const faqs: CardItem[] = [
     title: "Bagaimana cara mendaftar ke YYZU?",
     description:
       "Buka halaman Join di yyzu.tech/join, lalu pilih formulir pendaftaran yang sesuai dengan peran Anda: Join as Member (untuk member & kontributor) atau Join as Mentor/Partner. Setelah mengirimkan ketertarikan, tim kami akan meninjau dan menghubungi Anda untuk onboarding atau diskusi lanjutan.",
+  },
+];
+
+export type TrackItem = {
+  title: string;
+  description: string;
+};
+
+export const expertiseTracks: TrackItem[] = [
+  {
+    title: "Software Development",
+    description: "Mengembangkan fondasi pemrograman, algoritma, OOP/FP, SOLID principles, testing strategy, dan clean code.",
+  },
+  {
+    title: "Web Development",
+    description: "Membangun antarmuka web semantik, responsive layout, DOM manipulation, integrasi API, state management, dan performance engineering.",
+  },
+  {
+    title: "Mobile Development",
+    description: "Membangun aplikasi mobile (native/cross-platform), mengelola lifecycle, local storage (offline-first), dan push notifications.",
+  },
+  {
+    title: "UI/UX Design",
+    description: "Menerapkan visual hierarchy, riset pengguna, wireframing, component library, accessibility (WCAG), dan usability testing.",
+  },
+  {
+    title: "Product Management",
+    description: "Melakukan problem framing, user research, menulis PRD & Acceptance Criteria (Gherkin), prioritas backlog, dan roadmapping.",
+  },
+  {
+    title: "Quality Assurance",
+    description: "Merancang test case manual, bug reporting & triage, automation testing (API/UI), load testing, dan regression strategy.",
+  },
+  {
+    title: "Data & AI",
+    description: "Melakukan SQL querying, pembersihan data, statistik deskriptif, visualisasi data, machine learning, dan integrasi AI/LLM.",
+  },
+  {
+    title: "DevOps & Cloud",
+    description: "Mengelola CLI/Linux, containerization (Docker), mendesain CI/CD pipeline, setup cloud provider (AWS/GCP), dan IaC (Terraform).",
+  },
+  {
+    title: "Creative Technology",
+    description: "Mengeksplorasi creative coding (p5.js), interactive media (Three.js/WebGL), motion design, dan integrasi Rive/Lottie.",
+  },
+  {
+    title: "Digital Product",
+    description: "Menganalisis market & kompetitor, Lean Canvas, Go-to-Market (GTM) strategy, growth framework (AARRR), dan monetisasi.",
+  },
+  {
+    title: "Technology Collaboration",
+    description: "Memimpin Scrum/Agile, koordinasi lintas peran (cross-functional), komunikasi risiko, dan team topology.",
+  },
+];
+
+export type PrincipleItem = {
+  title: string;
+  description: string;
+  basis: string;
+};
+
+export const learningPrinciples: PrincipleItem[] = [
+  {
+    title: "Kompetensi Mendahului Konten",
+    description: "Pertanyaan yang didahulukan bukan 'materi apa yang harus diajarkan?' melainkan 'apa yang harus bisa dilakukan member?'",
+    basis: "C-BEN Quality Framework, Spady (Outcome-Based Education)",
+  },
+  {
+    title: "Bukti Mendahului Klaim",
+    description: "Kompetensi hanya dianggap dikuasai ketika ada artefak kerja nyata yang bisa diverifikasi secara independen (seperti Pull Request, berkas Figma).",
+    basis: "Pilar Evidence-Based YYZU",
+  },
+  {
+    title: "Proyek sebagai Medium Belajar Utama",
+    description: "Proyek bukan sekadar ujian akhir, melainkan cara belajar itu sendiri. Problem Discovery wajib dilakukan sebelum merancang solusi.",
+    basis: "Project-Based Learning (PBL)",
+  },
+  {
+    title: "Tim sebagai Unit Belajar",
+    description: "Pengalaman belajar dirancang dalam konteks tim lintas disiplin (kode, desain, manajemen produk) untuk mensimulasikan dinamika industri nyata.",
+    basis: "Pilar Team-Centric, Collaborative Learning",
+  },
+  {
+    title: "Dokumentasi sebagai Artefak Permanen",
+    description: "Pengetahuan yang tidak terdokumentasi dianggap tidak ada. Kode berfungsi tanpa dokumentasi tidak memenuhi Definition of Done.",
+    basis: "Pilar Documentation-Driven, Knowledge Management",
+  },
+  {
+    title: "Progression melalui Demonstrasi",
+    description: "Member naik level ketika berhasil mendemonstrasikan kompetensi target, bukan karena waktu telah berlalu. Exit criteria bersifat biner.",
+    basis: "Mastery Learning (Bloom), C-BEN Progression Gating",
+  },
+  {
+    title: "Mentor sebagai Pemandu",
+    description: "Mentor bertindak sebagai 'Guide on the Side' untuk memvalidasi dan memberi feedback kritis, bukan sebagai pengajar pasif satu arah.",
+    basis: "GROW Model (Coaching for Performance)",
+  },
+  {
+    title: "Relevansi terhadap Dunia Nyata",
+    description: "Mekanisme, workflow (sprint, PR, code review), dan standar yang dijalankan identik dengan standar profesional di industri digital.",
+    basis: "Talent Bridge Kampus-Industri",
+  },
+];
+
+export type ProjectCategory = {
+  title: string;
+  duration: string;
+  focus: string;
+  description: string;
+};
+
+export const projectCategories: ProjectCategory[] = [
+  {
+    title: "Mini Project",
+    duration: "6 Minggu",
+    focus: "Beginner level",
+    description: "Proyek skala kecil untuk melatih fundamental, pengenalan tools, teamwork dasar, dan pembiasaan menerima feedback serta revisi.",
+  },
+  {
+    title: "Collaborative Project",
+    duration: "8 - 12 Minggu",
+    focus: "Intermediate level",
+    description: "Kolaborasi lintas disiplin (sprint, PR, code review) dengan standar workflow industri yang ketat untuk menghasilkan produk terintegrasi.",
+  },
+  {
+    title: "Internal Project",
+    duration: "2 - 3 Bulan per Fase",
+    focus: "Advanced level",
+    description: "Pengembangan platform, infrastruktur, atau aplikasi penunjang operasional internal YYZU (misal: Portal Showcase, Dashboard Member) untuk pengguna nyata.",
+  },
+];
+
+export const learningPillars: CardItem[] = [
+  {
+    title: "Project-Driven",
+    description: "Kita tidak sekadar belajar untuk membangun proyek, melainkan membangun proyek untuk memahami teori.",
+  },
+  {
+    title: "Evidence-Based",
+    description: "Penguasaan skill diukur secara objektif melalui artefak kerja nyata yang dapat diaudit - seperti pull request atau berkas kolaborasi desain.",
+  },
+  {
+    title: "Team-Centric",
+    description: "Meniru ritme kerja tim profesional di industri teknologi guna mengikis ego dan menumbuhkan kepemimpinan kolektif.",
+  },
+  {
+    title: "Documentation-Driven",
+    description: "Penulisan dokumentasi teknis dan catatan keputusan arsitektur (ADR) berjalan beriringan dengan penulisan kode agar pengetahuan diwariskan.",
   },
 ];

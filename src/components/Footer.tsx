@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-slate-400">
-        Copyright 2026 YYZU. All rights reserved.
+        Copyright {new Date().getFullYear()} YYZU. All rights reserved.
       </div>
     </footer>
   );

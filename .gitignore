@@ -53,5 +53,5 @@ prisma/seed-founder.ts
 prisma/seed-divisions.ts
 
 
-.skill
+.skills
 .cursor

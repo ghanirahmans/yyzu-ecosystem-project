@@ -3,7 +3,7 @@ import CtaBand from "../../components/CtaBand";
 import InfoCard from "../../components/InfoCard";
 import PageHero from "../../components/PageHero";
 import Section from "../../components/Section";
-import { activities, activityRhythm } from "../../data/site";
+import { activities, activityRhythm, projectCategories } from "../../data/site";
 
 export const metadata: Metadata = {
   title: "Aktivitas & Program",
@@ -61,6 +61,41 @@ export default function ActivitiesPage() {
                 <p className="mt-4 text-sm leading-7 text-slate-300">
                   {item.description}
                 </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Project Categories ─────────────────────────────────── */}
+      <section className="bg-white py-16 sm:py-20 border-t border-slate-100">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <Section
+            eyebrow="Project Categories"
+            title="Tiga Kategori Proyek sebagai Media Belajar."
+            description="Pertumbuhan skill divalidasi langsung melalui pengerjaan proyek. Dari tingkat dasar secara mandiri hingga mengelola infrastruktur produksi riil."
+            align="center"
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {projectCategories.map((category) => (
+              <article
+                key={category.title}
+                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/50 p-6 shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-flex items-center rounded-full bg-[#006A67]/10 px-2.5 py-0.5 text-xs font-semibold text-[#006A67]">
+                      {category.focus}
+                    </span>
+                    <span className="text-xs font-medium text-slate-400">
+                      {category.duration}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-950">{category.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    {category.description}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

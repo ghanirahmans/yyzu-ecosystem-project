@@ -2,31 +2,27 @@
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
+/* ==========================================================================
+   ROOT VARIABLES & THEME TOKENS
+   ========================================================================== */
+
 :root {
   --background: #f7f9fb;
-  /* --foreground tidak diset di :root agar tidak bocor ke halaman publik (hero dll) */
 
-  /* Fumadocs UI overrides - Light Theme (High contrast YYZU Blue & Teal highlights) */
+  /* Fumadocs UI overrides — Light Theme */
   --color-fd-primary: hsl(232, 100%, 32%);
-  /* YYZU Blue */
   --color-fd-primary-foreground: hsl(0, 0%, 100%);
   --color-fd-background: hsl(210, 30%, 98%);
-  /* Soft light slate background */
   --color-fd-foreground: hsl(222, 50%, 10%);
-  /* High contrast near-black text */
   --color-fd-muted: hsl(210, 30%, 94%);
   --color-fd-muted-foreground: hsl(220, 20%, 35%);
-  /* High contrast gray-blue for secondary text */
   --color-fd-border: hsl(215, 25%, 85%);
-  /* High contrast borders */
   --color-fd-card: hsl(0, 0%, 100%);
   --color-fd-card-foreground: hsl(222, 50%, 10%);
   --color-fd-popover: hsl(0, 0%, 100%);
   --color-fd-popover-foreground: hsl(222, 50%, 10%);
   --color-fd-accent: hsl(232, 95%, 95%);
-  /* Very soft YYZU Blue tint for hover backgrounds */
   --color-fd-accent-foreground: hsl(232, 100%, 25%);
-  /* Dark blue text on hover */
 
   --fd-layout-width: 1450px;
   --fd-nav-height: 4rem;
@@ -34,31 +30,21 @@
 
 .dark {
   --background: hsl(222, 40%, 7%);
-  /* Pure dark background for body */
   --foreground: hsl(210, 40%, 98%);
-  /* Pure off-white text for body */
 
-  /* Fumadocs UI overrides - Dark Theme (High contrast premium dark mode) */
+  /* Fumadocs UI overrides — Dark Theme */
   --color-fd-primary: hsl(225, 95%, 62%);
-  /* Bright, legible YYZU Blue */
   --color-fd-primary-foreground: hsl(0, 0%, 100%);
   --color-fd-background: hsl(222, 40%, 7%);
-  /* Clean deep slate-black content background */
   --color-fd-foreground: hsl(210, 40%, 98%);
-  /* Crisp white text */
   --color-fd-muted: hsl(222, 20%, 15%);
-  /* Legible background for code blocks, badges */
   --color-fd-muted-foreground: hsl(215, 20%, 78%);
-  /* Brightened description/secondary text */
   --color-fd-border: hsl(217, 20%, 24%);
-  /* Distinct high-contrast border lines */
   --color-fd-card: hsl(222, 30%, 12%);
-  /* Slightly lighter card background for depth */
   --color-fd-card-foreground: hsl(210, 40%, 98%);
   --color-fd-popover: hsl(222, 40%, 9%);
   --color-fd-popover-foreground: hsl(210, 40%, 98%);
   --color-fd-accent: hsl(225, 25%, 16%);
-  /* Slightly brighter hover background for better visibility */
   --color-fd-accent-foreground: hsl(210, 40%, 98%);
 }
 
@@ -70,9 +56,12 @@
     Menlo, monospace;
 }
 
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
 body {
   background: var(--background);
-  /* color dibiarkan inherit dari elemen masing-masing, tidak diforce global */
 }
 
 html {
@@ -83,9 +72,7 @@ section {
   scroll-margin-top: 5rem;
 }
 
-/* Teks gelap hanya untuk halaman publik non-hero (section bg-white, bg-slate dll) */
-/* Hero sudah pakai text-white eksplisit, jadi tidak perlu global color */
-/* Fumadocs docs layout butuh teks gelap di light mode */
+/* Docs pages need explicit text color */
 :where([data-docs-page], .fd-page, [class*="fd-"]) {
   color: #0f172a;
 }
@@ -94,21 +81,98 @@ section {
   color: hsl(210, 40%, 98%);
 }
 
-
 ::selection {
   background: #0015a5;
   color: #ffffff;
 }
 
 /* ==========================================================================
-   CACHYOS STYLE SIDEBAR OVERRIDES
+   ANIMATION KEYFRAMES
    ========================================================================== */
 
-/* Sidebar Background styling */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.04);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.03);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out both;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.5s ease-out both;
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 10s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Stagger helpers */
+.stagger-1 { animation-delay: 60ms; }
+.stagger-2 { animation-delay: 120ms; }
+.stagger-3 { animation-delay: 180ms; }
+.stagger-4 { animation-delay: 240ms; }
+
+/* ==========================================================================
+   FUMADOCS SIDEBAR OVERRIDES (docs only)
+   ========================================================================== */
+
+/* Sidebar Background */
 .dark aside,
 .dark [data-sidebar] {
   background-color: hsl(222, 35%, 11%) !important;
-  /* Elegant dark navy sidebar */
   border-right: 1px solid hsl(222, 20%, 20%) !important;
 }
 
@@ -119,13 +183,10 @@ aside button[aria-controls],
 aside button[data-state],
 aside li>button {
   font-weight: 700 !important;
-  /* Bold but not extremely thick */
   font-size: 0.95rem !important;
-  /* Slightly larger than sub-items (0.825rem) */
   letter-spacing: 0.01em !important;
   transition: color 0.15s ease !important;
   color: hsl(222, 50%, 8%) !important;
-  /* High contrast dark navy for light mode */
 }
 
 .dark aside summary,
@@ -134,47 +195,39 @@ aside li>button {
 .dark aside button[data-state],
 .dark aside li>button {
   color: hsl(0, 0%, 100%) !important;
-  /* Bold pure white folders in dark mode */
 }
 
 /* Sidebar Links */
 aside a {
   font-size: 0.825rem !important;
-  /* Smaller text for page links to show hierarchy */
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
   transition: all 0.15s ease !important;
 }
 
-/* Sub-items (regular inactive links - high contrast) */
+/* Inactive sidebar links */
 aside a:not([aria-current="page"]) {
   color: hsl(222, 35%, 22%) !important;
-  /* High contrast dark slate-gray for light mode */
   font-weight: 500 !important;
 }
 
 .dark aside a:not([aria-current="page"]) {
   color: hsl(218, 25%, 82%) !important;
-  /* High contrast bright off-white for dark mode */
   font-weight: 500 !important;
 }
 
 aside a:not([aria-current="page"]):hover {
   color: hsl(232, 100%, 32%) !important;
-  /* YYZU Blue text on hover in light mode */
 }
 
 .dark aside a:not([aria-current="page"]):hover {
   color: hsl(171, 95%, 45%) !important;
-  /* Cyan text on hover in dark mode */
 }
 
-/* Active Link in Sidebar (Teal/Cyan highlight with dark text) */
+/* Active Link in Sidebar */
 aside a[aria-current="page"] {
   background-color: hsl(171, 95%, 45%) !important;
-  /* CachyOS-style bright Cyan/Green */
   color: hsl(223, 40%, 10%) !important;
-  /* Contrast dark text */
   font-weight: 800 !important;
   border-radius: 6px !important;
   padding-left: 0.75rem !important;
@@ -187,7 +240,7 @@ aside a[aria-current="page"] {
   color: hsl(223, 40%, 10%) !important;
 }
 
-/* Hierarchical Vertical Lines for nested lists */
+/* Hierarchical vertical lines */
 aside ul ul {
   border-left: 1px solid hsl(220, 20%, 80%) !important;
   margin-left: 0.85rem !important;
@@ -198,305 +251,271 @@ aside ul ul {
 
 .dark aside ul ul {
   border-left: 1px solid hsl(223, 20%, 25%) !important;
-  /* High contrast dark lines */
 }
 
-/* Spacing between MDX docs content and previous/next page navigation links */
+/* MDX prev/next nav spacing */
 div[class*="@container"][class*="grid"].gap-4 {
   margin-top: 4.5rem !important;
 }
 
 /* ==========================================================================
-   LIGHT MODE DASHBOARD OVERRIDES (Scoped to dashboard only)
-   Seluruh override ini hanya berlaku di dalam .yyzu-dashboard wrapper,
-   sehingga halaman publik (hero, landing page, dll) tidak terdampak.
+   DASHBOARD LIGHT MODE — Scoped CSS variables
+   Replaces the previous 280-line !important override approach.
+   Applied only inside .yyzu-dashboard wrapper.
    ========================================================================== */
 
-/* Wrapper class yang ditambahkan di DashboardShell */
+/* Light mode: override dark-default Tailwind values using CSS variables */
 html:not(.dark) .yyzu-dashboard {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  background-color: #f8fafc;
-  color: #0f172a;
+  /* Core palette */
+  --dash-bg: #f8fafc;
+  --dash-surface: #ffffff;
+  --dash-surface-hover: #f1f5f9;
+  --dash-surface-raised: #e2e8f0;
+  --dash-border: #e2e8f0;
+  --dash-border-subtle: #f1f5f9;
+  --dash-text: #0f172a;
+  --dash-text-muted: #475569;
+  --dash-text-faint: #94a3b8;
+  --dash-text-dim: #64748b;
+
+  background-color: var(--dash-bg);
+  color: var(--dash-text);
 }
 
-/* Header dan Sidebar */
-html:not(.dark) .yyzu-dashboard header.bg-\[\#0d1117\]\/80,
-html:not(.dark) .yyzu-dashboard aside.bg-\[\#161b22\] {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
+/* Dark mode: use existing dark values (dashboard is dark-first) */
+.dark .yyzu-dashboard {
+  --dash-bg: #0d1117;
+  --dash-surface: #161b22;
+  --dash-surface-hover: #1c2129;
+  --dash-surface-raised: rgba(255, 255, 255, 0.08);
+  --dash-border: rgba(255, 255, 255, 0.08);
+  --dash-border-subtle: rgba(255, 255, 255, 0.04);
+  --dash-text: #ffffff;
+  --dash-text-muted: rgba(255, 255, 255, 0.5);
+  --dash-text-faint: rgba(255, 255, 255, 0.25);
+  --dash-text-dim: rgba(255, 255, 255, 0.4);
 }
 
-/* Sidebars & lists */
-html:not(.dark) .yyzu-dashboard aside summary,
-html:not(.dark) .yyzu-dashboard aside .fd-sidebar-group-label,
-html:not(.dark) .yyzu-dashboard aside button[aria-controls],
-html:not(.dark) .yyzu-dashboard aside button[data-state],
-html:not(.dark) .yyzu-dashboard aside li>button {
-  color: #0f172a !important;
+/* ── Background overrides (light) ────────────────────────────── */
+html:not(.dark) .yyzu-dashboard .bg-\[\#0d1117\] {
+  background-color: var(--dash-bg) !important;
 }
 
-/* Collapsible folder lines in sidebar */
-html:not(.dark) .yyzu-dashboard aside ul ul {
-  border-left: 1px solid #cbd5e1 !important;
-}
-
-/* Inactive sidebar links */
-html:not(.dark) .yyzu-dashboard aside a:not([aria-current="page"]) {
-  color: #475569 !important;
-}
-
-html:not(.dark) .yyzu-dashboard aside a:not([aria-current="page"]):hover {
-  color: #4f46e5 !important;
-  background-color: #f1f5f9 !important;
-}
-
-/* Cards, Forms, Panels, & workspace items */
 html:not(.dark) .yyzu-dashboard .bg-\[\#161b22\] {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  color: #0f172a !important;
+  background-color: var(--dash-surface) !important;
+  border-color: var(--dash-border) !important;
 }
 
-/* Inputs, selects, and textareas */
-html:not(.dark) .yyzu-dashboard input.bg-\[\#0d1117\],
-html:not(.dark) .yyzu-dashboard select.bg-\[\#0d1117\],
-html:not(.dark) .yyzu-dashboard textarea.bg-\[\#0d1117\],
-html:not(.dark) .yyzu-dashboard div.bg-\[\#0d1117\] {
-  background-color: #f8fafc !important;
-  border-color: #cbd5e1 !important;
-  color: #0f172a !important;
+html:not(.dark) .yyzu-dashboard .hover\:bg-\[\#1c2129\]:hover {
+  background-color: var(--dash-surface-hover) !important;
 }
 
-html:not(.dark) .yyzu-dashboard input,
-html:not(.dark) .yyzu-dashboard select,
-html:not(.dark) .yyzu-dashboard textarea {
-  color: #0f172a !important;
+html:not(.dark) .yyzu-dashboard .bg-\[\#0d1117\]\/80 {
+  background-color: rgba(248, 250, 252, 0.9) !important;
+  border-color: var(--dash-border) !important;
 }
 
-html:not(.dark) .yyzu-dashboard input::placeholder,
-html:not(.dark) .yyzu-dashboard textarea::placeholder {
-  color: #94a3b8 !important;
-}
-
-/* Text color class overrides */
+/* ── Text color overrides (light) ────────────────────────────── */
 html:not(.dark) .yyzu-dashboard .text-white {
-  color: #0f172a !important;
+  color: var(--dash-text) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .text-white\/80 {
   color: #1e293b !important;
 }
-
 html:not(.dark) .yyzu-dashboard .text-white\/70,
 html:not(.dark) .yyzu-dashboard .text-white\/60,
 html:not(.dark) .yyzu-dashboard .text-white\/50 {
-  color: #334155 !important;
+  color: var(--dash-text-muted) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .text-white\/40,
 html:not(.dark) .yyzu-dashboard .text-white\/30,
 html:not(.dark) .yyzu-dashboard .text-white\/25,
 html:not(.dark) .yyzu-dashboard .text-white\/20 {
-  color: #64748b !important;
+  color: var(--dash-text-dim) !important;
+}
+html:not(.dark) .yyzu-dashboard .hover\:text-white:hover {
+  color: var(--dash-text) !important;
 }
 
-/* Active Sidebar States */
-html:not(.dark) .yyzu-dashboard .bg-indigo-500\/15 {
-  background-color: rgba(99, 102, 241, 0.1) !important;
-  color: #4f46e5 !important;
-}
-
-html:not(.dark) .yyzu-dashboard .text-indigo-400 {
-  color: #4f46e5 !important;
-}
-
-html:not(.dark) .yyzu-dashboard .ml-auto.text-indigo-400 {
-  color: #4f46e5 !important;
-}
-
-/* Active Admin Sidebar States */
-html:not(.dark) .yyzu-dashboard .bg-rose-500\/15 {
-  background-color: rgba(244, 63, 94, 0.1) !important;
-  color: #e11d48 !important;
-}
-
-html:not(.dark) .yyzu-dashboard .text-rose-400 {
-  color: #e11d48 !important;
-}
-
-html:not(.dark) .yyzu-dashboard .ml-auto.text-rose-400 {
-  color: #e11d48 !important;
-}
-
-/* Borders & Dividers */
+/* ── Border overrides (light) ────────────────────────────────── */
 html:not(.dark) .yyzu-dashboard .border-white\/4,
 html:not(.dark) .yyzu-dashboard .border-white\/5,
 html:not(.dark) .yyzu-dashboard .border-white\/6,
 html:not(.dark) .yyzu-dashboard .border-white\/8,
 html:not(.dark) .yyzu-dashboard .border-white\/10,
 html:not(.dark) .yyzu-dashboard .border-white\/12,
-html:not(.dark) .yyzu-dashboard .border-white\/15,
-html:not(.dark) .yyzu-dashboard .border-b.border-white\/4,
-html:not(.dark) .yyzu-dashboard .border-b.border-white\/5,
-html:not(.dark) .yyzu-dashboard .border-b.border-white\/6,
-html:not(.dark) .yyzu-dashboard .border-t.border-white\/5,
-html:not(.dark) .yyzu-dashboard .border-t.border-white\/8,
-html:not(.dark) .yyzu-dashboard .divide-white\/4,
-html:not(.dark) .yyzu-dashboard .divide-white\/5,
-html:not(.dark) .yyzu-dashboard .divide-white\/6,
-html:not(.dark) .yyzu-dashboard .divide-white\/8,
-html:not(.dark) .yyzu-dashboard .divide-white\/10,
-html:not(.dark) .yyzu-dashboard .divide-y> :not([hidden])~ :not([hidden]) {
-  border-color: #e2e8f0 !important;
+html:not(.dark) .yyzu-dashboard .border-white\/15 {
+  border-color: var(--dash-border) !important;
+}
+html:not(.dark) .yyzu-dashboard .divide-white\/4 > :not([hidden]) ~ :not([hidden]),
+html:not(.dark) .yyzu-dashboard .divide-white\/5 > :not([hidden]) ~ :not([hidden]),
+html:not(.dark) .yyzu-dashboard .divide-white\/8 > :not([hidden]) ~ :not([hidden]),
+html:not(.dark) .yyzu-dashboard .divide-y > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--dash-border) !important;
 }
 
-/* Buttons, badges & cards */
-html:not(.dark) .yyzu-dashboard .bg-white\/2 {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-}
-
+/* ── Background alpha overrides (light) ──────────────────────── */
+html:not(.dark) .yyzu-dashboard .bg-white\/2,
 html:not(.dark) .yyzu-dashboard .bg-white\/3 {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
+  background-color: var(--dash-surface) !important;
+  color: var(--dash-text) !important;
 }
-
-html:not(.dark) .yyzu-dashboard .bg-white\/4 {
-  background-color: #f1f5f9 !important;
-  color: #334155 !important;
-  border-color: #e2e8f0 !important;
-}
-
+html:not(.dark) .yyzu-dashboard .bg-white\/4,
 html:not(.dark) .yyzu-dashboard .bg-white\/5 {
-  background-color: #f1f5f9 !important;
-  color: #334155 !important;
-  border-color: #e2e8f0 !important;
+  background-color: var(--dash-border-subtle) !important;
+  color: var(--dash-text-muted) !important;
 }
-
-html:not(.dark) .yyzu-dashboard .bg-white\/8 {
-  background-color: #e2e8f0 !important;
-  color: #0f172a !important;
-}
-
+html:not(.dark) .yyzu-dashboard .bg-white\/8,
 html:not(.dark) .yyzu-dashboard .bg-white\/10 {
-  background-color: #e2e8f0 !important;
-  color: #0f172a !important;
+  background-color: var(--dash-surface-raised) !important;
+  color: var(--dash-text) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .hover\:bg-white\/4:hover {
-  background-color: #e2e8f0 !important;
+  background-color: var(--dash-surface-raised) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .hover\:bg-white\/5:hover {
-  background-color: #e2e8f0 !important;
+  background-color: var(--dash-surface-raised) !important;
 }
-
-html:not(.dark) .yyzu-dashboard .hover\:bg-white\/8:hover {
-  background-color: #cbd5e1 !important;
-}
-
+html:not(.dark) .yyzu-dashboard .hover\:bg-white\/8:hover,
 html:not(.dark) .yyzu-dashboard .hover\:bg-white\/10:hover {
   background-color: #cbd5e1 !important;
 }
 
-html:not(.dark) .yyzu-dashboard .hover\:text-white:hover {
-  color: #0f172a !important;
+/* ── Form inputs (light) ─────────────────────────────────────── */
+html:not(.dark) .yyzu-dashboard input,
+html:not(.dark) .yyzu-dashboard select,
+html:not(.dark) .yyzu-dashboard textarea {
+  color: var(--dash-text) !important;
+}
+html:not(.dark) .yyzu-dashboard input.bg-\[\#0d1117\],
+html:not(.dark) .yyzu-dashboard select.bg-\[\#0d1117\],
+html:not(.dark) .yyzu-dashboard textarea.bg-\[\#0d1117\],
+html:not(.dark) .yyzu-dashboard div.bg-\[\#0d1117\] {
+  background-color: var(--dash-bg) !important;
+  border-color: var(--dash-border) !important;
+  color: var(--dash-text) !important;
+}
+html:not(.dark) .yyzu-dashboard input::placeholder,
+html:not(.dark) .yyzu-dashboard textarea::placeholder {
+  color: var(--dash-text-faint) !important;
 }
 
-/* Additional accent colors */
+/* ── Accent colour overrides (light) ─────────────────────────── */
+/* Indigo */
+html:not(.dark) .yyzu-dashboard .bg-indigo-500\/15 {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  color: #4f46e5 !important;
+}
+html:not(.dark) .yyzu-dashboard .text-indigo-400 {
+  color: #4f46e5 !important;
+}
+/* Rose */
+html:not(.dark) .yyzu-dashboard .bg-rose-500\/15 {
+  background-color: rgba(244, 63, 94, 0.1) !important;
+  color: #e11d48 !important;
+}
+html:not(.dark) .yyzu-dashboard .text-rose-400 {
+  color: #e11d48 !important;
+}
+/* Cyan */
 html:not(.dark) .yyzu-dashboard .text-cyan-400 {
   color: #0891b2 !important;
 }
-
 html:not(.dark) .yyzu-dashboard .bg-cyan-500\/10 {
   background-color: rgba(6, 182, 212, 0.1) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .border-cyan-500\/20 {
   border-color: rgba(6, 182, 212, 0.2) !important;
 }
-
+/* Emerald */
 html:not(.dark) .yyzu-dashboard .text-emerald-400 {
   color: #16a34a !important;
 }
-
 html:not(.dark) .yyzu-dashboard .bg-emerald-500\/10 {
   background-color: rgba(16, 185, 129, 0.1) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .border-emerald-500\/20 {
   border-color: rgba(16, 185, 129, 0.2) !important;
 }
-
+/* Purple */
 html:not(.dark) .yyzu-dashboard .text-purple-400 {
   color: #7c3aed !important;
 }
-
 html:not(.dark) .yyzu-dashboard .bg-purple-500\/10 {
   background-color: rgba(139, 92, 246, 0.1) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .border-purple-500\/20 {
   border-color: rgba(139, 92, 246, 0.2) !important;
 }
-
+/* Pink */
 html:not(.dark) .yyzu-dashboard .text-pink-400 {
   color: #db2777 !important;
 }
-
 html:not(.dark) .yyzu-dashboard .bg-pink-500\/10 {
   background-color: rgba(236, 72, 153, 0.1) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .border-pink-500\/20 {
   border-color: rgba(236, 72, 153, 0.2) !important;
 }
-
+/* Amber */
 html:not(.dark) .yyzu-dashboard .text-amber-400 {
   color: #d97706 !important;
 }
-
 html:not(.dark) .yyzu-dashboard .bg-amber-500\/10 {
   background-color: rgba(245, 158, 11, 0.1) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .border-amber-500\/20 {
   border-color: rgba(245, 158, 11, 0.2) !important;
 }
-
+/* Blue */
 html:not(.dark) .yyzu-dashboard .text-blue-400 {
   color: #2563eb !important;
 }
-
 html:not(.dark) .yyzu-dashboard .bg-blue-500\/10 {
   background-color: rgba(59, 130, 246, 0.1) !important;
 }
-
 html:not(.dark) .yyzu-dashboard .border-blue-500\/20 {
   border-color: rgba(59, 130, 246, 0.2) !important;
 }
 
-/* Audit logs list & users list table rows */
-html:not(.dark) .yyzu-dashboard .border-b.border-white\/5 {
-  border-color: #e2e8f0 !important;
-}
-
-/* Custom scrollbars (hanya di dalam dashboard) */
+/* ── Scrollbars (light) ──────────────────────────────────────── */
 html:not(.dark) .yyzu-dashboard ::-webkit-scrollbar-track {
   background: #f1f5f9 !important;
 }
-
 html:not(.dark) .yyzu-dashboard ::-webkit-scrollbar-thumb {
   background: #cbd5e1 !important;
 }
 
+/* ── Sidebar inside dashboard (light) ───────────────────────── */
+html:not(.dark) .yyzu-dashboard aside.bg-\[\#161b22\] {
+  background-color: var(--dash-surface) !important;
+  border-color: var(--dash-border) !important;
+}
+html:not(.dark) .yyzu-dashboard aside summary,
+html:not(.dark) .yyzu-dashboard aside .fd-sidebar-group-label,
+html:not(.dark) .yyzu-dashboard aside button[aria-controls],
+html:not(.dark) .yyzu-dashboard aside button[data-state],
+html:not(.dark) .yyzu-dashboard aside li>button {
+  color: var(--dash-text) !important;
+}
+html:not(.dark) .yyzu-dashboard aside ul ul {
+  border-left: 1px solid var(--dash-border) !important;
+}
+html:not(.dark) .yyzu-dashboard aside a:not([aria-current="page"]) {
+  color: var(--dash-text-muted) !important;
+}
+html:not(.dark) .yyzu-dashboard aside a:not([aria-current="page"]):hover {
+  color: #4f46e5 !important;
+  background-color: var(--dash-border-subtle) !important;
+}
+
 /* ==========================================================================
-   CODE BLOCK OVERRIDES (Fix for segmented/stroke line backgrounds & contrast)
+   CODE BLOCK OVERRIDES
    ========================================================================== */
+
 pre,
 pre[class*="language-"] {
-  background-color: #f6f8fa !important; /* Solid light background in light mode */
+  background-color: #f6f8fa !important;
   border: 1px solid #d0d7de !important;
   padding: 1.25rem !important;
   border-radius: 8px !important;
@@ -507,7 +526,7 @@ pre[class*="language-"] {
 
 .dark pre,
 .dark pre[class*="language-"] {
-  background-color: #0d1117 !important; /* Solid dark/black background in dark mode */
+  background-color: #0d1117 !important;
   border: 1px solid #21262d !important;
 }
 
@@ -520,7 +539,6 @@ pre code {
   display: block !important;
 }
 
-/* Remove highlighted/stroke background on lines/words inside pre in both modes */
 pre code span,
 pre code .line,
 pre [data-line],
