@@ -145,7 +145,7 @@ export const values: CardItem[] = [
       "Menumbuhkan tanggung jawab penuh terhadap proses belajar pribadi, tugas yang diambil, serta kualitas kontribusi yang dikirimkan.",
   },
   {
-    title: "Stronger Together",
+    title: "Collaboration Over Competition",
     description:
       "Memprioritaskan kesuksesan bersama melalui kultur feedback yang sehat, peer review, dan dukungan tim yang mutual.",
   },
@@ -163,9 +163,9 @@ export const philosophy: CardItem[] = [
       "Fokus utama YYZU adalah tumbuh bersama melalui kontribusi aktif dan pemecahan masalah secara kolektif, bukan persaingan nilai.",
   },
   {
-    title: "Tongkrongan Intelektual",
+    title: "Kontribusi Aktif, Bukan Keanggotaan Pasif",
     description:
-      "Mengubah budaya nongkrong kasual Anak Medan menjadi gerakan produktif: melebur sekat formal, belajar tanpa rasa takut, dan melahirkan karya yang Paten.",
+      "Menjadi bagian dari YYZU berarti ikut bergerak sesuai kapasitas: berdiskusi secara serius, membantu dokumentasi, atau mengulas hasil kerja rekan.",
   },
   {
     title: "Konsistensi di Atas Popularitas",

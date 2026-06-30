@@ -8,7 +8,7 @@ import { fitPeople, philosophy, values, learningPrinciples } from "../../data/si
 export const metadata: Metadata = {
   title: "Kultur & Nilai Kolaborasi",
   description:
-    "Kultur kerja dan mindset kolaboratif di ekosistem YYZU: Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership, dan Stronger Together.",
+    "Kultur kerja dan mindset kolaboratif di ekosistem YYZU: Build Together, Continuous Growth, Real Experience, Industry-Oriented, Ownership, dan Collaboration Over Competition.",
 };
 
 export default function CulturePage() {

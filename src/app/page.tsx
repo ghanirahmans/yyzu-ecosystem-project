@@ -112,9 +112,10 @@ export default function Home() {
             className="mx-auto mt-7 max-w-xl text-balance text-base leading-7 text-slate-600 sm:text-[17px] sm:leading-[1.8] animate-slide-in-up"
             style={{ animationDelay: "160ms" }}
           >
-            YYZU adalah ekosistem teknologi kolaboratif yang menjembatani mahasiswa,
-            komunitas kampus, mentor praktisi, dan industri melalui proyek nyata,
-            simulasi alur kerja, dan pendampingan terstruktur.
+            YYZU is a collaborative technology ecosystem that bridges students,
+            campus communities, industry mentors, and partner organizations
+            through real project experience, workflow simulation, and structured
+            mentoring.
           </p>
 
           {/* CTAs */}

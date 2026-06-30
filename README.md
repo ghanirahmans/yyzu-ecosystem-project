@@ -37,7 +37,7 @@ Menciptakan environment belajar teknologi yang aktif, kolaboratif, dan berkelanj
 - **Real Experience**: Belajar langsung dari praktik, simulasi workflow industri, open contribution, dan pengerjaan project brief.
 - **Industry-Oriented**: Mengarahkan skill teknis, metode komunikasi, dokumentasi, dan kualitas delivery agar relevan dengan kebutuhan industri digital.
 - **Ownership**: Menumbuhkan tanggung jawab penuh terhadap proses belajar pribadi, tugas yang diambil, serta kualitas kontribusi yang dikirimkan.
-- **Stronger Together**: Memprioritaskan kesuksesan bersama melalui kultur feedback yang sehat, peer review, dan dukungan tim yang mutual.
+- **Collaboration Over Competition**: Memprioritaskan kesuksesan bersama melalui kultur feedback yang sehat, peer review, dan dukungan tim yang mutual.
 - **Sustainable Impact**: Setiap aktivitas, project, dan kontribusi diarahkan agar memiliki manfaat jangka panjang bagi member dan ekosistem.
 
 ---
