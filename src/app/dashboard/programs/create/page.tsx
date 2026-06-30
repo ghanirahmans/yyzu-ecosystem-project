@@ -7,7 +7,7 @@ import DashboardShell from "@/components/dashboard/DashboardShell";
 import ProgramCreateForm from "@/components/dashboard/ProgramCreateForm";
 
 export const metadata = {
-  title: "Buat Program | YYZU Admin",
+  title: "Buat Program | YYZU Operasional",
   description: "Tambah program kerja dan event baru untuk ekosistem YYZU.",
 };
 

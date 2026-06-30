@@ -46,7 +46,7 @@ const DIVISION_LABELS: Record<DivisionName, { label: string; description: string
 };
 
 export const metadata = {
-  title: "Divisions | YYZU Admin",
+  title: "Divisions | YYZU Operasional",
   description: "Struktur kepengurusan divisi dan BPH ekosistem YYZU.",
 };
 

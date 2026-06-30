@@ -120,7 +120,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
             <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-xs font-black text-white">
               Y
             </div>
-            <span className="font-bold text-sm text-white tracking-tight">YYZU Admin</span>
+            <span className="font-bold text-sm text-white tracking-tight">YYZU Operasional</span>
           </Link>
         </div>
 

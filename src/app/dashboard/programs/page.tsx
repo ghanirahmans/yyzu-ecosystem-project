@@ -23,7 +23,7 @@ const PROGRAM_APPROVAL_STATUS_LABELS: Record<ProgramApprovalStatus, { label: str
 };
 
 export const metadata = {
-  title: "Programs | YYZU Admin",
+  title: "Programs | YYZU Operasional",
   description: "Daftar program kerja dan event komunitas YYZU.",
 };
 

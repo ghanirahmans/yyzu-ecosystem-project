@@ -71,7 +71,7 @@ export default function LoginPage() {
               Y
             </div>
             <h1 className="text-2xl font-bold text-white">Welcome back</h1>
-            <p className="text-sm text-white/40 mt-1">Sign in to YYZU Admin</p>
+            <p className="text-sm text-white/40 mt-1">Sign in to YYZU Operasional</p>
           </div>
 
           {/* Error banner */}

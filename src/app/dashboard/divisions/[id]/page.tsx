@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const division = await prisma.division.findUnique({ where: { id } });
   const label = division ? (DIVISION_LABELS[division.name]?.label || division.name) : "Division";
   return {
-    title: `${label} Division | YYZU Admin`,
+    title: `${label} Division | YYZU Operasional`,
   };
 }
 

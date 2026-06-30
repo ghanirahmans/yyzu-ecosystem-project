@@ -7,7 +7,7 @@ import DashboardShell from "@/components/dashboard/DashboardShell";
 import PartnershipCreateForm from "@/components/dashboard/PartnershipCreateForm";
 
 export const metadata = {
-  title: "Tambah Mitra | YYZU Admin",
+  title: "Tambah Mitra | YYZU Operasional",
   description: "Tambah relasi kemitraan eksternal baru untuk YYZU.",
 };
 

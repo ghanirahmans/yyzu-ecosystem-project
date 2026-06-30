@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: "Dashboard — YYZU",
     template: "%s | YYZU Dashboard",
   },
-  description: "YYZU Internal Administration System",
+  description: "YYZU Internal Operational System",
   robots: { index: false, follow: false },
 };
 

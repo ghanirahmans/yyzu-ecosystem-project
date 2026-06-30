@@ -22,7 +22,7 @@ const TYPE_LABELS: Record<PartnershipType, string> = {
 };
 
 export const metadata = {
-  title: "Partnerships | YYZU Admin",
+  title: "Partnerships | YYZU Operasional",
   description: "Mengelola relasi kemitraan kampus dan industri YYZU.",
 };
 
