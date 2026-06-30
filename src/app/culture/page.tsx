@@ -69,24 +69,29 @@ export default function CulturePage() {
             description="Acuan akademis dan praktis yang melandasi setiap keputusan kurikulum, metodologi proyek, dan standar penilaian di ekosistem kami."
             align="center"
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-12 flex flex-wrap justify-center gap-6">
             {learningPrinciples.map((principle) => (
-              <article
+              <div
                 key={principle.title}
-                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/50 p-6 transition hover:bg-white hover:shadow-sm"
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex"
               >
-                <div>
-                  <h3 className="font-bold text-slate-950">{principle.title}</h3>
-                  <p className="mt-3 text-xs leading-5 text-slate-600">
-                    {principle.description}
-                  </p>
+                <div className="flex-grow flex flex-col">
+                  <article className="group h-full flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#006A67]/25 hover:shadow-lg hover:shadow-slate-200/80">
+                    <div>
+                      <div className="mb-5 flex items-center gap-2.5">
+                        <div className="h-1 w-8 rounded-full bg-[linear-gradient(135deg,#0015A5_0%,#006A67_100%)]" />
+                      </div>
+                      <h3 className="text-[17px] font-bold text-slate-950 leading-snug">{principle.title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">{principle.description}</p>
+                    </div>
+                    <div className="mt-5 border-t border-slate-100 pt-3">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-[#006A67]">
+                        Dasar: {principle.basis}
+                      </p>
+                    </div>
+                  </article>
                 </div>
-                <div className="mt-5 border-t border-slate-100 pt-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#006A67]">
-                    Dasar: {principle.basis}
-                  </p>
-                </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>
