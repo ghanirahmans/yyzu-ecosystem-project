@@ -4,11 +4,11 @@
   "pages": [
     "overview",
     "principles",
-    "mastery",
-    "learning",
-    "assessment",
-    "knowledge-architecture",
+    "mastery-architecture",
     "learning-model",
-    "fields"
+    "area-of-expertise",
+    "curriculum",
+    "assessment-standard",
+    "knowledge-architecture"
   ]
 }
