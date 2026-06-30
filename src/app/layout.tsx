@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | YYZU",
   },
   description:
-    "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui kolaborasi aktif, mentoring, simulasi alur kerja, dan project-based growth.",
+    "Mencari tahu apa itu YYZU? YYZU (yang sering dilafalkan sebagai Yeyzu) adalah collaborative technology ecosystem dan talent bridge yang menghubungkan kampus, talenta teknologi, mentor praktisi, dan industri melalui kolaborasi aktif, mentoring, simulasi alur kerja, dan project-based growth.",
   applicationName: "YYZU Ecosystem",
   authors: [{ name: "Ghaniyyir Rahman Sudarsono", url: "https://github.com/ghanirahmans" }],
   creator: "Ghaniyyir Rahman Sudarsono",
@@ -31,12 +31,24 @@ export const metadata: Metadata = {
     icon: "/icon.svg",
   },
   keywords: [
-    // Brand keywords
+    // Brand & phonetic variation keywords
     "YYZU",
     "YYZU Ecosystem",
     "YYZU Community",
     "Yeyzu",
+    "Yeyzu Ecosystem",
     "yyzu.tech",
+    "yeyzu.tech",
+    "apa itu YYZU",
+    "apa itu Yeyzu",
+    "apa itu YYZU Ecosystem",
+    "apa itu Yeyzu Ecosystem",
+    "pengertian YYZU",
+    "pengertian Yeyzu",
+    "komunitas YYZU",
+    "komunitas Yeyzu",
+    "YYZU Tech",
+    "Yeyzu Tech",
     // Core keywords
     "collaborative technology ecosystem",
     "talent bridge indonesia",

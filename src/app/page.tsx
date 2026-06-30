@@ -20,7 +20,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     name: "YYZU Ecosystem",
-    alternateName: "YYZU",
+    alternateName: ["YYZU", "Yeyzu", "YYZU Ecosystem", "Yeyzu Ecosystem"],
     founder: {
       "@type": "Person",
       name: "Ghaniyyir Rahman Sudarsono",

@@ -386,6 +386,11 @@ export const faqs: CardItem[] = [
       "YYZU adalah collaborative technology ecosystem dan talent bridge yang menghubungkan talenta teknologi (future builders), kampus, mentor praktisi, dan industri melalui program belajar berbasis praktik, workflow simulation, mentoring, dan penyusunan project brief kolaboratif.",
   },
   {
+    title: "Bagaimana cara melafalkan YYZU, dan apakah sama dengan Yeyzu?",
+    description:
+      "YYZU dilafalkan /ye-zu/. Nama 'Yeyzu' berasal dari kebiasaan penyebutan orang Indonesia, di mana huruf ganda 'YY' dibaca sebagai 'yey' lalu ditambahkan dengan 'zu' menjadi 'Yeyzu'. Oleh karena itu, sebagian orang menuliskan namanya secara fonetis sebagai 'Yeyzu' atau 'Yeyzu Ecosystem'. Keduanya merujuk pada ekosistem teknologi kolaboratif yang sama.",
+  },
+  {
     title: "Apakah YYZU komunitas belajar biasa?",
     description:
       "Bukan. YYZU bukan sekadar tempat kumpul atau diskusi santai. YYZU adalah ekosistem terstruktur yang berfokus pada collaborative growth, pembentukan engineering/product mindset, simulasi workflow industri nyata, dan pembangunan portofolio berbasis proses.",
