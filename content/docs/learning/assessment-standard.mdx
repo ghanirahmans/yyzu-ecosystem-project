@@ -3,11 +3,11 @@ title: Standar Penilaian (Assessment)
 description: Rubrik universal, prosedur sign-off, retry mechanism, dan appeal mechanism.
 status: active
 owner: Ghaniyyir Rahman Sudarsono (Founder YYZU)
-lastUpdated: 2026-06-29
+lastUpdated: 2026-07-03
 
 ---
 
-Dokumen ini mengisi gap antara kompetensi (didefinisikan di Kurikulum) dan keputusan sign-off (dilakukan oleh Mentor). Ini adalah operasionalisasi dari **Prinsip 2** (Bukti Mendahului Klaim) dan **Prinsip 6** (Progression melalui Demonstrasi) dari Prinsip Pembelajaran YYZU.
+Dokumen ini mengisi gap antara kompetensi (didefinisikan di Kurikulum) dan keputusan sign-off (dilakukan oleh Mentor). Alur review di YYZU menggunakan dua lapisan: **SDM Management** melakukan review internal terlebih dahulu, baru kemudian diteruskan ke Mentor yang relevan atau Mentor lainnya. Ini adalah operasionalisasi dari **Prinsip 2** (Bukti Mendahului Klaim) dan **Prinsip 6** (Progression melalui Demonstrasi) dari [🧭 Prinsip Pembelajaran YYZU](/docs/learning/principles).
 
 ## Daftar Isi
 
@@ -103,7 +103,7 @@ Sebelum menggunakan rubrik track-spesifik, setiap artefak dievaluasi terhadap em
 
 | Track | Contoh Fundamental Error |
 | --- | --- |
-| Web Development | Arsitektur atau implementasi menunjukkan miskonsepsi fundamental yang membuat sistem tidak memenuhi prinsip dasar keamanan, maintainability, atau correctness. *(Contoh: logika autentikasi yang sistematis tidak aman, data dikirim ke client tanpa validasi, skema yang tidak dapat berkembang — lihat Appendix untuk definisi operasional tiap contoh)* |
+| Web Development | Arsitektur atau implementasi menunjukkan miskonsepsi fundamental yang membuat sistem tidak memenuhi prinsip dasar keamanan, maintainability, atau correctness. *(Contoh: logika autentikasi yang sistematis tidak aman, data dikirim ke client tanpa validasi, skema yang tidak dapat berkembang)* |
 | UI/UX Design | Desain yang tidak memiliki hierarki visual sama sekali; tidak ada evidence riset pengguna dalam proses; handoff yang tidak memungkinkan implementasi |
 | Product Management | Problem statement yang merupakan solusi tersamar; PRD tanpa acceptance criteria yang bisa diverifikasi; keputusan tanpa reasoning yang dapat dievaluasi |
 
@@ -238,25 +238,36 @@ Jika seorang member secara konsisten lemah di salah satu kompetensi lintas track
 
 ### Langkah 1: Self-assessment oleh Member
 
-Sebelum mengajukan sign-off ke Mentor, member wajib mengisi self-assessment checklist:
+Sebelum mengajukan sign-off, member wajib mengisi self-assessment checklist:
 
 ```md
 # Self-Assessment Checklist - **[Track] Level [X]**
 
 | Informasi | Isi |
 |-----------|-----|
-| **Nama** | |
+| **Nama Member** | |
+| **Track** | |
+| **Level** | |
 | **Tanggal Pengajuan** | |
 | **Link Artefak** | |
 
 ---
 
-## Checklist
+## Checklist Dimensi Universal
 
-- [ ] Saya dapat menjelaskan setiap keputusan signifikan yang saya ambil dalam artefak ini.
-- [ ] Artefak ini dapat digunakan atau dipahami oleh orang lain tanpa penjelasan lisan dari saya.
-- [ ] Seluruh **Exit Criteria** untuk level ini sudah saya periksa dan terpenuhi.
-- [ ] Tidak ada *fundamental error* yang saya ketahui dan belum saya perbaiki.
+- [ ] Saya dapat menjelaskan setiap keputusan signifikan yang saya ambil dalam artefak ini. *(Dimensi 3: Kejujuran Proses)*
+- [ ] Artefak ini dapat digunakan atau dipahami oleh orang lain tanpa penjelasan lisan dari saya. *(Dimensi 1: Kegunaan)*
+- [ ] Seluruh **Exit Criteria** untuk level ini sudah saya periksa dan terpenuhi. *(Dimensi 2: Kelengkapan)*
+- [ ] Tidak ada *fundamental error* yang saya ketahui dan belum saya perbaiki. *(Dimensi 4: Tidak Ada Fundamental Error)*
+
+## Checklist Kompetensi Lintas Track
+
+- [ ] Artefak saya mendemonstrasikan komunikasi teknis tertulis yang jelas.
+- [ ] Saya dapat menjelaskan bagaimana saya memecah masalah menjadi unit kerja yang lebih kecil.
+- [ ] Artefak menunjukkan proses iteratif, bukan hanya satu submission besar.
+- [ ] Saya memberikan dan merespons feedback secara spesifik dan actionable.
+- [ ] Dokumentasi yang saya hasilkan dapat digunakan oleh orang lain.
+- [ ] Saya menjaga history yang dapat ditelusuri (commit, version, atau sejenisnya).
 
 ---
 
@@ -273,18 +284,24 @@ Tuliskan satu keputusan yang menurut Anda memiliki reasoning paling kuat, besert
 **Jawaban:**
 ```
 
+### Langkah 2: Review Internal oleh SDM Management
 
-Self-assessment ini dikirim ke Mentor **sebelum** sesi sign-off review.
+Self-assessment dan artefak dikirimkan ke **SDM Management** terlebih dahulu. SDM Management melakukan review internal menggunakan checklist yang relevan di dokumen ini. Tujuannya:
+- Memastikan artefak memenuhi standar sebelum diteruskan ke Mentor
+- Mengidentifikasi gap atau masalah teknis yang perlu diperbaiki sebelum sign-off
+- Menyampaikan rekomendasi awal kepada Mentor terkait
 
-### Langkah 2: Review oleh Mentor
+### Langkah 3: Diteruskan ke Mentor
 
-Mentor membaca self-assessment dan mereview artefak secara asinkron menggunakan checklist yang relevan di dokumen ini. Mentor mempersiapkan clarifying questions seperlunya.
+Jika artefak lolos review internal SDM Management, dokumen diteruskan ke **Mentor terkait** (atau Mentor lainnya yang tersedia). Mentor membaca review SDM Management dan mereview artefak secara asinkron. Mentor mempersiapkan clarifying questions seperlunya.
 
-### Langkah 3: Sign-off Session (jika diperlukan)
+Jika artefak belum memenuhi standar, SDM Management mengembalikan ke member dengan feedback untuk perbaikan - **belum sampai ke Mentor**.
+
+### Langkah 4: Sign-off Session (jika diperlukan)
 
 Jika Mentor sudah yakin dari review asinkron, sign-off dapat dilakukan secara tertulis. Jika ada pertanyaan clarifying, dijadwalkan sesi singkat maksimal 30 menit.
 
-### Langkah 4: Keputusan
+### Langkah 5: Keputusan
 
 **APPROVED:** Semua empat dimensi universal terpenuhi dan semua Exit Criteria untuk level terpenuhi. Mentor memberikan sign-off tertulis di Notion/platform yang berlaku.
 
@@ -296,11 +313,11 @@ Jika Mentor sudah yakin dari review asinkron, sign-off dapat dilakukan secara te
 
 Jika member menerima keputusan **NOT YET**:
 
-**Langkah 1: Feedback tertulis dari Mentor** - Mentor memberikan SBIN feedback yang mengidentifikasi dimensi mana yang tidak terpenuhi, Exit Criteria mana yang belum terpenuhi, contoh konkret dari artefak, dan arah perbaikan yang spesifik (*Next* di SBIN).
+**Langkah 1: Feedback tertulis dari Mentor** - Mentor memberikan SBIN feedback yang mengidentifikasi dimensi mana yang tidak terpenuhi, Exit Criteria mana yang belum terpenuhi, contoh konkret dari artefak, dan arah perbaikan yang spesifik (*Next* di SBIN). Feedback ini juga dikirimkan ke **SDM Management** untuk diarsipkan dan dipantau.
 
 **Langkah 2: Masa iterasi member** - Member diberikan waktu **satu sprint (1 - 2 minggu)** untuk melakukan perbaikan berdasarkan feedback. Member harus menunjukkan evidence baru yang mendemonstrasikan peningkatan kompetensi. Evidence tersebut dapat berupa revisi artefak sebelumnya apabila perubahan yang dilakukan cukup signifikan untuk menunjukkan peningkatan nyata, atau berupa pekerjaan baru yang dikerjakan setelah feedback.
 
-**Langkah 3: Re-submission** - Member mengajukan ulang dengan self-assessment yang diperbarui, termasuk penjelasan eksplisit tentang apa yang berubah dari submission sebelumnya.
+**Langkah 3: Re-submission** - Member mengajukan ulang dengan self-assessment yang diperbarui, termasuk penjelasan eksplisit tentang apa yang berubah dari submission sebelumnya. Re-submission melewati **SDM Management terlebih dahulu** sebelum diteruskan ke Mentor.
 
 **Aturan retry:**
 
@@ -315,9 +332,9 @@ Jika member menerima keputusan **NOT YET**:
 Jika member percaya keputusan Mentor tidak tepat:
 
 1. Member mendokumentasikan keberatan secara tertulis: keputusan apa yang diperdebatkan, alasan mengapa member percaya keputusan itu tidak tepat, dan evidence konkret yang mendukung posisi member
-2. Dokumen tersebut dikirim ke **Mentor Lead atau SDM Management** (bukan Mentor yang sama)
-3. Mentor Lead atau SDM Management meninjau artefak dan feedback Mentor secara independen dan mengambil keputusan
-4. Jika member masih tidak setuju dengan keputusan Mentor Lead / SDM Management, eskalasi dapat dilakukan ke **Founder** sebagai final escalation — khusus untuk kasus yang melibatkan inkonsistensi standar atau gap rubrik yang sistemik
+2. Dokumen tersebut dikirim ke **SDM Management**
+3. SDM Management meninjau artefak dan feedback Mentor secara independen dan mengambil keputusan
+4. Jika member masih tidak setuju dengan keputusan SDM Management, eskalasi dapat dilakukan ke **Founder** sebagai final escalation — khusus untuk kasus yang melibatkan inkonsistensi standar atau gap rubrik yang sistemik
 5. Hasil appeal dicatat dan dapat digunakan untuk mengkalibrasi rubrik jika ditemukan gap dalam standar yang ada
 
 *Catatan: Appeal bukan tentang mendebat preferensi - appeal adalah mekanisme untuk mendeteksi ketika rubrik tidak cukup jelas atau ketika ada inkonsistensi antar-Mentor.*
@@ -328,9 +345,9 @@ Jika member percaya keputusan Mentor tidak tepat:
 
 Untuk menjaga konsistensi keputusan lintas Mentor (inter-rater reliability):
 
-**Calibration session:** Dilakukan minimal sekali per batch, sebelum batch dimulai. Mentor Lead memfasilitasi review bersama terhadap 2 - 3 contoh artefak - satu yang jelas memenuhi, satu yang jelas tidak memenuhi, dan satu yang borderline. Semua Mentor membuat keputusan independen terlebih dahulu, kemudian mendiskusikan perbedaan.
+**Calibration session:** Dilakukan minimal sekali per batch, sebelum batch dimulai. **SDM Management** memfasilitasi review bersama terhadap 2 - 3 contoh artefak - satu yang jelas memenuhi, satu yang jelas tidak memenuhi, dan satu yang borderline. Semua Mentor membuat keputusan independen terlebih dahulu, kemudian mendiskusikan perbedaan.
 
-**Calibration log:** Setiap perbedaan signifikan dalam calibration session dicatat. Jika ada perbedaan yang berulang untuk dimensi yang sama, **Mentor Lead mengusulkan pembaruan rubrik dan Founder menyetujui sebelum perubahan berlaku resmi**.
+**Calibration log:** Setiap perbedaan signifikan dalam calibration session dicatat oleh SDM Management. Jika ada perbedaan yang berulang untuk dimensi yang sama, **SDM Management mengusulkan pembaruan rubrik dan Founder menyetujui sebelum perubahan berlaku resmi**.
 
 **Cascade:** Ketika rubrik diperbarui, semua Mentor aktif diberitahu dan diberikan contoh konkret dari perubahan.
 
@@ -351,4 +368,7 @@ Untuk menjaga konsistensi keputusan lintas Mentor (inter-rater reliability):
 
 | Versi | Tanggal | Ringkasan | Oleh |
 | --- | --- | --- | --- |
-| 1.1 | Juni 2026 | Remediation audit: Kompetensi Lintas Track dibuat track-agnostic; gating Dimensi 1 direvisi ke evaluasi penuh dengan auto-NOT YET; retry mechanism dilonggarkan untuk revisi signifikan; appeal mechanism diperjelas dengan tiered escalation; ownership update rubrik ditambahkan; rubrik Fundamental Error, CI/CD, dan commit history diperjelas | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
+| 1.2 | Juli 2026 | Integrasi SDM Management: alur sign-off dua lapisan, re-submission lewat SDM Management, calibration difasilitasi SDM Management; referensi Appendix yang tidak ada dihapus | Ghaniyyir Rahman Sudarsono |
+| 1.1 | Juni 2026 | Remediation audit: Kompetensi Lintas Track dibuat track-agnostic; gating Dimensi 1 direvisi ke evaluasi penuh dengan auto-NOT YET; retry mechanism dilonggarkan untuk revisi signifikan; appeal mechanism diperjelas dengan tiered escalation; ownership update rubrik ditambahkan; rubrik Fundamental Error, CI/CD, dan commit history diperjelas | Ghaniyyir Rahman Sudarsono |
+
+*Owner: Ghaniyyir Rahman Sudarsono (Founder YYZU) · Approved by: Ghaniyyir Rahman Sudarsono · Review: Tahunan · Status: v1.2 - Active*

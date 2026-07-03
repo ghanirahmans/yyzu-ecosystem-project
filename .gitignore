@@ -55,3 +55,4 @@ prisma/seed-divisions.ts
 
 .skills
 .cursor
+.opencode
