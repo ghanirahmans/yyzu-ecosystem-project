@@ -3,12 +3,18 @@ title: Skema Project Management
 description: Framework operasional project management, Scrumban, peran, dan kebijakan kontribusi aktif di ekosistem YYZU.
 status: active
 owner: Divisi Product & Project Management YYZU
-lastUpdated: 2026-07-04
+lastUpdated: 2026-07-05
 sidebar:
   order: 2
 ---
 
 # Skema Project Management
+
+## Pendahuluan
+
+Kompetensi di YYZU divalidasi melalui proyek nyata, bukan sekadar ujian teori. Dokumen ini menjelaskan bagaimana proyek dirancang, dijalankan, dan dievaluasi.
+
+---
 
 ## Daftar Isi
 1. Pendahuluan
@@ -219,138 +225,11 @@ Definition of Done adalah kriteria minimum yang harus terpenuhi agar sebuah task
 3. Dokumentasi akhir (README, Closure Report, Retrospective) sudah lengkap.
 4. Demo Day sudah dilaksanakan.
 5. Mentor memberikan sign-off tertulis.
-**Sebuah project dinyatakan gagal atau dibatalkan jika:**
-1. Project tidak mencapai minimal satu dari kriteria di atas setelah melewati batas waktu yang telah ditetapkan dalam PRD/Project Brief.
-2. Seluruh anggota kelompok mengundurkan diri atau dinyatakan tidak aktif secara permanen.
-3. Mentor dan Divisi Product & Project Management sepakat bahwa project tidak dapat dilanjutkan karena alasan teknis atau operasional yang fundamental.
-**Prosedur Penutupan Project Gagal/Batal:**
-1. Project Leader atau Divisi Product & Project Management mengajukan dokumen penutupan (Closure Report) yang menjelaskan alasan kegagalan atau pembatalan.
-2. Mentor memberikan evaluasi tertulis terhadap seluruh anggota kelompok.
-3. Divisi Product & Project Management mencatat hasil evaluasi untuk keperluan penilaian Level anggota.
-4. Kanban Board dan seluruh dokumentasi project diarsipkan.
----
-## 6. Alur Kerja Project (Project Workflow)
-| Fase | Deskripsi Aktivitas Utama | Target Output & Milestone |
-| --- | --- | --- |
-| **Foundation** (Persiapan) | Anggota kelompok mempelajari konsep dasar dan tools standar (Git flow, Figma, project setup) di bawah arahan Project Leader; Mentor memberikan pembekalan materi. | Kesiapan teknis seluruh anggota tim terverifikasi. |
-| **Problem Discovery** (Observasi) | Tim menerima tema dari Mentor yang ditetapkan bersama Divisi Product & Project Management, lalu melakukan observasi lapangan untuk menemukan masalah nyata yang akan diselesaikan. Output wajib: Problem Discovery Document. | Problem Discovery Document selesai dan siap dijadikan dasar penyusunan PRD. |
-| **Planning & Pitching** (Perencanaan) | Tim menyusun PRD dan Wireframe berdasarkan hasil observasi. Pitching dilakukan di depan Mentor sebagai simulasi komunikasi profesional ke client (Q&A Challenge). | Proposal disetujui Mentor, desain Figma handoff, repositori dibuat, dan Kanban Board siap. |
-| **Execution & QA** (Pengerjaan) | Pengerjaan task secara fokus. Project Leader memimpin sinkronisasi berkala. Developer menulis kode dengan Pull Request & Code Review. Deployment berkala ke staging server untuk pengujian bersama. | Application berfungsi penuh di server staging dan bebas dari bug kritis. |
-| **Release & Closing** (Rilis & Evaluasi) | User Acceptance Testing (UAT) oleh Mentor. Deployment aplikasi ke server produksi. Presentasi demo produk akhir (Demo Day). Penyelesaian dokumentasi dan evaluasi tim (Retrospective). | Application online (live), dokumentasi lengkap, presentasi demo selesai, dan catatan retrospektif terisi. |
-### Detail Penjelasan Fase Kerja:
-> **Catatan:** Tabel di atas menampilkan 5 fase. Pada penjelasan detail di bawah, Problem Discovery digabung sebagai Sub-Fase 2A dalam Fase Planning & Pitching karena keduanya berjalan berurutan dan saling terkait.
-1. **Fase Foundation (Persiapan & Pembekalan):**
-	- Member mempelajari tools standar (Git flow, pengenalan Figma, dasar-dasar setup project).
-	- Mentor memberikan materi/kuliah fundamental yang dibutuhkan untuk tema/bidang proyek yang berjalan.
-	- Divisi PM melakukan pembentukan kelompok dan menunjuk Project Leader.
-	- **Output:** Checkpoint kesiapan teknis seluruh anggota tim.
-2. **Fase Planning & Proposal Pitching (Perencanaan & Pembuktian Ide):**
-	Fase ini terdiri dari dua sub-fase yang wajib dijalankan secara berurutan: **Problem Discovery** terlebih dahulu, kemudian **Proposal Pitching**. Tim tidak diperbolehkan masuk ke tahap pitching sebelum menyelesaikan dan mendokumentasikan hasil observasi mereka.
-	**Sub-Fase 2A: Problem Discovery (Observasi & Penemuan Masalah)**
-	BPH atau Mentor menetapkan **tema project** di awal (contoh: *Educational Technology*, *Health & Wellness*, *Local Business Digitalization*). Tim tidak menentukan solusi terlebih dahulu - tim terlebih dahulu terjun ke lapangan untuk memahami masalah nyata yang ada di dalam tema tersebut.
-	Proses yang wajib dijalankan:
-	- **Observasi lapangan atau riset pengguna:** Tim mengamati kondisi nyata, mewawancarai minimal 3 - 5 orang yang relevan dengan tema, atau melakukan survei singkat untuk memahami pain point yang sesungguhnya.
-	- **Identifikasi masalah:** Dari hasil observasi, tim merumuskan satu masalah utama yang paling signifikan, nyata, dan dapat diselesaikan dengan solusi teknologi dalam batasan scope project.
-	- **Validasi masalah:** Tim memastikan masalah yang dipilih benar-benar dialami oleh pengguna nyata, bukan asumsi tim semata.
-	- **Output wajib:** **Problem Discovery Document** (lihat Template E di Bagian 8).
-	**Sub-Fase 2B: Proposal Pitching (Penyusunan & Presentasi Ide)**
-	Setelah masalah ditemukan dan didokumentasikan, tim merancang solusi dan mempresentasikannya kepada Mentor.
-	- **Penyusunan Proposal (PRD Awal & Wireframe UI):** Berdasarkan hasil Problem Discovery, tim menyusun draf PRD yang menjelaskan solusi yang diusulkan, fitur MVP, dan wireframe kasar antarmuka.
-	- **Pitching & Defense Session (Sesi Sidang Proposal):** Kelompok mempresentasikan proposal di depan Mentor yang berperan sebagai *Client*. Tujuan sesi ini bukan sekadar mendapatkan persetujuan - melainkan melatih kemampuan komunikasi profesional: menyampaikan ide secara terstruktur, meyakinkan stakeholder dengan data, dan merespons pertanyaan kritis di bawah tekanan. Ini adalah simulasi nyata dari situasi kerja di industri.
-	- **Mentor Q&A Challenge:** Mentor mengajukan pertanyaan tajam mengenai relevansi solusi terhadap masalah yang ditemukan, urgensi masalah bagi pengguna nyata, kesiapan tim, dan kelayakan MVP dalam timeline yang tersedia. Tim wajib menjawab dengan argumen berbasis data observasi, bukan opini atau asumsi.
-	- **Revisi & Finalisasi:** Setelah mendapat persetujuan Mentor, desainer menuntaskan UI di Figma dan developer menyiapkan struktur database/API. Project Leader memecah fitur menjadi task di Kanban Board.
-	- **Output:** Problem Discovery Document selesai, proposal disetujui Mentor, desain Figma handoff, repositori GitHub dibuat, dan Kanban Board siap.
-3. **Fase Execution & QA (Pengerjaan & Pengujian):**
-	- Developer fokus menulis kode sesuai tugas di Kanban Board. Setiap kode baru wajib melalui proses Pull Request (PR) di GitHub dan di-review oleh rekan tim/Tech Lead.
-	- Project Leader melakukan sinkronisasi berkala (daily sync/standup) untuk melacak kendala.
-	- Di pertengahan fase eksekusi akhir, aplikasi dideploy ke server uji coba (staging).
-	- Tim melakukan pengujian aplikasi secara bersama-sama (QA Testing) dan memperbaiki bug yang ditemukan.
-	- **Output:** Application berfungsi penuh di server staging dan bebas dari bug kritis.
-4. **Fase Release & Closing (Peluncuran & Evaluasi):**
-	- **UAT (User Acceptance Testing):** Mentor menguji aplikasi untuk memberikan persetujuan akhir (*sign-off*).
-	- **Deployment to Production:** Merilis aplikasi ke server publik (misal: Vercel/Netlify).
-	- **Demo Day:** Setiap tim melakukan presentasi demo karya di hadapan Founder, Mentor, dan seluruh anggota ekosistem YYZU.
-	- **Dokumentasi Akhir:** Melengkapi dokumentasi repositori README dan mempublikasikan artikel portofolio.
-	- **Sprint Retrospective:** Seluruh tim berkumpul untuk melakukan evaluasi kerja kelompok menggunakan template retro.
-	- **Output:** Application online, dokumentasi lengkap, dan sesi retrospektif selesai.
----
-## 7. Standardisasi Tools Kolaborasi Ekosistem YYZU
-Untuk mendukung kolaborasi yang efisien dan menyimulasikan alur kerja industri nyata secara optimal, seluruh tim project YYZU wajib menggunakan perkakas (tools) digital standar berikut:
-- **GitHub:** Repositori kode utama, review pull request (PR), dan pengelolaan codebase terintegrasi. Seluruh kontributor teknis wajib menggunakan workflow branch YYZU.
-- **Figma:** Workspace desain antarmuka (UI/UX) kolaboratif, penerapan design system YYZU, prototyping interaktif, dan serah terima (handoff) aset desain ke tim developer.
-- **Discord / Slack:** Saluran komunikasi utama ekosistem. Digunakan untuk sinkronisasi harian (asinkron), diskusi divisi, mentoring live, serta koordinasi insidental.
-- **Linear / Trello / Jira / ClickUp / Notion Board:** Manajemen tugas berbasis Kanban Board untuk memantau status pengerjaan yang dikelola oleh Project Leader kelompok secara berkala. Kolom minimal yang harus ada:
-	- **Backlog:** Ide fitur masa depan / di luar scope MVP.
-	- **To Do:** Fitur MVP yang siap dikerjakan pada sprint berjalan.
-	- **In Progress:** Fitur yang sedang dikerjakan developer.
-	- **In Review:** Fitur yang telah selesai dikoding dan sedang dalam proses Pull Request/code review.
-	- **Done:** Fitur yang telah lolos review dan diintegrasikan ke codebase utama.
----
-## 8. Standardisasi Dokumentasi Proyek
-Setiap tim wajib mematuhi standar dokumentasi berikut untuk menjaga kualitas portofolio publik dan keberlanjutan kode:
-### E. Template Problem Discovery Document - Diisi pada Sub-Fase 2A (Wajib untuk Mini Project & Collaborative Project)
-> **Catatan:** Template diberi label A-E berdasarkan urutan kronologis dalam siklus project, bukan urutan abjat. Template E (Problem Discovery) digunakan paling awal, diikuti A (PRD), B (README), C (Dokumentasi Publik), dan D (Retrospektif).
-```markdown
-# [Nama Tim] - Problem Discovery Document
+**Sebuah project dinyatakan gagal at
 
-## 1. Tema Project yang Ditetapkan
-Tuliskan tema yang diberikan oleh BPH/Mentor.
-- Contoh: Educational Technology
+... [OUTPUT TRUNCATED - 11484 chars omitted out of 61484 total] ...
 
-## 2. Proses Observasi
-Jelaskan metode yang digunakan tim untuk memahami masalah.
-- Metode: [Wawancara / Survei / Observasi Langsung / Riset Literatur]
-- Jumlah responden/sumber: [angka]
-- Waktu pelaksanaan: [tanggal]
-
-## 3. Temuan Utama
-Ringkaskan apa yang tim temukan dari observasi. Gunakan data dan fakta, bukan opini.
-- Temuan 1: ...
-- Temuan 2: ...
-- Temuan 3: ...
-
-## 4. Masalah yang Dipilih
-Rumuskan satu masalah utama yang akan diselesaikan. Gunakan format:
-"[Kelompok pengguna] mengalami [masalah spesifik] ketika [konteks situasi], yang mengakibatkan [dampak nyata]."
-
-## 5. Alasan Pemilihan Masalah
-Jelaskan mengapa masalah ini diprioritaskan dibanding temuan lain.
-- Seberapa sering masalah ini terjadi?
-- Seberapa besar dampaknya bagi pengguna?
-- Apakah teknologi dapat menjadi solusi yang realistis?
-
-## 6. Solusi Awal yang Diusulkan (Hipotesis)
-Tuliskan solusi awal tim sebelum PRD dibuat. Ini bersifat hipotesis dan masih bisa berubah.
-- Solusi yang diusulkan: ...
-- Asumsi utama yang perlu divalidasi: ...
-```
----
-### A. Template PRD (Product Requirement Document) - Diisi di Notion pada Fase Planning
-```markdown
-# [Nama Proyek] - PRD
-
-## 0. Referensi Problem Discovery
-- Link Problem Discovery Document: [Tautan ke Notion]
-- Masalah yang diselesaikan: [salin rumusan masalah dari Problem Discovery Document]
-
-## 1. Latar Belakang (The Why)
-Jelaskan masalah nyata yang ditemukan dari observasi dan mengapa solusi teknologi dibutuhkan.
-
-## 2. Solusi & MVP Scope (The What)
-Tuliskan fitur-fitur minimal yang WAJIB ada di proyek ini agar aplikasi bisa berfungsi.
-- [Contoh] Fitur Login & Registrasi.
-- [Contoh] Fitur Dashboard Transaksi.
-
-## 3. Batasan Proyek (Out of Scope)
-Tulis fitur yang TIDAK dibuat pada fase ini demi menjaga timeline pengerjaan.
-- [Contoh] Fitur pembayaran otomatis via e-wallet (dimasukkan ke backlog).
-
-## 4. Tautan Penting
-- Link Figma: [Tautan ke Figma]
-- Link GitHub: [Tautan ke Repositori]
-```
-### B. Template README Repositori - Wajib di GitHub pada Fase Release
-> **Catatan:** Template ini bersifat generik dan wajib disesuaikan dengan tech stack aktual yang digunakan tim. Contoh-contoh di bawah hanya ilustratif - tim bebas memilih tools, bahasa, framework, dan platform deployment yang paling sesuai dengan kebutuhan dan kompetensi mereka, sepanjang pilihan tersebut dapat dipertanggungjawabkan dalam review Mentor.
+g paling sesuai dengan kebutuhan dan kompetensi mereka, sepanjang pilihan tersebut dapat dipertanggungjawabkan dalam review Mentor.
 ```markdown
 # [Nama Aplikasi]
 
@@ -613,7 +492,7 @@ Anggota Kelompok -> Project Leader Kelompok -> PM Core Division -> Mentor & Foun
 - **Level 3:** PM Core Division -> Mentor & Founder (eskalasi akhir)
 ---
 ## 12. Kebijakan Kontribusi Aktif & Penanganan Anggota Pasif
-Keaktifan dan kontribusi nyata dalam pengerjaan proyek adalah prasyarat mutlak untuk mempertahankan status keanggotaan dan memperoleh sertifikat kelulusan batch. Sanksi administratif dan alur pembinaan anggota yang pasif diatur secara sah merujuk pada [**Anggaran Rumah Tangga (ART) YYZU Pasal 9**](https://app.notion.com/p/38362601ca8c81439e7ec188ec445418).
+Keaktifan dan kontribusi nyata dalam pengerjaan proyek adalah prasyarat mutlak untuk mempertahankan status keanggotaan dan memperoleh sertifikat kelulusan batch. Sanksi administratif dan alur pembinaan anggota yang pasif diatur secara sah merujuk pada [**Anggaran Rumah Tangga (ART) YYZU Pasal 9**](/docs/identity/art).
 ### Prosedur Pembinaan & Surat Peringatan (SP)
 > **Catatan:** Prosedur ini khusus untuk penanganan anggota pasif/kurang aktif di tingkat operasional project. Untuk pelanggaran disiplin (nilai, kode etik, dan sejenisnya), berlaku prosedur SP tersendiri sesuai ART YYZU Pasal 9 yang dikeluarkan oleh Divisi SDM.
 Untuk menjaga keadilan kontribusi dalam tim, alur penegakan sanksi kontribusi aktif di tingkat operasional project adalah sebagai berikut:
@@ -643,9 +522,9 @@ Dokumen ini adalah dokumen hidup yang dapat berkembang seiring pertumbuhan ekosi
 4. Versi dokumen diperbarui dan riwayat perubahan dicatat pada tabel di atas.
 5. Seluruh pengurus dan member aktif diberitahu mengenai perubahan yang berlaku.
 ## Referensi Dokumen Terkait
-- [Anggaran Dasar (AD) YYZU](https://app.notion.com/p/38362601ca8c8145b3c3c942fc70c373) - Landasan hukum dan struktur organisasi
-- [Anggaran Rumah Tangga (ART) YYZU](https://app.notion.com/p/38362601ca8c81439e7ec188ec445418) - Ketentuan operasional dan keanggotaan
-- [Skema Mentoring](https://app.notion.com/p/37062601-ca8c-802ba988e64a5f59bf7c) - Mekanisme mentoring dan kontribusi mentor
-- [Skema Partnership](https://app.notion.com/p/38362601ca8c819d8ba4ed363897d2b5) - Mekanisme kemitraan eksternal
-- [Panduan Peran YYZU](https://app.notion.com/p/37462601ca8c81daa0cbfbf6fc9d9f70) - Pembagian tanggung jawab peran
-- [Glosarium YYZU](https://app.notion.com/p/39362601ca8c814b80dde8f5521d7853) - Definisi seluruh istilah ekosistem
+- [Anggaran Dasar (AD) YYZU](/docs/identity/ad) - Landasan hukum dan struktur organisasi
+- [Anggaran Rumah Tangga (ART) YYZU](/docs/identity/art) - Ketentuan operasional dan keanggotaan
+- [Skema Mentoring](/docs/mentoring/overview) - Mekanisme mentoring dan kontribusi mentor
+- [Skema Partnership](/docs/mentoring/partnership) - Mekanisme kemitraan eksternal
+- [Panduan Peran YYZU](/docs/roles/overview) - Pembagian tanggung jawab peran
+- [Glosarium YYZU](/docs/operations/terminology) - Definisi seluruh istilah ekosistem

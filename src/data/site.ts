@@ -114,7 +114,7 @@ export const visionMission: CardItem[] = [
   {
     title: "Misi",
     description:
-      "Menciptakan environment belajar teknologi yang aktif, kolaboratif, dan berkelanjutan; membantu talenta berkembang melalui project nyata dan pengalaman berbasis tim; menjembatani kampus, talenta, mentor, komunitas, dan industri; mendorong terbentuknya skill teknis, problem solving, communication, dan ownership; serta membangun portfolio, pengalaman kolaboratif, dan kesiapan kerja.",
+      "Menciptakan environment belajar teknologi yang aktif, kolaboratif, dan berkelanjutan; membantu talenta berkembang melalui project nyata dan pengalaman berbasis tim; menjembatani kampus, talenta, mentor, komunitas, dan industri; mendorong terbentuknya skill teknis, problem solving, communication, dan ownership; serta membangun portfolio, pengalaman kolaboratif, dan kesiapan kerja; serta mengembangkan kultur teknologi yang produktif, suportif, dan sustainable.",
   },
 ];
 
@@ -553,6 +553,20 @@ export const projectCategories: ProjectCategory[] = [
     duration: "2 - 3 Bulan per Fase",
     focus: "Advanced level",
     description: "Pengembangan platform, infrastruktur, atau aplikasi penunjang operasional internal YYZU (misal: Portal Showcase, Dashboard Member) untuk pengguna nyata.",
+  },
+  {
+    title: "Real-World Project Development",
+    duration: "3 - 6 Bulan",
+    focus: "Advanced level",
+    description:
+      "Pengembangan produk digital untuk kebutuhan nyata mitra industri atau organisasi eksternal, dengan standar kualitas dan timeline profesional.",
+  },
+  {
+    title: "Open-Source Contribution",
+    duration: "Berkelanjutan",
+    focus: "Intermediate - Advanced",
+    description:
+      "Kontribusi aktif ke proyek open-source yang relevan dengan track keahlian member, melalui pull request, issue resolution, dan dokumentasi teknis.",
   },
 ];
 

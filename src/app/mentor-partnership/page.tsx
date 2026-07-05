@@ -11,23 +11,38 @@ export const metadata: Metadata = {
 const mentorFormUrl = "https://forms.gle/a8SbEvNR8hDFE5529";
 
 const mentorContributions = [
-  "Mentoring & review sesi berkala",
-  "Berbagi pengalaman (sharing session)",
-  "Evaluasi hasil kerja (code/design review)",
-  "Memberikan workflow & career insight",
-  "Bimbingan problem solving teknis",
+  "Sesi arahan awal",
+  "Sesi validasi learning path",
+  "Sesi review rencana project",
+  "Sesi checkpoint project",
+  "Sesi review hasil project",
+  "Sesi sharing pengalaman industri",
+  "Sesi portfolio atau career review",
+  "Sesi Q&A teknis atau karier",
 ];
 
 const mentorFocusAreas = [
-  "Software Engineering",
-  "Frontend Development",
-  "Backend Development",
-  "Mobile App Development",
-  "UI/UX Design",
+  "Software Development",
   "Product Management",
-  "Data / Artificial Intelligence",
-  "Cloud / DevOps",
-  "Engineering Leadership",
+  "UI/UX Design",
+  "Data Analytics",
+  "Digital Marketing",
+  "Founder / Startup",
+];
+
+const mentorLevels = [
+  {
+    level: "Level 1 - Light Involvement",
+    description: "Sesi tunggal (sharing, Q&A, review portofolio). Durasi 45-90 menit per sesi.",
+  },
+  {
+    level: "Level 2 - Cycle Mentor",
+    description: "Pendamping Mini Project selama 6 minggu. Total 4-5 sesi pada checkpoint terjadwal.",
+  },
+  {
+    level: "Level 3 - Project Advisor",
+    description: "Penasihat Collaborative/Internal Project selama 2-3 bulan. Total 3-5 sesi pada milestone.",
+  },
 ];
 
 const projectPartnerProvides = [
@@ -292,6 +307,32 @@ export default function MentorPartnershipPage() {
         </div>
       </section>
 
+      {/* SECTION 1.5: LEVEL KETERLIBATAN */}
+      <section className="bg-white py-16 sm:py-20 border-t border-slate-100">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <Section
+            eyebrow="Level Keterlibatan"
+            title="Tiga level kontribusi yang fleksibel."
+            description="YYZU membagi tingkat keterlibatan mentor agar bisa disesuaikan dengan kesibukan profesional masing-masing."
+            align="center"
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {mentorLevels.map((item) => (
+              <article
+                key={item.level}
+                className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                <div className="h-1 w-8 rounded-sm bg-[#006A67] mb-4" />
+                <h3 className="text-lg font-bold text-slate-950">{item.level}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 2: BATASAN & SAFETY (DARK) */}
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -344,7 +385,7 @@ export default function MentorPartnershipPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
             {/* Left Column: Flow */}
             <div className="lg:col-span-5 lg:sticky lg:top-8">
-              <span className="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">How It Works</span>
+              <span className="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">Cara Kerja</span>
               <h3 className="mt-4 text-3xl font-bold tracking-tight text-slate-950">Tahapan Proses Kolaborasi</h3>
               <p className="mt-4 text-sm leading-6 text-slate-600">
                 Dari penyerahan minat awal hingga pelaksanaan dan evaluasi hasil kerja sama.
@@ -367,7 +408,7 @@ export default function MentorPartnershipPage() {
 
             {/* Right Column: Models */}
             <div className="lg:col-span-7">
-              <span className="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">Collaboration Models</span>
+              <span className="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">Model Kolaborasi</span>
               <h3 className="mt-4 text-3xl font-bold tracking-tight text-slate-950">Pilihan Model Kerja Sama</h3>
               
               <div className="mt-8 space-y-4">

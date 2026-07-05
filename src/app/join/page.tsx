@@ -42,6 +42,30 @@ export default function JoinPage() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <Section
+            eyebrow="Track Spesialisasi"
+            title="Tiga track utama untuk memulai."
+            description="YYZU menyediakan tiga track spesialisasi utama berdasarkan standar kompetensi industri. Pilih track yang paling sesuai dengan minat dan tujuan Anda."
+            align="center"
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              { title: "Web Development", description: "Membangun aplikasi web modern dengan standar industri: frontend, backend, API, dan deployment." },
+              { title: "UI/UX Design", description: "Mendesain pengalaman pengguna yang intuitif melalui riset, wireframing, prototyping, dan usability testing." },
+              { title: "Product Management", description: "Mengelola siklus hidup produk digital: discovery, prioritization, roadmap, dan stakeholder management." },
+            ].map((item) => (
+              <article key={item.title} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="h-1 w-8 rounded-sm bg-[#0015A5] mb-4" />
+                <h3 className="text-lg font-bold text-slate-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20 border-t border-slate-100">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <Section
             eyebrow="Jalur Gabung"
             title="Pilih jalur keterlibatan yang sesuai dengan profil Anda."
             description="Peran di YYZU dapat berkembang seiring bertambahnya skill dan kontribusi Anda. Member aktif berkesempatan mengambil peran sebagai kontributor internal atau project lead."
@@ -58,7 +82,7 @@ export default function JoinPage() {
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-5xl px-5 text-center sm:px-6 lg:px-8">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-200">
-            Registration of Interest
+            Pendaftaran Minat
           </p>
           <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-5xl">
             Siap untuk bertumbuh bersama ekosistem YYZU?
