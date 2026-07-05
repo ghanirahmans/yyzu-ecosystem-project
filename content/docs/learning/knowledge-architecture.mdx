@@ -7,7 +7,7 @@ lastUpdated: 2026-07-05
 
 ---
 
-## Pendahuluan
+# Knowledge Architecture YYZU
 
 ---
 
@@ -273,123 +273,14 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 - **Usability Testing (UT)**
 	- *Prasyarat:* User Research, Wireframing
 	- *Diperlukan untuk:* Memvalidasi kemudahan penggunaan dengan pengguna nyata mencoba prototipe.
-	- *Evaluasi Diagnostik:* *"Di bagian alur mana pengguna mengalami friction? Apa rekomendasi perbaikannya?"*
-- **Interaction Design & State Coverage**
-	- *Prasyarat:* Design Component Consistency
-	- *Diperlukan untuk:* Mendesain seluruh kondisi tampilan (normal, loading, error, empty state).
-	- *Evaluasi Diagnostik:* *"Bagaimana tampilan halaman pencarian jika internet mati atau hasil tidak ditemukan?"*
-- **Design Handoff Spec**
-	- *Prasyarat:* Interaction Design, Design Component
-	- *Diperlukan untuk:* Spesifikasi desain yang siap diimplementasikan developer tanpa miskomunikasi.
-	- *Evaluasi Diagnostik:* *"Bisakah developer membuat layout presisi hanya dari dokumen serah-terima desainmu?"*
-- **Arsitektur Informasi (IA)**
-	- *Prasyarat:* User Research
-	- *Diperlukan untuk:* Menyusun struktur menu dan navigasi secara intuitif.
-	- *Evaluasi Diagnostik:* *"Bagaimana kamu memutuskan pengelompokan menu dashboard YYZU? Sudahkah diuji dengan pengguna?"*
-### Lapisan 4 - UI/UX Advanced
-- **Design System Governance & Scale**
-	- *Prasyarat:* Design Component Consistency
-	- *Diperlukan untuk:* Mengelola token desain di Figma agar terhubung langsung dengan variabel komponen kode developer.
-	- *Evaluasi Diagnostik:* *"Jika warna tema YYZU berubah, bagaimana perubahan itu otomatis ter-update di library Figma dan codebase developer?"*
-- **Advanced Usability & Quantitative Research**
-	- *Prasyarat:* Usability Testing
-	- *Diperlukan untuk:* Mengukur kegunaan produk menggunakan skala kuantitatif (SUS, HEART Framework).
-- **Behavioral Analytics & Data-Driven Design**
-	- *Prasyarat:* Arsitektur Informasi
-	- *Diperlukan untuk:* Memperbaiki desain berdasarkan data nyata di produksi (heatmap, funnel, session recording).
+	- *Evaluasi Diagnostik:* *"Di bagia
 
----
-## 8. Knowledge Architecture: Product Management (Product Strategy & Execution)
-### Lapisan 2 - Fondasi PM (Beginner)
-- **Problem Framing**
-	- *Prasyarat:* -
-	- *Diperlukan untuk:* Mendefinisikan masalah pengguna secara tajam sebelum memikirkan solusi.
-	- *Evaluasi Diagnostik:* *"Apakah problem statement kamu menjelaskan masalah pengguna, ataukah secara terselubung langsung menawarkan solusi fitur?"*
-- **User Research for PM**
-	- *Prasyarat:* Problem Framing
-	- *Diperlukan untuk:* Memvalidasi asumsi masalah dengan data kualitatif/kuantitatif.
-	- *Evaluasi Diagnostik:* *"Asumsi mana yang paling berisiko salah dalam rancangan produkmu? Bagaimana cara memvalidasinya?"*
-- **Prioritization Framework**
-	- *Prasyarat:* Problem Framing, User Research
-	- *Diperlukan untuk:* Memilih fitur paling berdampak dengan resource terbatas (RICE, MoSCoW).
-	- *Evaluasi Diagnostik:* *"Mengapa fitur A masuk sprint sekarang, sedangkan fitur B ditunda? Framework apa yang melandasi keputusan ini?"*
-- **Acceptance Criteria Writing (AC)**
-	- *Prasyarat:* Problem Framing
-	- *Diperlukan untuk:* Kriteria fungsionalitas yang jelas agar developer dan tester sepakat tentang 'Definition of Done'.
-	- *Evaluasi Diagnostik:* *"Bisakah developer membuat test case hanya berdasarkan AC yang kamu tulis ini?"*
-- **Facilitation Basics**
-	- *Prasyarat:* -
-	- *Diperlukan untuk:* Memandu rapat tim (sprint planning/retro) agar menghasilkan keputusan yang jelas.
-### Lapisan 3 - PM Intermediate
-- **Product Roadmapping**
-	- *Prasyarat:* Prioritization Framework
-	- *Diperlukan untuk:* Menyelaraskan visi jangka menengah dengan tim teknis dan bisnis.
-	- *Evaluasi Diagnostik:* *"Outcome apa yang ingin diberikan kepada pengguna 3 bulan dari sekarang? Fitur apa mendukungnya?"*
-- **Success Metrics Definition**
-	- *Prasyarat:* Problem Framing, Prioritization Framework
-	- *Diperlukan untuk:* Indikator kuantitatif yang membuktikan fitur berhasil memecahkan masalah.
-	- *Evaluasi Diagnostik:* *"Metrik apa yang membuktikan fitur event YYZU berhasil meningkatkan pendaftaran member?"*
-- **Product Requirement Document (PRD) Writing**
-	- *Prasyarat:* AC Writing, Product Roadmapping
-	- *Diperlukan untuk:* Dokumen spec produk yang menyatukan konteks bisnis, masalah, fungsionalitas, dan kriteria sukses.
-	- *Evaluasi Diagnostik:* *"Bisakah desainer wireframe dan developer setup API hanya dari PRD ini tanpa meeting tambahan?"*
-- **Decision Documentation**
-	- *Prasyarat:* Prioritization Framework, Facilitation Basics
-	- *Diperlukan untuk:* Mencatat keputusan produk krusial agar bisa dievaluasi di kemudian hari.
-### Lapisan 4 - PM Advanced
-- **Product Strategy & Vision Alignment**
-	- *Prasyarat:* Product Roadmapping
-	- *Diperlukan untuk:* Menghubungkan eksekusi harian dengan arah pertumbuhan organisasi jangka panjang.
-- **Data-Informed Product Decisions**
-	- *Prasyarat:* Success Metrics Definition
-	- *Diperlukan untuk:* Menganalisis data perilaku pengguna untuk iterasi produk.
-	- *Evaluasi Diagnostik:* *"Tunjukkan analisis data retensi/funnel yang melandasi keputusan iterasi ulang halaman pembayaran ini."*
-- **Stakeholder Management & Negotiation**
-	- *Prasyarat:* Decision Documentation
-	- *Diperlukan untuk:* Menjaga integritas roadmap dari intervensi subjektif stakeholder.
+... [OUTPUT TR
 
----
-## 9. Knowledge Architecture: Quality Assurance
-*QA adalah penjaga kualitas sistem yang memastikan setiap rilis memenuhi standar fungsional, performa, dan keamanan.*
-### Lapisan 2 - Fondasi QA (Beginner)
-- **Testing Types & Pyramid**
-	- *Prasyarat:* Computational Thinking
-	- *Diperlukan untuk:* Memahami hierarki pengujian: Unit Test, Integration Test, E2E Test.
-	- *Transferability:* Testing pyramid ini juga digunakan Software Dev dan Web Dev saat menulis kode yang dapat diuji.
-	- *Evaluasi Diagnostik:* *"Mengapa E2E test yang hanya menguji alur checkout belum cukup untuk menjamin kualitas fitur pembayaran secara menyeluruh?"*
-- **Manual Test Case Writing**
-	- *Prasyarat:* Testing Types
-	- *Diperlukan untuk:* Mendokumentasikan skenario pengujian yang komprehensif agar bisa diulang secara konsisten.
-	- *Evaluasi Diagnostik:* *"Apakah test case login YYZU yang kamu tulis sudah mencakup happy path, negative case, dan edge case?"*
-- **Bug Reporting & Triage**
-	- *Prasyarat:* Manual Test Case Writing
-	- *Diperlukan untuk:* Mendokumentasikan bug dengan detail yang cukup agar developer dapat mereproduksi tanpa klarifikasi tambahan.
-	- *Evaluasi Diagnostik:* *"Bisakah developer lain mereproduksi bug tersebut hanya dari laporan yang kamu tulis?"*
-- **Exploratory Testing**
-	- *Prasyarat:* Manual Test Case Writing
-	- *Diperlukan untuk:* Menemukan bug yang tidak ter-cover oleh test case formal melalui eksplorasi bebas.
-	- *Evaluasi Diagnostik:* *"Bagaimana kamu menentukan area mana yang paling berisiko untuk dijelajahi saat Exploratory Testing?"*
-- **Acceptance Testing (UAT)**
-	- *Prasyarat:* Bug Reporting
-	- *Diperlukan untuk:* Memvalidasi bahwa fitur memenuhi Acceptance Criteria yang ditetapkan PM.
-	- *Evaluasi Diagnostik:* *"Siapa yang bertanggung jawab melakukan UAT - QA atau PM? Jelaskan perbedaan perannya."*
-### Lapisan 3 - Intermediate QA
-- **Test Automation Fundamentals**
-	- *Prasyarat:* Manual Test Case Writing, Programming Fundamentals
-	- *Diperlukan untuk:* Mengotomatiskan skenario pengujian yang berulang agar regresi lebih cepat dan konsisten.
-	- *Evaluasi Diagnostik:* *"Test case mana yang paling layak diotomatisasi terlebih dahulu? Apa kriteria pemilihannya?"*
-- **API Testing**
-	- *Prasyarat:* Arsitektur Klien-Server, Test Automation
-	- *Diperlukan untuk:* Menguji kontrak API secara langsung tanpa melalui UI.
-	- *Evaluasi Diagnostik:* *"Bagaimana kamu memverifikasi bahwa endpoint YYZU mengembalikan error 422 dengan pesan tepat saat input tidak valid?"*
-- **Performance & Load Testing**
-	- *Prasyarat:* API Testing
-	- *Diperlukan untuk:* Mengukur batas kapasitas sistem dan mengidentifikasi bottleneck sebelum terjadi di produksi.
-	- *Evaluasi Diagnostik:* *"Bagaimana kamu menentukan jumlah concurrent user yang menjadi target load test untuk sistem YYZU?"*
-- **Regression Testing Strategy**
-	- *Prasyarat:* Test Automation
-	- *Diperlukan untuk:* Memastikan fitur baru tidak merusak fungsionalitas yang sudah berjalan.
-	- *Evaluasi Diagnostik:* *"Dari 500 test case yang ada, bagaimana kamu memilih mana yang dijalankan di setiap rilis untuk efisiensi waktu?"*
+... [OUTPUT TRUNCATED - 53 chars omitted out of 50053 total] ...
+
+
+ dijalankan di setiap rilis untuk efisiensi waktu?"*
 ### Lapisan 4 - Advanced QA
 - **QA Architecture & Strategy**
 	- *Prasyarat:* Seluruh Lapisan 3
