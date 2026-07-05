@@ -160,7 +160,7 @@ export default function MentorPartnershipPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-[#f7f9fb] text-slate-950 border-b border-slate-200 flex flex-col justify-center min-h-[calc(100vh-4rem)]">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:44px_44px] opacity-60"></div>
+        <div className="absolute inset-0 -z-10" style={{ backgroundImage: "radial-gradient(circle, rgba(0,21,165,0.05) 1px, transparent 1px)", backgroundSize: "24px 24px" }}></div>
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="max-w-4xl">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#006A67]">
@@ -204,7 +204,7 @@ export default function MentorPartnershipPage() {
       <section className="bg-white py-16 sm:py-20 border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Collaboration Paths"
+            eyebrow="Jalur Kolaborasi"
             title="Dua cara utama berpartisipasi dalam ekosistem."
             description="Pilih untuk terlibat secara personal sebagai mentor praktisi, atau jalin kemitraan formal sebagai partner institusi."
             align="center"
@@ -296,7 +296,7 @@ export default function MentorPartnershipPage() {
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Boundaries"
+            eyebrow="Batasan"
             title="Prinsip Batasan Kerja Sama (Collaboration Boundaries)"
             description="Demi menjaga ekosistem yang sehat, etis, dan bebas eksploitasi, kami menetapkan rambu-rambu kolaborasi yang jelas."
             align="center"

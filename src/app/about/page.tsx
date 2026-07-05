@@ -24,7 +24,7 @@ export default function AboutPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <Section
-            eyebrow="The Gap"
+            eyebrow="Celah yang Ada"
             title="Masalahnya bukan kurang materi belajar, tetapi kurang ruang untuk praktik kolaboratif."
             description="Pendidikan akademis dan belajar mandiri memberikan fondasi teori yang krusial. Namun untuk siap masuk ke industri, talenta wajib berlatih mengelola tugas tim, menerima masukan teknis (review), beradaptasi dengan kebutuhan produk, dan menjaga komitmen kualitas hasil kerja."
           />
@@ -39,7 +39,7 @@ export default function AboutPage() {
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Bridge Direction"
+            eyebrow="Arah Jembatan"
             title="Talent bridge dari pemahaman teori menuju kesiapan industri."
             description="YYZU bukan sekadar tempat mengobrol santai atau talent pool biasa. Yang kami bangun adalah lingkungan tumbuh yang membiasakan talenta bekerja secara terstruktur sesuai standar kebutuhan kerja profesional."
             align="center"
@@ -82,7 +82,7 @@ export default function AboutPage() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Long-Term Direction"
+            eyebrow="Arah Jangka Panjang"
             title="Membangun ekosistem teknologi kolaboratif yang terarah dan berkelanjutan."
             description="Arah pengembangan YYZU mencakup standarisasi learning path praktis, sistem pengelolaan project brief terintegrasi, jaringan mentor profesional, hub portofolio proses, hingga kolaborasi riset & pengembangan bersama mitra industri."
             align="center"

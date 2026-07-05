@@ -24,7 +24,7 @@ export default function ProjectsPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Current Logs"
+            eyebrow="Log Saat Ini"
             title="Timeline pengembangan YYZU yang sedang berjalan."
             description="Catatan ini dibuat agar proses pengembangan konsep, pembukaan member, project collaboration, workflow industri, keputusan, dan kontribusi YYZU bisa dipahami dengan jelas."
             align="center"
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Upcoming"
+            eyebrow="Segera Hadir"
             title="Next focus YYZU."
             description="Upcoming digunakan sebagai roadmap ringan. Bagian ini menunjukkan arah yang sedang disiapkan, tanpa mengklaim bahwa program sudah berjalan penuh."
             align="center"
@@ -97,7 +97,7 @@ export default function ProjectsPage() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Project Principles"
+            eyebrow="Prinsip Proyek"
             title="Project harus realistis, nyata, reviewable, dan membangun industry readiness."
             description="Yang penting project membantu member belajar workflow, ownership, komunikasi, product thinking, software quality, documentation, dan kualitas kontribusi."
             align="center"

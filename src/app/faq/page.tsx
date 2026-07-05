@@ -22,7 +22,7 @@ export default function FaqPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Questions"
+            eyebrow="Pertanyaan"
             title="Pahami YYZU sebelum mendaftarkan diri."
             description="Kami ingin memastikan setiap pembelajar, mentor, dan partner memahami arah ekosistem, kultur kolaboratif, dan ekspektasi peran sebelum memutuskan bergabung."
             align="center"

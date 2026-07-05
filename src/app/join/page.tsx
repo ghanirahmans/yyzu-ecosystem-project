@@ -26,7 +26,7 @@ export default function JoinPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Expectations"
+            eyebrow="Ekspektasi"
             title="Ekspektasi sebelum Anda bergabung."
             description="Kami berkomitmen untuk menjaga kualitas kolaborasi. Memahami ekspektasi di awal akan membantu Anda beradaptasi dengan ritme belajar di dalam ekosistem."
             align="center"
@@ -42,7 +42,7 @@ export default function JoinPage() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <Section
-            eyebrow="Join Paths"
+            eyebrow="Jalur Gabung"
             title="Pilih jalur keterlibatan yang sesuai dengan profil Anda."
             description="Peran di YYZU dapat berkembang seiring bertambahnya skill dan kontribusi Anda. Member aktif berkesempatan mengambil peran sebagai kontributor internal atau project lead."
           />

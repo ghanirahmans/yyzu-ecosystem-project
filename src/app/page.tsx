@@ -596,7 +596,7 @@ export default function Home() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <Section
-            eyebrow="Positioning"
+            eyebrow="Posisi"
             title="YYZU adalah collaborative technology ecosystem dan talent bridge."
             description="YYZU bukan sekadar ruang belajar pasif atau komunitas kumpul santai. Kami adalah lingkungan tumbuh terstruktur untuk melatih kesiapan industri talenta teknologi melalui kolaborasi aktif, ulasan berkala, dan project-based growth."
           />
@@ -620,7 +620,7 @@ export default function Home() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20 border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Learning Pillars"
+            eyebrow="Pilar Pembelajaran"
             title="Empat pilar utama yang melandasi proses belajar di YYZU."
             description="Kami merancang cara belajar yang berorientasi pada output nyata, standar industri, serta kolaborasi aktif untuk mengikis ego individu."
             align="center"
@@ -648,7 +648,7 @@ export default function Home() {
       <section className="bg-white py-16 sm:py-20 border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Specialization Tracks"
+            eyebrow="Track Spesialisasi"
             title="Peta Bidang Keahlian & Kurikulum."
             description="YYZU membagi fokus pembelajaran ke dalam 11 track spesifik berbasis standar kompetensi industri. Pilih jalur Anda dan bertumbuh bersama tim."
             align="center"
@@ -681,7 +681,7 @@ export default function Home() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Why YYZU Exists"
+            eyebrow="Mengapa YYZU Ada"
             title="Menjembatani celah antara teori belajar dan realitas dunia kerja."
             description="Banyak talenta memiliki fondasi akademis yang baik, tetapi belum terbiasa dengan sprint planning, version control, dokumentasi teknis, ulasan kritis (review), dan ownership tugas. YYZU hadir untuk melatih habits industri tersebut."
             align="center"
@@ -698,7 +698,7 @@ export default function Home() {
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Bridge Model"
+            eyebrow="Model Jembatan"
             title="Dari tahap belajar menuju kolaborasi aktif dan kesiapan industri."
             description="Tumbuh di YYZU bukanlah jalan pintas. Kesiapan industri dibangun melalui interaksi nyata dengan mentor praktisi, pembagian peran tim, dan ulasan hasil kerja yang transparan."
             align="center"
@@ -725,7 +725,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <Section
-              eyebrow="Activities Preview"
+              eyebrow="Pratinjau Aktivitas"
               title="Latihan langsung lewat simulasi workflow dan kolaborasi proyek."
               description="Aktivitas kami dirancang agar partisipan terbiasa menyelesaikan tugas sesuai scope, berani mempresentasikan solusi, menerima masukan teknis, dan mendokumentasikan proses."
             />
@@ -759,7 +759,7 @@ export default function Home() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20 border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Project Categories"
+            eyebrow="Kategori Proyek"
             title="Tiga Kategori Proyek sebagai Media Belajar."
             description="Pertumbuhan skill divalidasi langsung melalui pengerjaan proyek. Dari tingkat dasar secara mandiri hingga mengelola infrastruktur produksi riil."
             align="center"
@@ -796,7 +796,7 @@ export default function Home() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Ecosystem"
+            eyebrow="Ekosistem"
             title="Menghubungkan future builders, kampus, mentor, dan industri."
             description="YYZU memfasilitasi kolaborasi multi-pihak untuk mendukung penyelarasan kompetensi talenta dengan standar kebutuhan industri digital."
             align="center"

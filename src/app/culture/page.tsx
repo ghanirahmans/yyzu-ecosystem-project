@@ -24,7 +24,7 @@ export default function CulturePage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Core Values"
+            eyebrow="Nilai Inti"
             title="Nilai-nilai inti yang memandu cara kami bekerja."
             description="Nilai inti ini diterapkan langsung dalam menentukan format aktivitas, kriteria ulasan project, serta metode kerja tim lintas peran."
             align="center"
@@ -40,7 +40,7 @@ export default function CulturePage() {
       <section className="bg-[#f7f9fb] py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <Section
-            eyebrow="Principles"
+            eyebrow="Prinsip"
             title="Menghargai kualitas proses, konsistensi, dan kontribusi aktif."
             description="Di YYZU, kami lebih menghargai kemauan melakukan perbaikan dan kepemilikan tugas secara bertanggung jawab dibanding klaim sepihak tanpa bukti."
           />
@@ -64,7 +64,7 @@ export default function CulturePage() {
       <section className="bg-white py-16 sm:py-20 border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Learning Principles"
+            eyebrow="Prinsip Pembelajaran"
             title="Delapan Prinsip Belajar YYZU."
             description="Acuan akademis dan praktis yang melandasi setiap keputusan kurikulum, metodologi proyek, dan standar penilaian di ekosistem kami."
             align="center"
@@ -100,7 +100,7 @@ export default function CulturePage() {
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Ecosystem Fit"
+            eyebrow="Kesesuaian Ekosistem"
             title="YYZU didesain untuk pertumbuhan yang terarah."
             description="Kami ingin memastikan ekspektasi Anda selaras dengan model belajar kolaboratif yang kami jalankan."
             align="center"

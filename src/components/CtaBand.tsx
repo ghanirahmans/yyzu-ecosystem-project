@@ -41,7 +41,7 @@ export default function CtaBand({
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden rounded-lg bg-slate-950 px-6 py-12 text-white sm:px-10">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(0,21,165,0.78)_0%,rgba(0,106,103,0.64)_48%,rgba(15,23,42,0.96)_100%)]"></div>
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:38px_38px] opacity-20"></div>
+          <div className="absolute inset-0 -z-10" style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px)", backgroundSize: "24px 24px" }}></div>
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-200">
               {eyebrow}

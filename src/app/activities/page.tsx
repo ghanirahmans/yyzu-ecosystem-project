@@ -24,7 +24,7 @@ export default function ActivitiesPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Activity Types"
+            eyebrow="Jenis Aktivitas"
             title="Model pembelajaran praktis yang mendekati lingkungan kerja nyata."
             description="Kami menyusun aktivitas agar member terbiasa dengan pembagian tugas tim, pembuatan dokumentasi, pengiriman hasil kerja terukur, serta evaluasi mandiri."
             align="center"
@@ -40,7 +40,7 @@ export default function ActivitiesPage() {
       <section className="bg-slate-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Working Rhythm"
+            eyebrow="Ritme Kerja"
             title="Ritme aktivitas Learn, Build, Collaborate, Grow."
             description="Sebuah kerangka kerja terarah untuk memandu kemajuan belajar Anda dari pemahaman dasar hingga portofolio proses yang kredibel."
             align="center"
@@ -71,7 +71,7 @@ export default function ActivitiesPage() {
       <section className="bg-white py-16 sm:py-20 border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <Section
-            eyebrow="Project Categories"
+            eyebrow="Kategori Proyek"
             title="Tiga Kategori Proyek sebagai Media Belajar."
             description="Pertumbuhan skill divalidasi langsung melalui pengerjaan proyek. Dari tingkat dasar secara mandiri hingga mengelola infrastruktur produksi riil."
             align="center"

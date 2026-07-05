@@ -22,10 +22,35 @@ export default function PageHero({
       }`}
     >
       <div
-        className={`absolute inset-0 -z-10 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:44px_44px] ${
-          isDark ? "opacity-20" : "opacity-60"
-        }`}
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage: isDark
+            ? "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)"
+            : "radial-gradient(circle, rgba(0,21,165,0.05) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
       ></div>
+      {/* Gradient orbs */}
+      <div
+        className="pointer-events-none absolute -top-24 -left-24 h-[350px] w-[350px] rounded-full blur-3xl -z-10"
+        aria-hidden="true"
+        style={{
+          background: isDark
+            ? "radial-gradient(circle, #0015A5, transparent 70%)"
+            : "radial-gradient(circle, #0015A5, transparent 70%)",
+          opacity: isDark ? 0.12 : 0.08,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute -bottom-24 -right-24 h-[300px] w-[300px] rounded-full blur-3xl -z-10"
+        aria-hidden="true"
+        style={{
+          background: isDark
+            ? "radial-gradient(circle, #006A67, transparent 70%)"
+            : "radial-gradient(circle, #006A67, transparent 70%)",
+          opacity: isDark ? 0.10 : 0.06,
+        }}
+      />
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="max-w-4xl">
           <p
