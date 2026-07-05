@@ -504,7 +504,7 @@ export default function Home() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#006A67]" />
             </span>
             <span className="text-xs font-bold tracking-wide text-[#006A67]">
-              Now Open &mdash; Batch 1 Accepting Applications
+              Dalam Tahap Pengembangan - Batch 1
             </span>
           </div>
 
@@ -513,7 +513,7 @@ export default function Home() {
             className="mx-auto max-w-3xl text-balance text-5xl font-black leading-[1.07] tracking-tight text-slate-950 sm:text-6xl lg:text-[4.5rem] animate-slide-in-up"
             style={{ animationDelay: "80ms" }}
           >
-            Tempat{" "}
+            Ekosistem teknologi kolaboratif <br className="hidden sm:block" />
             <span
               className="bg-clip-text text-transparent"
               style={{
@@ -521,18 +521,17 @@ export default function Home() {
                   "linear-gradient(135deg, #0015A5 0%, #006A67 100%)",
               }}
             >
-              builder Indonesia
-            </span>{" "}
-            tumbuh bersama.
+              untuk talenta Indonesia.
+            </span>
           </h1>
 
           <p
             className="mx-auto mt-7 max-w-xl text-balance text-base leading-7 text-slate-600 sm:text-[17px] sm:leading-[1.8] animate-slide-in-up"
             style={{ animationDelay: "160ms" }}
           >
-            YYZU adalah ekosistem teknologi kolaboratif yang menghubungkan
-            mahasiswa, mentor praktisi, dan industri melalui project nyata,
-            simulasi workflow, dan mentoring terstruktur.
+            Bukan kursus biasa. YYZU adalah wadah di mana mahasiswa, mentor, dan
+            industri bertemu untuk membangun proyek nyata dengan standar kerja
+            profesional.
           </p>
 
           <div
@@ -544,18 +543,18 @@ export default function Home() {
               prefetch={false}
               className="group inline-flex min-h-11 items-center justify-center rounded-full bg-[#0015A5] px-7 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0015A5]/20 transition-all duration-200 hover:bg-[#00118a] hover:shadow-lg hover:shadow-[#0015A5]/25 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0015A5] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
-              Join as Member
+              Mulai Perjalananmu
               <ArrowRight
                 className="ml-2 size-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
                 aria-hidden="true"
               />
             </Link>
             <Link
-              href="/docs/"
+              href="/about/"
               prefetch={false}
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-7 py-2.5 text-sm font-semibold text-slate-600 transition-all duration-200 hover:border-slate-300 hover:text-slate-900 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
-              Read the Docs
+              Kenali YYZU
             </Link>
           </div>
 
@@ -563,7 +562,7 @@ export default function Home() {
             className="mt-5 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500 animate-fade-in"
             style={{ animationDelay: "320ms" }}
           >
-            For students &bull; mentors &bull; campus partners &bull; industry
+            Mahasiswa &bull; Mentor &bull; Kampus &bull; Industri
           </p>
 
           <div
