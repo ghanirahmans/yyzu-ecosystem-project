@@ -1,10 +1,10 @@
 ---
-title: Tingkat Kemahiran (Mastery)
-description: Tingkatan mastery (Bloom/Dreyfus) dan pemetaan hak & peran dalam proyek di YYZU.
+title: Arsitektur Penguasaan (Mastery Architecture)
+description: Kerangka 4 level penguasaan, pemetaan hak & peran, dan mekanisme asesmen mastery di ekosistem YYZU.
 status: active
 owner: Ghaniyyir Rahman Sudarsono (Founder YYZU)
-lastUpdated: 2026-06-29
-
+lastUpdated: 2026-07-04
+tipeDokumen: Foundational Reference - Living Standard
 ---
 
 ## Daftar Isi
@@ -20,10 +20,10 @@ lastUpdated: 2026-06-29
 ---
 ## 1. Mengapa Dokumen Ini Ada
 Di ekosistem YYZU, kenaikan level tidak boleh didasarkan pada lama waktu bergabung atau sekadar menyelesaikan tutorial. Namun, asesmen biner ("lulus" atau "gagal") yang ada saat ini tidak cukup untuk menangkap kedalaman keahlian seseorang secara presisi.
-Tanpa definisi tingkat penguasaan (*depth of mastery*) yang terstandardisasi:
-- **Ketidakpastian Kualitas:** Member yang bisa menduplikasi kode dari tutorial dianggap setara dengan member yang mampu mendesain sistem tersebut dari awal.
-- **Kesulitan Skalabilitas Mentoring:** Mentor kesulitan mengidentifikasi member mana yang sudah siap untuk membimbing orang lain (*peer mentor*), sehingga beban mentoring tetap berpusat pada sedikit mentor senior.
-- **Limitasi Automasi AI:** AI Mentor dan AI Assessor tidak memiliki parameter kuantitatif dan kualitatif untuk mengukur kedalaman analisis member dalam tugas-tugas mereka.
+Tanpa definisi tingat penguasaan (*depth of mastery*) yang terstandardisasi:
+- **Ketidakpastian Kualitas:** Talenta yang bisa menduplikasi kode dari tutorial dianggap setara dengan talenta yang mampu mendesain sistem tersebut dari awal.
+- **Kesulitan Skalabilitas Mentoring:** Mentor kesulitan mengidentifikasi talenta mana yang sudah siap untuk membimbing orang lain (*peer mentor*), sehingga beban mentoring tetap berpusat pada sedikit mentor senior.
+- **Limitasi Automasi AI:** AI Mentor dan AI Assessor tidak memiliki parameter kuantitatif dan kualitatif untuk mengukur kedalaman analisis talenta dalam tugas-tugas mereka.
 Dokumen ini menetapkan **Mastery Architecture YYZU** sebagai kerangka tunggal untuk mengukur, memvalidasi, dan mengkategorikan kedalaman keahlian di seluruh track.
 
 ---
@@ -38,37 +38,37 @@ Filosofi utama Mastery YYZU meliputi:
 ## 3. Tingkatan Mastery (Mastery Levels)
 YYZU membagi tingkat penguasaan ke dalam 4 level progresif yang diadaptasi dari Taksonomi Bloom dan Model Dreyfus:
 ### Level 1: Understand & Articulate (Mengerti & Menjelaskan)
-- **Definisi:** Member memahami konsep dasar, alur kerja, dan mampu menjelaskan *mengapa* konsep tersebut digunakan dalam bahasa yang logis.
+- **Definisi:** Talenta memahami konsep dasar, alur kerja, dan mampu menjelaskan *mengapa* konsep tersebut digunakan dalam bahasa yang logis.
 - **Kata Kerja Operasional (KKO):** Menjelaskan, mengidentifikasi, menunjukkan, mengkategorikan, merangkum.
 - **Indikator Perilaku:**
 	- Mampu menjawab pertanyaan diagnostik tingkat dasar tanpa kebingungan istilah.
 	- Mampu membaca dokumentasi resmi dan menjelaskan cara kerja sistem sederhana.
 	- Mampu mengidentifikasi kesalahan dasar (*fundamental errors*) pada kode atau desain sederhana.
-- **Contoh:** Member mampu menjelaskan perbedaan antara Server-Side Rendering (SSR) dan Client-Side Rendering (CSR) beserta implikasinya terhadap SEO.
+- **Contoh:** Talenta mampu menjelaskan perbedaan antara Server-Side Rendering (SSR) dan Client-Side Rendering (CSR) beserta implikasinya terhadap SEO.
 ### Level 2: Apply & Execute (Menerapkan & Mengeksekusi)
-- **Definisi:** Member mampu membangun solusi fungsional secara mandiri yang memenuhi kriteria kelayakan tanpa error fundamental.
+- **Definisi:** Talenta mampu membangun solusi fungsional secara mandiri yang memenuhi kriteria kelayakan tanpa error fundamental.
 - **Kata Kerja Operasional (KKO):** Membangun, mengimplementasikan, menerapkan, memecahkan, mendemonstrasikan.
 - **Indikator Perilaku:**
 	- Menghasilkan artefak kerja (repository, pull request, Figma file, PRD) yang berjalan sesuai spesifikasi.
 	- Mampu menerapkan *best practices* (seperti responsivitas CSS, auto-layout Figma, penulisan kriteria penerimaan) secara mandiri.
 	- Mampu melakukan debugging dasar secara mandiri berdasarkan pesan error.
-- **Contoh:** Member mampu mengimplementasikan form handling yang aman dengan validasi input menggunakan Zod di frontend Next.js.
+- **Contoh:** Talenta mampu mengimplementasikan form handling yang aman dengan validasi input menggunakan Zod di frontend Next.js.
 ### Level 3: Evaluate & Architect (Mengevaluasi & Mengarsiteki)
-- **Definisi:** Member mampu mendesain sistem/produk yang kompleks, menganalisis trade-off dari beberapa opsi solusi, dan mengevaluasi kualitas pekerjaan sejawat.
+- **Definisi:** Talenta mampu mendesain sistem/produk yang kompleks, menganalisis trade-off dari beberapa opsi solusi, dan mengevaluasi kualitas pekerjaan sejawat.
 - **Kata Kerja Operasional (KKO):** Mendesain, mengarsiteki, mengevaluasi, membandingkan, mengoptimasi, mendokumentasikan trade-off.
 - **Indikator Perilaku:**
 	- Menulis Dokumen Keputusan Arsitektur (`ADR` untuk Web Dev, *Handoff Spec* untuk UI/UX, *PRD & Decision Log* untuk PM) yang menjelaskan alternatif yang ditolak dan alasannya.
 	- Mampu melakukan optimasi performa atau skalabilitas produk secara terukur (berbasis data).
 	- Mampu memimpin kolaborasi teknis lintas peran dan menyelaraskan kontrak data (seperti API Contract).
-- **Contoh:** Member merancang skema database PostgreSQL dengan relasi yang optimal dan menulis ADR yang membandingkan penggunaan Prisma ORM vs SQL mentah untuk query yang kompleks.
+- **Contoh:** Talenta merancang skema database PostgreSQL dengan relasi yang optimal dan menulis ADR yang membandingkan penggunaan Prisma ORM vs SQL mentah untuk query yang kompleks.
 ### Level 4: Peer Instruction & Knowledge Share (Instruksi Sejawat & Kontribusi Pengetahuan)
-- **Definisi:** Member mampu mentransfer pengetahuan secara sistematis ke sesama anggota (*peer-to-peer*), memberikan umpan balik sejawat yang konstruktif, serta mendokumentasikan pengetahuan secara terstruktur untuk ekosistem.
+- **Definisi:** Talenta mampu mentransfer pengetahuan secara sistematis ke sesama anggota (*peer-to-peer*), memberikan umpan balik sejawat yang konstruktif, serta mendokumentasikan pengetahuan secara terstruktur untuk ekosistem.
 - **Kata Kerja Operasional (KKO):** Menjelaskan ulang, memfasilitasi diskusi, meninjau sejawat (*peer-review*), menulis dokumentasi onboarding.
 - **Indikator Perilaku:**
 	- Memberikan tinjauan sejawat (*peer review* kode/desain) yang objektif menggunakan format SBIN.
 	- Membantu menjelaskan konsep rumit kepada junior secara asinkron atau sinkron dalam study group.
 	- Mampu menyederhanakan dokumentasi teknis atau menulis panduan modul yang siap digunakan kontributor baru secara mandiri.
-- **Contoh:** Member Level 4 membuat panduan praktis (Module Guide) untuk integrasi Next.js dan PostgreSQL, lalu membimbing rekan sejawat yang mengalami kendala teknis saat setup database.
+- **Contoh:** Talenta Level 4 membuat panduan praktis (Module Guide) untuk integrasi Next.js dan PostgreSQL, lalu membimbing rekan sejawat yang mengalami kendala teknis saat setup database.
 
 ---
 ## 4. Pemetaan Hak & Peran Berdasarkan Mastery
@@ -78,27 +78,27 @@ Untuk memastikan keberlanjutan ekosistem YYZU secara mandiri, level mastery seca
 | **Level 1** | Kontributor Mini Project | Penerima Bimbingan | Mengisi self-assessment secara jujur sebelum mengajukan sign-off. |
 | **Level 2** | Implementor Collaborative Project | Peer Reviewer (Tinjauan Sejawat Awal) | Menyelesaikan tugas sprint tepat waktu dan membantu rekan tim yang kesulitan. |
 | **Level 3** | Tech/Design/Product Lead dalam Proyek | Asisten Fasil (Shadow Facilitator) | Menetapkan standar arsitektur proyek, menulis ADR/PRD, serta menyelaraskan API Contract. |
-| **Level 4** | Pembuat Modul / Kontributor Dokumentasi Induk | Peer Mentor (Mentor Sejawat) | Membantu onboarding member baru, memfasilitasi study group, dan melakukan peer-review awal. |
-### 4.1. Distingsi Peran: Member Level 4 (Peer Mentor) vs. Mentor Praktisi
-Untuk menjaga kualitas lulusan dan kenyamanan waktu praktisi profesional, YYZU membedakan secara tegas antara peran **Member Level 4 (Peer Mentor)** dan **Mentor Praktisi**:
-| Karakteristik | Member Level 4 (Peer Mentor) | Mentor Praktisi (Industry Mentor) |
+| **Level 4** | Pembuat Modul / Kontributor Dokumentasi Induk | Peer Mentor (Mentor Sejawat) | Membantu onboarding talenta baru, memfasilitasi study group, dan melakukan peer-review awal. |
+### 4.1. Distingsi Peran: Talenta Level 4 (Peer Mentor) vs. Mentor Praktisi
+Untuk menjaga kualitas lulusan dan kenyamanan waktu praktisi profesional, YYZU membedakan secara tegas antara peran **Talenta Level 4 (Peer Mentor)** dan **Mentor Praktisi**:
+| Karakteristik | Talenta Level 4 (Peer Mentor) | Mentor Praktisi (Industry Mentor) |
 | :--- | :--- | :--- |
-| **Asal/Status** | Internal Member YYZU yang telah mencapai mastery Level 4 di kompetensi terkait. | Profesional industri aktif (eksternal) yang direkrut sukarela oleh YYZU. |
+| **Asal/Status** | Internal Talenta YYZU yang telah mencapai mastery Level 4 di kompetensi terkait. | Profesional industri aktif (eksternal) yang direkrut sukarela oleh YYZU. |
 | **Fokus Utama** | Membantu operasional belajar harian, menjawab pertanyaan teknis di Discord, dan peer-review awal. | Memberikan wawasan industri makro, validasi arah proyek, dan feedback standar profesional. |
-| **Otoritas Asesmen** | **Tidak memiliki** hak sign-off kelulusan final level. Hanya memberikan rekomendasi kelulusan ke Mentor Praktisi. | **Pemegang hak eksklusif** sign-off kelulusan akhir level member (*final gatekeeper*). |
+| **Otoritas Asesmen** | **Tidak memiliki** hak sign-off kelulusan final level. Hanya memberikan rekomendasi kelulusan ke Mentor Praktisi. | **Pemegang hak eksklusif** sign-off kelulusan akhir level talenta (*final gatekeeper*). |
 | **Sifat Interaksi** | Sering, bersifat harian, informal, dan asinkron (peer-to-peer support). | Terjadwal (sinkron/asinkron), formal, pada checkpoint penting proyek (Milestone Review). |
 ---
 ## 5. Mekanisme Kenaikan & Asesmen Mastery
 Asesmen tingkat mastery bersifat **kumulatif dan berbasis bukti (evidence-based)**:
-1. **Pengajuan Bukti:** Member mengajukan portofolio artefak fisik (link PR, file Figma, link PRD) yang diakumulasikan selama pengerjaan proyek.
+1. **Pengajuan Bukti:** Talenta mengajukan portofolio artefak fisik (link PR, file Figma, link PRD) yang diakumulasikan selama pengerjaan proyek.
 2. **Evaluasi Asinkron:** Assessor (Mentor Praktisi atau AI Assessor) memeriksa artefak berdasarkan checklist dan rubrik *Assessment & Rubric Architecture*.
-3. **Wawancara Konseptual (Clarification Chat):** Sesi sinkron singkat (maksimal 20 menit) di mana member diminta menjelaskan reasoning di balik keputusan dalam artefaknya (untuk menguji transisi dari Level 2 ke Level 3).
+3. **Wawancara Konseptual (Clarification Chat):** Sesi sinkron singkat (maksimal 20 menit) di mana talenta diminta menjelaskan reasoning di balik keputusan dalam artefaknya (untuk menguji transisi dari Level 2 ke Level 3).
 4. **Keputusan Biner:** Hasil asesmen dinyatakan sebagai *Mastered* (Lulus) atau *Not Yet* (Belum Lulus) disertai saran perbaikan berbasis SBIN.
 
 ---
 ## 6. Integrasi AI Agent & Automasi
 Rancangan Mastery Level ini dibuat dengan struktur logis agar siap dikonsumsi oleh AI Agent di ekosistem YYZU:
-- **AI Mentor:** Menggunakan data level mastery member untuk menyesuaikan bahasa bimbingan. (Misal: memberikan petunjuk konseptual untuk Level 1, dan menantang trade-off arsitektur untuk Level 3).
+- **AI Mentor:** Menggunakan data level mastery talenta untuk menyesuaikan bahasa bimbingan. (Misal: memberikan petunjuk konseptual untuk Level 1, dan menantang trade-off arsitektur untuk Level 3).
 - **AI Assessor:** Membaca checklist bukti fisik secara terprogram dan mencocokkannya dengan kriteria kelulusan biner untuk memberikan rekomendasi awal kelulusan kepada Mentor manusia.
 
 ---

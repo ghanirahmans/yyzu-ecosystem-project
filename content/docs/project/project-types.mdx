@@ -2,14 +2,14 @@
 title: Kategori & Jenis Proyek
 description: Klasifikasi dan jenis-jenis proyek yang diselenggarakan di ekosistem YYZU.
 status: active
-owner: YYZU
-lastUpdated: 2026-06-25
+owner: Divisi Product & Project Management YYZU
+lastUpdated: 2026-07-04
 
 ---
 
 # Jenis Proyek di YYZU
 
-Di ekosistem YYZU, pengerjaan project dikelompokkan ke dalam tiga kategori utama berdasarkan skala, durasi, dan tujuan belajarnya. Seluruh tim project wajib mengikuti karakteristik operasional berikut:
+Di ekosistem YYZU, pengerjaan project dikelompokkan ke dalam lima kategori utama berdasarkan skala, durasi, dan tujuan belajarnya. Seluruh tim project wajib mengikuti karakteristik operasional berikut:
 
 ---
 
@@ -36,7 +36,7 @@ Mini Project adalah project kecil yang dirancang untuk melatih penerapan konsep 
   - Purwarupa (prototype) mobile interaktif dasar.
   - Website dokumentasi statis sederhana.
   
-*Mini Project bukan tempat untuk membangun sistem berskala enterprise, arsitektur microservices, or produk dengan proses bisnis yang rumit.*
+*Mini Project bukan tempat untuk membangun sistem berskala enterprise, arsitektur microservices, atau produk dengan proses bisnis yang rumit.*
 
 ---
 
@@ -59,9 +59,166 @@ Internal Project adalah project pengembangan platform, infrastruktur, atau aplik
 
 - **Tujuan Utama:** Membangun solusi nyata untuk kebutuhan riil YYZU (seperti dashboard keanggotaan, portal materi belajar, website profil utama) sambil memberikan member pengalaman membangun produk nyata yang digunakan pengguna asli.
 - **Durasi Siklus:** **2 hingga 3 Bulan per Fase** (Pengembangan bertahap)
+- **Estimasi Durasi per Fase:** Fase 1-2: 4-6 minggu per fase. Fase 3-4: 6-8 minggu per fase. Fase 5: berkelanjutan (maintenance).
 - **Fase Pengembangan Bertahap (Iterative Roadmap):**
   - **Fase 1 (MVP awal):** Pembuatan Landing Page Utama YYZU dan portal pendaftaran.
   - **Fase 2 (Showcase):** Penambahan galeri karya proyek member (*Showcase Portal*).
   - **Fase 3 (Member Area):** Integrasi sistem login dan Dashboard Anggota.
   - **Fase 4 (Management):** Sistem manajemen admin sederhana untuk BPH.
   - **Fase 5 (Maintenance):** Pengoptimalan kinerja, pemeliharaan sistem, dan pembaruan berkala.
+
+---
+
+## 4. Real-World Project Development
+Real-World Project Development adalah project yang berasal dari kebutuhan nyata pihak luar (partner industri, UMKM, atau institusi mitra), bukan dari tema internal yang ditetapkan BPH/Mentor. Mentor pada tipe project ini berperan sebagai penghubung ke client asli, bukan sebagai client simulasi.
+
+- **Tujuan Utama:** Memberikan member pengalaman bekerja dengan client sungguhan: requirement yang berubah berdasarkan kebutuhan bisnis nyata, ekspektasi profesional terhadap kualitas dan tenggat waktu, serta komunikasi langsung dengan stakeholder non-teknis.
+- **Durasi Siklus:** Mengikuti kesepakatan dengan partner, umumnya **8 hingga 16 minggu** tergantung skala kebutuhan.
+- **Perbedaan Kunci dari Collaborative Project:**
+	- Brief berasal dari partner eksternal, diterjemahkan oleh Divisi PM melalui sesi intake bersama partner sebelum masuk fase Foundation.
+	- Perubahan scope mengikuti negosiasi nyata dengan partner (bukan simulasi Q&A Challenge), tetap melalui jalur Divisi PM sesuai Bagian 11 Skema PM.
+	- Sign-off akhir membutuhkan persetujuan tertulis dari partner, selain dari Mentor.
+- **Linimasa Fase Pengerjaan:** Mengikuti seluruh Alur Kerja Project di Bagian 6 Skema PM (Foundation -> Problem Discovery & Pitching -> Execution & QA -> Release & Closing) tanpa modifikasi struktural, dengan dua penyesuaian:
+	- Fase Problem Discovery diganti dengan **Sesi Intake Partner**: Divisi PM dan Project Leader bertemu langsung dengan partner untuk menggali requirement asli, bukan observasi lapangan mandiri.
+	- Fase Release & Closing menambahkan **Handover ke Partner**: dokumentasi akses, kredensial, dan panduan maintenance diserahkan resmi ke partner.
+- **Eligibilitas:** Diprioritaskan untuk member yang sudah menyelesaikan minimal satu Collaborative Project, mengingat tingkat akuntabilitas terhadap pihak eksternal lebih tinggi.
+- **Project Leader:** Project Leader, dengan Divisi PM sebagai jalur komunikasi resmi tunggal ke partner (anggota tim tidak diperkenankan berkomunikasi langsung dengan partner tanpa melalui Divisi PM atau Project Leader).
+
+---
+
+## 5. Open-Source Contribution
+Open-source contribution memiliki karakteristik unik (timeline eksternal, tidak ada Mentor sebagai client, deliverable ditentukan oleh maintainer repo), sehingga aktivitas ini **tidak sepenuhnya mengikuti alur Skema PM**, namun tetap memerlukan struktur minimal yang terukur.
+
+- **Tujuan Utama:** Melatih kemampuan membaca codebase orang lain, mengikuti contribution guidelines pihak eksternal, dan membangun portofolio kontribusi publik yang terverifikasi.
+- **Durasi Siklus:** Tidak tetap, bergantung pada kompleksitas issue yang dipilih, direkomendasikan **2 hingga 6 minggu per kontribusi**.
+- **Linimasa & Struktur Minimal:**
+
+| Fase | Durasi Indikatif | Aktivitas | Output |
+| :--- | :--- | :--- | :--- |
+| **Eligibilitas & Pendaftaran** | Sebelum mulai | Member memastikan diri sudah menyelesaikan minimal satu Mini Project atau Collaborative Project, lalu mengajukan intent ke Divisi PM: repo target, issue yang dipilih, estimasi waktu. | Intent kontribusi disetujui Divisi PM |
+| **Familiarisasi Repo** | 2 - 4 hari di awal | Membaca contribution guidelines, code style, dan riwayat PR terkait issue yang dipilih. | Pemahaman dasar struktur repo |
+| **Pengerjaan & Monitoring** | Sisa durasi kontribusi | Member mengerjakan perubahan, melaporkan progres ke Divisi PM setiap dua minggu. | Progress report berkala |
+| **Submisi & Review** | Mengikuti timeline maintainer | PR diajukan ke repo asli, menunggu review dari maintainer eksternal (di luar kendali YYZU). | PR merged, ditolak, atau diminta revisi |
+| **Penutupan & Refleksi** | Setelah PR final diputuskan | Member menyusun ringkasan learning, terlepas dari hasil PR merged atau ditolak. | Link PR/commit + ringkasan learning |
+
+- **Project Leader:** Project Leader (jika dilakukan sebagai tim kecil) atau member itu sendiri (jika mandiri), dengan Mentor sebagai advisor opsional.
+- **Catatan:** Karena maintainer eksternal tidak terikat pada timeline YYZU, kontribusi yang belum di-review dalam waktu lama tetap dianggap berjalan (in progress) selama member terus melaporkan status, bukan otomatis dianggap gagal.
+
+---
+
+## 6. Klasifikasi Aktivitas Ekosistem (Non-Project & Project)
+Bagian 1 - 5 di atas mendefinisikan karakteristik tiap jenis project (Mini Project, Collaborative Project, Internal Project, Real-World Project Development, Open-Source Contribution) sebagai salah satu *jenis* aktivitas dalam ekosistem YYZU. Namun tidak seluruh aktivitas YYZU berbentuk project. Bagian ini memetakan **seluruh 16 tipe aktivitas** ekosistem YYZU, baik yang non-project maupun project-based, ke dalam tiga klaster, sehingga jelas aktivitas mana yang wajib mengikuti Skema PM secara penuh dan mana yang tidak.
+
+### 6.1 Tiga Klaster Aktivitas
+
+| Klaster | Sifat | Contoh Aktivitas |
+| :--- | :--- | :--- |
+| **A: Learning & Sharing** | Non-project, berbasis pengetahuan | Study group, mentoring session, workshop, technical discussion, product discussion, industry sharing, career preparation |
+| **B: Review & Simulation** | Non-project, berbasis praktik terbatas | Code review, design review, portfolio review, workflow simulation |
+| **C: Project-Based** | Berbasis deliverable dan eksekusi tim | Mini project, collaborative project, internal product development, real-world project development, open-source contribution |
+
+### 6.2 Klaster A: Learning & Sharing
+Aktivitas di klaster ini bersifat **non-project**: tidak menghasilkan deliverable teknis, tidak membutuhkan Kanban Board atau sprint, dan tidak dijalankan dengan Skema Project Management.
+
+**A1. Study Group**
+- **Deskripsi:** Sesi belajar bersama yang difasilitasi oleh anggota ekosistem, fokus pada topik tertentu sesuai track (Web Dev, UI/UX, PM, dll).
+- **Format:** 60 - 120 menit, dipimpin satu fasilitator (bisa member), bisa sinkron atau asinkron.
+- **Output wajib:** Catatan ringkasan sesi (summary notes) disimpan di Notion.
+- **PIC:** Divisi yang relevan (misal: Divisi Web Dev menyelenggarakan study group React).
+- **Frekuensi:** Sesuai kebutuhan batch atau inisiatif divisi.
+
+**A2. Mentoring Session**
+- **Deskripsi:** Sesi bimbingan antara Mentor dengan member atau kelompok kecil, bersifat personal dan tematik.
+- **Format:** 30 - 90 menit, bisa 1-on-1 atau kelompok kecil (≤5 orang).
+- **Output wajib:** Action items yang disepakati, dicatat oleh member yang dibimbing.
+- **PIC:** Divisi SDM (koordinasi jadwal Mentor).
+
+**A3. Workshop**
+- **Deskripsi:** Sesi hands-on terstruktur dengan instruktur, fokus pada penguasaan tool atau konsep tertentu dalam satu waktu.
+- **Format:** 2 - 4 jam, memiliki materi tertulis atau slide, disertai latihan praktis.
+- **Output wajib:** Materi workshop diarsipkan di Notion. Peserta mengumpulkan hasil latihan.
+- **PIC:** Divisi penyelenggara atau Mentor yang menjadi instruktur.
+
+**A4. Technical Discussion**
+- **Deskripsi:** Diskusi teknis terfokus antara anggota ekosistem mengenai topik, teknologi, atau pendekatan tertentu. Bukan dalam konteks project yang sedang berjalan.
+- **Format:** 30 - 60 menit, bisa sinkron (Discord/meet) atau asinkron (thread Discord).
+- **Output wajib:** Ringkasan diskusi dan kesimpulan utama dicatat di Notion atau thread Discord yang dapat diakses ulang.
+- **PIC:** Inisiator diskusi bertanggung jawab membuat ringkasan.
+
+**A5. Product Discussion**
+- **Deskripsi:** Diskusi berfokus pada product thinking: validasi ide, analisis use case, product strategy, atau fitur suatu produk digital. Berbeda dari Technical Discussion karena perspektifnya adalah produk, bukan implementasi teknis.
+- **Format:** 30 - 60 menit, bisa melibatkan lintas track (Dev, Design, PM).
+- **Output wajib:** Ringkasan diskusi beserta keputusan atau insight utama.
+- **PIC:** Inisiator atau Divisi Product & Project Management.
+
+**A6. Industry Sharing**
+- **Deskripsi:** Sesi berbagi pengalaman dari praktisi industri (guest, Mentor, atau alumni), berupa cerita karier, insight dunia kerja, atau tren teknologi terkini.
+- **Format:** 60 - 90 menit. Bisa berupa talk, panel diskusi, atau Q&A session.
+- **Output wajib:** Ringkasan poin penting disimpan di Notion. Rekaman sesi (jika ada) diarsipkan.
+- **PIC:** Divisi yang relevan atau BPH sebagai penyelenggara.
+- **Catatan:** Pembicara eksternal harus dikoordinasikan dengan Founder/BPH terlebih dahulu.
+
+**A7. Career Preparation**
+- **Deskripsi:** Aktivitas yang mempersiapkan member untuk memasuki dunia kerja: CV review, mock interview, portfolio critique, atau sesi career roadmap.
+- **Format:** Bervariasi. Bisa 1-on-1 (CV/portfolio review: 20 - 30 menit) atau sesi kelompok (mock interview: 60 - 90 menit).
+- **Output wajib:** Feedback tertulis yang diserahkan kepada member yang direview.
+- **PIC:** Divisi SDM, berkoordinasi dengan Mentor jika diperlukan.
+
+### 6.3 Klaster B: Review & Simulation
+Aktivitas di klaster ini bersifat **praktik terbatas**: menggunakan artefak nyata (kode, desain, portofolio) sebagai bahan, tetapi tidak dalam konteks sprint atau project yang sedang berjalan secara penuh.
+
+**B1. Code Review (Standalone)**
+- **Deskripsi:** Review kualitas kode yang dilakukan di luar konteks project aktif. Bisa menggunakan kode pribadi member, kode lama, atau kode latihan.
+- **Format:** Async (via GitHub PR atau thread) atau sync (screen sharing, 30 - 60 menit).
+- **Output wajib:** Catatan feedback reviewer, disimpan di thread atau Notion.
+- **PIC:** Reviewer (Mentor atau senior member).
+
+**B2. Design Review (Standalone)**
+- **Deskripsi:** Review terhadap desain UI/UX yang dilakukan di luar konteks project aktif.
+- **Format:** Async (via komentar Figma) atau sync (screen sharing, 30 - 60 menit).
+- **Output wajib:** Catatan feedback di Figma atau Notion.
+- **PIC:** Reviewer (Mentor atau senior member dengan track UI/UX).
+
+**B3. Portfolio Review**
+- **Deskripsi:** Review menyeluruh terhadap portfolio member: website portfolio, GitHub profile, atau kumpulan project yang disiapkan untuk keperluan rekrutmen atau showcase.
+- **Format:** 30 - 45 menit per member, bisa dilakukan secara batch (review bersama beberapa member sekaligus).
+- **Output wajib:** Feedback tertulis yang memuat: apa yang sudah baik, apa yang perlu diperbaiki, dan prioritas perbaikan.
+- **PIC:** Divisi SDM atau Mentor.
+
+**B4. Workflow Simulation**
+- **Deskripsi:** Simulasi proses kerja industri dalam format yang terkontrol dan terbatas waktu. Contoh: simulasi sprint planning, simulasi code review process, simulasi pitching ke client.
+- **Format:** 60 - 120 menit per sesi, dengan skenario yang disiapkan oleh fasilitator sebelumnya.
+- **Output wajib:** Debrief session setelah simulasi: apa yang berjalan baik, apa yang perlu diperbaiki.
+- **PIC:** Divisi Product & Project Management (untuk simulasi project workflow) atau Divisi yang relevan.
+
+### 6.4 Klaster C: Project-Based
+Aktivitas di klaster ini mengikuti Skema Project Management sebagai framework eksekusi utama. Seluruh lima tipe project sudah memiliki bagian operasional lengkap masing-masing di Bagian 1 - 5:
+
+| Tipe Project | Definisi Singkat | Referensi Detail |
+| :--- | :--- | :--- |
+| **Mini Project** | Project kecil 6 minggu untuk melatih fundamental dan basic collaboration | Bagian 1 |
+| **Collaborative Project** | Project menengah 8 - 12 minggu, lintas disiplin, standar workflow industri | Bagian 2 |
+| **Internal Product Development** | Pengembangan platform/infrastruktur internal YYZU, bertahap | Bagian 3 |
+| **Real-World Project Development** | Project dari kebutuhan pihak luar (partner/industri), mengikuti alur project penuh dengan dua penyesuaian fase | Bagian 4 |
+| **Open-Source Contribution** | Kontribusi ke proyek open-source publik, dikerjakan mandiri atau sebagai tim kecil | Bagian 5 |
+
+### 6.5 Matriks Referensi Cepat
+
+| Aktivitas | Klaster | Butuh Skema PM Penuh? | PIC Default | Output Wajib |
+| :--- | :--- | :--- | :--- | :--- |
+| Study Group | A | Tidak | Divisi relevan | Summary notes di Notion |
+| Mentoring Session | A | Tidak | Divisi SDM | Action items |
+| Workshop | A | Tidak (Kecuali bagian Foundation) | Divisi/Mentor | Materi arsip + hasil latihan |
+| Technical Discussion | A | Tidak | Inisiator | Ringkasan diskusi |
+| Product Discussion | A | Tidak | Inisiator / Divisi PM | Ringkasan + keputusan |
+| Industry Sharing | A | Tidak | BPH / Divisi | Ringkasan + arsip rekaman |
+| Career Preparation | A | Tidak | Divisi SDM | Feedback tertulis |
+| Code Review (standalone) | B | Tidak | Reviewer | Catatan feedback |
+| Design Review (standalone) | B | Tidak | Reviewer | Catatan feedback Figma/Notion |
+| Portfolio Review | B | Tidak | Divisi SDM / Mentor | Feedback tertulis |
+| Workflow Simulation | B | Tidak (Kecuali bagian Foundation) | Divisi PM | Debrief notes |
+| Mini Project | C | Iya | Project Leader | Sesuai Bagian 1 |
+| Collaborative Project | C | Iya | Project Leader | Sesuai Bagian 2 |
+| Internal Product Development | C | Iya | Project Leader | Sesuai Bagian 3 |
+| Real-World Project Development | C | Iya | Project Leader | Sesuai Bagian 4 |
+| Open-Source Contribution | C | Parsial | Project Leader + Mentor advisor | Sesuai Bagian 5 |

@@ -1,15 +1,26 @@
 ---
-title: Overview
-description: Cetak biru (blueprint) dan acuan tunggal pendidikan di ekosistem YYZU.
-status: active
+title: YYZU Learning Architecture
+description: Blueprint induk pendidikan di ekosistem YYZU - cetak biru kurikulum, alur belajar, mekanisme proyek, peran mentor, dan kebijakan operasional.
+status: v1.1 - Active
 owner: Ghaniyyir Rahman Sudarsono (Founder YYZU)
-lastUpdated: 2026-06-29
-
+lastUpdated: 2026-07-04
 ---
-# Curriculum & Learning Overview
-Dokumen ini merupakan cetak biru (*blueprint*) dan acuan tunggal pendidikan di ekosistem YYZU. Dokumen ini menyelaraskan landasan filosofis, kurikulum, alur pembelajaran aktif, mekanisme proyek, peran bimbingan mentor, serta kebijakan operasional yang sah secara organisasi berdasarkan Anggaran Dasar, Anggaran Rumah Tangga, dan skema-skema kepengurusan YYZU.
+
+# YYZU Learning Architecture
+
+Dokumen ini adalah cetak biru pendidikan di ekosistem YYZU. Isinya mencakup landasan filosofis, kurikulum, alur belajar, mekanisme proyek, peran mentor, dan kebijakan operasional. Semua mengacu pada Anggaran Dasar, Anggaran Rumah Tangga, dan skema kepengurusan YYZU.
+
+| Field | Value |
+| :--- | :--- |
+| **Tipe Dokumen** | Blueprint Induk - Living Document |
+| **Owner** | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
+| **Berlaku untuk** | Seluruh ekosistem YYZU |
+| **Review** | Tahunan |
+| **Approved by** | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
+| **Status** | v1.1 - Active |
 
 ## Daftar Isi
+
 1. Landasan Filosofis & Pilar Belajar
 2. Alur Pembelajaran Aktif
 3. Matriks Kompetensi Kurikulum
@@ -22,99 +33,123 @@ Dokumen ini merupakan cetak biru (*blueprint*) dan acuan tunggal pendidikan di e
 ---
 
 ## 1. Landasan Filosofis & Pilar Belajar
-Seluruh aktivitas rekayasa produk dan proses belajar di YYZU berpedoman pada lima nilai utama:
+
+Semua aktivitas di YYZU berpedoman pada lima nilai utama:
 
 | Nilai | Deskripsi |
 | :--- | :--- |
 | **Kolaborasi Sinergis** | Menjunjung tinggi kerja sama terbuka lintas disiplin dan latar belakang untuk memecahkan masalah bersama |
 | **Pertumbuhan Berkelanjutan** | Berkomitmen pada pembelajaran tanpa akhir, umpan balik konstruktif, dan peningkatan kualitas diri |
-| **Integritas Karya** | Menghormati hak kekayaan intelektual (HKI), transparansi kontribusi, dan etika profesional dalam berkarya |
+| **Integritas Karya** | Menghormati hak kekayaan intelektual, transparansi kontribusi, dan etika profesional dalam berkarya |
 | **Inklusivitas Terbuka** | Menyediakan ruang belajar yang ramah, setara, dan mudah diakses tanpa diskriminasi |
-| **Dampak Nyata** | Berfokus pada pembangunan solusi teknologi praktis yang memberikan manfaat konkret bagi masyarakat dan industri |
+| **Dampak Nyata** | Berfokus pada solusi teknologi praktis yang memberikan manfaat bagi masyarakat dan industri |
 
-### Konsep Sinergi Kampus-Industri
-YYZU memposisikan diri sebagai jembatan talenta (*talent bridge*):
-- **Bagi Kampus:** Laboratorium praktis untuk menyalurkan minat mahasiswa, mendukung program magang mandiri / MBKM, serta menyelaraskan kompetensi lulusan dengan kebutuhan industri digital.
-- **Bagi Industri:** Mitra yang berafiliasi berkontribusi memberikan studi kasus nyata (*real-world project briefs*) dan mentoring sukarela, serta memperoleh akses rekrutmen eksklusif terhadap talenta siap kerja yang terlatih.
+### Sinergi Kampus dan Industri
 
-### Empat Pilar Belajar YYZU
+YYZU berperan sebagai jembatan antara kampus dan industri.
+
+**Bagi Kampus:** YYZU menjadi wadah praktis untuk menyalurkan minat mahasiswa. YYZU juga mendukung program magang mandiri dan menyelaraskan kompetensi lulusan dengan kebutuhan industri digital.
+
+**Bagi Industri:** YYZU adalah mitra yang menyediakan studi kasus nyata dan mentoring sukarela. YYZU juga memberikan akses rekrutmen ke talenta siap kerja.
+
+### Empat Pilar Belajar
 
 | Pilar | Prinsip |
 | :--- | :--- |
-| **Project-Driven** | Kita tidak sekadar belajar untuk membangun proyek, melainkan membangun proyek untuk memahami teori |
-| **Evidence-Based** | Penguasaan skill diukur secara objektif melalui artefak kerja nyata yang dapat diaudit - seperti pull request, berkas kolaborasi desain, atau dokumen PRD |
-| **Team-Centric** | Meniru ritme kerja tim profesional di industri teknologi guna mengikis ego dan menumbuhkan kepemimpinan kolektif |
-| **Documentation-Driven** | Penulisan dokumentasi teknis dan catatan keputusan arsitektur (ADR) berjalan beriringan dengan penulisan kode agar pengetahuan dapat diwariskan |
+| **Project-Driven** | Kita membangun proyek untuk memahami teori, bukan sekadar belajar lalu membuat proyek |
+| **Evidence-Based** | Penguasaan skill diukur melalui bukti nyata yang dapat diaudit - pull request, berkas desain, atau dokumen PRD |
+| **Team-Centric** | Meniru ritme kerja tim profesional untuk mengikis ego dan menumbuhkan kepemimpinan kolektif |
+| **Documentation-Driven** | Dokumentasi teknis dan catatan keputusan arsitektur ditulis bersamaan dengan kode agar pengetahuan dapat diwariskan |
 
 ---
 
 ## 2. Alur Pembelajaran Aktif
-Setiap anggota YYZU (*Learner*) menjalani pembelajaran melalui siklus empat tahap:
+
+Setiap anggota YYZU (*Member*) menjalani proses belajar dalam empat tahap:
 
 | Tahap | Deskripsi |
 | :--- | :--- |
-| **Exposure** | Member dihadapkan langsung pada masalah nyata atau tantangan proyek (*project brief*) |
-| **Exploration** | Member melakukan riset mandiri untuk menemukan solusi menggunakan dokumentasi resmi dan referensi terkurasi |
-| **Execution** | Member membangun, mendesain, atau mendokumentasikan solusi dalam konteks proyek nyata |
-| **Evaluation** | Hasil kerja dievaluasi secara objektif melalui *peer review* dan reviu mentor berbasis bukti |
+| **Exposure** | Member dihadapkan pada masalah nyata atau tantangan proyek |
+| **Exploration** | Member melakukan riset mandiri menggunakan dokumentasi resmi dan referensi terkurasi |
+| **Execution** | Member membangun, mendesain, atau mendokumentasikan solusi dalam konteks proyek |
+| **Evaluation** | Hasil kerja dievaluasi melalui peer review dan reviu mentor berbasis bukti |
 
 ---
 
 ## 3. Matriks Kompetensi Kurikulum
-Matriks kompetensi di YYZU dirancang untuk mengukur kemajuan *Learner* secara objektif dan mandiri. Setiap track memiliki standar kompetensi, bentuk bukti (*evidence*), dan kriteria kelulusan biner (*exit criteria*).
 
-Detail lengkap matriks kompetensi untuk seluruh track (Web Development, UI/UX Design, dan Product Management) beserta Kompetensi Lintas Track dikelola secara terpusat pada dokumen [Kurikulum Member YYZU](/docs/learning/curriculum).
+Matriks kompetensi di YYZU dirancang untuk mengukur kemajuan member secara objektif. Setiap track memiliki standar kompetensi, bentuk bukti, dan kriteria kelulusan.
+
+Dokumen [Kurikulum Member YYZU](/docs/learning/curriculum) berisi matriks lengkap untuk Web Development, UI/UX Design, dan Product Management, termasuk Kompetensi Lintas Track.
 
 ### Cara Membaca Kurikulum
 
 | Elemen | Penjelasan |
 | :--- | :--- |
-| **Competency Statement** | Kemampuan abstrak yang wajib dikuasai - bersifat *technology-agnostic* |
-| **Evidence** | Bentuk bukti konkret berbasis output yang dapat diamati dan diverifikasi secara independen |
-| **Exit Criteria** | Kondisi minimum biner yang harus dipenuhi secara kumulatif untuk mendapatkan *sign-off* level dari Mentor |
+| **Competency Statement** | Kemampuan abstrak yang wajib dikuasai, bersifat technology-agnostic |
+| **Evidence** | Bukti konkret berbasis output yang dapat diverifikasi secara mandiri |
+| **Exit Criteria** | Kondisi minimum yang harus dipenuhi untuk mendapatkan sign-off dari Mentor |
 
 ---
 
 ## 4. Skema Proyek & Metodologi Kerja
-Kompetensi teknis dan lintas track di ekosistem YYZU divalidasi secara langsung melalui pengerjaan proyek nyata. Struktur pelaksanaan, alur kerja, standar dokumentasi, serta tata kelola proyek diatur secara rinci dalam [Projects System](/docs/project/overview).
+
+Kompetensi teknis di YYZU divalidasi melalui proyek nyata. Struktur pelaksanaan, alur kerja, standar dokumentasi, dan tata kelola proyek diatur dalam [Skema Project Management](/docs/project/overview).
 
 ### Kategori Proyek
-Sebagai instrumen evaluasi kompetensi, proyek dibagi menjadi tiga kategori utama berdasarkan tingkat kompleksitas:
+
+Proyek dibagi menjadi tiga kategori berdasarkan tingkat kompleksitas:
 
 | Kategori | Deskripsi |
 | :--- | :--- |
-| **Mini Project** | Wahana validasi kompetensi tingkat dasar (*Beginner*) secara mandiri |
-| **Collaborative Project** | Simulasi pengerjaan tim lintas peran untuk memvalidasi kompetensi tingkat menengah (*Intermediate*) |
-| **Internal Product** | Pelibatan anggota tingkat lanjut (*Advanced*) dalam memelihara infrastruktur produksi riil YYZU |
+| **Mini Project** | Validasi kompetensi tingkat dasar (Beginner) secara mandiri |
+| **Collaborative Project** | Simulasi kerja tim lintas peran untuk validasi kompetensi tingkat menengah (Intermediate) |
+| **Internal Product** | Pelibatan anggota tingkat lanjut (Advanced) dalam memelihara infrastruktur produksi YYZU |
 
-### Metodologi Kerja Scrumban
-Seluruh proyek di YYZU wajib menerapkan metodologi kerja **Scrumban** untuk menjamin transparansi tugas, mengelola beban kerja anggota, dan membiasakan tim dengan standar kerja industri digital. Ketentuan detail mengenai pembagian *sprint*, pelacakan tugas pada papan Kanban, pembatasan pekerjaan aktif (*WIP Limit*), serta kriteria penyelesaian tugas (*Definition of Done*) diatur sepenuhnya dalam [Skema Project Management](/docs/project/overview).
+### Metodologi Scrumban
+
+Semua proyek YYZU menggunakan **Scrumban** sebagai metodologi kerja. Tujuannya menjaga transparansi tugas, mengelola beban kerja, dan membiasakan tim dengan standar industri.
+
+Aturan detail mengenai pembagian sprint, Kanban, WIP Limit, dan Definition of Done ada di [Skema Project Management](/docs/project/overview).
 
 ---
 
 ## 5. Skema Mentoring, Penilaian & Tata Kelola
-Mentor di ekosistem YYZU bertindak sebagai *Guide on the Side* - memposisikan diri sebagai penasihat, validator, dan pemberi umpan balik kritis, bukan sebagai pelaksana operasional harian. Aturan keterlibatan, hak, kewajiban, serta tata cara penjadwalan mentoring diatur secara terpusat pada [Skema Mentoring](/docs/mentoring/overview).
 
-### Kerangka Umpan Balik & Evaluasi
-Untuk menjamin kualitas dan objektivitas evaluasi kompetensi anggota, seluruh interaksi mentoring wajib menerapkan dua model komunikasi berikut:
+Mentor di YYZU berperan sebagai penasihat dan validator, bukan pelaksana operasional. Mereka memberikan umpan balik kritis dan memandu perkembangan anggota.
+
+Aturan lengkap tentang hak, kewajiban, dan jadwal mentoring diatur di [Skema Mentoring](/docs/mentoring/overview).
+
+### Model Umpan Balik
+
+Semua interaksi mentoring wajib menggunakan dua model komunikasi ini:
 
 | Model | Fungsi |
 | :--- | :--- |
-| **Feedback SBIN** *(Situation-Behavior-Impact-Next)* | Metode penyampaian kritik konstruktif berbasis perilaku dan bukti hasil kerja nyata untuk memandu perbaikan konkret anggota |
-| **Coaching GROW Model** *(Goal-Reality-Options-Will)* | Kerangka bimbingan terstruktur yang digunakan dalam sesi sinkronus 1-on-1 berkala untuk membantu anggota merancang rencana dan arah belajarnya secara mandiri |
+| **Feedback SBIN** | Kritik konstruktif berbasis perilaku dan bukti kerja nyata |
+| **Coaching GROW** | Bimbingan terstruktur dalam sesi 1-on-1 untuk membantu anggota merancang arah belajarnya |
 
 ---
 
 ## 6. Kebijakan Operasional Utama
 
-### Kebijakan Progresi & Bypass Level
-Anggota baru yang telah memiliki bukti keahlian nyata diperkenankan mengajukan asesmen khusus (*Bypass Level*) sebelum periode berjalan dimulai untuk langsung menempati tingkat kompetensi yang sesuai. Prosedur asesmen dan kriteria diatur sepenuhnya dalam [Skema Mentoring](/docs/mentoring/overview).
+### Bypass Level
 
-### Kebijakan Kontribusi Aktif (Free Rider Policy)
-Keaktifan dan kontribusi nyata dalam tim adalah prasyarat mutlak untuk mempertahankan status keanggotaan dan memperoleh sertifikat kelulusan batch. Anggota yang terbukti pasif secara berturut-turut akan dikenakan sanksi bertahap mulai dari teguran internal hingga pencabutan hak partisipasi. Alur penegakan sanksi (SP1 dan SP2) dijalankan sepenuhnya oleh Divisi PM dan SDM berdasarkan prosedur di [Skema Project Management](/docs/project/overview) serta [Anggaran Rumah Tangga (ART) YYZU Pasal 9](/docs/operations/bylaws).
+Anggota baru yang sudah memiliki bukti keahlian dapat mengajukan asesmen khusus sebelum periode berjalan. Tujuannya agar mereka langsung menempati level yang sesuai.
 
-### Hak Kekayaan Intelektual (HKI)
-Default lisensi dari seluruh karya dan proyek kolaboratif yang dikembangkan di ekosistem YYZU adalah lisensi terbuka (*open-source*). Seluruh hak moral tetap melekat pada pembuat karya, sedangkan pemberian hak lisensi bebas royalti universal diatur secara sah dan konstitusional merujuk pada ketentuan [Anggaran Dasar (AD) YYZU Pasal 30](/docs/operations/articles-of-association).
+Prosedur lengkap ada di [Skema Mentoring](/docs/mentoring/overview).
+
+### Free Rider Policy
+
+Keaktifan dan kontribusi nyata adalah syarat mutlak untuk mempertahankan keanggotaan dan mendapatkan sertifikat kelulusan. Anggota yang pasif secara berturut-turut akan dikenakan sanksi: teguran internal hingga pencabutan hak partisipasi.
+
+Penegakan sanksi dijalankan oleh Divisi PM dan Divisi SDM. Dasar hukumnya adalah [Skema Project Management](/docs/project/overview) dan [ART YYZU Pasal 9](/docs/operations/bylaws).
+
+### Hak Kekayaan Intelektual
+
+Lisensi default untuk semua karya di YYZU adalah open-source. Hak moral tetap melekat pada pembuat karya.
+
+Ketentuan lisensi diatur dalam [AD YYZU Pasal 30](/docs/operations/articles-of-association).
 
 ---
 
@@ -126,42 +161,45 @@ Default lisensi dari seluruh karya dan proyek kolaboratif yang dikembangkan di e
 | :--- | :--- |
 | [Anggaran Dasar (AD) YYZU](/docs/operations/articles-of-association) | Konstitusi dasar organisasi |
 | [Anggaran Rumah Tangga (ART) YYZU](/docs/operations/bylaws) | Aturan rumah tangga dan administrasi keanggotaan |
-| [Panduan Peran YYZU](/docs/roles/overview) | Batasan tanggung jawab pengurus BPH dan jenis anggota |
-| [Sejarah Awal YYZU Ecosystem](/docs/identity/early-history) | Latar belakang pendirian dan timbal balik kemitraan |
-| [YYZU Documentation Style Guide & Metadata Standard](/docs/operations/documentation-standard) | Standar penulisan dokumen resmi dan metadata kepemilikan |
-| [YYZU Global Terminology Dictionary](/docs/operations/terminology) | Definisi tunggal seluruh istilah pendidikan di ekosistem YYZU |
+| [Panduan Peran YYZU](/docs/roles/overview) | Batasan tanggung jawab peran di YYZU |
+| [Sejarah Awal YYZU Ecosystem](/docs/identity/early-history) | Latar belakang pendirian dan kemitraan |
+| [YYZU Documentation Style Guide & Metadata Standard](/docs/operations/documentation-standard) | Standar penulisan dokumen dan metadata |
+| [YYZU Global Terminology Dictionary](/docs/operations/terminology) | Definisi istilah pendidikan di ekosistem YYZU |
 
 ### Dokumen Operasional
 
 | Dokumen | Deskripsi |
 | :--- | :--- |
-| [Skema Project Management](/docs/project/overview) | Pedoman detail Scrumban, siklus rilis, dan template dokumentasi proyek (PRD, README, Retro) |
-| [Skema Mentoring](/docs/mentoring/overview) | Tata tertib, SOP bimbingan, dan program apresiasi sukarelawan mentor |
+| [Skema Project Management](/docs/project/overview) | Pedoman Scrumban, siklus rilis, dan template dokumentasi |
+| [Skema Mentoring](/docs/mentoring/overview) | SOP bimbingan dan program apresiasi mentor |
 
 ### Sub-halaman Induk (Child Pages)
 
 | Dokumen | Deskripsi |
 | :--- | :--- |
 | [Kurikulum Member YYZU](/docs/learning/curriculum) | Matriks kompetensi dan exit criteria track Web Dev, UI/UX, dan PM |
-| [Prinsip Pembelajaran YYZU - Learning Principles](/docs/learning/principles) | Konsolidasi 8 prinsip pembelajaran yang menjadi landasan seluruh keputusan kurikulum dan assessment |
-| [Assessment Standard YYZU](/docs/learning/assessment-standard) | Rubrik operasional, prosedur sign-off, retry mechanism, dan appeal mechanism |
+| [Prinsip Pembelajaran YYZU - Learning Principles](/docs/learning/principles) | 8 prinsip pembelajaran untuk kurikulum dan assessment |
+| [Assessment Standard YYZU](/docs/learning/assessment-standard) | Rubrik, prosedur sign-off, retry, dan appeal |
 | [Mastery Architecture YYZU](/docs/learning/mastery-architecture) | Tingkatan mastery (Bloom/Dreyfus) dan pemetaan hak & peran dalam proyek |
-| [Onboarding Pathway YYZU; Panduan Member Baru](/docs/member/onboarding) | Jalur navigasi 4 minggu untuk member baru yang masuk tanpa konteks ekosistem |
-| [Knowledge Architecture YYZU](/docs/learning/knowledge-architecture) | Graf relasional pengetahuan per track: dependensi antar-konsep, titik konvergensi lintas track, dan diagnostic questions untuk Mentor |
-| [YYZU Documentation Style Guide](/docs/operations/documentation-standard) | Standar penulisan dokumen resmi dan metadata kepemilikan |
-| [YYZU Global Terminology Dictionary](/docs/operations/terminology) | Definisi tunggal seluruh istilah pendidikan di ekosistem YYZU |
-| [YYZU Change Management & Quality Framework](/docs/operations/change-management) | Prosedur RFC, analisis dampak perubahan, standar ADR, kriteria kualitas, dan mitigasi risiko |
+| [Onboarding Pathway YYZU; Panduan Member Baru](/docs/member/onboarding) | Panduan 4 minggu untuk member baru |
+| [Knowledge Architecture YYZU](/docs/learning/knowledge-architecture) | Graf relasional pengetahuan per track dan diagnostic questions |
+| [YYZU Documentation Style Guide](/docs/operations/documentation-standard) | Standar penulisan dokumen dan metadata |
+| [YYZU Global Terminology Dictionary](/docs/operations/terminology) | Definisi istilah pendidikan |
+| [YYZU Change Management & Quality Framework](/docs/operations/change-management) | Prosedur RFC, analisis dampak, standar ADR, kriteria kualitas |
 
 ---
 
 ## 8. Tata Kelola & Riwayat Perubahan
 
-### Prosedur Usulan Perubahan Kurikulum (RFC)
-Sebagai dokumen sistem induk, setiap usulan perubahan pada *YYZU Learning Architecture* wajib mengikuti prosedur formal **Request for Comments (RFC)**:
-1. **Usulan Tertulis** - Pengurus BPH atau Mentor aktif mengajukan draf usulan perubahan kurikulum secara tertulis kepada Founder atau Divisi Kurikulum.
-2. **Periode Peninjauan (RFC)** - Draf dipublikasikan secara internal selama minimal 7 hari kerja untuk menerima masukan dan komentar dari seluruh Mentor aktif dan pengurus BPH.
-3. **Penyelarasan & Konsensus** - Founder atau Divisi Kurikulum mensintesis masukan dan berkoordinasi dengan Divisi PM untuk memastikan perubahan tidak mengganggu kelancaran operasional proyek.
-4. **Persetujuan & Rilis** - Usulan final diajukan kepada Dewan Mentor YYZU untuk mendapatkan persetujuan tertulis (*sign-off*) sesuai ketentuan ART Pasal 12. Keputusan Dewan Mentor diambil melalui musyawarah mufakat dengan kuorum minimal 2/3 anggota. Jika konsensus tidak tercapai, eskalasi ke Dewan Wali Amanat. Setelah disetujui, perubahan dicatat dalam tabel riwayat dokumen di bawah ini.
+### Prosedur RFC
+
+Setiap perubahan pada dokumen ini harus melalui proses Request for Comments:
+
+1. **Usulan Tertulis** — Pengurus BPH atau Mentor aktif mengajukan draf usulan secara tertulis kepada Founder atau Divisi Kurikulum.
+2. **Periode Peninjauan (RFC)** — Draf dipublikasikan selama 7 hari kerja untuk masukan dari Mentor dan pengurus BPH.
+3. **Penyelarasan & Konsensus** — Founder atau Divisi Kurikulum menyatukan masukan dan berkoordinasi dengan Divisi PM.
+4. **Persetujuan & Rilis** — Usulan final diajukan ke Dewan Mentor untuk persetujuan tertulis sesuai ART Pasal 12. Keputusan Dewan Mentor diambil melalui musyawarah mufakat dengan kuorum minimal 2/3 anggota. Jika konsensus tidak tercapai, eskalasi ke Dewan Wali Amanat.
+5. Setelah disetujui, perubahan dicatat dalam tabel riwayat di bawah ini.
 
 ### Versi & Riwayat Dokumen
 
@@ -170,8 +208,6 @@ Sebagai dokumen sistem induk, setiap usulan perubahan pada *YYZU Learning Archit
 | 1.0 | Juni 2026 | Rilis awal blueprint arsitektur pembelajaran YYZU | Dewan Mentor YYZU |
 | 1.1 | 26 Juni 2026 | Refaktorisasi pemisahan layer operasional (Kanban, SLA, SP) dan formalisasi prosedur RFC | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
 | 1.2 | Juni 2026 | Penambahan sub-halaman: Prinsip Pembelajaran, Assessment Standard, Onboarding Pathway, Knowledge Architecture | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
-| 1.3 | 29 Juni 2026 | Koreksi link-link child pages yang mismatch dan penambahan sub-halaman Mastery Architecture YYZU | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
-| 1.4 | 29 Juni 2026 | Integrasi Education Governance Architecture (EGA) dengan 3 dokumen tata kelola baru di root dan sinkronisasi Kurikulum Member v2.0 (11 Track Penuh) | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
 
 ---
 

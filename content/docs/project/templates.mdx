@@ -15,7 +15,7 @@ Setiap tim wajib mematuhi standar dokumentasi berikut untuk menjaga kualitas por
 
 ---
 
-## E. Template Problem Discovery Document — Diisi pada Sub-Fase 2A (Wajib untuk Mini Project & Collaborative Project)
+## E. Template Problem Discovery Document - Diisi pada Sub-Fase 2A (Wajib untuk Mini Project & Collaborative Project)
 
 ```markdown
 # [Nama Tim] - Problem Discovery Document
@@ -54,7 +54,7 @@ Tuliskan solusi awal tim sebelum PRD dibuat. Ini bersifat hipotesis dan masih bi
 
 ---
 
-## A. Template PRD (Product Requirement Document) — Diisi di Notion pada Fase Planning
+## A. Template PRD (Product Requirement Document) - Diisi di Notion pada Fase Planning
 
 ```markdown
 # [Nama Proyek] - PRD
@@ -82,7 +82,9 @@ Tulis fitur yang TIDAK dibuat pada fase ini demi menjaga timeline pengerjaan.
 
 ---
 
-## B. Template README.md Repositori — Wajib di GitHub pada Fase Release
+## B. Template README.md Repositori - Wajib di GitHub pada Fase Release
+
+> **Catatan:** Template ini bersifat generik dan wajib disesuaikan dengan tech stack aktual yang digunakan tim. Contoh-contoh di bawah hanya ilustratif - tim bebas memilih tools, bahasa, framework, dan platform deployment yang paling sesuai dengan kebutuhan dan kompetensi mereka, sepanjang pilihan tersebut dapat dipertanggungjawabkan dalam review Mentor.
 
 ```markdown
 # [Nama Aplikasi]
@@ -90,21 +92,21 @@ Tulis fitur yang TIDAK dibuat pada fase ini demi menjaga timeline pengerjaan.
 Aplikasi ini dibuat dalam program kolaborasi proyek YYZU (Tema: [Nama Tema Proyek]).
 
 ## Tech Stack
-- Frontend: Next.js / React (disesuaikan)
-- Backend/Database: PostgreSQL / SQLite (Prisma ORM) (disesuaikan)
-- Deployment: Vercel / Netlify (disesuaikan)
+- Frontend: [isi dengan framework/library yang digunakan, misal: React, Vue, Svelte, plain HTML/CSS]
+- Backend: [isi dengan runtime/framework yang digunakan, misal: Express, FastAPI, Laravel, atau serverless function]
+- Database: [isi dengan database yang digunakan, misal: PostgreSQL, MySQL, SQLite, MongoDB]
+- Deployment: [isi dengan platform yang digunakan, misal: Railway, Render, Fly.io, VPS, dsb.]
 
 ## Cara Menjalankan Proyek Secara Lokal (Local Setup)
-1. Clone repositori ini: git clone [link-repo]
-2. Install dependensi: npm install
-3. Salin file environment:
-   Buat file `.env` di root folder dan sesuaikan variabel database Anda.
-4. Jalankan migrasi database: npx prisma db push
-5. Jalankan server lokal: npm run dev
+1. Clone repositori ini: `git clone [link-repo]`
+2. Install dependensi: [sesuaikan dengan package manager yang digunakan]
+3. Konfigurasi environment: salin file `.env.example` menjadi `.env` dan isi variabel yang dibutuhkan
+4. Setup database: [sesuaikan dengan ORM atau migration tool yang digunakan]
+5. Jalankan server lokal: [sesuaikan dengan perintah start project]
 
 ## Kontak & Kontributor
-- [Nama Project Leader] (Role: Project Leader / Frontend) - [Username GitHub]
-- [Nama Member] (Role: Backend) - [Username GitHub]
+- [Nama Project Leader] (Role: Project Leader / [Track]) - [Username GitHub]
+- [Nama Member] (Role: [Track]) - [Username GitHub]
 ```
 
 ---
@@ -118,7 +120,7 @@ Setiap tim wajib membuat ringkasan proyek yang ramah dibaca masyarakat umum deng
 
 ---
 
-## D. Catatan Retrospektif (Retrospective Notes) — Diisi Bersama pada Fase Release
+## D. Catatan Retrospektif (Retrospective Notes) - Diisi Bersama pada Fase Release
 
 Setiap tim wajib mendokumentasikan hasil evaluasi internal mereka dengan format:
 

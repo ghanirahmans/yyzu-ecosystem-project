@@ -1,9 +1,23 @@
 ---
-title: Arsitektur Pengetahuan (Knowledge)
-description: Graf relasional pengetahuan, peta dependensi konsep, dan diagnostic questions.
+title: Graf Pengetahuan (Knowledge Architecture)
+description: Graf relasional pengetahuan per track dan level untuk mendukung navigasi pembelajaran di ekosistem YYZU.
 status: active
 owner: Ghaniyyir Rahman Sudarsono (Founder YYZU)
-lastUpdated: 2026-07-03
+lastUpdated: 2026-07-04
+
+---
+
+## Metadata
+
+| Field | Value |
+| :--- | :--- |
+| **Tipe Dokumen** | Knowledge Architecture - Living Reference |
+| **Owner** | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
+| **Parent** | YYZU Learning Architecture |
+| **Berlaku untuk** | Seluruh 11 track dan level di ekosistem YYZU |
+| **Review** | Per batch atau saat kurikulum berubah signifikan |
+| **Approved by** | Ghaniyyir Rahman Sudarsono (Founder YYZU) |
+| **Status** | v3.0 - Active (Ekspansi 11 Track Penuh) |
 
 ---
 
@@ -31,12 +45,17 @@ lastUpdated: 2026-07-03
 
 ---
 ## 1. Mengapa Dokumen Ini Ada
-Kurikulum Member YYZU mengorganisir pembelajaran sebagai **daftar kompetensi per track per level** - pendekatan yang efektif untuk mendefinisikan standar, tetapi tidak menjelaskan *mengapa* urutan tertentu penting, *bagaimana* konsep-konsep saling bergantung, dan *kapan* seseorang perlu memahami konsep dari track lain.
+Kurikulum Member YYZU mengorganisir pembelajaran sebagai daftar kompetensi per track per level - pendekatan yang efektif untuk mendefinisikan standar, tetapi tidak menjelaskan *mengapa* urutan tertentu penting, *bagaimana* konsep-konsep saling bergantung, dan *kapan* seseorang perlu memahami konsep dari track lain.
 Tanpa peta relasi antar-konsep:
 - Member tidak tahu mengapa kompetensi A harus dikuasai sebelum B.
 - Mentor tidak memiliki kerangka untuk mendiagnosis gap pengetahuan secara sistematis.
 - Kolaborasi lintas peran (*cross-track collaboration*) seringkali terhambat karena setiap peran terisolasi dalam bahasanya sendiri.
-Dokumen ini menyediakan **graf relasional pengetahuan** di ekosistem YYZU. Dokumen ini mencakup **11 track** yang secara kolektif merepresentasikan ekosistem karir produk digital modern, dan menonjolkan **kemampuan transfer skill (transferability)** antar peran dalam industri.
+Dokumen ini menyediakan graf relasional pengetahuan di ekosistem YYZU. Dokumen ini mencakup 11 track yang secara kolektif merepresentasikan ekosistem karir produk digital modern, dan menonjolkan kemampuan transfer skill (transferability) antar peran dalam industri.
+
+### Mulai dari Mana?
+- **Member baru:** Mulai dari Section 3 (Fondasi Universal) untuk membangun dasar yang kuat sebelum memilih track spesifik.
+- **Member yang sudah punya pengalaman:** Gunakan *Diagnostic Questions* di setiap track untuk mengidentifikasi gap pengetahuan, lalu fokus di Lapisan yang belum dikuasai.
+- **Mentor:** Gunakan Section 17 (Panduan Mentor) sebagai titik awal untuk memahami cara menggunakan dokumen ini dalam coaching session.
 
 ---
 ## 2. Cara Membaca Dokumen Ini
@@ -73,7 +92,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 	- *Prasyarat:* Computational Thinking
 	- *Diperlukan untuk:* Semua aspek pengembangan perangkat lunak.
 	- *Transferability:* Logika kondisional dan fungsi juga digunakan di Automation Testing (QA), Data Pipeline scripting (Data & AI), dan Shell Scripting (DevOps).
-	- *Evaluasi Diagnostik:* *"Diberikan list 1000 nama pengguna acak, jelaskan algoritma untuk menemukan duplikat tanpa mengiterasi setiap pasangan  -  dan mengapa pendekatan itu lebih efisien."*
+	- *Evaluasi Diagnostik:* *"Diberikan list 1000 nama pengguna acak, jelaskan algoritma untuk menemukan duplikat tanpa mengiterasi setiap pasangan - dan mengapa pendekatan itu lebih efisien."*
 - **Algoritma & Struktur Data**
 	- *Prasyarat:* Programming Fundamentals
 	- *Diperlukan untuk:* Menulis solusi yang efisien dari sisi waktu dan memori.
@@ -84,7 +103,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 	- *Evaluasi Diagnostik:* *"Jelaskan mengapa inheritance yang berlebihan bisa menjadi masalah, dan kapan kamu memilih composition over inheritance."*
 - **Clean Code & Naming Convention**
 	- *Prasyarat:* OOP
-	- *Diperlukan untuk:* Kolaborasi tim  -  kode yang bisa dibaca adalah kode yang bisa di-maintain.
+	- *Diperlukan untuk:* Kolaborasi tim - kode yang bisa dibaca adalah kode yang bisa di-maintain.
 	- *Evaluasi Diagnostik:* *"Tunjukkan kode yang kamu refactor. Apa yang diubah dan mengapa kode sebelumnya sulit dibaca?"*
 - **Version Control Praktis (Git Workflow)**
 	- *Prasyarat:* Version Control (Fondasi Universal)
@@ -383,7 +402,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 ### Lapisan 4 - Advanced QA
 - **QA Architecture & Strategy**
 	- *Prasyarat:* Seluruh Lapisan 3
-	- *Diperlukan untuk:* Merancang strategi pengujian end-to-end untuk tim  -  tools, coverage target, dan pipeline pengujian.
+	- *Diperlukan untuk:* Merancang strategi pengujian end-to-end untuk tim - tools, coverage target, dan pipeline pengujian.
 	- *Evaluasi Diagnostik:* *"Bagaimana kamu merancang QA pipeline untuk tim yang merilis fitur setiap 2 minggu secara konsisten?"*
 - **Security Testing Fundamentals**
 	- *Prasyarat:* API Testing, Exploratory Testing
@@ -394,7 +413,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 
 ---
 ## 10. Knowledge Architecture: Data & AI
-*Track ini mencakup kemampuan mengolah, menganalisis, dan membangun sistem berbasis data  -  dari query SQL analitik hingga integrasi model AI ke dalam produk digital.*
+*Track ini mencakup kemampuan mengolah, menganalisis, dan membangun sistem berbasis data - dari query SQL analitik hingga integrasi model AI ke dalam produk digital.*
 ### Lapisan 2 - Fondasi Data (Beginner)
 - **Data Literacy & Thinking in Data**
 	- *Prasyarat:* Computational Thinking
@@ -481,7 +500,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 - **Monitoring & Observability**
 	- *Prasyarat:* Cloud Fundamentals
 	- *Diperlukan untuk:* Memantau kesehatan sistem di produksi dan mendapatkan alerting saat terjadi anomali.
-	- *Evaluasi Diagnostik:* *"Bagaimana kamu mendeteksi bahwa API response time meningkat 10x dalam 5 menit terakhir  -  bahkan sebelum ada user yang melaporkan?"*
+	- *Evaluasi Diagnostik:* *"Bagaimana kamu mendeteksi bahwa API response time meningkat 10x dalam 5 menit terakhir - bahkan sebelum ada user yang melaporkan?"*
 ### Lapisan 4 - Advanced DevOps & Cloud
 - **Container Orchestration (Kubernetes)**
 	- *Prasyarat:* Containerization, CI/CD
@@ -500,7 +519,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 ### Lapisan 2 - Fondasi Creative Technology (Beginner)
 - **Creative Coding Fundamentals**
 	- *Prasyarat:* Programming Fundamentals
-	- *Diperlukan untuk:* Menggunakan kode sebagai medium ekspresi kreatif  -  membuat visual, animasi, dan interaksi generatif.
+	- *Diperlukan untuk:* Menggunakan kode sebagai medium ekspresi kreatif - membuat visual, animasi, dan interaksi generatif.
 	- *Transferability:* Prinsip manipulasi visual dengan kode juga diterapkan di Web Dev (Canvas API, CSS Animation) dan UI/UX (Figma Smart Animate).
 	- *Evaluasi Diagnostik:* *"Tanpa library animasi yang sudah jadi, bagaimana kamu membuat elemen lingkaran yang bergerak mengikuti mouse secara smooth menggunakan canvas?"*
 - **Design Principles for Interactive Media**
@@ -542,7 +561,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 
 ---
 ## 13. Knowledge Architecture: Digital Product
-*Track ini berfokus pada peran Product Strategy yang lebih senior  -  menghubungkan visi bisnis, business model, go-to-market strategy, dan growth framework untuk membangun produk digital yang berkelanjutan.*
+*Track ini berfokus pada peran Product Strategy yang lebih senior - menghubungkan visi bisnis, business model, go-to-market strategy, dan growth framework untuk membangun produk digital yang berkelanjutan.*
 ### Lapisan 2 - Fondasi Digital Product (Beginner)
 - **Market & Competitive Analysis**
 	- *Prasyarat:* -
@@ -559,7 +578,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 	- *Evaluasi Diagnostik:* *"Apa perbedaan freemium dan subscription? Kapan masing-masing model lebih cocok untuk komunitas seperti YYZU?"*
 - **Go-to-Market (GTM) Strategy Fundamentals**
 	- *Prasyarat:* Business Model
-	- *Diperlukan untuk:* Merancang rencana peluncuran produk  -  siapa yang dituju, melalui saluran apa, dan dengan pesan apa.
+	- *Diperlukan untuk:* Merancang rencana peluncuran produk - siapa yang dituju, melalui saluran apa, dan dengan pesan apa.
 	- *Evaluasi Diagnostik:* *"Jika YYZU akan meluncurkan batch baru, bagaimana kamu menentukan saluran akuisisi member yang paling efisien?"*
 ### Lapisan 3 - Intermediate Digital Product
 - **Growth Framework & Metrics**
@@ -598,11 +617,11 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 	- *Evaluasi Diagnostik:* *"Jelaskan kepada stakeholder non-teknis mengapa fitur yang 'terlihat sederhana' di UI bisa membutuhkan 2 minggu untuk diimplementasikan dengan benar."*
 - **Agile & Scrum Fundamentals**
 	- *Prasyarat:* -
-	- *Diperlukan untuk:* Berpartisipasi efektif dalam sprint cycle  -  memfasilitasi dan mengambil manfaat dari setiap ceremony Agile.
+	- *Diperlukan untuk:* Berpartisipasi efektif dalam sprint cycle - memfasilitasi dan mengambil manfaat dari setiap ceremony Agile.
 	- *Evaluasi Diagnostik:* *"Apa perbedaan Sprint Review dan Sprint Retrospective? Apa yang dilakukan dan siapa yang memimpin masing-masing?"*
 - **Technical Writing Fundamentals**
 	- *Prasyarat:* -
-	- *Diperlukan untuk:* Menulis dokumentasi teknis yang jelas  -  meeting notes, spec doc, panduan  -  yang dapat dipahami semua pemangku kepentingan.
+	- *Diperlukan untuk:* Menulis dokumentasi teknis yang jelas - meeting notes, spec doc, panduan - yang dapat dipahami semua pemangku kepentingan.
 	- *Evaluasi Diagnostik:* *"Apakah pembaca yang tidak hadir bisa memahami keputusan yang diambil dan langkah selanjutnya hanya dari rangkuman meeting yang kamu tulis?"*
 - **Remote & Async Collaboration**
 	- *Prasyarat:* Technical Writing
@@ -643,7 +662,7 @@ Konsep-konsep ini bukan spesifik untuk satu peran saja - semua anggota dari semu
 
 ---
 ## 15. Titik Konvergensi Lintas Track (Kolaborasi Industri)
-Pada titik-titik ini, kolaborasi yang sukses menuntut pemahaman lintas peran:
+Pada titik-titik ini, kolaborasi yang sukses menuntut pemahaman lintas peran. **Prioritas pemahaman:**
 | Titik Konvergensi | Track yang Terlibat | Poin Konvergensi Kunci |
 | :--- | :--- | :--- |
 | **API Contract & Data Shape** | Software Dev, Web Dev, Mobile Dev, QA, Data & AI | Semua track konsumer data harus menyepakati format JSON, error codes, dan pagination sebelum pengembangan paralel dimulai. |
@@ -652,21 +671,36 @@ Pada titik-titik ini, kolaborasi yang sukses menuntut pemahaman lintas peran:
 | **QA Sign-off & Release Gate** | QA, DevOps, Software Dev, Web Dev, Mobile Dev | Tidak ada artefak yang masuk pipeline CI/CD produksi tanpa sign-off QA. DevOps menyediakan environment pengujian yang identik dengan produksi. |
 | **Data & Product Metrics** | Data & AI, PM, Digital Product, DevOps | Engineer data menyediakan pipeline dan dashboard; PM menetapkan metrik yang diukur; DevOps memastikan logging dan tracing berjalan di produksi. |
 | **GTM & Launch Readiness** | Digital Product, PM, Tech Collab, DevOps, QA | Peluncuran membutuhkan keselarasan antara kesiapan teknis (DevOps/QA), komunikasi (Tech Collab), dan rencana pemasaran (Digital Product). |
+**Keterangan Prioritas:**
+- **Kritis untuk semua tim:** API Contract, Definition of Done, QA Sign-off
+- **Penting untuk tim produk:** Design Handoff, Data & Product Metrics
+- **Penting untuk peluncuran:** GTM & Launch Readiness
 ---
 ## 16. Kompetensi Lintas Track dalam Graf Pengetahuan
-Enam Kompetensi Lintas Track bukan kompetensi tambahan  -  mereka adalah **pengikat** antar-lapisan di semua 11 track:
-- **Komunikasi teknis tertulis:** README (Dev), Handoff (UI/UX), PRD (PM), Test Report (QA), ADR (Software Dev), Data Story (Data & AI).
-- **Problem decomposition:** Memecah masalah besar  -  prasyarat utama untuk naik ke Lapisan 3 di semua track.
-- **Iterative delivery:** Rilis bertahap  -  Sprint (Agile), Canary Release (DevOps), A/B Test (Digital Product).
-- **Feedback literacy:** Code Review (Dev), Design Critique (UI/UX), Stakeholder Feedback (PM), QA Sign-off (QA).
-- **Knowledge documentation:** ADR (Dev), Decision Log (PM), Test Coverage Report (QA), Model Card (Data & AI).
-- **Version control mindset:** Git (Dev/DevOps), Figma History (UI/UX), PRD Changelog (PM), Model Registry (Data & AI), Creative Asset Versioning (Creative Tech).
+Enam Kompetensi Lintas Track bukan kompetensi tambahan - mereka adalah **pengikat** antar-lapisan di semua 11 track:
+- **Komunikasi teknis tertulis:** Kemampuan menulis dokumentasi teknis yang jelas. Contoh penerapan: README (Dev), Handoff (UI/UX), PRD (PM), Test Report (QA), ADR (Software Dev), Data Story (Data & AI).
+- **Problem decomposition:** Kemampuan memecah masalah besar menjadi unit yang dapat dikerjakan. Ini adalah prasyarat utama untuk naik ke Lapisan 3 di semua track.
+- **Iterative delivery:** Kemampuan merilis produk secara bertahap alih-alih big-bang release. Contoh: Sprint (Agile), Canary Release (DevOps), A/B Test (Digital Product).
+- **Feedback literacy:** Kemampuan memberi dan menerima umpan balik secara konstruktif. Contoh: Code Review (Dev), Design Critique (UI/UX), Stakeholder Feedback (PM), QA Sign-off (QA).
+- **Knowledge documentation:** Kemampuan mendokumentasikan keputusan dan pengetahuan agar tidak hilang saat anggota tim berubah. Contoh: ADR (Dev), Decision Log (PM), Test Coverage Report (QA), Model Card (Data & AI).
+- **Version control mindset:** Kemampuan melacak perubahan dan mengelola konfigurasi. Contoh: Git (Dev/DevOps), Figma History (UI/UX), PRD Changelog (PM), Model Registry (Data & AI), Creative Asset Versioning (Creative Tech).
 
 ---
 ## 17. Cara Mentor Menggunakan Dokumen Ini
-- **Untuk diagnosis gap**: Gunakan *Diagnostic Questions* berbasis skenario untuk menguji model mental member  -  bukan hafalan definisi. Jika member kesulitan menjawab pertanyaan di Lapisan 2 (meskipun tugasnya selesai), jangan berikan sign-off untuk Lapisan 3.
-- **Untuk merancang coaching session**: Identifikasi konsep mana yang menjadi bottleneck. Gunakan GROW Model untuk memandu member merancang rencana perbaikan mandiri.
-- **Untuk cross-track mentoring**: Gunakan Bab 15 (Titik Konvergensi) untuk membantu member memahami bagaimana peran mereka berhubungan dengan peran lain dalam proyek kolaboratif.
+### Diagnosis Gap
+Gunakan *Diagnostic Questions* berbasis skenario untuk menguji model mental member - bukan hafalan definisi. Jika member kesulitan menjawab pertanyaan di Lapisan 2 (meskipun tugasnya selesai), jangan berikan sign-off untuk Lapisan 3.
+
+**Contoh penerapan:** Jika member mengerjakan fitur login tetapi tidak bisa menjelaskan mengapa memilih JWT daripada session-based auth, ini menandakan gap di Layer 2 (Authentication & Authorization) meskipun fitur sudah berjalan.
+
+### Merancang Coaching Session
+Identifikasi konsep mana yang menjadi bottleneck. Gunakan GROW Model untuk memandu member merancang rencana perbaikan mandiri:
+- **Goal:** Apa yang ingin dicapai member?
+- **Reality:** Di mana member sekarang berdasarkan diagnosis?
+- **Options:** Apa saja jalur belajar yang tersedia di Knowledge Architecture ini?
+- **Will:** Mana yang dipilih member dan kapan deadline-nya?
+
+### Cross-track Mentoring
+Gunakan Bab 15 (Titik Konvergensi) untuk membantu member memahami bagaimana peran mereka berhubungan dengan peran lain dalam proyek kolaboratif. Gunakan Bab 16 untuk menjelaskan kompetensi umum yang harus dimiliki semua anggota tim.
 
 ---
 ## 18. Dokumen Terkait
@@ -681,10 +715,10 @@ Enam Kompetensi Lintas Track bukan kompetensi tambahan  -  mereka adalah **pengi
 - **AC (Acceptance Criteria):** Kriteria penerimaan terukur yang harus dipenuhi agar fitur dinyatakan selesai.
 - **ADR (Architecture Decision Record):** Dokumen singkat yang mencatat keputusan arsitektur beserta alasan pemilihan dan alternatif yang ditolak.
 - **API (Application Programming Interface):** Antarmuka yang memungkinkan berbagai aplikasi saling berkomunikasi dan bertukar data.
-- **CI/CD:** Continuous Integration / Continuous Delivery  -  praktik mengotomatiskan proses build, test, dan deploy.
+- **CI/CD:** Continuous Integration / Continuous Delivery - praktik mengotomatiskan proses build, test, dan deploy.
 - **Containerization:** Teknik mengemas aplikasi beserta dependensinya ke dalam container terisolasi yang identik di lingkungan manapun.
-- **E2E Testing:** End-to-End Testing  -  pengujian yang mensimulasikan alur pengguna dari awal hingga akhir.
-- **EDA:** Exploratory Data Analysis  -  proses investigasi dataset untuk menemukan pola dan anomali.
+- **E2E Testing:** End-to-End Testing - pengujian yang mensimulasikan alur pengguna dari awal hingga akhir.
+- **EDA:** Exploratory Data Analysis - proses investigasi dataset untuk menemukan pola dan anomali.
 - **Git:** Sistem pengontrol versi standar industri untuk melacak riwayat perubahan kode.
 - **GTM (Go-to-Market):** Strategi peluncuran produk mencakup target audiens, saluran, dan pesan komunikasi.
 - **IA (Information Architecture):** Metode pengorganisasian struktur informasi agar pengguna dapat bernavigasi mudah.
@@ -697,10 +731,21 @@ Enam Kompetensi Lintas Track bukan kompetensi tambahan  -  mereka adalah **pengi
 - **README:** Panduan utama repositori untuk menginstruksikan cara menjalankan dan berkontribusi pada proyek.
 - **SEO (Search Engine Optimization):** Optimasi agar konten mudah ditemukan mesin pencari.
 - **SOLID Principles:** Lima prinsip desain OOP yang menghasilkan kode mudah dikembangkan dan diuji.
-- **SQL:** Structured Query Language  -  bahasa standar untuk mengelola data dari database relasional.
+- **SQL:** Structured Query Language - bahasa standar untuk mengelola data dari database relasional.
 - **State Management:** Mekanisme mengelola dan mendistribusikan data dinamis ke berbagai bagian antarmuka.
 - **UAT (User Acceptance Testing):** Pengujian akhir untuk memvalidasi bahwa fitur memenuhi kebutuhan bisnis.
 - **UI/UX:** Kombinasi desain tampilan visual dan keseluruhan pengalaman pengguna.
+- **GROW Model:** Kerangka coaching 1-on-1 yang terdiri dari Goal, Reality, Options, dan Will.
+- **OWASP Top 10:** Daftar 10 risiko keamanan aplikasi web paling kritis yang dipublikasikan oleh Open Web Application Security Project.
+- **AARRR (Pirate Metrics):** Framework metrik pertumbuhan produk: Acquisition, Activation, Retention, Revenue, Referral.
+- **HEART Framework:** Framework metrik pengalaman pengguna dari Google: Happiness, Engagement, Adoption, Retention, Task Success.
+- **RICE Scoring:** Metode prioritas produk berdasarkan Reach, Impact, Confidence, dan Effort.
+- **MoSCoW:** Metode prioritas: Must have, Should have, Could have, Won't have.
+- **LLM (Large Language Model):** Model AI yang dilatih pada dataset teks besar untuk menghasilkan dan memahami bahasa manusia.
+- **MVVM:** Model-View-ViewModel - pola arsitektur yang memisahkan UI dari logika bisnis.
+- **Clean Architecture:** Pola arsitektur yang memisahkan concerns ke dalam layer konsentris dengan dependensi dari luar ke dalam.
+- **Docker:** Platform containerization untuk mengemas dan menjalankan aplikasi secara konsisten di berbagai lingkungan.
+- **Figma:** Alat desain kolaboratif berbasis cloud untuk wireframing, prototyping, dan design handoff.
 
 ---
 ## 20. Riwayat Perubahan

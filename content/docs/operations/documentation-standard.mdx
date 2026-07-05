@@ -1,9 +1,11 @@
 ---
 title: Standar Penulisan & Metadata
 description: Pedoman penulisan, visual standar, metadata, dan aturan larangan karakter khusus di YYZU.
-status: active
-owner: Ghaniyyir Rahman Sudarsono (Founder YYZU)
-lastUpdated: 2026-06-29
+tipe_dokumen: Governance Standard - Living Standard
+owner: Founder YYZU
+status: v1.1 - Active
+review: Tahunan
+lastUpdated: 2026-07-04
 
 ---
 
@@ -24,6 +26,7 @@ Dokumen ini menetapkan standar penulisan (style guide) dan struktur metadata res
 ---
 ## 2. Standar Metadata Dokumen (Ownership)
 Setiap dokumen resmi di ekosistem YYZU wajib memiliki tabel metadata di bagian paling atas dengan format sebagai berikut:
+
 | Field | Deskripsi/Nilai yang Diizinkan |
 | :--- | :--- |
 | **Tipe Dokumen** | Kategori dokumen (contoh: Blueprint Induk, Foundational Reference, Operational Standard, Operational Guide, Framework Operasional) |
@@ -32,32 +35,63 @@ Setiap dokumen resmi di ekosistem YYZU wajib memiliki tabel metadata di bagian p
 | **Berlaku untuk** | Lingkup penerapan dokumen (contoh: Seluruh member, Mentor, atau project tertentu) |
 | **Review** | Frekuensi peninjauan ulang dokumen (contoh: Ulasan Tahunan, Per batch, atau Sesuai RFC) |
 | **Status** | Versi dan status keaktifan dokumen (contoh: v1.0 - Active, v2.1 - Draft, Deprecated, Archived) |
+
 ---
 ## 3. Panduan Gaya Penulisan & Karakter (Style Guide)
 Untuk memastikan kompatibilitas tinggi lintas editor (Notion, GitHub, VS Code, Obsidian) dan efisiensi pemrosesan AI, kontributor wajib mengikuti aturan berikut:
+
 ### A. Karakter yang Dilarang
 Jangan menggunakan karakter dekoratif atau non-standar keyboard berikut:
 - **Dilarang:** Em dash (" - ") atau en dash (" - "). **Gunakan:** Hyphen standar ("-").
 - **Dilarang:** Unicode ellipsis ("..."). **Gunakan:** Tiga titik standar ("...").
 - **Dilarang:** Smart quotes / curly quotes (curly double/single quotes). **Gunakan:** Quotation marks standar (" ") dan apostrophe standar (' ').
+
 ### B. Heading & Hierarki Dokumen
 - Gunakan struktur heading yang logis: H1 (#) hanya untuk judul utama halaman (hanya satu per halaman).
 - Gunakan H2 (##) untuk bab-bab utama dan H3 (###) untuk sub-bab. Hindari kedalaman heading melebihi H4.
 - Setiap dokumen wajib memiliki pembatas horizontal ("---") setelah daftar isi dan di antara bab-bab utama untuk membantu pemisahan visual.
+
 ### C. Bullet List & Penomoran
 - Gunakan bullet list standar ("- Item") untuk daftar tanpa urutan.
 - Gunakan penomoran standar ("1. Step") untuk alur kerja atau prosedur langkah-demi-langkah.
 - Hindari penggunaan simbol unicode khusus sebagai bullet point.
-### D. Penggunaan Callout & Emoji
+
+### D. Penggunaan Callout
 - Hindari penggunaan emoji di dalam judul halaman, tautan dokumen, atau bab di dalam repository agar format tetap bersih dan profesional.
 - Gunakan callout block secara strategis untuk informasi penting, tips, atau peringatan:
 	- Gunakan label [!NOTE] untuk catatan tambahan.
 	- Gunakan label [!IMPORTANT] atau [!WARNING] untuk instruksi kritis.
 
+### E. Formatting Teks
+- **Bold (\*\*text\*\*):** Gunakan untuk istilah teknis, nama kompetensi, dan label field metadata. Contoh: **API**, **State Management**, **Acceptance Criteria**.
+- **Italic (\*text\*):** Gunakan untuk penekanan konsep atau istilah asing yang belum umum. Contoh: *transferability*, *cross-track collaboration*.
+- **Code (\`text\`):** Gunakan untuk nama file, nama fitur, command, atau kode. Contoh: `README.md`, `sprint planning`, `git push`.
+- Hindari penggunaan bold secara berlebihan. Bold hanya untuk istilah yang benar-benar perlu ditekankan.
+
+### F. Panduan Bahasa
+Dokumen YYZU ditulis dalam Bahasa Indonesia dengan pengecualian istilah teknis yang sudah umum digunakan dalam industri teknologi.
+
+**Aturan Penggunaan Bahasa:**
+- **Bahasa Indonesia:** Gunakan untuk kalimat deskripsi, penjelasan, dan instruksi.
+- **Istilah Teknis (Boleh Inggris):** API, SDK, CLI, Git, Docker, Kubernetes, CI/CD, SQL, JSON, YAML, HTTP, HTTPS, URL, HTML, CSS, JavaScript, TypeScript, React, Vue, Angular, Node.js, Python, Java, Go, Rust, AWS, GCP, Azure, Figma, VS Code, IntelliJ.
+- **Istilah Campuran:** Gunakan bentuk yang paling umum digunakan di industri. Contoh: *product-market fit*, *go-to-market*, *design system*, *code review*.
+- **Kesalahan Umum:** Jangan gunakan "and" sebagai konjungsi dalam kalimat Indonesia. Gunakan "dan". Contoh: ❌ "Frontend and Backend" → ✅ "Frontend dan Backend".
+
 ---
 ## 4. Standar Penamaan & Tautan Halaman (Naming & Linking)
-- **Judul Halaman:** Gunakan format huruf kapital pada setiap awal kata (Title Case) tanpa menyertakan emoji di depannya (contoh: "Assessment Standard YYZU").
-- **Tautan (Links):** Saat mereferensikan dokumen lain, gunakan tautan internal yang valid. Teks tautan harus merupakan nama resmi dokumen tanpa menggunakan format kode / backticks (contoh: [Kurikulum Member YYZU](url) - bukan [`Kurikulum Member YYZU`](url)).
+- **Judul Halaman:** Gunakan format huruf kapital pada setiap awal kata (Title Case) (contoh: "Assessment Standard YYZU").
+- **Tautan (Links):** Saat mereferensikan dokumen lain di Notion, gunakan tautan Notion yang valid atau mention-page. Teks tautan harus merupakan nama resmi dokumen tanpa menggunakan format kode / backticks (contoh: [Kurikulum Member YYZU](url) - bukan [`Kurikulum Member YYZU`](url)).
+
+**Contoh Penamaan yang Benar:**
+- ✅ YYZU Learning Architecture
+- ✅ Onboarding Pathway YYZU
+- ✅ Assessment Standard YYZU
+- ❌ learning architecture (huruf kecil)
+- ❌ Learning architecture (Title Case tidak konsisten)
+
+**Contoh Link yang Benar:**
+- ✅ Lihat [Knowledge Architecture YYZU](/p/38e62601ca8c811fb413e83eb782ea61?pvs=25) untuk detail.
+- ❌ Lihat [`Knowledge Architecture YYZU`](https://app.notion.com/xxx) untuk detail.
 
 ---
 ## 5. Kriteria Keberhasilan & Audit
@@ -66,3 +100,6 @@ Setiap dokumen yang dipublikasikan akan dievaluasi oleh Divisi PM atau Founder b
 - [ ] Apakah semua tautan internal berfungsi dengan baik?
 - [ ] Apakah dokumen bersih dari em dash, en dash, unicode ellipsis, dan smart quotes?
 - [ ] Apakah struktur heading sudah berurutan secara logis?
+- [ ] Apakah dokumen bersih dari bahasa campur ("and" diganti "dan")?
+- [ ] Apakah format bold, italic, dan code sudah sesuai aturan?
+- [ ] Apakah istilah teknis sudah menggunakan format yang benar?
