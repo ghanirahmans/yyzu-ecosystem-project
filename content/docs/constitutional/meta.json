@@ -1,0 +1,11 @@
+{
+  "title": "Konstitusi & Tata Kelola",
+  "defaultOpen": true,
+  "pages": [
+    "overview",
+    "ad",
+    "art",
+    "role-guide",
+    "decision-log"
+  ]
+}

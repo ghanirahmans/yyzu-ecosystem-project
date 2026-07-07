@@ -1,0 +1,13 @@
+{
+  "title": "Panduan & Sumber Daya",
+  "defaultOpen": true,
+  "pages": [
+    "overview",
+    "glossary",
+    "writing-guide",
+    "tools",
+    "finance",
+    "incident-response",
+    "contribution-guide"
+  ]
+}

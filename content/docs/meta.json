@@ -1,12 +1,9 @@
 {
   "pages": [
-    "index",
-    "identity",
-    "member",
-    "project",
+    "getting-started",
     "learning",
-    "mentoring",
-    "roles",
-    "operations"
+    "constitutional",
+    "operations",
+    "reference"
   ]
 }

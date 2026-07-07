@@ -16,7 +16,6 @@
     "@types/node": "^20",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
-    "ecc-universal": "^2.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

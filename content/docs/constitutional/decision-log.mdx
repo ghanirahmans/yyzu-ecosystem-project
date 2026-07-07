@@ -1,0 +1,188 @@
+---
+title: "Decision Log YYZU"
+description: "Catatan keputusan arsitektur dan kebijakan organisasi yang berlaku untuk seluruh ekosistem YYZU."
+tipeDokumen: "Governance Record - Living Document"
+owner: "Founder YYZU"
+berlakuUntuk: "Seluruh ekosistem YYZU"
+review: "Setiap keputusan baru ditambahkan"
+approvedBy: "Ghaniyyir Rahman Sudarsono (Founder YYZU)"
+status: "v1.1 - Active"
+lastUpdated: 2026-07-06
+---
+
+# 📋 Decision Log YYZU
+
+## Pendahuluan
+
+Decision Log ini memuat keputusan arsitektur dan kebijakan organisasi yang berlaku untuk seluruh ekosistem YYZU. Semua keputusan di sini mengikat dan jadi acuan dokumen operasional.
+
+> **Aturan:** Keputusan di sini tidak bisa diubah tanpa proses RFC yang disetujui Founder YYZU. Siapa pun bisa menambahkan keputusan baru, tapi harus dapat persetujuan Founder dulu sebelum berlaku.
+
+---
+
+## Daftar Keputusan
+
+| ID | Tanggal | Keputusan | Konteks | Keputusan Final | Dasar | Dokumen Terdampak | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| D-001 | 6 Juli 2026 | Durasi Learning Sprint | Learning Sprint durasinya berbeda di 4 dokumen | 2 minggu (default) | Konsistensi dengan Glosarium dan Skema Partnership | Glosarium, Kalender Event Batch, Skema Event, Skema Partnership | Aktif |
+| D-002 | 6 Juli 2026 | Terminologi keanggotaan utama | AD mendefinisikan "Talenta" tetapi Skema Media melarang penggunaannya secara eksternal | "Talenta" adalah istilah utama YYZU | AD adalah dokumen konstitusional; istilah konstitusional tidak bisa dilarang oleh panduan brand | AD, Glosarium, Skema Media, semua dokumen | Aktif |
+| D-003 | 6 Juli 2026 | Kebijakan inaktivitas | ART Pasal 10 (30 hari) dan Skema PM (2 hari) mengatur hal berbeda | Pisahkan: Inaktivitas Operasional (2 hari) dan Inaktivitas Keanggotaan (30 hari) | Kedua kebijakan mengatur level berbeda: operasional project vs status keanggotaan | ART, Skema PM, Glosarium | Aktif |
+| D-004 | 6 Juli 2026 | Otoritas glosarium | Glosarium YYZU dan Global Terminology Dictionary sama-sama mengklaim sebagai single source of truth | Gabungkan ke dalam Glosarium YYZU | Dual authority menimbulkan kebingungan; Glosarium punya metadata lebih lengkap | Glosarium, Terminology Dictionary (didepresiasi) | Aktif |
+| D-005 | 6 Juli 2026 | Alur progresi keanggotaan | Talenta butuh berapa batch untuk jadi Talenta Inti? | Batch 1 (kompetensi) + Batch 2 (komitmen) = Anggota Inti. BPH aktif otomatis Anggota Inti. Alumni Tersertifikasi bisa jeda sebelum batch 2. | Bukti komitmen jangka panjang, filter alami untuk hak suara, jalur yang jelas | Glosarium, ART Pasal 8, Panduan Peran, SOP Member Lifecycle | Aktif |
+| D-006 | 6 Juli 2026 | Rename Anggota Inti → Talenta Inti | Istilah "Anggota Inti" kurang khas YYZU. Karena YYZU belum mulai operasional, lebih baik ganti sekarang. | Ganti "Anggota Inti" menjadi "Talenta Inti" di seluruh dokumen. Hierarki: Talenta → Alumni Tersertifikasi → Talenta Inti. BPH aktif otomatis Talenta Inti. | Konsistensi branding, biaya perubahan nol karena belum ada operasional | AD, ART, Glosarium, Panduan Peran, semua Skema | Aktif |
+| D-007 | 6 Juli 2026 | Talenta Senior sebagai peran di batch 2 | Alumni Tersertifikasi yang lanjut batch 2 perlu definisi peran | Alumni Tersertifikasi di batch 2 disebut "Talenta Senior". Mereka tetap Talenta biasa, tapi punya tanggung jawab tambahan bantu Talenta baru beradaptasi. Bukan Mentor, bukan pengurus. | Pembuktian komitmen sebelum jadi Talenta Inti, mentorship natural dari pengalaman | Glosarium, Perjalanan Talenta, Skema PM | Aktif |
+| D-008 | 6 Juli 2026 | Generalisasi RFC ke semua dokumen | Proses perubahan hanya ada di Learning Architecture, dokumen lain tidak punya | RFC umum ditambahkan ke Decision Log. Setiap dokumen punya Owner yang jadi reviewer. Proses disederhanakan: tulis usulan → kirim ke Owner → review 7 hari → terapkan. Pengecualian: perubahan kecil (typo, formatting) tidak perlu RFC. | Mencegah perubahan sepihak, menjaga konsistensi, audit trail | Decision Log, Learning Architecture, semua dokumen | Aktif |
+| D-009 | 6 Juli 2026 | Lisensi open-source untuk proyek YYZU | AD Pasal 30 menyebut "open-source" tanpa spesifikasi lisensi | MIT License dipilih. Alasan: sederhana, paling umum di komunitas, tidak menghalangi kolaborasi dengan partner industri, cocok untuk ekosistem belajar. | Kejelasan hukum untuk kontributor dan mitra | Panduan Kontribusi Open-Source, semua repositori kode YYZU | Aktif |
+| D-010 | 6 Juli 2026 | Restrukturisasi hirarki dokumen | 28 dokumen flat tanpa kategori, navigasi sulit | Dokumen dikelompokkan ke 6 kategori: Konstitusi & Tata Kelola, Pembelajaran, Operasional Divisi, Referensi & Standar, Navigasi, Historis. Dokumen induk (Learning Architecture, Skema PM, Skema Event) punya sub-page. 7 dokumen di-rename untuk konsistensi. | Navigasi lebih mudah, hirarki jelas, konsistensi penamaan | Semua dokumen | Aktif |
+| D-011 | 6 Juli 2026 | Durasi batch = 18 minggu | Durasi batch berbeda di beberapa dokumen: Kalender Event (±17 minggu), Perjalanan Talenta (18 minggu), Learning Architecture (18 minggu), ART (4 bulan) | 18 minggu penuh. Referensi kasual "4 bulan" hanya untuk komunikasi publik, bukan untuk perencanaan operasional. Kalender Event Batch wajib menggunakan 18 minggu. | Konsistensi dengan Learning Architecture dan Perjalanan Talenta. 18 minggu = 4.5 bulan, bukan 4 bulan atau 17 minggu. | Kalender Event Batch, Perjalanan Talenta, Learning Architecture, ART, Skema Event, Glosarium | Aktif |
+| D-012 | 6 Juli 2026 | Hierarki terminologi 3-tier | Konflik "Talenta" antara AD (konstitusional) dan Skema Media (melarang penggunaan eksternal). Tidak ada aturan tentang mana yang menang. | Hierarki: Tier 1 = AD/ART (otoritas tertinggi, tidak bisa dilanggar dokumen operasional). Tier 2 = Glosarium YYZU (single source of truth untuk semua istilah). Tier 3 = Dokumen operasional (boleh variasi kasual/kontekstual, tidak boleh kontradiksi Tier 1-2). | AD adalah dokumen konstitusional; istilah konstitusional tidak bisa dilarang oleh panduan brand. Glosarium sudah ditetapkan sebagai single source of truth (D-004). | AD, ART, Glosarium, Skema Media, semua dokumen | Aktif |
+| D-013 | 6 Juli 2026 | Sumber primer definisi peran | "Project Leader" didefinisikan di 3+ tempat (Panduan Peran, Glosarium, Skema PM). Duplikasi menyebabkan risiko inkonsistensi. | Panduan Peran YYZU adalah sumber primer untuk definisi peran organisasi. Glosarium menyediakan ringkasan 1-2 kalimat + link ke Panduan Peran. Skema divisi merujuk ke Panduan Peran, bukan mendefinisikan ulang (kecuali konteks spesifik divisi tersebut). | Mengurangi duplikasi, memudahkan maintenance, satu tempat untuk update. | Panduan Peran, Glosarium, semua Skema divisi | Aktif |
+| D-014 | 6 Juli 2026 | Standar metadata dokumen | Beberapa dokumen punya metadata lengkap, beberapa tidak. Format bervariasi. | 6 field wajib untuk semua dokumen operasional: Tipe Dokumen, Owner, Berlaku untuk, Review, Approved by, Status. Untuk dokumen konstitusional (AD/ART): gunakan format "Informasi Dokumen" (Tipe, Disahkan, Status, Perubahan). | Konsistensi metadata memudahkan maintenance jangka panjang dan audit. | Semua dokumen aktif, Panduan Penulisan Dokumen | Aktif |
+
+---
+
+## Prosedur Perubahan Dokumen (RFC)
+
+Prosedur ini berlaku untuk seluruh dokumen di ekosistem YYZU, kecuali AD dan ART (yang mengikuti proses perubahan konstitusional masing-masing).
+
+### Siapa yang Bisa Mengajukan?
+
+Siapa pun yang terlibat di YYZU: BPH, Mentor, Talenta Senior, atau Talenta biasa.
+
+### Bagaimana Cara Mengajukan?
+
+1. Tulis perubahan yang diusulkan secara tertulis. Sertakan: dokumen yang ingin diubah, bagian yang diubah, alasan perubahan, dan dampak ke dokumen lain.
+2. Kirimkan ke Owner dokumen yang bersangkutan. (Daftar Owner ada di metadata setiap dokumen.)
+
+### Proses Review
+
+| Jenis Dokumen | Reviewer | Waktu Review |
+| :--- | :--- | :--- |
+| Dokumen operasional (Skema, SOP, Panduan) | Owner dokumen | 7 hari kerja |
+| Dokumen referensi (Glosarium, Style Guide) | BPH YYZU | 7 hari kerja |
+| Dokumen pembelajaran (Kurikulum, Assessment, Learning Architecture) | Founder + Dewan Mentor | 14 hari kerja |
+| AD/ART | Ikuti proses konstitusional di AD Pasal 41 / ART Pasal 23 | Sesuai AD/ART |
+
+### Setelah Disetujui
+
+1. Perubahan diterapkan ke dokumen.
+2. Catatan perubahan ditambahkan ke Riwayat Perubahan di dokumen yang bersangkutan.
+3. Jika perubahan memengaruhi dokumen lain, dokumen lain juga diperbarui.
+
+### Jika Ditolak
+
+Alasan penolakan dicatat di Decision Log ini agar keputusan bisa dilacak.
+
+### Pengecualian
+
+Perubahan kecil (typo, formatting, perbaikan link) tidak perlu RFC. Cukup Owner dokumen yang mengubah.
+
+---
+
+## Manajemen Perubahan & Mutu
+
+### Daftar Isi
+
+1. Pendahuluan
+2. Change Management Standard (Prosedur RFC & Persetujuan)
+3. Impact Analysis Framework (Dampak Perubahan)
+4. Standar ADR (Architecture Decision Record) Pendidikan
+5. Education Quality Attributes (Atribut Kualitas Pendidikan)
+6. Risk Register & Mitigasi
+7. Riwayat Perubahan
+
+---
+
+### 1. Pendahuluan
+
+Dokumen ini menetapkan standar tata kelola perubahan (Change Management) dan penjaminan mutu (Quality Framework) untuk seluruh ekosistem pembelajaran YYZU. Tujuannya adalah memastikan bahwa setiap modifikasi kurikulum dan kebijakan pembelajaran dilakukan secara terukur, tidak merusak konsistensi antar-dokumen, dan memitigasi risiko curriculum drift.
+
+---
+
+### 2. Change Management Standard (Prosedur RFC & Persetujuan)
+
+Setiap usulan perubahan pada kurikulum, skema proyek, atau standar penilaian wajib melewati alur Request for Comments (RFC) berikut:
+
+1. **Inisiasi & Draf Tertulis:** Pengusul (BPH, Mentor, atau Founder) menyusun draf perubahan tertulis menggunakan format ADR (Architecture Decision Record) di bagian 4.
+2. **Review Internal (3 Hari):** Divisi PM atau SDM melakukan kurasi administratif awal untuk memastikan kesesuaian dengan YYZU Documentation Style Guide.
+3. **Periode RFC Komunitas (7 Hari Kerja):** Draf dipublikasikan ke forum internal pengurus dan dewan mentor untuk mendapatkan feedback tertulis.
+4. **Kalibrasi & Konsensus (3 Hari):** Founder mensintesis masukan dan berkoordinasi dengan pengusul untuk revisi draf.
+5. **Persetujuan Akhir (Sign-off):** Pengesahan tertulis oleh Dewan Mentor YYZU. Perubahan status dari Draft ke Active dicatat di tabel riwayat dokumen.
+
+---
+
+### 3. Impact Analysis Framework (Dampak Perubahan)
+
+Setiap perubahan pada satu dokumen wajib menganalisis dampaknya ke dokumen lain dengan aturan penjalaran berikut:
+
+- **Perubahan pada Prinsip Pembelajaran**
+  - *Dampak:* Berdampak langsung ke Kurikulum Member dan Assessment Standard.
+  - *Aksi:* Wajib melakukan review keselarasan rubrik penilaian.
+- **Perubahan pada Kurikulum Member**
+  - *Dampak:* Berdampak langsung ke Knowledge Architecture (graf dependensi konsep), Mastery Architecture (exit criteria), dan Module Guide.
+  - *Aksi:* Update graf relasi konsep dan checklist evaluasi asinkron AI Assessor.
+- **Perubahan pada Skema Project Management**
+  - *Dampak:* Berdampak langsung ke Onboarding Pathway (sprint cycle) dan Skema Mentoring (SOP sesi).
+
+---
+
+### 4. Standar ADR (Architecture Decision Record) Pendidikan
+
+Setiap keputusan arsitektur pendidikan utama wajib didokumentasikan dengan format sebagai berikut:
+
+- **Judul Keputusan (ADR-XX: Judul)**
+- **Status:** \[Draft / Proposed / Approved / Rejected / Deprecated\]
+- **Context:** Latar belakang masalah dan kendala yang dihadapi.
+- **Alternatives Considered:** Opsi-opsi solusi lain yang dipertimbangkan beserta kelemahannya.
+- **Rationale:** Alasan utama memilih solusi ini dibanding alternatif lain.
+- **Consequences:** Implikasi dari keputusan ini terhadap proses operasional, beban mentor, atau sistem AI.
+
+---
+
+### 5. Education Quality Attributes (Atribut Kualitas Pendidikan)
+
+Untuk mengukur efektivitas sistem pendidikan, YYZU menggunakan parameter kualitas berikut:
+
+- **Scalability**
+  - *Cara Mengukur:* Jumlah member yang dapat ditangani oleh satu mentor praktisi dengan memanfaatkan Peer Mentor Level 4 (target rasio minimal 1:20).
+- **Maintainability**
+  - *Cara Mengukur:* Waktu yang dibutuhkan untuk mengupdate satu sub-bab kurikulum tanpa memicu broken links atau inkonsistensi terms (target maksimal 2 jam).
+- **Learnability**
+  - *Cara Mengukur:* Persentase kelulusan member baru di level Beginner pada sprint pertama (target minimal 85%).
+- **Consistency**
+  - *Cara Mengukur:* Tingkat keseragaman penilaian antar-mentor (inter-rater reliability) dalam sesi kalibrasi (target minimal 90% kesepakatan skor).
+- **AI Compatibility**
+  - *Cara Mengukur:* Persentase keakuratan AI Assessor dalam mengidentifikasi kelengkapan bukti (evidence) awal dibanding keputusan mentor manusia (target minimal 95%).
+- **Traceability**
+  - *Cara Mengukur:* Kemudahan melacak asal-usul kriteria penilaian di Assessment Standard kembali ke Prinsip Pembelajaran.
+
+---
+
+### 6. Risk Register & Mitigasi
+
+Identifikasi risiko utama tata kelola dokumentasi dan rencana mitigasinya:
+
+| Risiko | Severity | Likelihood | Mitigasi | Owner |
+| :--- | :--- | :--- | :--- | :--- |
+| **Knowledge Duplication** | Tinggi | Sedang | Gunakan link referensi internal daripada menyalin-tempel teks antar-dokumen. | Divisi PM |
+| **Information Overload** | Sedang | Tinggi | Jaga agar struktur halaman tetap datar (flat) maksimal 1 level sub-halaman di Notion. | Divisi SDM |
+| **Curriculum Drift** | Tinggi | Sedang | Terapkan Impact Analysis Framework sebelum menyetujui RFC baru. | Founder YYZU |
+| **Broken Links** | Sedang | Tinggi | Lakukan audit link berkala (automated check atau manual per batch). | Divisi PM |
+| **AI Misinterpretation** | Tinggi | Rendah | Pastikan penulisan dokumen mematuhi YYZU Documentation Style Guide. | Founder YYZU |
+| **Mentor Bias** | Sedang | Sedang | Gunakan Rubrik Universal biner dan lakukan sesi Calibration minimal 1x per batch. | Divisi SDM |
+
+---
+
+### 7. Riwayat Perubahan
+
+| Versi | Tanggal | Ringkasan Perubahan | Oleh |
+| :--- | :--- | :--- | :--- |
+| 1.0 | 29 Juni 2026 | Rilis inisial Change Management & Quality Framework | Founder YYZU |
+
+---
+
+## Referensi Dokumen Terkait
+
+- [YYZU Learning Architecture](/docs/learning/overview) - Blueprint induk pendidikan
+- [Skema Project Management](/docs/operations/project/overview) - Framework eksekusi proyek
+- [Glosarium YYZU](/docs/reference/glossary) - Definisi seluruh istilah ekosistem

@@ -1,0 +1,185 @@
+---
+title: Alur Kerja (Workflow) Proyek
+description: Workflow atau alur kerja pengerjaan proyek dari tahap ideasi hingga rilis di YYZU.
+status: active
+owner: YYZU
+lastUpdated: 2026-07-05
+
+---
+
+# Alur Kerja Proyek (Project Workflow)
+
+Workflow proyek di YYZU dirancang untuk meniru proses pengembangan produk di industri teknologi secara profesional. Dari pembentukan tim hingga evaluasi akhir, setiap tahap punya tujuan belajar yang spesifik.
+
+---
+
+Dokumen ini menjelaskan tahapan alur kerja (workflow) pelaksanaan proyek di ekosistem YYZU. Alur kerja ini dirancang untuk meniru proses pengembangan produk di industri teknologi secara profesional, mulai dari pembentukan tim hingga proses evaluasi akhir.
+
+## 2. Pembentukan Kelompok
+Terdapat dua opsi pembentukan kelompok: self-form, yaitu anggota memilih sendiri rekan kelompoknya, atau assigned, yaitu kelompok disusun langsung oleh Divisi Product & Project Management. Pendekatan yang direkomendasikan adalah hybrid: anggota melakukan self-form terlebih dahulu, kemudian Divisi Product & Project Management memvalidasi apakah komposisi setiap kelompok cukup proporsional terhadap kebutuhan project yang berjalan. Kriteria proporsionalitas ditentukan oleh Divisi Product & Project Management pada tahap planning, disesuaikan dengan jenis project yang dijalankan.
+
+Apabila ditemukan kelompok dengan komposisi yang tidak seimbang, reshuffle dilakukan sebelum project dimulai, bukan pada saat proses eksekusi sedang berjalan.
+
+---
+
+## 5. Metodologi Kerja: Agile Scrumban
+Seluruh project di ekosistem YYZU wajib menggunakan metodologi **Scrumban** - pendekatan hybrid yang menggabungkan struktur Scrum dengan fleksibilitas Kanban.
+
+### Mengapa Scrumban?
+Scrum memberikan ritme kerja terstruktur melalui sprint dan ceremony berkala, sehingga tim memiliki cadence yang jelas dan terukur. Kanban memberikan visibilitas alur kerja secara real-time dan mencegah bottleneck melalui pembatasan pekerjaan yang sedang berjalan (WIP Limit). Kombinasi keduanya sesuai dengan kondisi tim YYZU yang berukuran kecil, memiliki kapasitas tidak selalu konsisten, dan perlu belajar workflow industri secara bertahap.
+
+### Komponen Scrumban yang Berlaku di YYZU
+
+| Komponen | Sumber | Fungsi |
+| :--- | :--- | :--- |
+| Sprint (1-2 minggu) | Scrum | Unit kerja utama dengan batas waktu tetap |
+| Sprint Ceremonies | Scrum | Struktur sesi perencanaan, sinkronisasi, dan evaluasi |
+| Backlog | Scrum | Daftar terprioritas semua pekerjaan yang akan datang |
+| Kanban Board | Kanban | Visualisasi status seluruh task secara real-time |
+| WIP Limit | Kanban | Batasan jumlah task yang boleh dikerjakan bersamaan |
+| Pull System | Kanban | Anggota mengambil task berikutnya saat kapasitas tersedia |
+
+### Kanban Board: Kolom Wajib
+Seluruh task wajib dikelola di Kanban Board dengan kolom berikut:
+
+**Backlog -> To Do -> In Progress -> In Review -> Done**
+
+- **Backlog:** Seluruh task yang sudah teridentifikasi namun belum dijadwalkan ke sprint berjalan.
+- **To Do:** Task yang dikomitkan untuk dikerjakan pada sprint ini.
+- **In Progress:** Task yang sedang aktif dikerjakan. WIP Limit maksimal **2 task per anggota** pada waktu bersamaan.
+- **In Review:** Task selesai dikerjakan, menunggu review dari rekan tim atau Project Leader.
+- **Done:** Task telah diverifikasi sesuai Definition of Done.
+
+### 5.1 Sprint Ceremonies (Sesi Wajib per Sprint)
+Setiap sprint wajib menjalankan empat ceremony berikut. Seluruh sesi dipimpin oleh Project Leader dan dihadiri oleh seluruh anggota tim.
+
+**1. Sprint Planning**
+- Waktu: Hari pertama sprint, maksimal 60 menit.
+- Peserta: Seluruh tim + Mentor (opsional, diundang jika ada keputusan scope besar).
+- Agenda:
+  1. Review backlog dan prioritas bersama.
+  2. Tim memilih task dari backlog yang akan dikerjakan pada sprint ini.
+  3. Setiap task dipecah menjadi subtask konkret dan diassign ke anggota.
+  4. Estimasi durasi pengerjaan per task disepakati bersama.
+- Output: Kanban Board terisi dengan task sprint yang siap dikerjakan.
+
+**2. Daily Sync (Standup)**
+- Waktu: Setiap hari kerja, maksimal 15 menit. Bisa dilakukan secara asinkron via pesan teks jika tim tidak bisa sinkron langsung.
+- Peserta: Seluruh anggota tim.
+- Format tiga pertanyaan:
+  1. Apa yang sudah selesai sejak kemarin?
+  2. Apa yang akan dikerjakan hari ini?
+  3. Adakah blocker yang menghambat pekerjaan?
+- Catatan: Daily Sync bukan sesi problem-solving. Blocker yang butuh diskusi panjang dijadwalkan terpisah setelah sesi selesai.
+
+**3. Sprint Review**
+- Waktu: Hari terakhir sprint, maksimal 45 menit.
+- Peserta: Seluruh tim + Mentor (wajib hadir).
+- Agenda:
+  1. Tim mendemonstrasikan apa yang berhasil diselesaikan dalam sprint ini.
+  2. Mentor memberikan feedback dan validasi terhadap deliverable.
+  3. Task yang belum selesai dikaji: apakah dilanjutkan ke sprint berikutnya atau di-descope.
+- Output: Daftar task Done yang divalidasi Mentor dan keputusan task carry-over.
+
+**4. Sprint Retrospective**
+- Waktu: Setelah Sprint Review, maksimal 30 menit.
+- Peserta: Seluruh anggota tim. Mentor tidak wajib hadir.
+- Format tiga kolom:
+  1. What Went Well - apa yang berjalan baik dan harus dipertahankan.
+  2. What Went Wrong / Bottlenecks - hambatan teknis atau komunikasi yang terjadi.
+  3. Action Items - tindakan konkret yang akan diterapkan pada sprint berikutnya.
+- Output: Catatan Retrospektif terisi dan disimpan di Notion sebagai bagian dari dokumentasi project.
+
+### 5.2 Definition of Done (DoD)
+Definition of Done adalah kriteria minimum yang harus terpenuhi agar sebuah task dianggap benar-benar selesai. Tanpa DoD yang jelas, "selesai" bisa berarti berbeda bagi setiap anggota tim.
+
+**Sebuah task dinyatakan Done jika seluruh kondisi berikut terpenuhi:**
+1. Pekerjaan selesai sesuai kriteria yang disepakati saat Sprint Planning.
+2. Sudah di-review oleh minimal satu anggota lain (untuk task teknis: melalui Pull Request).
+3. Tidak ada bug kritis atau error yang belum diselesaikan.
+4. Artefak hasil pekerjaan (kode, desain, dokumen) sudah tersimpan di repository atau platform resmi.
+5. Status task di Kanban Board diperbarui ke kolom **Done**.
+6. Jika task menghasilkan deliverable yang perlu diketahui Mentor, sudah dikomunikasikan kepada Project Leader.
+
+**Sebuah project dinyatakan selesai jika:**
+1. Seluruh deliverable utama yang disepakati dalam Project Brief/PRD sudah diserahkan atau dijelaskan statusnya secara tertulis.
+2. Aplikasi/produk sudah di-deploy dan dapat diakses (untuk project teknis).
+3. Dokumentasi akhir (README, Closure Report, Retrospective) sudah lengkap.
+4. Demo Day sudah dilaksanakan.
+5. Mentor memberikan sign-off tertulis.
+
+---
+
+## 6. Alur Kerja Project (Project Workflow)
+
+| Fase | Deskripsi Aktivitas Utama | Target Output & Milestone |
+| :--- | :--- | :--- |
+| **Foundation** (Persiapan) | Anggota kelompok mempelajari konsep dasar dan tools standar (Git flow, Figma, project setup) di bawah arahan Project Leader; Mentor memberikan pembekalan materi. | Kesiapan teknis seluruh anggota tim terverifikasi. |
+| **Problem Discovery** (Observasi) | Tim menerima tema dari BPH/Mentor, lalu melakukan observasi lapangan untuk menemukan masalah nyata yang akan diselesaikan. Output wajib: Problem Discovery Document. | Problem Discovery Document selesai dan siap dijadikan dasar penyusunan PRD. |
+| **Planning & Pitching** (Perencanaan) | Tim menyusun PRD dan Wireframe berdasarkan hasil observasi. Pitching dilakukan di depan Mentor sebagai simulasi komunikasi profesional ke client (Q&A Challenge). | Proposal disetujui Mentor, desain Figma handoff, repositori dibuat, dan Kanban Board siap. |
+| **Execution & QA** (Pengerjaan) | Pengerjaan task secara fokus. Project Leader memimpin sinkronisasi berkala. Developer menulis kode dengan Pull Request & Code Review. Deployment berkala ke staging server untuk pengujian bersama. | Aplikasi berfungsi penuh di server staging dan bebas dari bug kritis. |
+| **Release & Closing** (Rilis & Evaluasi) | User Acceptance Testing (UAT) oleh Mentor. Deployment aplikasi ke server produksi. Presentasi demo produk akhir (Demo Day). Penyelesaian dokumentasi dan evaluasi tim (Retrospective). | Aplikasi online (live), dokumentasi lengkap, presentasi demo selesai, dan catatan retrospektif terisi. |
+
+### Detail Penjelasan Fase Kerja:
+
+1. **Fase Foundation (Persiapan & Pembekalan):**
+   - Member mempelajari tools standar (Git flow, pengenalan Figma, dasar-dasar setup project).
+   - Mentor memberikan materi/kuliah fundamental yang dibutuhkan untuk tema/bidang proyek yang berjalan.
+   - Divisi PM melakukan pembentukan kelompok dan menunjuk Project Leader.
+   - **Output:** Checkpoint kesiapan teknis seluruh anggota tim.
+
+2. **Fase Planning & Proposal Pitching (Perencanaan & Pembuktian Ide):**
+   Fase ini terdiri dari dua sub-fase yang wajib dijalankan secara berurutan: **Problem Discovery** terlebih dahulu, kemudian **Proposal Pitching**. Tim tidak diperbolehkan masuk ke tahap pitching sebelum menyelesaikan dan mendokumentasikan hasil observasi mereka.
+
+   - **Sub-Fase 2A: Problem Discovery (Observasi & Penemuan Masalah)**
+     BPH atau Mentor menetapkan **tema project** di awal (contoh: *Educational Technology*, *Health & Wellness*, *Local Business Digitalization*). Tim tidak menentukan solusi terlebih dahulu - tim terlebih dahulu terjun ke lapangan untuk memahami masalah nyata yang ada di dalam tema tersebut.
+     Proses yang wajib dijalankan:
+     - **Observasi lapangan atau riset pengguna:** Tim mengamati kondisi nyata, mewawancarai minimal 3 - 5 orang yang relevan dengan tema, atau melakukan survei singkat untuk memahami pain point yang sesungguhnya.
+     - **Identifikasi masalah:** Dari hasil observasi, tim merumuskan satu masalah utama yang paling signifikan, nyata, dan dapat diselesaikan dengan solusi teknologi dalam batasan scope project.
+     - **Validasi masalah:** Tim memastikan masalah yang dipilih benar-benar dialami oleh pengguna nyata, bukan asumsi tim semata.
+     - **Output wajib:** Problem Discovery Document.
+
+   - **Sub-Fase 2B: Proposal Pitching (Penyusunan & Presentasi Ide)**
+     Setelah masalah ditemukan dan didokumentasikan, tim merancang solusi dan mempresentasikannya kepada Mentor.
+     - **Penyusunan Proposal (PRD Awal & Wireframe UI):** Berdasarkan hasil Problem Discovery, tim menyusun draf PRD yang menjelaskan solusi yang diusulkan, fitur MVP, dan wireframe kasar antarmuka.
+     - **Pitching & Defense Session (Sesi Sidang Proposal):** Kelompok mempresentasikan proposal di depan Mentor yang berperan sebagai *Client*. Tujuan sesi ini bukan sekadar mendapatkan persetujuan - melainkan melatih kemampuan komunikasi profesional: menyampaikan idenya secara terstruktur, meyakinkan stakeholder dengan data, dan merespons pertanyaan kritis di bawah tekanan. Ini adalah simulasi nyata dari situasi kerja di industri.
+     - **Mentor Q&A Challenge:** Mentor mengajukan pertanyaan tajam mengenai relevansi solusi terhadap masalah yang ditemukan, urgensi masalah bagi pengguna nyata, kesiapan tim, dan kelayakan MVP dalam timeline yang tersedia. Tim wajib menjawab dengan argumen berbasis data observasi, bukan opini atau asumsi.
+     - **Revisi & Finalisasi:** Setelah mendapat persetujuan Mentor, desainer menuntaskan UI di Figma dan developer menyiapkan struktur database/API. Project Leader memecah fitur menjadi task di Kanban Board.
+     - **Output:** Problem Discovery Document selesai, proposal disetujui Mentor, desain Figma handoff, repositori GitHub dibuat, dan Kanban Board siap.
+
+3. **Fase Execution & QA (Pengerjaan & Pengujian):**
+   - Developer fokus menulis kode sesuai tugas di Kanban Board. Setiap kode baru wajib melalui proses Pull Request (PR) di GitHub dan di-review oleh rekan tim/Tech Lead.
+   - Project Leader melakukan sinkronisasi berkala (daily sync/standup) untuk melacak kendala.
+   - Di pertengahan fase eksekusi akhir, aplikasi dideploy ke server uji coba (staging).
+   - Tim melakukan pengujian aplikasi secara bersama-sama (QA Testing) dan memperbaiki bug yang ditemukan.
+   - **Output:** Aplikasi berfungsi penuh di server staging dan bebas dari bug kritis.
+
+4. **Fase Release & Closing (Peluncuran & Evaluasi):**
+   - **UAT (User Acceptance Testing):** Mentor menguji aplikasi untuk memberikan persetujuan akhir (*sign-off*).
+   - **Deployment to Production:** Merilis aplikasi ke server publik (misal: Vercel/Netlify).
+   - **Demo Day:** Setiap tim melakukan presentasi demo karya di hadapan Founder, Mentor, dan seluruh anggota ekosistem YYZU.
+   - **Dokumentasi Akhir:** Melengkapi README.md repositori dan mempublikasikan artikel portofolio.
+   - **Sprint Retrospective:** Seluruh tim berkumpul untuk melakukan evaluasi kerja kelompok menggunakan template retro.
+   - **Output:** Aplikasi online, dokumentasi lengkap, dan sesi retrospektif selesai.
+
+---
+
+## 7. Standardisasi Tools Kolaborasi Ekosistem YYZU
+Untuk mendukung kolaborasi yang efisien dan menyimulasikan alur kerja industri nyata secara optimal, seluruh tim project YYZU wajib menggunakan perkakas (tools) digital standar berikut:
+- **GitHub:** Repositori kode utama, review pull request (PR), dan pengelolaan codebase terintegrasi. Seluruh kontributor teknis wajib menggunakan workflow branch YYZU.
+- **Figma:** Workspace desain antarmuka (UI/UX) kolaboratif, penerapan design system YYZU, prototyping interaktif, dan serah terima (handoff) aset desain ke tim developer.
+- **Discord / Slack:** Saluran komunikasi utama ekosistem. Digunakan untuk sinkronisasi harian (asinkron), diskusi divisi, mentoring live, serta koordinasi insidental.
+- **Linear / Trello / Jira / ClickUp / Notion Board:** Manajemen tugas berbasis Kanban Board untuk memantau status pengerjaan yang dikelola oleh Project Leader kelompok secara berkala. Kolom minimal yang harus ada:
+  - **Backlog:** Ide fitur masa depan / di luar scope MVP.
+  - **To Do:** Fitur MVP yang siap dikerjakan pada sprint berjalan.
+  - **In Progress:** Fitur yang sedang dikerjakan developer.
+  - **In Review:** Fitur yang telah selesai dikoding dan sedang dalam proses Pull Request/code review.
+  - **Done:** Fitur yang telah lolos review dan diintegrasikan ke codebase utama.
+
+---
+
+## Referensi Dokumen Terkait
+
+- [Jenis Proyek](/docs/operations/project/types) - klasifikasi proyek berdasarkan skala dan durasi
+- [Standar Proyek YYZU](/docs/operations/project/standards) - kriteria kelayakan dan KPI proyek
+- [Peran Project Leader](/docs/operations/project/overview) - detail peran Project Leader

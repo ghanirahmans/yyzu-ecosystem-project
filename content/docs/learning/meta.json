@@ -1,14 +1,18 @@
 {
-  "title": "Learning & Curriculum",
+  "title": "Pembelajaran & Pengembangan",
   "defaultOpen": true,
   "pages": [
     "overview",
-    "principles",
-    "mastery-architecture",
-    "learning-model",
-    "area-of-expertise",
+    "architecture",
     "curriculum",
-    "assessment-standard",
-    "knowledge-architecture"
+    "assessment",
+    "principles",
+    "knowledge",
+    "onboarding",
+    "journey",
+    "methodology",
+    "tracks",
+    "expertise",
+    "levels"
   ]
 }

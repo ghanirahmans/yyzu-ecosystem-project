@@ -1,14 +1,16 @@
 {
-  "title": "Operations",
+  "title": "Operasional Divisi",
   "defaultOpen": true,
   "pages": [
     "overview",
-    "collaboration-system",
-    "event-program",
-    "documentation-standard",
-    "terminology",
-    "change-management",
-    "articles-of-association",
-    "bylaws"
+    "project",
+    "mentoring",
+    "partnership",
+    "partnership-types",
+    "partnership-how-to-apply",
+    "event",
+    "event-calendar",
+    "media-branding",
+    "general-coordinator"
   ]
 }
