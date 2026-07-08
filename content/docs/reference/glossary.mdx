@@ -3,12 +3,13 @@ title: "Glosarium YYZU"
 description: Definisi tunggal seluruh istilah yang digunakan dalam ekosistem YYZU. Glosarium ini menjadi sumber tunggal definisi (single source of truth) untuk seluruh istilah di semua dokumen YYZU.
 tipe_dokumen: "Referensi - Living Document"
 owner: BPH YYZU
-status: "v1.6 - Active"
+berlaku_untuk: Seluruh dokumen dan komunikasi ekosistem YYZU
 review: Per batch atau sesuai RFC
-lastUpdated: 2026-07-07
+approved_by: Ghaniyyir Rahman Sudarsono (Founder YYZU)
+status: "v1.6 - Active"
 ---
 
-# Glosarium YYZU
+## Pendahuluan
 
 Istilah yang sama bisa berarti hal berbeda di dokumen yang berbeda. Glosarium ini menjadi sumber tunggal definisi (single source of truth) untuk seluruh istilah di ekosistem YYZU - dari role organisasi hingga terminologi teknis.
 
@@ -16,10 +17,24 @@ Istilah yang sama bisa berarti hal berbeda di dokumen yang berbeda. Glosarium in
 
 ---
 
+## Daftar Isi
+
+1. [Role & Organisasi](#role--organisasi)
+2. [Proses & Mekanisme](#proses--mekanisme)
+3. [Teknis](#teknis)
+4. [Kemitraan](#kemitraan)
+5. [Istilah Pembelajaran & Teknis](#istilah-pembelajaran--teknis)
+6. [Istilah Keuangan](#istilah-keuangan)
+7. [Lisensi Open-Source](#lisensi-open-source)
+8. [Referensi Silang](#referensi-silang)
+9. [Referensi Dokumen Terkait](#referensi-dokumen-terkait)
+
+---
+
 ## Role & Organisasi
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **Founder** | Pendiri YYZU (Ghaniyyir Rahman Sudarsono) yang memiliki peran konstitusional khusus dalam organisasi. Founder memiliki hak veto dalam keputusan strategis dan menjadi anggota ex-officio Dewan Wali Amanat. |
 | **Dewan Wali Amanat (DWA)** | Badan tertinggi pengawas visi dan pelindung arah strategis organisasi YYZU. DWA beranggotakan Pendiri (Founder), Ketua Dewan Mentor, dan perwakilan mantan Koordinator Umum. DWA memiliki wewenang veto atas keputusan strategis terkait perubahan Anggaran Dasar, pembubaran organisasi, serta penyelesaian sengketa kepemimpinan tertinggi. |
 | **BPH (Badan Pelaksana Harian)** | Badan eksekutif yang menyelenggarakan program harian YYZU, dipimpin oleh Koordinator Umum. BPH memiliki fungsi minimal yang wajib ada: Kemitraan, Divisi SDM, Event & Planning, Product & Project Management, Learning & Curriculum, serta Media & Branding. |
@@ -41,21 +56,17 @@ Istilah yang sama bisa berarti hal berbeda di dokumen yang berbeda. Glosarium in
 
 ### Alur Progresi Keanggotaan
 
-| Tahap | Status | Syarat |
-|-------|--------|--------|
-| 1 | **Talenta** | Mendaftar dan diterima di batch YYZU |
-| 2 | **Alumni Tersertifikasi** | Menjalani batch pertama + lulus assessment |
-| 3 | **Talenta Senior** | Menjalani batch berikutnya sebagai alumni |
-| 4 | **Talenta Inti** | Menjalani 2+ batch + kontribusi dikonfirmasi Divisi SDM |
-
-> BPH aktif otomatis berstatus Talenta Inti.
+```
+Talenta → [menjalani batch pertama + lulus assessment] → Alumni Tersertifikasi → [menjalani batch berikutnya sebagai Talenta Senior] → Talenta Inti
+BPH aktif → otomatis Talenta Inti
+```
 
 ---
 
 ## Proses & Mekanisme
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **Batch** | Satu periode keanggotaan aktif dalam ekosistem YYZU selama 18 minggu, di mana sekelompok anggota menjalani program mentoring dan project secara bersamaan. Satu batch mencakup satu siklus project dari Foundation hingga Release. |
 | **Sprint** | Unit kerja utama dengan batas waktu tetap (1-2 minggu) dalam metodologi Scrumban. Setiap sprint memiliki planning, daily sync, review, dan retrospective ceremony. |
 | **Learning Sprint** | Siklus pembelajaran terstruktur selama 2 minggu yang membentuk dasar kompetensi member sebelum memasuki project. Learning Sprint merupakan prioritas awal dalam rekomendasi fokus YYZU. |
@@ -68,13 +79,33 @@ Istilah yang sama bisa berarti hal berbeda di dokumen yang berbeda. Glosarium in
 | **NDA (Non-Disclosure Agreement)** | Lembar kesepakatan kerahasiaan yang wajib ditandatangani oleh anggota yang terlibat dalam proyek kemitraan industri untuk menjaga informasi non-publik milik mitra. |
 | **MoU (Nota Kesepahaman)** | Dokumen kerja sama yang memuat kesepakatan awal antara YYZU dengan mitra, mencakup hak, kewajiban, jangka waktu, dan HKI proyek. |
 | **PKS (Perjanjian Kerja Sama)** | Dokumen perjanjian formal yang memuat detail kerja sama antara YYZU dengan mitra, mencakup hak, kewajiban, jangka waktu, dan HKI proyek. PKS digunakan untuk kemitraan yang lebih formal dan mengikat dibandingkan MoU. |
+| **API (Application Programming Interface)** | Antarmuka pemrograman aplikasi yang memungkinkan dua atau lebih sistem perangkat lunak untuk berkomunikasi dan bertukar data secara terstruktur. Dalam konteks YYZU, API digunakan dalam pengembangan proyek fullstack dan integrasi layanan. |
+| **Docker** | Platform containerization yang memungkinkan aplikasi dikemas bersama seluruh dependensinya ke dalam container yang portabel dan konsisten di berbagai lingkungan. Digunakan dalam proyek YYZU untuk memastikan konsistensi antara lingkungan development, staging, dan production. |
+| **Git** | Sistem version control terdistribusi yang digunakan untuk melacak perubahan kode sumber selama pengembangan perangkat lunak. Seluruh proyek YYZU menggunakan Git sebagai standar kolaborasi tim. |
+| **SQL (Structured Query Language)** | Bahasa pemrograman yang digunakan untuk mengelola dan memanipulasi data dalam database relasional. Anggota YYZU wajib memahami dasar SQL untuk kebutuhan pengembangan backend dan analisis data. |
+| **SOLID** | Lima prinsip desain dalam pemrograman berorientasi objek: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, dan Dependency Inversion. Prinsip ini menjadi standar kualitas kode dalam proyek YYZU. |
+| **OOP (Object-Oriented Programming)** | Paradigma pemrograman yang mengorganisir kode ke dalam objek yang memiliki properti dan method. OOP menjadi fondasi kurikulum pemrograman YYZU untuk track backend dan mobile. |
+| **MVVM (Model-View-ViewModel)** | Pola arsitektur perangkat lunak yang memisahkan antara logika bisnis (Model), tampilan (View), dan pengikat data (ViewModel). Digunakan sebagai standar arsitektur dalam pengembangan mobile di YYZU. |
+| **MVC (Model-View-Controller)** | Pola arsitektur perangkat lunak yang memisahkan aplikasi menjadi tiga komponen utama: Model (data), View (tampilan), dan Controller (logika pengendalian). Digunakan dalam pengembangan web backend di YYZU. |
+| **REST (Representational State Transfer)** | Gaya arsitektur untuk desain API yang menggunakan metode HTTP standar (GET, POST, PUT, DELETE) untuk operasi CRUD. REST API menjadi standar komunikasi antara frontend dan backend dalam proyek YYZU. |
+| **Framework** | Kerangka kerja perangkat lunak yang menyediakan struktur dasar, library, dan tools untuk mempercepat pengembangan aplikasi. Contoh: Next.js, Laravel, Flutter. Anggota YYZU belajar menggunakan framework sesuai track yang dipilih. |
+| **Library** | Kumpulan kode yang sudah ditulis sebelumnya dan dapat digunakan kembali untuk menjalankan fungsi tertentu tanpa harus menulis dari awal. Berbeda dengan framework, library dipanggil oleh kode pengguna, bukan sebaliknya. |
+| **Repository (Repo)** | Penyimpanan digital yang berisi seluruh kode sumber, riwayat perubahan, dan konfigurasi proyek. Dalam YYZU, setiap project memiliki repository sendiri di GitHub organisasi. |
+| **Branch** | Salinan terpisah dari kode dalam repository yang memungkinkan pengembangan paralel tanpa mempengaruhi kode utama. Anggota YYZU menggunakan branch sesuai konvensi yang ditetapkan dalam standar kolaborasi. |
+| **Deployment** | Proses merilis dan menginstal aplikasi ke lingkungan produksi (server publik) sehingga dapat diakses oleh pengguna akhir. Setiap project YYZU wajib melalui tahapan testing sebelum deployment. |
+| **Frontend** | Bagian aplikasi yang berinteraksi langsung dengan pengguna, mencakup tampilan visual dan interaksi UI. Track Frontend Development di YYZU mencakup HTML, CSS, JavaScript, dan framework modern. |
+| **Backend** | Bagian aplikasi yang menangani logika bisnis, pemrosesan data, dan komunikasi dengan database. Track Backend Development di YYZU mencakup pemrograman server-side dan manajemen database. |
+| **Fullstack** | Kemampuan mengembangkan baik sisi frontend maupun backend dari sebuah aplikasi. Track Fullstack Development di YYZU menggabungkan kurikulum frontend dan backend secara terintegrasi. |
+| **DevOps** | Praktik yang menggabungkan pengembangan perangkat lunak (Development) dan operasi IT (Operations) untuk mempercepat siklus pengembangan dan meningkatkan kualitas deployment. Track DevOps di YYZU mencakup CI/CD, containerization, dan infrastruktur sebagai kode. |
+| **Database** | Sistem penyimpanan data terstruktur yang memungkinkan penyimpanan, pengambilan, dan manipulasi data secara efisien. Anggota YYZU belajar menggunakan database relasional (PostgreSQL, MySQL) dan NoSQL (MongoDB) sesuai kebutuhan proyek. |
+| **UI/UX (User Interface/User Experience)** | UI merujuk pada tampilan visual dan elemen interaktif aplikasi, sedangkan UX merujuk pada pengalaman keseluruhan pengguna saat berinteraksi dengan produk. Track UI/UX Design di YYZU mencakup riset pengguna, wireframing, prototyping, dan desain visual. |
 
 ---
 
 ## Teknis
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **Kanban Board** | Papan visualisasi status seluruh task secara real-time yang digunakan dalam metodologi kerja Scrumban. Kolom minimal yang harus ada: Backlog, To Do, In Progress (dengan WIP Limit), In Review, dan Done. |
 | **WIP Limit** | Pembatasan jumlah tugas aktif yang boleh dikerjakan oleh seorang anggota pada saat bersamaan (maksimal 2 task per anggota) untuk meminimalkan kemacetan (bottleneck) dan menjaga fokus kerja. |
 | **DoD (Definition of Done)** | Kriteria kelayakan minimum yang wajib dipenuhi agar sebuah tugas/fitur dinyatakan benar-benar selesai. DoD mencakup aspek fungsionalitas, dokumentasi, review, dan testing. |
@@ -95,7 +126,7 @@ Istilah yang sama bisa berarti hal berbeda di dokumen yang berbeda. Glosarium in
 ## Kemitraan
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **Campus Partner** | Mitra yang berfokus pada kolaborasi dengan institusi pendidikan untuk memperkuat ekosistem pembelajaran. |
 | **Industry Partner** | Mitra yang berfokus pada memberikan akses ke talenta yang berkembang di wadah YYZU. |
 | **Resource Partner** | Mitra yang berfokus pada dukungan sumber daya untuk operasional YYZU. |
@@ -111,7 +142,7 @@ Istilah-istilah pendidikan, tingkat penguasaan, dan operasional proyek yang digu
 ### Istilah Pendidikan Utama (Core Educational Terms)
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **Learning Architecture** | Kerangka kerja dan cetak biru (blueprint) pendidikan induk yang menyatukan landasan filosofis, struktur kurikulum, asesmen, skema mentoring, dan tata kelola organisasi pembelajaran YYZU. |
 | **Knowledge Architecture** | Peta relasional konsep pengetahuan (graf pengetahuan) per track yang mendefinisikan prasyarat (dependencies), titik konvergensi lintas disiplin, dan pertanyaan diagnostik tingkat lanjut. |
 | **Competency** | Kemampuan abstrak, menyeluruh, dan tidak terikat pada satu teknologi tertentu (technology-agnostic) yang wajib dimiliki oleh anggota pada tingkatan level tertentu. |
@@ -127,7 +158,7 @@ Istilah-istilah pendidikan, tingkat penguasaan, dan operasional proyek yang digu
 Definisi kedalaman penguasaan kompetensi di YYZU (Bloom & Dreyfus):
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **Level 1: Understand & Articulate** | Mampu menjelaskan konsep secara logis dan mengidentifikasi kesalahan dasar. |
 | **Level 2: Apply & Execute** | Mampu membangun solusi fungsional secara mandiri yang berjalan lancar tanpa error fundamental. |
 | **Level 3: Evaluate & Architect** | Mampu mendesain arsitektur produk yang kompleks, menganalisis trade-off, dan memimpin kolaborasi tim. |
@@ -135,10 +166,14 @@ Definisi kedalaman penguasaan kompetensi di YYZU (Bloom & Dreyfus):
 
 ### Istilah Operasional & Proyek Tambahan
 
-Istilah operasional proyek yang melengkapi definisi di bagian Proses & Mekanisme dan Teknis:
+**SBIN (Situation, Behavior, Impact, Next):** Model umpan balik konstruktif yang digunakan Mentor saat memberikan feedback kepada member. Empat komponennya: Situation (situasi spesifik), Behavior (perilaku yang diamati), Impact (dampak perilaku tersebut), dan Next (langkah perbaikan yang diharapkan). Model ini menjadi standar komunikasi feedback di seluruh sesi mentoring YYZU.
+
+**Scrumban:** Metodologi kerja gabungan yang menggabungkan struktur Sprint dari Scrum dengan visualisasi aliran kerja (Kanban Board) dan WIP Limit. YYZU menggunakan Scrumban untuk semua proyek agar transparan, fleksibel, dan terukur.
+
+Istilah operasional proyek yang melengkapi definisi di bagian Proses & Mekanisme dan Teknis. Kategori ini mencakup istilah-istilah Scrum/Agile yang digunakan dalam siklus proyek YYZU.
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **Epic** | Kumpulan fitur atau inisiatif besar yang dipecah menjadi beberapa user story atau tugas lebih kecil. |
 | **User Story** | Deskripsi singkat tentang kebutuhan pengguna dari sudut pandang pengguna akhir, biasanya dalam format "Sebagai [pengguna], saya ingin [aksi] agar [manfaat]". |
 | **Acceptance Criteria (AC)** | Daftar kondisi spesifik yang harus dipenuhi agar user story dinyatakan selesai dan dapat diterima. |
@@ -158,7 +193,7 @@ Istilah operasional proyek yang melengkapi definisi di bagian Proses & Mekanisme
 ## Istilah Keuangan
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **Bendahara** | Pengurus yang bertanggung jawab mencatat penerimaan dan pengelolaan keuangan harian organisasi, menyusun laporan keuangan, dan mengelola kas. Saat ini dijabat oleh Founder YYZU sesuai ketentuan Masa Transisi (AD Pasal 43). |
 | **Dana Kelolaan** | Total dana yang dikelola organisasi dalam satu tahun buku, termasuk dana dari sponsor, hibah eksternal, dan transfer keuntungan dari unit usaha turunan. |
 | **Audit Independen** | Pemeriksaan laporan keuangan oleh Kantor Akuntan Publik (KAP) independen. Wajib dilakukan jika dana kelolaan melampaui Rp500 juta (ART Pasal 21). |
@@ -168,7 +203,7 @@ Istilah operasional proyek yang melengkapi definisi di bagian Proses & Mekanisme
 ## Lisensi Open-Source
 
 | Istilah | Definisi |
-| :--- | :--- |
+|---|---|
 | **MIT License** | Lisensi open-source yang digunakan oleh seluruh proyek YYZU. Bersifat sangat permisif: pengguna bisa menggunakan, memodifikasi, dan mendistribusikan kode untuk tujuan apa saja tanpa wajib membuka kode modifikasi. Hanya mensyaratkan pencantuman copyright notice asli. Dipilih karena sederhana, umum di komunitas, dan tidak menghalangi kolaborasi dengan partner industri. |
 
 ---
@@ -179,10 +214,10 @@ Dokumen-dokumen yang menggunakan istilah-istilah di atas:
 
 - [Anggaran Dasar (AD) YYZU](/docs/constitutional/ad)
 - [Anggaran Rumah Tangga (ART) YYZU](/docs/constitutional/art)
-- [Skema Project Management](/docs/operations/project/overview)
-- [Skema Mentoring](/docs/operations/mentoring)
-- [Skema Partnership](/docs/operations/partnership)
-- [Panduan Peran YYZU](/docs/constitutional/role-guide)
+- [Skema Project Management](/docs/constitutional/project-management)
+- [Mekanisme Mentoring](/docs/constitutional/mentoring)
+- [Skema Kemitraan](/docs/constitutional/kemitraan)
+- [Struktur Organisasi YYZU](/docs/constitutional/struktur-organisasi)
 
 ---
 
@@ -190,4 +225,11 @@ Dokumen-dokumen yang menggunakan istilah-istilah di atas:
 
 - [Anggaran Dasar (AD) YYZU](/docs/constitutional/ad) - Landasan hukum dan struktur organisasi
 - [Anggaran Rumah Tangga (ART) YYZU](/docs/constitutional/art) - Ketentuan operasional dan keanggotaan
-- [YYZU Learning Architecture](/docs/learning/overview) - Blueprint induk pendidikan
+- [Mekanisme Mentoring](/docs/constitutional/mentoring) - Mekanisme mentoring dan kontribusi mentor
+- [Skema Project Management](/docs/constitutional/project-management) - Framework pengelolaan project
+- [Skema Kemitraan](/docs/constitutional/kemitraan) - Mekanisme kemitraan eksternal
+- [Struktur Organisasi YYZU](/docs/constitutional/struktur-organisasi) - Pembagian tanggung jawab peran
+
+---
+
+*Owner: BPH YYZU - Approved by: Founder YYZU - Review: Per batch - Status: v1.6 - Active*

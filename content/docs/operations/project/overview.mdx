@@ -1,47 +1,40 @@
 ---
-title: Skema Project Management
+title: "Skema Project Management"
 description: Framework operasional project management, Scrumban, peran, dan kebijakan kontribusi aktif di ekosistem YYZU.
-status: active
-owner: Divisi Product & Project Management YYZU
-lastUpdated: 2026-07-05
-sidebar:
-  order: 2
 ---
-
-# Skema Project Management
-
-Kompetensi di YYZU divalidasi melalui proyek nyata, bukan sekadar ujian teori. Dokumen ini menjelaskan bagaimana proyek dirancang, dijalankan, dan dievaluasi.
-
 ---
-
 ## Daftar Isi
 1. Pendahuluan
 2. Struktur Pelaksanaan & Peran Project
 3. Pembentukan Kelompok
 4. Divisi Product & Project Management (Detail)
-5. Project Leader (Detail)
+5. Project Leader
 6. Metodologi Kerja: Agile Scrumban
 7. Alur Kerja Project (Project Workflow)
 8. Standardisasi Tools Kolaborasi Ekosistem YYZU
 9. Standardisasi Dokumentasi Proyek
 10. Kategori & Karakteristik Project
-	10.1 Mini Project
-	10.2 Collaborative Project
-	10.3 Internal Project
-	10.4 Real-World Project Development
-	10.5 Open-Source Contribution
-	10.6 Klasifikasi Aktivitas Ekosistem (Non-Project & Project)
+	9.1 Mini Project
+	9.2 Collaborative Project
+		- Abstraksi Collaborative Project
+		- Contoh: Platform Event YYZU
+		- Peran dalam Tim
+	9.3 Internal Project
+	9.4 Real-World Project Development
+	9.5 Open-Source Contribution
+	9.6 Klasifikasi Aktivitas Ekosistem (Non-Project & Project)
 11. KPI Framework
 12. Batasan & Eskalasi
 13. Kebijakan Kontribusi Aktif & Penanganan Anggota Pasif
 14. Governance Dokumen
 ---
-Dokumen ini disusun untuk melengkapi Dokumentasi Peran Ekosistem YYZU (level divisi) dan Skema Mentoring/Partnership (level keterlibatan mentor) dengan framework eksekusi project di level tim. Dokumen ini mencakup struktur pelaksanaan, alur kerja, standar dokumentasi, serta KPI yang berlaku untuk seluruh jenis project pada ekosistem YYZU, termasuk namun tidak terbatas pada Mini Project, Collaborative Project, dan Internal Project.
-Bagian yang bersifat spesifik terhadap konten atau output suatu project - seperti detail requirement, kriteria teknis, maupun deliverable - ditentukan pada tahap Planning masing-masing project, dan bukan merupakan bagian dari dokumen ini.
-> **Catatan untuk Calon Talenta Pemula:** Seluruh alur kerja industri (seperti Git, Figma, Kanban) akan diajarkan dari dasar pada fase Learning Sprint. Anda tidak perlu khawatir jika belum pernah menggunakannya.
+## Pendahuluan
+Kompetensi di YYZU divalidasi melalui proyek nyata, bukan kuis. Dokumen ini mengatur framework eksekusi proyek - dari pembentukan tim, metodologi Scrumban, alur kerja 5 fase, hingga KPI dan kebijakan kontribusi aktif - untuk seluruh kategori proyek di ekosistem YYZU.
+> \[NOTE\]
+> **Catatan untuk Calon Member Pemula:** Seluruh alur kerja industri (seperti Git, Figma, Kanban) akan diajarkan dari dasar pada fase Learning Sprint. Anda tidak perlu khawatir jika belum pernah menggunakannya.
 **Istilah Kunci:**
 - **Batch:** Periode keanggotaan aktif dalam ekosistem YYZU, di mana sekelompok anggota menjalani program mentoring dan project secara bersamaan. Satu batch mencakup satu siklus project dari Foundation hingga Release.
-- **BPH (Badan Pengurus Harian):** Kepengurusan harian ekosistem YYZU yang bertanggung jawab atas operasional sehari-hari, termasuk koordinasi dengan Mentor, Divisi PM, dan anggota.
+- **BPH (Badan Pelaksana Harian):** Kepengurusan harian ekosistem YYZU yang bertanggung jawab atas operasional sehari-hari, termasuk koordinasi dengan Mentor, Divisi PM, dan anggota.
 - **Project Leader (Person In Charge):** Jabatan yang bertanggung jawab mengoordinasikan eksekusi harian project dalam satu kelompok. Bersifat *project-scoped*, melekat pada satu project tertentu.
 - **PIC (Person In Charge):** Orang yang ditunjuk bertanggung jawab atas satu kegiatan atau aktivitas non-project (misal: study group, workshop, code review). Berbeda dengan Project Leader yang khusus untuk project management.
 - **Divisi SDM:** Divisi yang bertanggung jawab atas sumber daya manusia, rekrutmen, evaluasi kinerja, dan penanganan kasus disiplin anggota.
@@ -75,9 +68,9 @@ Apabila ditemukan kelompok dengan komposisi yang tidak seimbang, reshuffle dilak
 ---
 ## 3. Divisi Product & Project Management
 Divisi Product & Project Management (Divisi PM) adalah divisi kepengurusan YYZU yang bertanggung jawab atas kelancaran operasional seluruh project di ekosistem YYZU pada level batch. Berbeda dengan Project Leader yang bekerja di level kelompok, Divisi PM bekerja di level lintas kelompok dan menjadi penghubung antara Mentor dengan seluruh tim yang berjalan.
-### Tujuan: Divisi Product & Project Management
+### Tujuan
 Memastikan seluruh project dalam satu batch berjalan sesuai framework, timeline, dan standar kualitas yang telah ditetapkan, serta menjadi titik koordinasi resmi antara Mentor, Project Leader, dan BPH selama siklus project berlangsung.
-### Ruang Lingkup Tanggung Jawab: Divisi Product & Project Management
+### Ruang Lingkup Tanggung Jawab
 **Sebelum Project Dimulai (Fase Foundation):**
 - Mentor bersama Divisi Product & Project Management menetapkan tema project, kemudian Divisi PM mengumumkan dan menyosialisasikan kepada seluruh anggota batch.
 - Memfasilitasi proses pembentukan kelompok (self-form atau assigned) dan memvalidasi komposisi setiap kelompok.
@@ -95,60 +88,61 @@ Memastikan seluruh project dalam satu batch berjalan sesuai framework, timeline,
 - Memastikan seluruh kelompok siap untuk Demo Day, termasuk kesiapan presentasi dan dokumentasi.
 - Mengumpulkan dan mengarsipkan seluruh dokumentasi project dari semua kelompok.
 - Menyusun ringkasan batch kepada BPH dan Mentor setelah project selesai.
-### Wewenang: Divisi Product & Project Management
+### Wewenang
 - Melakukan reshuffle komposisi kelompok sebelum project dimulai apabila ditemukan ketidakseimbangan yang signifikan.
 - Menolak atau meminta revisi draf scope kelompok apabila dinilai tidak realistis terhadap timeline atau kapasitas tim.
 - Membawa kasus perubahan scope ke Mentor atas nama kelompok, dan meneruskan keputusan Mentor kepada Project Leader.
 - Menerbitkan SP1 dan SP2 terhadap anggota yang melanggar kebijakan kontribusi aktif.
 - Mengeskalasi kasus ke Divisi SDM atau Founder apabila situasi di luar kapasitas Divisi PM untuk diselesaikan.
-### Batasan Peran: Divisi Product & Project Management
+### Batasan Peran
 Divisi PM tidak bertanggung jawab atas:
 - Mengerjakan task teknis milik kelompok. Divisi PM bukan backup developer atau desainer.
 - Memimpin Daily Sync atau Sprint Ceremony kelompok; itu adalah tanggung jawab Project Leader.
 - Memberikan penilaian teknis terhadap kualitas kode atau desain; penilaian teknis adalah domain Mentor selaku instructor.
 - Memutuskan kelulusan atau transisi Level anggota; itu adalah kewenangan Mentor dan Divisi SDM.
 - Mengubah framework atau kebijakan batch secara sepihak; perubahan harus mengikuti prosedur di Bagian 13.
-### Format Monitoring: Divisi Product & Project Management
+### Format Monitoring
 Untuk menjalankan fungsi pemantauan secara efektif, Divisi PM menggunakan mekanisme berikut:
 - Laporan progres mingguan dari setiap Project Leader, minimal berisi: task yang selesai di sprint berjalan, task yang sedang berjalan, dan blocker aktif yang ada.
 - Akses baca ke Kanban Board semua kelompok untuk pemantauan mandiri.
 - Sinkronisasi langsung dengan Mentor minimal satu kali per dua sprint untuk update status batch secara keseluruhan.
-### Profil Orang yang Sesuai: Divisi Product & Project Management
+### Profil Orang yang Sesuai
 Posisi ini sesuai untuk individu yang mampu berpikir di level sistem (melihat keseluruhan batch, bukan hanya satu kelompok), terorganisir dalam mengelola banyak jalur komunikasi sekaligus, dan nyaman mengambil keputusan koordinatif di bawah tekanan waktu. Kemampuan teknis dasar dibutuhkan agar dapat membaca Kanban Board dan memahami laporan Project Leader secara substantif, bukan sekadar administratif.
-### Indikator Keberhasilan: Divisi Product & Project Management
+### Indikator Keberhasilan
 - Tidak ada blocker lintas kelompok yang baru diketahui setelah terlambat ditangani.
 - Seluruh kelompok dalam batch menyelesaikan project sesuai atau mendekati timeline yang disepakati.
 - Komunikasi antara Mentor dan seluruh Project Leader berjalan lancar tanpa miskomunikasi yang berulang.
 - Dokumentasi seluruh kelompok terkumpul lengkap pada akhir batch.
 - Tidak ada kasus Free Rider yang mencapai Langkah 4 tanpa melalui prosedur eskalasi yang benar.
 ---
-## 4. Project Leader (Detail)
+## 4. Project Leader
 Peran ini bersifat *project-scoped*, berbeda dengan peran kepengurusan permanen di level divisi YYZU. Project Leader hanya aktif selama satu project berjalan dan melekat pada satu kelompok tertentu.
-### Tujuan: Project Leader
+### Tujuan
 Project Leader bertanggung jawab dalam mengoordinasikan eksekusi harian kelompoknya, agar project berjalan sesuai scope, timeline, dan kualitas yang telah disepakati pada tahap planning, serta menjadi titik komunikasi utama antara kelompok dan Divisi Product & Project Management.
-### Ruang Lingkup Tanggung Jawab: Project Leader
+### Ruang Lingkup Tanggung Jawab
 - Membagi task kepada anggota kelompok sesuai hasil planning.
 - Memantau progres harian maupun mingguan setiap anggota kelompok.
 - Memastikan dokumentasi kelompok (progres, kendala, dan hasil kerja) tercatat dengan baik.
 - Melaporkan progres dan kendala kepada Divisi Product & Project Management secara berkala.
 - Memastikan kelompok siap menghadapi checkpoint bersama Mentor.
 - Menjadi penengah pertama atas konflik kecil dalam kelompok, sebelum dilakukan eskalasi.
-### Wewenang: Project Leader
+### Wewenang
 - Menentukan pembagian task harian dalam batas scope yang telah disepakati.
 - Mengeskalasi kendala kepada Divisi Product & Project Management apabila tidak dapat diselesaikan secara internal.
-### Batasan Peran: Project Leader
+### Batasan Peran
 Project Leader tidak bertanggung jawab atas:
 - Mengubah scope atau requirement project secara sepihak; perubahan harus melalui Divisi Product & Project Management dan disetujui oleh Mentor.
 - Melakukan komunikasi langsung dengan Mentor terkait brief atau requirement; komunikasi tersebut menjadi jalur Divisi Product & Project Management.
 - Menentukan kelulusan atau transisi Level anggota kelompoknya; hal ini tetap menjadi kewenangan Mentor dan Divisi SDM.
 - Menjabat secara permanen di luar durasi project; peran Project Leader berakhir saat project selesai.
 - **Suksesi:** Jika Project Leader mengundurkan diri atau berhalangan di tengah project, Divisi Product & Project Management menunjuk pengganti sementara dari anggota kelompok yang ada, atau mengadakan pemilihan ulang dalam kelompok. Suksesi harus diselesaikan maksimal 3 hari kerja sebelum eksekusi terganggu.
-### Profil Orang yang Sesuai: Project Leader
+### Profil Orang yang Sesuai
 Posisi ini sesuai untuk individu yang terorganisir, proaktif, dan nyaman berkoordinasi dengan banyak orang, serta tidak segan melakukan eskalasi ketika diperlukan. Individu pada posisi ini perlu memiliki kemampuan teknis dasar pada bidang project yang berjalan, agar mampu memahami progres anggotanya secara substantif, bukan hanya administratif.
-### Indikator Keberhasilan: Project Leader
+### Indikator Keberhasilan
 - Kelompok menyelesaikan pekerjaan sesuai timeline yang disepakati pada tahap planning.
 - Komunikasi progres kepada Divisi Product & Project Management berjalan lancar, tanpa kendala yang baru diketahui setelah terlambat.
 - Anggota kelompok siap pada setiap checkpoint Mentor tanpa kebingungan terhadap scope.
+Untuk checklist harian, template ceremony, dan panduan lengkap Project Leader, lihat: [Panduan Project Leader](/docs/operations/project/leader-guide)
 ---
 ## 5. Metodologi Kerja: Agile Scrumban
 Seluruh project di ekosistem YYZU wajib menggunakan metodologi **Scrumban** - pendekatan hybrid yang menggabungkan struktur Scrum dengan fleksibilitas Kanban.
@@ -222,11 +216,138 @@ Definition of Done adalah kriteria minimum yang harus terpenuhi agar sebuah task
 3. Dokumentasi akhir (README, Closure Report, Retrospective) sudah lengkap.
 4. Demo Day sudah dilaksanakan.
 5. Mentor memberikan sign-off tertulis.
-**Sebuah project dinyatakan gagal at
+**Sebuah project dinyatakan gagal atau dibatalkan jika:**
+1. Project tidak mencapai minimal satu dari kriteria di atas setelah melewati batas waktu yang telah ditetapkan dalam PRD/Project Brief.
+2. Seluruh anggota kelompok mengundurkan diri atau dinyatakan tidak aktif secara permanen.
+3. Mentor dan Divisi Product & Project Management sepakat bahwa project tidak dapat dilanjutkan karena alasan teknis atau operasional yang fundamental.
+**Prosedur Penutupan Project Gagal/Batal:**
+1. Project Leader atau Divisi Product & Project Management mengajukan dokumen penutupan (Closure Report) yang menjelaskan alasan kegagalan atau pembatalan.
+2. Mentor memberikan evaluasi tertulis terhadap seluruh anggota kelompok.
+3. Divisi Product & Project Management mencatat hasil evaluasi untuk keperluan penilaian Level anggota.
+4. Kanban Board dan seluruh dokumentasi project diarsipkan.
+---
+## 6. Alur Kerja Project (Project Workflow)
+| Fase | Deskripsi Aktivitas Utama | Target Output & Milestone |
+| --- | --- | --- |
+| **Foundation** (Persiapan) | Anggota kelompok mempelajari konsep dasar dan tools standar (Git flow, Figma, project setup) di bawah arahan Project Leader; Mentor memberikan pembekalan materi. | Kesiapan teknis seluruh anggota tim terverifikasi. |
+| **Problem Discovery** (Observasi) | Tim menerima tema dari Mentor yang ditetapkan bersama Divisi Product & Project Management, lalu melakukan observasi lapangan untuk menemukan masalah nyata yang akan diselesaikan. Output wajib: Problem Discovery Document. | Problem Discovery Document selesai dan siap dijadikan dasar penyusunan PRD. |
+| **Planning & Pitching** (Perencanaan) | Tim menyusun PRD dan Wireframe berdasarkan hasil observasi. Pitching dilakukan di depan Mentor sebagai simulasi komunikasi profesional ke client (Q&A Challenge). | Proposal disetujui Mentor, desain Figma handoff, repositori dibuat, dan Kanban Board siap. |
+| **Execution & QA** (Pengerjaan) | Pengerjaan task secara fokus. Project Leader memimpin sinkronisasi berkala. Developer menulis kode dengan Pull Request & Code Review. Deployment berkala ke staging server untuk pengujian bersama. | Application berfungsi penuh di server staging dan bebas dari bug kritis. |
+| **Release & Closing** (Rilis & Evaluasi) | User Acceptance Testing (UAT) oleh Mentor. Deployment aplikasi ke server produksi. Presentasi demo produk akhir (Demo Day). Penyelesaian dokumentasi dan evaluasi tim (Retrospective). | Application online (live), dokumentasi lengkap, presentasi demo selesai, dan catatan retrospektif terisi. |
+### Detail Penjelasan Fase Kerja:
+> **Catatan:** Tabel di atas menampilkan 5 fase. Pada penjelasan detail di bawah, Problem Discovery digabung sebagai Sub-Fase 2A dalam Fase Planning & Pitching karena keduanya berjalan berurutan dan saling terkait.
+1. **Fase Foundation (Persiapan & Pembekalan):**
+	- Member mempelajari tools standar (Git flow, pengenalan Figma, dasar-dasar setup project).
+	- Mentor memberikan materi/kuliah fundamental yang dibutuhkan untuk tema/bidang proyek yang berjalan.
+	- Divisi PM melakukan pembentukan kelompok dan menunjuk Project Leader.
+	- **Output:** Checkpoint kesiapan teknis seluruh anggota tim.
+2. **Fase Planning & Proposal Pitching (Perencanaan & Pembuktian Ide):**
+	Fase ini terdiri dari dua sub-fase yang wajib dijalankan secara berurutan: **Problem Discovery** terlebih dahulu, kemudian **Proposal Pitching**. Tim tidak diperbolehkan masuk ke tahap pitching sebelum menyelesaikan dan mendokumentasikan hasil observasi mereka.
+	**Sub-Fase 2A: Problem Discovery (Observasi & Penemuan Masalah)**
+	BPH atau Mentor menetapkan **tema project** di awal (contoh: *Educational Technology*, *Health & Wellness*, *Local Business Digitalization*). Tim tidak menentukan solusi terlebih dahulu - tim terlebih dahulu terjun ke lapangan untuk memahami masalah nyata yang ada di dalam tema tersebut.
+	Proses yang wajib dijalankan:
+	- **Observasi lapangan atau riset pengguna:** Tim mengamati kondisi nyata, mewawancarai minimal 3 - 5 orang yang relevan dengan tema, atau melakukan survei singkat untuk memahami pain point yang sesungguhnya.
+	- **Identifikasi masalah:** Dari hasil observasi, tim merumuskan satu masalah utama yang paling signifikan, nyata, dan dapat diselesaikan dengan solusi teknologi dalam batasan scope project.
+	- **Validasi masalah:** Tim memastikan masalah yang dipilih benar-benar dialami oleh pengguna nyata, bukan asumsi tim semata.
+	- **Output wajib:** **Problem Discovery Document** (lihat Template E di Bagian 8).
+	**Sub-Fase 2B: Proposal Pitching (Penyusunan & Presentasi Ide)**
+	Setelah masalah ditemukan dan didokumentasikan, tim merancang solusi dan mempresentasikannya kepada Mentor.
+	- **Penyusunan Proposal (PRD Awal & Wireframe UI):** Berdasarkan hasil Problem Discovery, tim menyusun draf PRD yang menjelaskan solusi yang diusulkan, fitur MVP, dan wireframe kasar antarmuka.
+	- **Pitching & Defense Session (Sesi Sidang Proposal):** Kelompok mempresentasikan proposal di depan Mentor yang berperan sebagai *Client*. Tujuan sesi ini bukan sekadar mendapatkan persetujuan - melainkan melatih kemampuan komunikasi profesional: menyampaikan ide secara terstruktur, meyakinkan stakeholder dengan data, dan merespons pertanyaan kritis di bawah tekanan. Ini adalah simulasi nyata dari situasi kerja di industri.
+	- **Mentor Q&A Challenge:** Mentor mengajukan pertanyaan tajam mengenai relevansi solusi terhadap masalah yang ditemukan, urgensi masalah bagi pengguna nyata, kesiapan tim, dan kelayakan MVP dalam timeline yang tersedia. Tim wajib menjawab dengan argumen berbasis data observasi, bukan opini atau asumsi.
+	- **Revisi & Finalisasi:** Setelah mendapat persetujuan Mentor, desainer menuntaskan UI di Figma dan developer menyiapkan struktur database/API. Project Leader memecah fitur menjadi task di Kanban Board.
+	- **Output:** Problem Discovery Document selesai, proposal disetujui Mentor, desain Figma handoff, repositori GitHub dibuat, dan Kanban Board siap.
+3. **Fase Execution & QA (Pengerjaan & Pengujian):**
+	- Developer fokus menulis kode sesuai tugas di Kanban Board. Setiap kode baru wajib melalui proses Pull Request (PR) di GitHub dan di-review oleh rekan tim/Tech Lead.
+	- Project Leader melakukan sinkronisasi berkala (daily sync/standup) untuk melacak kendala.
+	- Di pertengahan fase eksekusi akhir, aplikasi dideploy ke server uji coba (staging).
+	- Tim melakukan pengujian aplikasi secara bersama-sama (QA Testing) dan memperbaiki bug yang ditemukan.
+	- **Output:** Application berfungsi penuh di server staging dan bebas dari bug kritis.
+4. **Fase Release & Closing (Peluncuran & Evaluasi):**
+	- **UAT (User Acceptance Testing):** Mentor menguji aplikasi untuk memberikan persetujuan akhir (*sign-off*).
+	- **Deployment to Production:** Merilis aplikasi ke server publik (misal: Vercel/Netlify).
+	- **Demo Day:** Setiap tim melakukan presentasi demo karya di hadapan Founder, Mentor, dan seluruh anggota ekosistem YYZU.
+	- **Dokumentasi Akhir:** Melengkapi dokumentasi repositori README dan mempublikasikan artikel portofolio.
+	- **Sprint Retrospective:** Seluruh tim berkumpul untuk melakukan evaluasi kerja kelompok menggunakan template retro.
+	- **Output:** Application online, dokumentasi lengkap, dan sesi retrospektif selesai.
+---
+## 7. Standardisasi Tools Kolaborasi Ekosistem YYZU
+Untuk mendukung kolaborasi yang efisien dan menyimulasikan alur kerja industri nyata secara optimal, seluruh tim project YYZU wajib menggunakan perkakas (tools) digital standar berikut:
+- **GitHub:** Repositori kode utama, review pull request (PR), dan pengelolaan codebase terintegrasi. Seluruh kontributor teknis wajib menggunakan workflow branch YYZU.
+- **Figma:** Workspace desain antarmuka (UI/UX) kolaboratif, penerapan design system YYZU, prototyping interaktif, dan serah terima (handoff) aset desain ke tim developer.
+- **Discord / Slack:** Saluran komunikasi utama ekosistem. Digunakan untuk sinkronisasi harian (asinkron), diskusi divisi, mentoring live, serta koordinasi insidental.
+- **Linear / Trello / Jira / ClickUp / Notion Board:** Manajemen tugas berbasis Kanban Board untuk memantau status pengerjaan yang dikelola oleh Project Leader kelompok secara berkala. Kolom minimal yang harus ada:
+	- **Backlog:** Ide fitur masa depan / di luar scope MVP.
+	- **To Do:** Fitur MVP yang siap dikerjakan pada sprint berjalan.
+	- **In Progress:** Fitur yang sedang dikerjakan developer.
+	- **In Review:** Fitur yang telah selesai dikoding dan sedang dalam proses Pull Request/code review.
+	- **Done:** Fitur yang telah lolos review dan diintegrasikan ke codebase utama.
+---
+## 8. Standardisasi Dokumentasi Proyek
+Setiap tim wajib mematuhi standar dokumentasi berikut untuk menjaga kualitas portofolio publik dan keberlanjutan kode:
+### E. Template Problem Discovery Document - Diisi pada Sub-Fase 2A (Wajib untuk Mini Project & Collaborative Project)
+> **Catatan:** Template diberi label A-E berdasarkan urutan kronologis dalam siklus project, bukan urutan abjat. Template E (Problem Discovery) digunakan paling awal, diikuti A (PRD), B (README), C (Dokumentasi Publik), dan D (Retrospektif).
+```markdown
+# [Nama Tim] - Problem Discovery Document
 
-... [OUTPUT TRUNCATED - 11484 chars omitted out of 61484 total] ...
+## 1. Tema Project yang Ditetapkan
+Tuliskan tema yang diberikan oleh BPH/Mentor.
+- Contoh: Educational Technology
 
-g paling sesuai dengan kebutuhan dan kompetensi mereka, sepanjang pilihan tersebut dapat dipertanggungjawabkan dalam review Mentor.
+## 2. Proses Observasi
+Jelaskan metode yang digunakan tim untuk memahami masalah.
+- Metode: [Wawancara / Survei / Observasi Langsung / Riset Literatur]
+- Jumlah responden/sumber: [angka]
+- Waktu pelaksanaan: [tanggal]
+
+## 3. Temuan Utama
+Ringkaskan apa yang tim temukan dari observasi. Gunakan data dan fakta, bukan opini.
+- Temuan 1: ...
+- Temuan 2: ...
+- Temuan 3: ...
+
+## 4. Masalah yang Dipilih
+Rumuskan satu masalah utama yang akan diselesaikan. Gunakan format:
+"[Kelompok pengguna] mengalami [masalah spesifik] ketika [konteks situasi], yang mengakibatkan [dampak nyata]."
+
+## 5. Alasan Pemilihan Masalah
+Jelaskan mengapa masalah ini diprioritaskan dibanding temuan lain.
+- Seberapa sering masalah ini terjadi?
+- Seberapa besar dampaknya bagi pengguna?
+- Apakah teknologi dapat menjadi solusi yang realistis?
+
+## 6. Solusi Awal yang Diusulkan (Hipotesis)
+Tuliskan solusi awal tim sebelum PRD dibuat. Ini bersifat hipotesis dan masih bisa berubah.
+- Solusi yang diusulkan: ...
+- Asumsi utama yang perlu divalidasi: ...
+```
+---
+### A. Template PRD (Product Requirement Document) - Diisi di Notion pada Fase Planning
+```markdown
+# [Nama Proyek] - PRD
+
+## 0. Referensi Problem Discovery
+- Link Problem Discovery Document: [Tautan ke Notion]
+- Masalah yang diselesaikan: [salin rumusan masalah dari Problem Discovery Document]
+
+## 1. Latar Belakang (The Why)
+Jelaskan masalah nyata yang ditemukan dari observasi dan mengapa solusi teknologi dibutuhkan.
+
+## 2. Solusi & MVP Scope (The What)
+Tuliskan fitur-fitur minimal yang WAJIB ada di proyek ini agar aplikasi bisa berfungsi.
+- [Contoh] Fitur Login & Registrasi.
+- [Contoh] Fitur Dashboard Transaksi.
+
+## 3. Batasan Proyek (Out of Scope)
+Tulis fitur yang TIDAK dibuat pada fase ini demi menjaga timeline pengerjaan.
+- [Contoh] Fitur pembayaran otomatis via e-wallet (dimasukkan ke backlog).
+
+## 4. Tautan Penting
+- Link Figma: [Tautan ke Figma]
+- Link GitHub: [Tautan ke Repositori]
+```
+### B. Template README Repositori - Wajib di GitHub pada Fase Release
+> **Catatan:** Template ini bersifat generik dan wajib disesuaikan dengan tech stack aktual yang digunakan tim. Contoh-contoh di bawah hanya ilustratif - tim bebas memilih tools, bahasa, framework, dan platform deployment yang paling sesuai dengan kebutuhan dan kompetensi mereka, sepanjang pilihan tersebut dapat dipertanggungjawabkan dalam review Mentor.
 ```markdown
 # [Nama Aplikasi]
 
@@ -275,8 +396,15 @@ Tindakan nyata untuk mengatasi kekurangan di masa depan.
 ## 9. Kategori & Karakteristik Project
 Di ekosistem YYZU, pengerjaan project dikelompokkan ke dalam lima kategori utama berdasarkan skala, durasi, dan tujuan belajarnya. Seluruh tim project wajib mengikuti karakteristik operasional berikut:
 ### 9.1 Mini Project
-Mini Project adalah project kecil yang dirancang untuk melatih penerapan konsep dasar, pengenalan tools, kerja sama tim dasar, serta alur pengerjaan teknis awal. Ini berfungsi sebagai jembatan sebelum member masuk ke proyek berskala lebih besar.
-- **Tujuan Utama:** Melatih problem solving dasar, pembagian kerja tim (task ownership), komunikasi kelompok, pengenalan alur Git/design system dasar, pembuatan dokumentasi sederhana, presentasi demo, serta pembiasaan menerima feedback dan revisi.
+Mini Project adalah project pertama yang dijalankan member YYZU. Tim kecil (4 orang, bisa 1 track saja) bekerja selama 6 minggu untuk membangun solusi teknologi sederhana terhadap masalah nyata dalam tema yang ditetapkan Mentor.
+**Alur singkat:**
+Mentor menetapkan tema → tim riset masalah dalam tema tersebut → pitching ide ke Mentor → bangun solusi dalam 2 sprint → review dan dokumentasi.
+**Yang membedakan dari Collaborative Project:**
+- Tim bisa 1 track saja (tidak wajib lintas track)
+- Scope sederhana (CRUD, landing page, API sederhana)
+- 6 minggu (bukan 8-12)
+- Mentor sebagai reviewer (bukan Client aktif)
+- Tidak ada Q&A Challenge
 - **Durasi Siklus:** **6 Minggu**
 - **Pembagian Fase & Linimasa:**
 | Fase Pengerjaan | Durasi | Milestone Penting | Fokus Eksekusi |
@@ -294,16 +422,71 @@ Mini Project adalah project kecil yang dirancang untuk melatih penerapan konsep 
 	- Purwarupa (prototype) mobile interaktif dasar.
 	- Website dokumentasi statis sederhana.
 *Mini Project bukan tempat untuk membangun sistem berskala enterprise, arsitektur microservices, atau produk dengan proses bisnis yang rumit.*
+### Contoh Mini Project: "Tracker Pengeluaran Mahasiswa"
+**Tema dari Mentor:** "Pendidikan"
+**Tim:** 4 orang, semua track Web Development
+- Rizal (Project Leader)
+- Sari
+- Tono
+- Ulya
+#### Fase 1: Foundation (Minggu 1-2)
+- Rizal ditunjuk sebagai Project Leader
+- Tim belajar tools dasar: Git, Figma, Next.js
+- Mentor memberikan pembekalan: "Mahasiswa sering kesulitan mengelola uang selama kuliah"
+- Tim setup repo GitHub dan Kanban Board
+#### Fase 2: Problem Discovery & Planning (Minggu 3)
+**Problem Discovery:**
+- Tim wawancara 5 mahasiswa di kampus
+- Temuan: "Mahasiswa tidak tahu uangnya habis ke mana, tidak ada catatan rutin, dan baru sadar sudah habis di akhir bulan"
+- Tim menulis Problem Discovery Document
+**Planning & Pitching:**
+- Tim menyusun PRD sederhana:
+	- Fitur 1: Catat pengeluaran harian
+	- Fitur 2: Dashboard ringkasan per kategori
+	- Fitur 3: Alert jika pengeluaran mendekati batas
+- Tim membuat wireframe di Figma
+- Tim pitching ke Mentor: "Kami mau bangun tracker karena..."
+- Mentor: "Oke, scope-nya realistis. Lanjutkan."
+- Rizal pecah task ke Kanban Board
+#### Fase 3: Eksekusi (Minggu 4-5)
+**Sprint 1 (Minggu 4):**
+- Rizal: setup database + API
+- Sari: buat halaman input pengeluaran
+- Tono: buat dashboard ringkasan
+- Ulya: desain UI di Figma
+- Daily Sync setiap hari 15 menit
+- Sprint Review: API jalan, input bisa disimpan
+**Sprint 2 (Minggu 5):**
+- Integrasi semua komponen
+- Tambah fitur alert
+- Fix bug
+- Sprint Review: aplikasi berfungsi penuh
+#### Fase 4: Review & Closing (Minggu 6)
+- Demo ke Mentor: "Ini hasilnya, bisa catat pengeluaran dan lihat ringkasan"
+- Mentor feedback: "Bagus, tapi input-nya perlu validasi angka"
+- Tim fix minor issue
+- Deploy ke Vercel
+- Tulis README
+- Retrospective: "Komunikasi lancar, tapi estimasi API terlalu optimis"
+**Output:** Aplikasi live, 4 anggota punya portofolio pertama
 ### 9.2 Collaborative Project
-Collaborative Project adalah project dengan skala pengerjaan menengah yang melibatkan kolaborasi lintas disiplin dengan standar workflow industri yang lebih ketat.
+Collaborative Project adalah simulasi kerja tim profesional di industri teknologi. Tim lintas track (Developer, UI/UX Designer, Product Manager) bekerja bersama selama 10 minggu untuk membangun produk digital yang menyelesaikan masalah nyata, menggunakan workflow standar industri (Scrumban, Git, Figma, Code Review).
+**Alur singkat:**
+Tim menerima tema → riset masalah di lapangan → pitching ide ke Mentor (sebagai Client) → bangun produk dalam sprint 2 mingguan → testing → Demo Day → dokumentasi portofolio.
+**Yang membedakan dari Mini Project:**
+- Tim wajib lintas track (Dev + UI/UX + PM)
+- Ada fase Problem Discovery sebelum coding
+- Mentor berperan sebagai Client + Instructor (bukan hanya reviewer)
+- Ada Q&A Challenge saat pitching
+- Standar lebih ketat: PR wajib, code review wajib, testing wajib
 - **Tujuan Utama:** Melatih kolaborasi lintas peran, penerapan workflow Git modern (pull request, review code), desain sistem UI terintegrasi, manajemen tugas dengan Kanban Board, pengujian perangkat lunak, serta penyusunan dokumentasi teknis yang profesional.
-- **Durasi Siklus:** **8 hingga 12 Minggu**
+- **Durasi Siklus:** **10 Minggu**
 - **Linimasa Fase Pengerjaan:**
 	- **Fase 1: Preparation & Team Setup (1 Minggu):** Pembentukan tim, pengenalan anggota, penyelarasan cara kerja, penyediaan repositori git, dan setup workspace desain/project management.
-	- **Fase 2: Problem Discovery & Planning (1-2 Minggu):** Tim melakukan validasi masalah berdasarkan tema yang ditetapkan Mentor, kemudian menerjemahkan temuan tersebut menjadi User Stories, Product Requirement Document (PRD) sederhana, Wireframe UI, dan skema database. Proses pitching kepada Mentor tetap wajib dilakukan sebelum eksekusi dimulai.
-	- **Fase 3: Development Sprint (4-6 Minggu):** Siklus pengerjaan fitur secara iteratif melalui sprints (2 mingguan), koordinasi dipimpin Project Leader, dan pengawasan kualitas oleh divisi Product & Project Management.
-	- **Fase 4: Testing & Review (1-2 Minggu):** Pengujian sistem terintegrasi, perbaikan bug (bug fixing), validasi kegunaan (usability testing), dan peninjauan teknis/desain oleh mentor.
-	- **Fase 5: Final Demo & Documentation (1 Minggu):** Rilis produk akhir, demo pleno di hadapan mentor/ekosistem, penyerahan dokumentasi teknis lengkap, dan retro kelompok.
+	- **Fase 2: Problem Discovery & Planning (2 Minggu):** Tim melakukan validasi masalah berdasarkan tema yang ditetapkan Mentor, kemudian menerjemahkan temuan tersebut menjadi User Stories, Product Requirement Document (PRD) sederhana, Wireframe UI, dan skema database. Proses pitching kepada Mentor tetap wajib dilakukan sebelum eksekusi dimulai.
+	- **Fase 3: Development Sprint (4 Minggu):** Siklus pengerjaan fitur secara iteratif melalui sprints (2 mingguan), koordinasi dipimpin Project Leader, dan pengawasan kualitas oleh divisi Product & Project Management.
+	- **Fase 4: Testing & Review (1 Minggu):** Pengujian sistem terintegrasi, perbaikan bug (bug fixing), validasi kegunaan (usability testing), dan peninjauan teknis/desain oleh mentor.
+	- **Fase 5: Final Demo & Documentation (2 Minggu):** Rilis produk akhir, demo pleno di hadapan mentor/ekosistem, penyerahan dokumentasi teknis lengkap, dan retro kelompok.
 ### 9.3 Internal Project
 Internal Project adalah project pengembangan platform, infrastruktur, atau aplikasi penunjang operasional internal YYZU Community yang dikerjakan secara berkelompok oleh member terpilih.
 - **Tujuan Utama:** Membangun solusi nyata untuk kebutuhan riil YYZU (seperti dashboard keanggotaan, portal materi belajar, website profil utama) sambil memberikan member pengalaman membangun produk nyata yang digunakan pengguna asli.
@@ -323,7 +506,7 @@ Real-World Project Development adalah project yang berasal dari kebutuhan nyata 
 	- Brief berasal dari partner eksternal, diterjemahkan oleh Divisi PM melalui sesi intake bersama partner sebelum masuk fase Foundation.
 	- Perubahan scope mengikuti negosiasi nyata dengan partner (bukan simulasi Q&A Challenge), tetap melalui jalur Divisi PM sesuai Bagian 11.
 	- Sign-off akhir membutuhkan persetujuan tertulis dari partner, selain dari Mentor.
-- **Linimasa Fase Pengerjaan:** Mengikuti seluruh Alur Kerja Project di Bagian 6 (Foundation -> Problem Discovery & Pitching -> Execution & QA -> Release & Closing) tanpa modifikasi struktural, dengan dua penyesuaian:
+- **Linimasa Fase Pengerjaan:** Mengikuti seluruh Alur Kerja Project di Bagian 6 (Foundation → Problem Discovery & Pitching → Execution & QA → Release & Closing) tanpa modifikasi struktural, dengan dua penyesuaian:
 	- Fase Problem Discovery diganti dengan **Sesi Intake Partner**: Divisi PM dan Project Leader bertemu langsung dengan partner untuk menggali requirement asli, bukan observasi lapangan mandiri.
 	- Fase Release & Closing menambahkan **Handover ke Partner**: dokumentasi akses, kredensial, dan panduan maintenance diserahkan resmi ke partner.
 - **Eligibilitas:** Diprioritaskan untuk member yang sudah menyelesaikan minimal satu Collaborative Project, mengingat tingkat akuntabilitas terhadap pihak eksternal lebih tinggi.
@@ -336,7 +519,7 @@ Open-source contribution memiliki karakteristik unik (timeline eksternal, tidak 
 | Fase | Durasi Indikatif | Aktivitas | Output |
 | --- | --- | --- | --- |
 | **Eligibilitas & Pendaftaran** | Sebelum mulai | Member memastikan diri sudah menyelesaikan minimal satu Mini Project atau Collaborative Project, lalu mengajukan intent ke Divisi PM: repo target, issue yang dipilih, estimasi waktu. | Intent kontribusi disetujui Divisi PM |
-| **Familiarisasi Repo** | 2 - 4 hari di awal | Membaca contribution guidelines, code style, dan riwayat PR terkait issue yang dipilih. | Pemahaman dasar struktur repo |
+| **Familiarisasi Repo** | 2-4 hari di awal | Membaca contribution guidelines, code style, dan riwayat PR terkait issue yang dipilih. | Pemahaman dasar struktur repo |
 | **Pengerjaan & Monitoring** | Sisa durasi kontribusi | Member mengerjakan perubahan, melaporkan progres ke Divisi PM setiap dua minggu. | Progress report berkala |
 | **Submisi & Review** | Mengikuti timeline maintainer | PR diajukan ke repo asli, menunggu review dari maintainer eksternal (di luar kendali YYZU). | PR merged, ditolak, atau diminta revisi |
 | **Penutupan & Refleksi** | Setelah PR final diputuskan | Member menyusun ringkasan learning, terlepas dari hasil PR merged atau ditolak. | Link PR/commit + ringkasan learning |
@@ -344,7 +527,7 @@ Open-source contribution memiliki karakteristik unik (timeline eksternal, tidak 
 - **Catatan:** Karena maintainer eksternal tidak terikat pada timeline YYZU, kontribusi yang belum di-review dalam waktu lama tetap dianggap berjalan (in progress) selama member terus melaporkan status, bukan otomatis dianggap gagal.
 ---
 ## 9.6 Klasifikasi Aktivitas Ekosistem (Non-Project & Project)
-Bagian 9.1 - 9.5 di atas mendefinisikan karakteristik tiap jenis project (Mini Project, Collaborative Project, Internal Project, Real-World Project Development, Open-Source Contribution) sebagai salah satu *jenis* aktivitas dalam ekosistem YYZU. Namun tidak seluruh aktivitas YYZU berbentuk project. Bagian ini memetakan **seluruh 16 tipe aktivitas** ekosistem YYZU, baik yang non-project maupun project-based, ke dalam tiga klaster, sehingga jelas aktivitas mana yang wajib mengikuti Skema PM ini secara penuh dan mana yang tidak.
+Bagian 9.1-9.5 di atas mendefinisikan karakteristik tiap jenis project (Mini Project, Collaborative Project, Internal Project, Real-World Project Development, Open-Source Contribution) sebagai salah satu *jenis* aktivitas dalam ekosistem YYZU. Namun tidak seluruh aktivitas YYZU berbentuk project. Bagian ini memetakan **seluruh 16 tipe aktivitas** ekosistem YYZU, baik yang non-project maupun project-based, ke dalam tiga klaster, sehingga jelas aktivitas mana yang wajib mengikuti Skema PM ini secara penuh dan mana yang tidak.
 ### 9.6.1 Tiga Klaster Aktivitas
 | Klaster | Sifat | Contoh Aktivitas |
 | --- | --- | --- |
@@ -355,19 +538,19 @@ Bagian 9.1 - 9.5 di atas mendefinisikan karakteristik tiap jenis project (Mini P
 Aktivitas di klaster ini bersifat **non-project**: tidak menghasilkan deliverable teknis, tidak membutuhkan Kanban Board atau sprint, dan tidak dijalankan dengan Skema Project Management ini.
 **A1. Study Group**
 - **Deskripsi:** Sesi belajar bersama yang difasilitasi oleh anggota ekosistem, fokus pada topik tertentu sesuai track (Web Dev, UI/UX, PM, dll).
-- **Format:** 60 - 120 menit, dipimpin satu fasilitator (bisa member), bisa sinkron atau asinkron.
+- **Format:** 60-120 menit, dipimpin satu fasilitator (bisa member), bisa sinkron atau asinkron.
 - **Output wajib:** Catatan ringkasan sesi (summary notes) disimpan di Notion.
 - **PIC:** Divisi yang relevan (misal: Divisi Web Dev menyelenggarakan study group React).
 - **Frekuensi:** Sesuai kebutuhan batch atau inisiatif divisi.
 **A2. Mentoring Session**
 - **Deskripsi:** Sesi bimbingan antara Mentor dengan member atau kelompok kecil, bersifat personal dan tematik.
-- **Format:** 30 - 90 menit, bisa 1-on-1 atau kelompok kecil (≤5 orang).
+- **Format:** 30-90 menit, bisa 1-on-1 atau kelompok kecil (≤5 orang).
 - **Output wajib:** Action items yang disepakati, dicatat oleh member yang dibimbing.
-- **PIC:** Divisi SDM (koordinasi jadwal Mentor).
-- **Catatan:** Mentoring session dalam konteks project diatur oleh Skema Project Management ini.
+- **PIC:** Divisi Divisi SDM (koordinasi jadwal Mentor).
+- **Catatan:** Mentoring session dalam konteks project diatur oleh Skema Project Management ini. Mentoring Session bersifat **opsional** dan bisa dilaksanakan kapan saja sesuai kebutuhan, bukan event wajib batch.
 **A3. Workshop**
 - **Deskripsi:** Sesi hands-on terstruktur dengan instruktur, fokus pada penguasaan tool atau konsep tertentu dalam satu waktu.
-- **Format:** 2 - 4 jam, memiliki materi tertulis atau slide, disertai latihan praktis.
+- **Format:** 2-4 jam, memiliki materi tertulis atau slide, disertai latihan praktis.
 - **Output wajib:** Materi workshop diarsipkan di Notion. Peserta mengumpulkan hasil latihan.
 - **PIC:** Divisi penyelenggara atau Mentor yang menjadi instruktur.
 - **Catatan:** Workshop yang merupakan bagian dari Fase Foundation suatu project tetap diatur oleh Skema PM ini (lihat Bagian 6).
@@ -376,53 +559,65 @@ Aktivitas di klaster ini bersifat **non-project**: tidak menghasilkan deliverabl
 - **Format:** 30 - 60 menit, bisa sinkron (Discord/meet) atau asinkron (thread Discord).
 - **Output wajib:** Ringkasan diskusi dan kesimpulan utama dicatat di Notion atau thread Discord yang dapat diakses ulang.
 - **PIC:** Inisiator diskusi bertanggung jawab membuat ringkasan.
+- **Catatan:** Technical Discussion berbeda dari Workshop (A3). Workshop bersifat hands-on dengan instruktur (hingga 2 jam lebih), sedangkan Technical Discussion bersifat diskusi dan eksplorasi ide (30 - 60 menit). Keduanya dipertahankan sebagai event terpisah karena:
+	1. **Fase berbeda:** Technical Discussion cocok untuk Discovery phase (eksplorasi masalah), Workshop cocok untuk Execution phase (belajar tools)
+	2. **Durasi berbeda:** Technical Discussion lebih pendek (30-60 menit), Workshop lebih panjang (hingga 2 jam lebih)
+	3. **Output berbeda:** Technical Discussion menghasilkan ringkasan diskusi, Workshop menghasilkan materi + latihan
+	4. **Fleksibilitas:** Technical Discussion bisa dipimpin oleh member, Workshop biasanya oleh expert
+**Kapan menggunakan Technical Discussion vs Workshop:**
+| Situasi | Gunakan | Alasan |
+| --- | --- | --- |
+| Eksplorasi ide, brainstorming | Technical Discussion | Format diskusi, durasi pendek |
+| Problem-solving teknis | Technical Discussion | Fokus pada solusi, bukan praktik |
+| Belajar tools baru | Workshop | Butuh hands-on dan instruktur |
+| Praktik langsung | Workshop | Butuh waktu lebih lama untuk latihan |
 **A5. Product Discussion**
 - **Deskripsi:** Diskusi berfokus pada product thinking: validasi ide, analisis use case, product strategy, atau fitur suatu produk digital. Berbeda dari Technical Discussion karena perspektifnya adalah produk, bukan implementasi teknis.
-- **Format:** 30 - 60 menit, bisa melibatkan lintas track (Dev, Design, PM).
+- **Format:** 30-60 menit, bisa melibatkan lintas track (Dev, Design, PM).
 - **Output wajib:** Ringkasan diskusi beserta keputusan atau insight utama.
 - **PIC:** Inisiator atau Divisi Product & Project Management.
 **A6. Industry Sharing**
 - **Deskripsi:** Sesi berbagi pengalaman dari praktisi industri (guest, Mentor, atau alumni), berupa cerita karier, insight dunia kerja, atau tren teknologi terkini.
-- **Format:** 60 - 90 menit. Bisa berupa talk, panel diskusi, atau Q&A session.
+- **Format:** 60-90 menit. Bisa berupa talk, panel diskusi, atau Q&A session.
 - **Output wajib:** Ringkasan poin penting disimpan di Notion. Rekaman sesi (jika ada) diarsipkan.
 - **PIC:** Divisi yang relevan atau BPH sebagai penyelenggara.
 - **Catatan:** Pembicara eksternal harus dikoordinasikan dengan Founder/BPH terlebih dahulu.
 **A7. Career Preparation**
 - **Deskripsi:** Aktivitas yang mempersiapkan member untuk memasuki dunia kerja: CV review, mock interview, portfolio critique, atau sesi career roadmap.
-- **Format:** Bervariasi. Bisa 1-on-1 (CV/portfolio review: 20 - 30 menit) atau sesi kelompok (mock interview: 60 - 90 menit).
+- **Format:** Bervariasi. Bisa 1-on-1 (CV/portfolio review: 20-30 menit) atau sesi kelompok (mock interview: 60-90 menit).
 - **Output wajib:** Feedback tertulis yang diserahkan kepada member yang direview.
-- **PIC:** Divisi SDM, berkoordinasi dengan Mentor jika diperlukan.
+- **PIC:** Divisi Divisi SDM, berkoordinasi dengan Mentor jika diperlukan.
 ### 9.6.3 Klaster B: Review & Simulation
 Aktivitas di klaster ini bersifat **praktik terbatas**: menggunakan artefak nyata (kode, desain, portofolio) sebagai bahan, tetapi tidak dalam konteks sprint atau project yang sedang berjalan secara penuh.
 **B1. Code Review (Standalone)**
 - **Deskripsi:** Review kualitas kode yang dilakukan di luar konteks project aktif. Bisa menggunakan kode pribadi member, kode lama, atau kode latihan.
-- **Format:** Async (via GitHub PR atau thread) atau sync (screen sharing, 30 - 60 menit).
+- **Format:** Async (via GitHub PR atau thread) atau sync (screen sharing, 30-60 menit).
 - **Output wajib:** Catatan feedback reviewer, disimpan di thread atau Notion.
 - **PIC:** Reviewer (Mentor atau senior member).
 - **Catatan:** Code Review dalam konteks project aktif diatur oleh Skema PM ini (Fase Execution & QA, Bagian 6).
 **B2. Design Review (Standalone)**
 - **Deskripsi:** Review terhadap desain UI/UX yang dilakukan di luar konteks project aktif.
-- **Format:** Async (via komentar Figma) atau sync (screen sharing, 30 - 60 menit).
+- **Format:** Async (via komentar Figma) atau sync (screen sharing, 30-60 menit).
 - **Output wajib:** Catatan feedback di Figma atau Notion.
 - **PIC:** Reviewer (Mentor atau senior member dengan track UI/UX).
 - **Catatan:** Design Review dalam konteks project aktif diatur oleh Skema PM ini.
 **B3. Portfolio Review**
 - **Deskripsi:** Review menyeluruh terhadap portfolio member: website portfolio, GitHub profile, atau kumpulan project yang disiapkan untuk keperluan rekrutmen atau showcase.
-- **Format:** 30 - 45 menit per member, bisa dilakukan secara batch (review bersama beberapa member sekaligus).
+- **Format:** 30-45 menit per member, bisa dilakukan secara batch (review bersama beberapa member sekaligus).
 - **Output wajib:** Feedback tertulis yang memuat: apa yang sudah baik, apa yang perlu diperbaiki, dan prioritas perbaikan.
-- **PIC:** Divisi SDM atau Mentor.
+- **PIC:** Divisi Divisi SDM atau Mentor.
 **B4. Workflow Simulation**
 - **Deskripsi:** Simulasi proses kerja industri dalam format yang terkontrol dan terbatas waktu. Contoh: simulasi sprint planning, simulasi code review process, simulasi pitching ke client.
-- **Format:** 60 - 120 menit per sesi, dengan skenario yang disiapkan oleh fasilitator sebelumnya.
+- **Format:** 60-120 menit per sesi, dengan skenario yang disiapkan oleh fasilitator sebelumnya.
 - **Output wajib:** Debrief session setelah simulasi: apa yang berjalan baik, apa yang perlu diperbaiki.
 - **PIC:** Divisi Product & Project Management (untuk simulasi project workflow) atau Divisi yang relevan.
 - **Catatan:** Workflow Simulation yang merupakan bagian dari Fase Foundation suatu project tetap diatur oleh Skema PM ini.
 ### 9.6.4 Klaster C: Project-Based
-Aktivitas di klaster ini mengikuti Skema Project Management ini sebagai framework eksekusi utama. Seluruh lima tipe project sudah memiliki bagian operasional lengkap masing-masing di Bagian 9.1 - 9.5:
+Aktivitas di klaster ini mengikuti Skema Project Management ini sebagai framework eksekusi utama. Seluruh lima tipe project sudah memiliki bagian operasional lengkap masing-masing di Bagian 9.1-9.5:
 | Tipe Project | Definisi Singkat | Referensi Detail |
 | --- | --- | --- |
 | **Mini Project** | Project kecil 6 minggu untuk melatih fundamental dan basic collaboration | Bagian 9.1 |
-| **Collaborative Project** | Project menengah 8 - 12 minggu, lintas disiplin, standar workflow industri | Bagian 9.2 |
+| **Collaborative Project** | Project menengah 10 minggu, lintas disiplin, standar workflow industri | Bagian 9.2 |
 | **Internal Product Development** | Pengembangan platform/infrastruktur internal YYZU, bertahap | Bagian 9.3 |
 | **Real-World Project Development** | Project dari kebutuhan pihak luar (partner/industri), mengikuti alur project penuh dengan dua penyesuaian fase | Bagian 9.4 |
 | **Open-Source Contribution** | Kontribusi ke proyek open-source publik, dikerjakan mandiri atau sebagai tim kecil | Bagian 9.5 |
@@ -483,15 +678,16 @@ Apabila terdapat project lanjutan yang bergantung pada output project sebelumnya
 | Konflik internal kelompok | Project Leader | Divisi Product & Project Management, diteruskan ke Divisi SDM apabila bersifat serius |
 | Perubahan scope di tengah eksekusi | Tidak diizinkan secara langsung pada level Project Leader maupun anggota | Harus melalui Divisi Product & Project Management untuk di-negosiasikan kepada Mentor |
 ### Jalur Eskalasi Resmi (Escalation Path)
-Anggota Kelompok -> Project Leader Kelompok -> PM Core Division -> Mentor & Founder
-- **Level 1:** Anggota Kelompok -> Project Leader (diskusi harian)
-- **Level 2:** Project Leader -> PM Core Division (kendala berat)
-- **Level 3:** PM Core Division -> Mentor & Founder (eskalasi akhir)
+Anggota Kelompok → Project Leader Kelompok → PM Core Division → Mentor & Founder
+- **Level 1:** Anggota Kelompok → Project Leader (diskusi harian)
+- **Level 2:** Project Leader → PM Core Division (kendala berat)
+- **Level 3:** PM Core Division → Mentor & Founder (eskalasi akhir)
 ---
-## 12. Kebijakan Kontribusi Aktif & Penanganan Anggota Pasif
-Keaktifan dan kontribusi nyata dalam pengerjaan proyek adalah prasyarat mutlak untuk mempertahankan status keanggotaan dan memperoleh sertifikat kelulusan batch. Sanksi administratif dan alur pembinaan anggota yang pasif diatur secara sah merujuk pada [**Anggaran Rumah Tangga (ART) YYZU Pasal 9**](/docs/constitutional/art).
+## 12. Kebijakan Kontribusi Aktif & Penanganan Anggota Pasif (Inaktivitas Operasional)
+Keaktifan dan kontribusi nyata dalam pengerjaan proyek adalah prasyarat mutlak untuk mempertahankan status keanggotaan dan memperoleh sertifikat kelulusan batch. Sanksi administratif dan alur pembinaan anggota yang pasif diatur secara sah merujuk pada [Anggaran Rumah Tangga (ART) YYZU](/docs/constitutional/art).
+> **Catatan Penting:** Kebijakan ini mengatur **inaktivitas operasional dalam project** (batas waktu sebelum teguran diberikan kepada anggota yang tidak aktif dalam project). Untuk kebijakan **inaktivitas keanggotaan formal** (status keanggotaan secara keseluruhan), lihat ART Pasal 10 - Keanggotaan Tidak Aktif (30 hari).
 ### Prosedur Pembinaan & Surat Peringatan (SP)
-> **Catatan:** Prosedur ini khusus untuk penanganan anggota pasif/kurang aktif di tingkat operasional project. Untuk pelanggaran disiplin (nilai, kode etik, dan sejenisnya), berlaku prosedur SP tersendiri sesuai ART YYZU Pasal 9 yang dikeluarkan oleh Divisi SDM.
+> **Catatan:** Prosedur ini khusus untuk penanganan anggota pasif/kurang aktif di tingkat operasional project. Untuk pelanggaran disiplin (nilai, kode etik, dan sejenisnya), berlaku prosedur SP tersendiri sesuai ART YYZU Pasal 9 yang dikeluarkan oleh Divisi Divisi SDM.
 Untuk menjaga keadilan kontribusi dalam tim, alur penegakan sanksi kontribusi aktif di tingkat operasional project adalah sebagai berikut:
 1. **Teguran Internal (Lisan/Tertulis):** Jika seorang anggota tidak aktif atau tidak mengerjakan tugas yang disepakati selama **2 hari berturut-turut** tanpa alasan sah yang dikomunikasikan sebelumnya, Project Leader kelompok wajib memberikan teguran tertulis langsung di Discord/Slack.
 > **Ketentuan Izin:** Anggota dapat mengajukan izin tertulis (cuti/sakit/urusan mendesak) kepada Project Leader minimal 1 hari sebelumnya. Izin yang disetujui Project Leader menghentikan penghitungan hari inaktif selama durasi izin berjalan. Project Leader wajib mencatat izin di Kanban Board atau kanal Discord kelompok.
@@ -522,6 +718,7 @@ Dokumen ini adalah dokumen hidup yang dapat berkembang seiring pertumbuhan ekosi
 - [Anggaran Dasar (AD) YYZU](/docs/constitutional/ad) - Landasan hukum dan struktur organisasi
 - [Anggaran Rumah Tangga (ART) YYZU](/docs/constitutional/art) - Ketentuan operasional dan keanggotaan
 - [Skema Mentoring](/docs/operations/mentoring) - Mekanisme mentoring dan kontribusi mentor
-- [Skema Partnership](/docs/operations/partnership) - Mekanisme kemitraan eksternal
+- 38362601ca8c819d8ba4ed363897d2b5 - Mekanisme kemitraan eksternal
 - [Panduan Peran YYZU](/docs/constitutional/role-guide) - Pembagian tanggung jawab peran
 - [Glosarium YYZU](/docs/reference/glossary) - Definisi seluruh istilah ekosistem
+- [Panduan Project Leader](/docs/operations/project/leader-guide) - Checklist harian, template ceremony, dan panduan lengkap PL
