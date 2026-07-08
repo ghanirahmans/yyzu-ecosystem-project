@@ -1,4 +1,17 @@
 {
   "title": "Track Spesialisasi",
-  "pages": ["overview", "web-development", "ui-ux-design", "product-management"]
+  "pages": [
+    "overview",
+    "software-development",
+    "web-development",
+    "mobile-development",
+    "ui-ux-design",
+    "product-management",
+    "quality-assurance",
+    "data-and-ai",
+    "devops-and-cloud",
+    "creative-technology",
+    "digital-product",
+    "technology-collaboration"
+  ]
 }
