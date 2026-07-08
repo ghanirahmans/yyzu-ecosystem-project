@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 height="18"
               />
             </span>
-            <span className="font-bold tracking-[0.1em] text-slate-950 dark:text-slate-50">YYZU Docs</span>
+            <span className="font-bold tracking-[0.1em] text-slate-950 dark:text-slate-50">YYZU Ecosystem Wiki</span>
           </div>
         ),
       }}
