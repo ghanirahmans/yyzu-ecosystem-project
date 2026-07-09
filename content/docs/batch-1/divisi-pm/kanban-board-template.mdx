@@ -1,0 +1,182 @@
+---
+title: "Template Kanban Board Batch 1"
+description: "Panduan setup dan penggunaan Kanban Board untuk tim YYZU Batch 1"
+---
+
+# Template Kanban Board - YYZU Batch 1
+
+> Panduan setup dan penggunaan Kanban Board untuk seluruh tim YYZU Batch 1.
+
+---
+
+## Struktur Board
+
+Kolom utama Kanban Board mengikuti alur kerja Scrumban:
+
+```
+Backlog → To Do → In Progress (WIP: 2) → In Review → Done
+```
+
+| Kolom | Fungsi |
+|-------|--------|
+| **Backlog** | Semua task yang sudah di-identify tapi belum masuk sprint |
+| **To Do** | Task yang sudah diprioritaskan dan siap dikerjakan |
+| **In Progress** | Task yang sedang aktif dikerjakan (maksimal 2 per orang) |
+| **In Review** | Task selesai, menunggu review/feedback |
+| **Done** | Task selesai dan sudah di-accept |
+
+---
+
+## WIP Limit Rules
+
+**Batasan utama:** Maksimal 2 task aktif (In Progress) per orang.
+
+- Setiap talenTa tidak boleh memiliki lebih dari 2 card di kolom In Progress sekaligus.
+- Jika ingin mengambil task baru, selesaikan atau pindahkan task yang sedang berjalan ke In Review atau Done terlebih dahulu.
+- Tim bisa menyesuaikan kapasitas WIP berdasarkan ukuran dan kebutuhan tim.
+- WIP limit ada untuk menjaga fokus dan kualitas, bukan menghambat produktivitas.
+
+---
+
+## Card Template
+
+Setiap card di Kanban Board wajib memiliki informasi berikut:
+
+| Field | Keterangan |
+|-------|------------|
+| **Title** | Judul task yang jelas dan spesifik |
+| **Assignee** | Penanggung jawab task |
+| **Story Point** | Estimasi kompleksitas (1, 2, 3, 5, 8) |
+| **Due Date** | Tenggat waktu penyelesaian |
+| **Labels** | Track dan tema project (lihat sistem label di bawah) |
+
+---
+
+## Sistem Label
+
+Gunakan label berikut untuk mengkategorikan card:
+
+### Label Tema
+- `Economic` - Task terkait tema Ekonomi
+- `Education` - Task terkait tema Pendidikan
+
+### Label Tahapan
+- `Mini Project` - Task bagian Mini Project (W3-W8)
+- `Collab Project` - Task bagian Collaborative Project (W9-W18)
+
+### Label Sprint
+- `Sprint 0` - W1-W2 (Simulation)
+- `Sprint 1` - W3-W4 (Mini Project)
+- `Sprint 2` - W5-W6 (Mini Project)
+- `Sprint 3` - W7-W8 (Mini Project)
+- `Sprint 4` - W9-W10 (Collab Project)
+- `Sprint 5` - W11-W12 (Collab Project)
+- `Sprint 6` - W13-W14 (Collab Project)
+- `Sprint 7` - W15-W16 (Collab Project)
+- `Sprint 8` - W17-W18 (Collab Project)
+
+### Label Track (opsional, untuk Collab Project)
+- `Web Dev`, `Mobile`, `UI/UX`, `PM`, `QA`, `Data & AI`, `Software Dev`, `DevOps & Cloud`, `Creative Technology`, `Digital Product`, `Technology Collaboration`
+
+---
+
+## Naming Convention
+
+Prefix setiap task card wajib menggunakan format berikut:
+
+- **`[MP]`** untuk Mini Project tasks
+- **`[CP]`** untuk Collaborative Project tasks
+
+Contoh:
+- `[MP] Desain landing page utama`
+- `[CP] Setup database untuk MVP`
+- `[MP] Tulis test case untuk fitur login`
+
+---
+
+## Platform Rekomendasi
+
+Pilih salah satu platform berikut untuk membuat Kanban Board:
+
+1. **Notion Board** (pilihan utama jika tersedia)
+2. **Trello** (alternatif yang mudah digunakan)
+3. **GitHub Projects** (terintegrasi dengan repository)
+
+---
+
+## Setup Guide
+
+### Notion Board
+1. Buka Notion, buat halaman baru.
+2. Pilih template "Board" atau "Kanban Board".
+3. Buat grup/kolom: Backlog, To Do, In Progress, In Review, Done.
+4. Tambahkan property: Assignee, Story Point (Number), Due Date, Labels (Multi-select).
+5. Set WIP limit: atur reminder manual di kolom In Progress (maks 2 per assignee).
+6. Share board ke seluruh anggota tim.
+
+### Trello
+1. Buat board baru di Trello dengan nama tim.
+2. Buat list: Backlog, To Do, In Progress, In Review, Done.
+3. Tambahkan Custom Fields: Story Point, Due Date (sudah built-in).
+4. Buat label: Economic, Education, Mini Project, Collab Project, Sprint 0-8.
+5. Install Power-Up "Custom Fields" jika belum ada.
+6. Invite seluruh anggota tim ke board.
+
+### GitHub Projects
+1. Buka repository GitHub tim.
+2. Tab "Projects" > "New project" > pilih "Board".
+3. Tambahkan kolom: Backlog, To Do, In Progress, In Review, Done.
+4. Tambahkan custom fields: Story Points (number), Sprint (iteration), Theme (single select).
+5. Hubungkan issues ke project board.
+6. Set visibility ke tim yang bersangkutan.
+
+---
+
+## Contoh Card
+
+### Contoh 1: Mini Project - Web Dev
+
+| Field | Isi |
+|-------|-----|
+| **Title** | `[MP] Buat halaman dashboard data inflasi Indonesia` |
+| **Assignee** | Ahmad (Web Dev) |
+| **Story Point** | 5 |
+| **Due Date** | 15 Agustus 2026 |
+| **Labels** | `Economic`, `Mini Project`, `Sprint 1` |
+| **Description** | Halaman dashboard menampilkan data inflasi Indonesia dari 2020-2026 dengan chart interaktif. Data diambil dari API Bank Indonesia. |
+
+### Contoh 2: Mini Project - UI/UX
+
+| Field | Isi |
+|-------|-----|
+| **Title** | `[MP] Riset user untuk platform edukasi finansial` |
+| **Assignee** | Sari (UI/UX) |
+| **Story Point** | 3 |
+| **Due Date** | 22 Agustus 2026 |
+| **Labels** | `Economic`, `Education`, `Mini Project`, `Sprint 1` |
+| **Description** | Lakukan riset user kepada 10 responden untuk memvalidasi kebutuhan fitur platform edukasi finansial. Hasil riset menjadi dasar wireframe. |
+
+### Contoh 3: Collab Project - QA
+
+| Field | Isi |
+|-------|-----|
+| **Title** | `[CP] Tulis test plan untuk fitur pembayaran UMKM` |
+| **Assignee** | Rizal (QA) |
+| **Story Point** | 3 |
+| **Due Date** | 30 September 2026 |
+| **Labels** | `Economic`, `Collab Project`, `Sprint 4` |
+| **Description** | Buat test plan lengkap untuk fitur pembayaran digital UMKM. Mencakup positive case, negative case, dan edge case. Format mengikuti template test plan YYZU. |
+
+---
+
+## Tips Penggunaan
+
+1. **Update card setiap hari.** Pindahkan card sesuai progres aktual.
+2. **Jangan biarkan card mengendap.** Jika stuck lebih dari 2 hari, angkat di standup.
+3. **Gunakan label dengan konsisten.** Ini memudahkan filtering dan reporting.
+4. **Review board saat standup.** Board adalah satu sumber kebenaran (single source of truth).
+5. **Hormati WIP limit.** Fokus pada penyelesaian, bukan akumulasi task.
+
+---
+
+*Dokumen ini dibuat oleh Divisi PM YYZU Batch 1.*

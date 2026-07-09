@@ -1,0 +1,250 @@
+---
+title: "Workshop Scrumban Workflow"
+description: "Materi workshop Scrumban workflow untuk seluruh talenta YYZU Batch 1"
+---
+
+# Workshop: Scrumban Workflow
+
+**Event:** Workshop Scrumban YYZU Batch 1
+**Durasi:** 2.5 jam (150 menit)
+**Peserta:** Semua talenta YYZU Batch 1
+
+---
+
+## Daftar Isi
+
+1. Apa itu Scrumban?
+2. Kenapa YYZU Pakai Scrumban?
+3. Kanban Board: Cara Baca, Cara Pakai
+4. Sprint Ceremonies
+5. WIP Limit & Kenapa Penting
+6. Role dalam Tim
+7. Hands-on Exercise: Simulasi Sprint Planning
+
+---
+
+## 1. Apa itu Scrumban?
+
+Scrumban adalah metodologi yang menggabungkan dua pendekatan Agile:
+
+**Scrum:**
+- Sprint berdurasi tetap (time-boxed).
+- Ada ceremonies: planning, daily, review, retro.
+- Fokus pada iterasi dan peningkatan berkelanjutan.
+
+**Kanban:**
+- Alur kerja visual di papan (board).
+- Fokus pada throughput dan mengurangi work-in-progress.
+- Tidak ada sprint, alirkan task terus menerus.
+
+**Scrumban:**
+- Pakai sprint dari Scrum (ada siklus 2 mingguan).
+- Pakai Kanban board untuk visualisasi alur kerja.
+- Fleksibel: tidak seketat Scrum, lebih terstruktur dari Kanban murni.
+
+---
+
+## 2. Kenapa YYZU Pakai Scrumban?
+
+- **Visualisasi jelas:** Semua task terlihat di board. Siapa mengerjakan apa, status apa, semuanya transparan.
+- **Fleksibel:** Talenta dengan berbagai track (dev, design, PM, QA) bisa pakai framework yang sama tanpa harus mengikuti aturan Scrum yang kaku.
+- **Disiplin waktu:** Sprint 2 mingguan memaksa semua orang punya target dan deadline.
+- **Kolaborasi lintas track:** Kanban board memudahkan koordinasi saat kerja tim, baik dengan orang dari track sama maupun berbeda.
+- **Mirip industri nyata:** Banyak perusahaan tech pakai Scrumban atau variasinya. Talenta langsung terbiasa.
+
+---
+
+## 3. Kanban Board: Cara Baca, Cara Pakai
+
+### Kolom Standar
+
+```
+| Backlog | To Do | In Progress | Review | Done |
+```
+
+- **Backlog:** Daftar semua task yang belum diprioritaskan.
+- **To Do:** Task yang sudah dipilih untuk sprint ini, belum dikerjakan.
+- **In Progress:** Sedang dikerjakan.
+- **Review:** Selesai dikerjakan, perlu review atau approval.
+- **Done:** Selesai dan disetujui.
+
+### Cara Pakai
+
+1. **Buat task** di kolom Backlog. Tulis deskripsi yang jelas.
+2. **Sprint Planning:** Pindahkan task dari Backlog ke To Do.
+3. **Mulai kerja:** Pindahkan task ke In Progress, assign ke diri sendiri.
+4. **Selesai:** Pindahkan ke Review.
+5. **Disetujui:** Pindahkan ke Done.
+
+### Aturan Penting
+
+- Satu task = satu hal. Jangan gabung banyak hal dalam satu task.
+- Task harus punya deskripsi, assignee, dan label/track.
+- Update board setiap hari, minimal sekali.
+- Kalau task tidak di board, berarti tidak ada.
+
+---
+
+## 4. Sprint Ceremonies
+
+### 4.1 Sprint Planning
+
+**Apa:** Sesi untuk menentukan task apa yang masuk sprint berikutnya.
+**Kapan:** Awal setiap sprint (Senin pertama sprint, atau Selasa jika Seni libur).
+**Siapa:** Semua anggota tim.
+**Durasi:** 30-60 menit.
+
+**Format:**
+1. Review backlog: apa saja task yang tersedia.
+2. Estimasi: setiap task diberi estimasi ukuran (S, M, L).
+3. Pilih task: pindahkan dari Backlog ke To Do berdasarkan prioritas.
+4. Assign: setiap task punya penanggung jawab.
+5. Set goal: apa target sprint ini? (misal: "selesai prototype halaman utama").
+
+**Output:** Kanban board terisi di kolom To Do, sprint goal jelas.
+
+### 4.2 Daily Sync
+
+**Apa:** Check-in singkat untuk update progres.
+**Kapan:** Setiap hari kerja (atau minimal 3x seminggu).
+**Siapa:** Semua anggota tim.
+**Durasi:** 15 menit (atau async via chat).
+
+**Format Standup (3 pertanyaan):**
+1. Kemarin saya mengerjakan apa?
+2. Hari ini saya akan mengerjakan apa?
+3. Ada blocker atau halangan?
+
+**Async option:** Jika tidak bisa meeting, tulis jawaban 3 pertanyaan di grup chat setiap hari sebelum jam 12:00 WIB.
+
+### 4.3 Sprint Review
+
+**Apa:** Presentasi hasil kerja sprint kepada tim dan mentor.
+**Kapan:** Akhir setiap sprint.
+**Siapa:** Semua anggota tim, mentor, dan panitia.
+**Durasi:** 30-60 menit.
+
+**Format:**
+1. Demo: tunjukkan apa yang sudah selesai (screen recording, prototype, dokumen).
+2. Walkthrough Kanban board: task apa saja yang selesai, mana yang belum.
+3. Feedback dari mentor/tim.
+4. Catatan untuk perbaikan.
+
+### 4.4 Retrospective
+
+**Apa:** Refleksi proses kerja, bukan hasil produk.
+**Kapan:** Setelah Sprint Review, akhir setiap sprint.
+**Siapa:** Semua anggota tim.
+**Durasi:** 20-30 menit.
+
+**Format:**
+1. **What went well?** Apa yang berjalan baik di sprint ini?
+2. **What didn't go well?** Apa yang bermasalah?
+3. **Action items:** Apa yang akan diperbaiki di sprint berikutnya?
+
+**Tips:** Tulis semua di dokumen bersama. Action item harus spesifik dan punya penanggung jawab.
+
+---
+
+## 5. WIP Limit & Kenapa Penting
+
+**WIP (Work In Progress) Limit** adalah batasan jumlah task yang boleh ada di kolom "In Progress" secara bersamaan.
+
+### Contoh
+
+Jika WIP limit = 3, maka maksimal 3 task di kolom In Progress. Kalau mau mulai task ke-4, harus selesaikan salah satu dulu.
+
+### Kenapa Penting?
+
+1. **Fokus.** Terlalu banyak task paralel = tidak ada yang selesai.
+2. **Kualitas.** Lebih baik 2 task selesai dengan baik daripada 5 task setengah jadi.
+3. **Deteksi bottleneck.** Jika kolom In Progress penuh terus, berarti ada masalah di alur kerja.
+4. **Kolaborasi.** Jika kamu stuck, bisa bantu orang lain karena task kamu sudah di limit.
+
+### Rekomendasi WIP Limit
+
+- Individu: 1-2 task sekaligus.
+- Tim kecil (4 orang): 3-4 task sekaligus di In Progress.
+
+## 6. Role dalam Tim
+
+### Project Leader (PL)
+- Memastikan sprint berjalan sesuai rencana.
+- Memimpin sprint planning, review, dan retro.
+- Memastikan semua anggota aktif dan berkontribusi.
+- Bukan bos. Koordinator.
+
+### Anggota
+- Kontribusi sesuai keahlian track masing-masing.
+- Mengerjakan task sesuai bidang: coding, desain, testing, dokumentasi, dll.
+- Update progres di Kanban board.
+- Berpartisipasi dalam review.
+
+
+Komposisi tim **wajib lintas track** — anggota WAJIB berasal dari track berbeda (minimal 2 track berbeda dalam 1 tim). PL bisa dari track mana saja.
+
+---
+
+## 7. Hands-on Exercise: Simulasi Sprint Planning (30 menit)
+
+### Tujuan
+Merasakan langsung bagaimana sprint planning bekerja.
+
+### Setup (5 menit)
+1. Bagi peserta ke dalam kelompok 4 orang.
+2. Setiap kelompok buat Kanban board sederhana (bisa pakai Trello, Notion, atau sticky notes di Miro).
+3. Tentukan PL untuk setiap kelompok.
+
+### Scenario
+"Tim kalian diminta membuat landing page untuk platform edukasi online. Target: selesai dalam 1 sprint (2 minggu)."
+
+### Langkah (20 menit)
+
+**Step 1: Brainstorm task (5 menit)**
+- Tulis semua task yang diperlukan untuk membuat landing page.
+- Contoh: desain hero section, buat wireframe, coding halaman, tulis copywriting, testing responsif, deploy.
+
+**Step 2: Estimasi (5 menit)**
+- Setiap task diberi ukuran: S (1-2 hari), M (3-5 hari), L (5+ hari).
+- Diskusikan kenapa task tertentu ukurannya S, M, atau L.
+
+**Step 3: Pilih task untuk sprint (5 menit)**
+- Dari semua task, pilih mana yang masuk sprint ini.
+- Pertimbangkan: prioritas, kapasitas tim, ketergantungan antar task.
+- Pindahkan ke kolom To Do.
+
+**Step 4: Assign task (5 menit)**
+- Setiap task punya penanggung jawab.
+- Pastikan tidak ada orang yang kelebihan task.
+- Set WIP limit untuk In Progress.
+
+### Debrief (5 menit)
+- Diskusi: apa yang sulit? Bagaimana memutuskan prioritas?
+- PL share pengalaman jadi koordinator.
+- Fasilitator rangkum pembelajaran.
+
+---
+
+## Rangkuman Workshop
+
+| Konsep | Intinya |
+|--------|---------|
+| Scrumban | Sprint dari Scrum + visualisasi dari Kanban |
+| Kanban Board | Visualisasi alur kerja: Backlog > To Do > In Progress > Review > Done |
+| Sprint Planning | Tentukan task untuk sprint berikutnya |
+| Daily Sync | 15 menit, 3 pertanyaan, setiap hari |
+| Sprint Review | Demo hasil kerja, ambil feedback |
+| Retrospective | Refleksi proses, buat action item |
+| WIP Limit | Batasi task paralel, fokus pada penyelesaian |
+|| Role | 1 Project Leader + 3 anggota (role bebas, disesuaikan kebutuhan project), **wajib lintas track** |
+
+## Catatan untuk Fasilitator
+
+- Pastikan semua peserta punya akses ke tool Kanban (Trello/Notion/Miro) sebelum workshop.
+- Hands-on exercise lebih penting daripada presentasi teori. Berikan minimal 30 menit untuk simulasi.
+- Jika ada peserta dari track non-dev, tekankan bahwa Scrumban juga berlaku untuk PM, QA, dan Designer.
+- Siapkan contoh Kanban board yang sudah terisi sebagai referensi visual.
+
+
+## Referensi
+- [Project Workflow](/docs/operations/project/workflow)

@@ -1,0 +1,1819 @@
+---
+title: "Materi Workshop Batch 1"
+description: "Kumpulan materi 6 workshop sepanjang Batch 1 YYZU"
+---
+
+# Materi Workshop YYZU Batch 1
+
+> **Divisi:** Learning & Curriculum
+> **Batch:** 1
+> **Tema Project:** Economic & Education
+> **Durasi Batch:** 18 minggu (12 Juli - 15 November 2026)
+> **Jumlah Workshop:** 6 sesi
+> **Status:** Draft v1.0
+
+---
+
+## Daftar Workshop
+
+| # | Judul | Tanggal | Hari | Jam | Durasi | Fase |
+|---|-------|---------|------|-----|--------|------|
+| 1 | Tools Dasar | 2 Agustus 2026 | Sabtu | 16:00 WIB | 2.5 jam | Mini Project |
+| 2 | Teknis Spesifik Track | 26 Agustus 2026 | Selasa | 20:00 WIB | 2.5 jam | Mini Project |
+| 3 | Persiapan Collaborative Project | 13 September 2026 | Sabtu | 16:00 WIB | 2.5 jam | Collab Project |
+| 4 | Lanjutan | 16 September 2026 | Selasa | 20:00 WIB | 2.5 jam | Collab Project |
+| 5 | Teknis Spesifik Track (Lanjutan) | 30 September 2026 | Selasa | 20:00 WIB | 2.5 jam | Collab Project |
+| 6 | Persiapan Presentasi | 14 Oktober 2026 | Selasa | 20:00 WIB | 2 jam | Collab Project |
+
+---
+
+## Workshop #1: Tools Dasar
+
+### Info Workshop
+
+| Field | Detail |
+|-------|--------|
+| **Tanggal** | 2 Agustus 2026 |
+| **Waktu** | 16:00 - 18:30 WIB |
+| **Durasi** | 2.5 jam (150 menit) |
+| **Fase Batch** | Mini Project (Minggu 3) |
+| **PIC** | Divisi Learning & Curriculum + Divisi Event & Planning |
+| **Platform** | Discord/Google Meet |
+
+### Tujuan Pembelajaran
+
+Setelah mengikuti workshop ini, talenta mampu:
+
+1. Menggunakan Git dan GitHub untuk version control dasar (clone, commit, push, pull, branch, PR)
+2. Membuat wireframe sederhana menggunakan Figma
+3. Membuat dokumentasi project di Notion
+4. Mengatur task menggunakan Kanban Board
+
+### Agenda Detail
+
+| Waktu | Durasi | Materi | Aktivitas |
+|-------|--------|--------|-----------|
+| 16:00 - 16:05 | 5 menit | Pembukaan | Registrasi, brief agenda |
+| 16:05 - 16:45 | 40 menit | Git & GitHub | Presentasi + hands-on |
+| 16:45 - 17:15 | 30 menit | Figma | Presentasi + hands-on |
+| 17:15 - 17:35 | 20 menit | Notion | Presentasi + hands-on |
+| 17:35 - 17:55 | 20 menit | Kanban Board | Presentasi + hands-on |
+| 17:55 - 18:15 | 20 menit | Q&A | Tanya jawab terbuka |
+| 18:15 - 18:30 | 15 menit | Penutupan | Recap, checklist, next steps |
+
+---
+
+### Materi 1: Git & GitHub (40 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Pengenalan (5 menit)**
+- Apa itu version control? Kenapa penting?
+- Git vs GitHub: Git = tools lokal, GitHub = platform hosting
+- Analogi: Git seperti "save game" tapi bisa balik ke save sebelumnya
+
+**Konsep Dasar (10 menit)**
+- Repository: folder yang dipantau Git
+- Commit: snapshot perubahan pada satu titik waktu
+- Branch: jalur kerja terpisah untuk fitur baru
+- Pull Request: permintaan untuk merge branch ke main
+- Merge: menggabungkan perubahan dari satu branch ke branch lain
+
+**Demo Langsung (10 menit)**
+- Fasilitator mendemonstrasikan alur kerja:
+  1. Buat repository baru di GitHub
+  2. Clone ke lokal: `git clone <url>`
+  3. Buat perubahan pada file
+  4. Stage: `git add .`
+  5. Commit: `git commit -m "pesan deskriptif"`
+  6. Push: `git push origin main`
+  7. Buat branch baru: `git checkout -b feature/nama-fitur`
+  8. Push branch: `git push origin feature/nama-fitur`
+  9. Buat Pull Request di GitHub
+
+**Hands-on: Buat Repo dan Push First Commit (15 menit)**
+
+Instruksi untuk peserta:
+1. Buka github.com, login dengan akun masing-masing
+2. Klik "New Repository"
+3. Nama repo: `yyzu-batch1-mini-project-[nama-kamu]`
+4. Pilih "Public", centang "Add a README file"
+5. Clone repo ke lokal (gunakan terminal atau VS Code)
+6. Buat file baru bernama `notes.md`, isi dengan:
+   ```
+   # Mini Project YYZU Batch 1
+   ## Nama: [nama kamu]
+   ## Track: [track kamu]
+   ## Ide Project: [ide sederhana]
+   ```
+7. Stage, commit, dan push file tersebut
+8. Buka GitHub, pastikan file sudah muncul
+
+#### Catatan Fasilitator
+
+- Pastikan semua peserta sudah install Git sebelum workshop. Kirim panduan install H-3.
+- Jika ada peserta yang stuck, minta bantuan peserta lain (peer learning).
+- Tunjukkan cara resolve error umum: authentication, merge conflict sederhana.
+- Untuk peserta non-dev, tekankan bahwa GitHub juga bisa untuk dokumentasi, bukan hanya kode.
+
+---
+
+### Materi 2: Figma (30 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Pengenalan (5 menit)**
+- Apa itu Figma? Tools desain berbasis browser, gratis untuk penggunaan dasar.
+- Kenapa semua orang perlu tahu Figma? Kolaborasi real-time, industri standar.
+- Bukan hanya untuk designer. Developer, PM, dan QA juga pakai Figma.
+
+**Fitur Dasar (10 menit)**
+- Frame: "canvas" untuk setiap halaman/layar
+- Shape tools: rectangle, circle, line
+- Text tool: heading, body, label
+- Component: elemen yang bisa dipakai ulang (tombol, kartu, navbar)
+- Prototyping: menghubungkan frame dengan interaksi (klik, scroll)
+
+**Demo Langsung (5 menit)**
+- Fasilitator mendemonstrasikan:
+  1. Buat project baru di Figma
+  2. Buat frame mobile (375x812)
+  3. Tambahkan rectangle untuk header
+  4. Tambahkan text untuk judul
+  5. Duplikasi frame untuk halaman kedua
+  6. Hubungkan frame dengan prototyping (klik header, pindah ke halaman 2)
+
+**Hands-on: Buat Wireframe Sederhana (10 menit)**
+
+Instruksi untuk peserta:
+1. Buka figma.com, login dengan akun masing-masing
+2. Buat project baru: "YYZU Mini Project Wireframe"
+3. Buat frame mobile (375x812)
+4. Buat wireframe untuk halaman utama mini project kamu:
+   - Header dengan judul project
+   - 3-4 card atau elemen konten
+   - Navigasi di bagian bawah
+5. Simpan dan share link ke Notion project doc
+
+#### Catatan Fasilitator
+
+- Figma gratis, tapi peserta harus daftar akun dulu. Kirim link pendaftaran H-3.
+- Untuk peserta track UI/UX, ini adalah pengulangan. Minta mereka bantu peserta lain.
+- Fokus pada wireframe, bukan visual design yang sempurna. Yang penting struktur.
+- Tunjukkan shortcut: R (rectangle), T (text), F (frame), Ctrl+D (duplicate).
+
+---
+
+### Materi 3: Notion (20 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Pengenalan (3 menit)**
+- Notion: workspace all-in-one untuk dokumentasi, catatan, dan kolaborasi
+- Kenapa pakai Notion di YYZU? Standar organisasi, terintegrasi dengan workflow
+
+**Fitur Dasar (7 menit)**
+- Page: halaman dokumen utama
+- Block: elemen dalam page (text, heading, table, checklist, callout)
+- Database: tabel data yang bisa difilter dan di-sort
+- Template: page yang bisa diduplikasi
+- Share & permission: atur siapa yang bisa akses
+
+**Demo Langsung (5 menit)**
+- Fasilitator mendemonstrasikan:
+  1. Buat page baru: "Mini Project Documentation"
+  2. Tambahkan heading, text, dan checklist
+  3. Buat database sederhana (table) untuk task tracker
+  4. Set page ke public/shareable
+  5. Copy link
+
+**Hands-on: Buat Project Doc (5 menit)**
+
+Instruksi untuk peserta:
+1. Buka Notion workspace masing-masing
+2. Buat page baru: "Mini Project - [nama project]"
+3. Isi dengan template berikut:
+   - Section "Overview": nama project, track, tema (Economic/Education)
+   - Section "Problem Statement": masalah yang ingin diselesaikan
+   - Section "Target User": siapa yang akan pakai
+   - Section "Progress": checklist task mingguan
+4. Share page (opsional, bisa private dulu)
+
+#### Catatan Fasilitator
+
+- Kirim template Notion yang sudah jadi ke peserta sebelum workshop.
+- Untuk peserta yang belum punya akun, bantu proses registrasi.
+- Tekankan bahwa dokumentasi project adalah bagian dari assessment.
+
+---
+
+### Materi 4: Kanban Board (20 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Pengenalan (5 menit)**
+- Apa itu Kanban? Metode visual untuk mengatur alur kerja
+- Kenapa pakai Kanban? Lihat semua task, tahu yang sedang dikerjakan, hindari overcommit
+- Tools yang bisa dipakai: Notion Board, Trello, GitHub Projects
+
+**Konsep Dasar (5 menit)**
+- Column: kolom status (To Do, In Progress, Done, Blocked)
+- Card: satu task atau item pekerjaan
+- WIP Limit: batas jumlah task yang boleh "In Progress" sekaligus
+- Swimlane: pengelompokan card berdasarkan kategori
+
+**Demo Langsung (5 menit)**
+- Fasilitator mendemonstrasikan (gunakan Notion Board atau Trello):
+  1. Buat board baru
+  2. Buat 4 kolom: Backlog, To Do, In Progress, Done
+  3. Buat 3 card dummy
+  4. Pindahkan card dari satu kolom ke kolom lain
+  5. Tambahkan label dan deadline pada card
+
+**Hands-on: Setup Board Masing-masing (5 menit)**
+
+Instruksi untuk peserta:
+1. Buat Kanban board baru (Notion Board atau Trello)
+2. Buat kolom: Backlog, To Do (Sprint Ini), In Progress, Done
+3. Buat card untuk task pertama mini project kamu:
+   - "Setup repository"
+   - "Buat wireframe"
+   - "Tulis problem statement"
+4. Pindahkan "Setup repository" ke Done (karena sudah dikerjakan di materi Git)
+
+#### Catatan Fasilitator
+
+- Rekomendasikan Notion Board agar terintegrasi dengan project doc.
+- Jelaskan bahwa Kanban board ini akan dipakai selama Mini Project dan Collab Project.
+- Perlihatkan contoh Kanban board yang sudah terisi dari batch sebelumnya (jika ada).
+
+---
+
+### Materi 5: Q&A (20 menit)
+
+#### Panduan Fasilitator
+
+- Buka sesi dengan pertanyaan pancingan: "Ada yang bingung atau mau klarifikasi?"
+- Jika sepi, tanyakan hal spesifik: "Ada yang Git-nya error tadi? Figma-nya susah?"
+- Kumpulkan pertanyaan di chat, jawab satu per satu
+- Jika ada pertanyaan teknis yang kompleks, arahkan ke Study Group selanjutnya
+- Tutup dengan recap: apa yang sudah dipelajari, apa yang harus dilakukan sebelum event berikutnya
+
+---
+
+### Checklist Pre-Workshop (untuk Fasilitator)
+
+- [ ] Kirim undangan workshop H-7 (26 Juli)
+- [ ] Kirim panduan install Git H-3 (30 Juli)
+- [ ] Kirim link registrasi Figma H-3 (30 Juli)
+- [ ] Kirim template Notion project doc H-3 (30 Juli)
+- [ ] Pastikan semua peserta punya akun GitHub, Figma, Notion H-1 (1 Agustus)
+- [ ] Siapkan slide/dokumen presentasi
+- [ ] Test platform (Discord/Meet) dan screen sharing H-1
+- [ ] Siapkan breakout room jika diperlukan
+- [ ] Kirim reminder di grup H-1 (1 Agustus)
+
+### Checklist Post-Workshop
+
+- [ ] Verifikasi semua peserta sudah push commit pertama ke GitHub
+- [ ] Verifikasi semua peserta sudah punya wireframe di Figma
+- [ ] Verifikasi semua peserta sudah buat project doc di Notion
+- [ ] Verifikasi semua peserta sudah setup Kanban board
+- [ ] Kirim recap dan link rekaman (jika ada) di grup
+
+---
+
+---
+
+## Workshop #2: Teknis Spesifik Track
+
+### Info Workshop
+
+| Field | Detail |
+|-------|--------|
+| **Tanggal** | 26 Agustus 2026 |
+| **Waktu** | 20:00 - 22:30 WIB |
+| **Durasi** | 2.5 jam (150 menit) |
+| **Fase Batch** | Mini Project (Minggu 7, Execution) |
+| **PIC** | Divisi Learning & Curriculum + Divisi Event & Planning |
+| **Platform** | Discord/Google Meet |
+
+### Tujuan Pembelajaran
+
+Setelah mengikuti workshop ini, talenta mampu:
+
+1. Mengatasi tantangan teknis spesifik pada track masing-masing
+2. Menggunakan tools dan framework yang relevan dengan track
+3. Menerapkan best practices dalam Mini Project
+
+### Format Workshop
+
+| Bagian | Durasi | Keterangan |
+|--------|--------|------------|
+| Presentasi per track | 30 menit | Fasilitator/mentor menjelaskan konsep dan best practices |
+| Hands-on | 120 menit | Peserta langsung implement di Mini Project masing-masing |
+
+### Struktur Sesi
+
+| Waktu | Durasi | Aktivitas |
+|-------|--------|-----------|
+| 20:00 - 20:05 | 5 menit | Pembukaan, brief agenda |
+| 20:05 - 20:35 | 30 menit | Presentasi materi track (per ruang terpisah) |
+| 20:35 - 22:15 | 100 menit | Hands-on: implementasi langsung di project |
+| 22:15 - 22:25 | 10 menit | Wrap-up per track: apa yang sudah dicapai, apa yang jadi blocker |
+| 22:25 - 22:30 | 5 menit | Penutupan, next steps |
+
+### Setup Ruang
+
+Setiap track punya ruang/breakout room terpisah. Fasilitator atau mentor track hadir di setiap ruang. Jika mentor tidak cukup, gabungkan track yang mirip (contoh: Web Dev + Mobile, PM + Digital Product).
+
+---
+
+### Track: Web Development
+
+**Materi Presentasi (30 menit)**
+
+1. Responsive Design (10 menit)
+   - Mobile-first approach: desain untuk mobile dulu, baru scale up
+   - Breakpoint standar: 375px (mobile), 768px (tablet), 1024px (desktop)
+   - CSS media query: cara pakai, contoh kode
+   - Flexbox dan Grid untuk layout responsif
+
+2. CSS Framework (10 menit)
+   - Kenapa pakai framework? Konsistensi, kecepatan, responsive out-of-the-box
+   - Bootstrap vs Tailwind CSS: perbandingan singkat
+   - Cara install dan setup Tailwind (rekomendasi untuk project baru)
+   - Contoh: buat card responsif dengan Tailwind
+
+3. Deployment (10 menit)
+   - Kenapa deploy? Project harus bisa diakses publik untuk assessment
+   - Netlify: drag-and-drop deployment, custom domain gratis
+   - Vercel: deploy dari GitHub, automatic preview per PR
+   - Demo: deploy satu project ke Netlify dalam 2 menit
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Implementasikan responsive design pada Mini Project (30 menit)
+   - Pastikan layout berfungsi di mobile dan desktop
+   - Gunakan media query atau framework
+2. Setup CSS framework jika belum (20 menit)
+   - Install Tailwind atau Bootstrap
+   - Refactor komponen yang sudah ada
+3. Deploy Mini Project ke Netlify atau Vercel (20 menit)
+   - Buat akun Netlify/Vercel
+   - Connect ke GitHub repo
+   - Pastikan project live dan bisa diakses
+4. Polish dan fix issue yang muncul (30 menit)
+   - Test di berbagai screen size
+   - Fix layout yang rusak
+
+---
+
+### Track: UI/UX Design
+
+**Materi Presentasi (30 menit)**
+
+1. Advanced Prototyping (10 menit)
+   - Prototype vs mockup: mockup statis, prototype bisa diklik
+   - Interaction di Figma: click, drag, hover, smart animate
+   - Multi-flow prototype: alur utama, alur alternatif, error state
+   - Tips: jangan over-prototype, fokus pada flow utama
+
+2. Design System (10 menit)
+   - Apa itu design system? Kumpulan komponen, pattern, dan guideline
+   - Komponen dasar: color palette, typography, spacing, iconography
+   - Membuat component library di Figma: button, card, input, navbar
+   - Consistency: pastikan semua elemen punya style yang sama
+
+3. Usability Testing (10 menit)
+   - Apa itu usability testing? Minta orang lain pakai desain kamu
+   - Kapan test? Sebelum finalisasi, idealnya setelah prototype jadi
+   - Cara sederhana: 5 orang test, catat apa yang bikin mereka bingung
+   - Template catatan: task yang diberikan, waktu selesai, error yang terjadi, feedback
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Buat advanced prototype untuk Mini Project (40 menit)
+   - Hubungkan semua halaman dengan interaksi
+   - Tambahkan transition dan animasi sederhana
+   - Buat minimal 1 alur utama yang bisa diklik end-to-end
+2. Buat design system sederhana (30 menit)
+   - Tentukan color palette (maksimal 5 warna)
+   - Tentukan typography (2 font: heading + body)
+   - Buat 5 komponen reusable: button, card, input, navbar, footer
+3. Lakukan usability testing mini (30 menit)
+   - Minta 1-2 teman test prototype kamu
+   - Berikan 3 task sederhana
+   - Catat hasilnya di Notion project doc
+
+---
+
+### Track: Product Management
+
+**Materi Presentasi (30 menit)**
+
+1. User Story Mapping (10 menit)
+   - Apa itu user story mapping? Visualisasi alur user dari perspektif mereka
+   - Struktur: Activities > User Stories > Tasks
+   - Contoh untuk tema Education: Activity "Daftar Kelas" > Story "Sebagai siswa, saya ingin mencari kelas berdasarkan topik" > Tasks
+   - Tools: sticky notes (offline) atau Miro/FigJam (online)
+
+2. Acceptance Criteria (10 menit)
+   - Apa itu acceptance criteria? Kriteria spesifik yang harus dipenuhi agar story dianggap selesai
+   - Format Given-When-Then:
+     - Given: kondisi awal
+     - When: aksi yang dilakukan user
+     - Then: hasil yang diharapkan
+   - Contoh: Given user sudah login, When user klik "Simpan", Then data tersimpan dan muncul notifikasi sukses
+
+3. Stakeholder Management (10 menit)
+   - Siapa stakeholder di Mini Project? Mentor, peer, target user
+   - Cara manage ekspektasi: komunikasi rutin, update progres, minta feedback awal
+   - Handling feedback negatif: dengar, klarifikasi, prioritas, respond
+   - Template update: apa yang sudah selesai, apa yang sedang dikerjakan, apa yang jadi blocker
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Buat user story map untuk Mini Project (40 menit)
+   - Identifikasi 3-5 activities utama user
+   - Break down jadi user stories (minimal 10)
+   - Prioritaskan: must-have, nice-to-have, bisa nanti
+2. Tulis acceptance criteria untuk 5 stories utama (30 menit)
+   - Gunakan format Given-When-Then
+   - Pastikan criteria spesifik dan bisa di-test
+3. Buat stakeholder update pertama (30 menit)
+   - Tulis di Notion: progres, rencana, blocker
+   - Share ke mentor atau peer untuk feedback
+
+---
+
+### Track: Quality Assurance
+
+**Materi Presentasi (30 menit)**
+
+1. Advanced Test Case Writing (10 menit)
+   - Test case yang baik: spesifik, reproducible, independent
+   - Komponen: test ID, description, preconditions, steps, expected result, actual result
+   - Boundary testing: test di batas minimum dan maksimum
+   - Negative testing: test input yang salah, edge case
+
+2. Automation Intro (10 menit)
+   - Kenapa automation? Konsistensi, kecepatan, bisa diulang
+   - Kapan automation vs manual? Automation untuk regression, manual untuk exploratory
+   - Tools sederhana: browser developer tools, Postman untuk API testing
+   - Intro singkat ke Playwright atau Cypress (konsep, bukan coding mendalam)
+
+3. Bug Reporting (10 menit)
+   - Template bug report: summary, steps to reproduce, expected vs actual, severity, screenshot
+   - Severity level: critical (app crash), major (fitur tidak jalan), minor (cosmetic), trivial (typo)
+   - Tips: satu bug per report, reproduce dulu sebelum report, attach bukti
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Buat test plan untuk Mini Project (30 menit)
+   - Identifikasi 10 test scenarios utama
+   - Tulis test case detail untuk 5 scenarios
+   - Gunakan template yang sudah diajarkan
+2. Lakukan manual testing pada Mini Project sendiri (40 menit)
+   - Jalankan semua test case
+   - Catat hasil: pass/fail
+   - Report bug yang ditemukan
+3. Buat bug report untuk minimal 2 issue (30 menit)
+   - Gunakan template bug report
+   - Attach screenshot
+   - Assign severity
+
+---
+
+### Track: Data & AI
+
+**Materi Presentasi (30 menit)**
+
+1. Data Visualization (10 menit)
+   - Kenapa visualisasi? Data tanpa visualisasi sulit dipahami
+   - Jenis chart: bar (perbandingan), line (tren), pie (proporsi), scatter (korelasi)
+   - Tools: Chart.js, Recharts, D3.js (intro), Google Sheets chart
+   - Tips: pilih chart yang sesuai dengan data, jangan terlalu banyak warna
+
+2. API Integration (10 menit)
+   - Apa itu API? Cara dua aplikasi saling bicara
+   - REST API: GET (ambil data), POST (kirim data), PUT (update), DELETE (hapus)
+   - Cara fetch data dari API: fetch() di JavaScript, contoh kode
+   - Error handling: apa yang terjadi jika API gagal? Loading state, error message
+
+3. Storytelling with Data (10 menit)
+   - Data storytelling: menyampaikan insight dari data secara naratif
+   - Struktur: konteks (apa yang terjadi), insight (kenapa penting), rekomendasi (apa yang harus dilakukan)
+   - Contoh: "Penggunaan aplikasi naik 40% setelah redesign. Insight: UX improvement berdampak langsung. Rekomendasi: lanjutkan iterasi pada fitur X."
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Buat chart/grafik untuk Mini Project (40 menit)
+   - Pilih data yang relevan dengan tema Economic/Education
+   - Buat minimal 2 jenis chart berbeda
+   - Pastikan chart punya label, judul, dan warna yang jelas
+2. Integrasi API sederhana (30 menit)
+   - Gunakan public API (contoh: data.go.id untuk data ekonomi, atau mock API)
+   - Fetch data dan tampilkan di halaman
+   - Handle loading dan error state
+3. Buat data story sederhana (30 menit)
+   - Tulis narasi 1 paragraf berdasarkan data yang divisualisasikan
+   - Sertakan insight dan rekomendasi
+   - Tambahkan ke Notion project doc
+
+---
+
+### Track: Software Development
+
+**Materi Presentasi (30 menit)**
+
+1. API Design (10 menit)
+   - Prinsip REST: resource-based URL, HTTP methods, stateless
+   - Naming convention: `/api/v1/users`, `/api/v1/products`
+   - Request & response format: JSON standar
+   - Documentation: swagger/OpenAPI intro, Postman collection
+
+2. Database Schema Design (10 menit)
+   - Relational vs non-relational: kapan pakai yang mana?
+   - Entity-relationship: tabel, kolom, relasi (one-to-many, many-to-many)
+   - Normalization dasar: hindari duplikasi data
+   - Contoh: schema untuk app Education (tabel users, courses, enrollments, reviews)
+
+3. Error Handling (10 menit)
+   - Kenapa error handling penting? User experience, debugging, security
+   - Try-catch pattern: tangkap error, log, tampilkan pesan yang user-friendly
+   - HTTP status code: 200 (ok), 201 (created), 400 (bad request), 401 (unauthorized), 404 (not found), 500 (server error)
+   - Global error handler: middleware untuk tangkap semua error
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Desain API endpoints untuk Mini Project (30 menit)
+   - List semua resource (user, product, transaction, dll)
+   - Tentukan endpoint, method, dan response untuk setiap resource
+   - Dokumentasikan di Notion
+2. Buat database schema (40 menit)
+   - Identifikasi entitas utama
+   - Gambar ERD sederhana (bisa pakai dbdiagram.io atau draw.io)
+   - Implementasikan schema (SQL atau ORM)
+3. Implementasi error handling (30 menit)
+   - Tambahkan try-catch pada semua API call
+   - Buat error response yang konsisten
+   - Test dengan input yang tidak valid
+
+---
+
+### Track: Mobile Development
+
+**Materi Presentasi (30 menit)**
+
+1. Responsive Layouts (10 menit)
+   - Mobile layout patterns: single column, tab navigation, bottom sheet
+   - Safe area: hindari notch dan home indicator
+   - Orientation: portrait vs landscape, kapan handle yang mana
+   - Tools: Flutter LayoutBuilder, React Native Dimensions API
+
+2. State Management (10 menit)
+   - Apa itu state? Data yang berubah seiring waktu (login status, form input, API response)
+   - Kenapa state management penting? Konsistensi data antar halaman
+   - Pattern sederhana: useState/useContext (React Native), setState + Provider (Flutter)
+   - Kapan state lokal vs global?
+
+3. Testing (10 menit)
+   - Jenis testing mobile: unit test, widget test, integration test
+   - Unit test: test fungsi/logika tanpa UI
+   - Widget test: test komponen UI
+   - Tools: Flutter test, Jest + React Native Testing Library
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Implementasi responsive layout (30 menit)
+   - Pastikan app berfungsi di ukuran layar berbeda
+   - Test di emulator/responsive mode
+2. Refactor state management (40 menit)
+   - Identifikasi state yang perlu dikelola
+   - Implementasi state management yang sesuai
+   - Pastikan state konsisten antar halaman
+3. Tulis unit test sederhana (30 menit)
+   - Minimal 5 unit test untuk fungsi utama
+   - Jalankan test dan pastikan semua pass
+
+---
+
+### Track: DevOps & Cloud
+
+**Materi Presentasi (30 menit)**
+
+1. Docker Basics (15 menit)
+   - Apa itu Docker? Mengemas aplikasi + dependencies jadi satu unit
+   - Kenapa pakai Docker? Konsisten di semua environment
+   - Konsep: image (template), container (instance running), Dockerfile (instruksi build)
+   - Perintah dasar: docker build, docker run, docker ps, docker stop
+
+2. CI/CD Pipeline (15 menit)
+   - Apa itu CI/CD? Automasi build, test, dan deploy
+   - Continuous Integration: setiap push kode, otomatis build dan test
+   - Continuous Deployment: setiap merge ke main, otomatis deploy
+   - Tools: GitHub Actions (gratis untuk public repo)
+   - Contoh pipeline: push > build > test > deploy
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Buat Dockerfile untuk Mini Project (40 menit)
+   - Pilih base image yang sesuai (node:18-alpine, python:3.11-slim)
+   - Copy source code, install dependencies, expose port
+   - Build dan run container di lokal
+2. Buat GitHub Actions workflow (40 menit)
+   - Buat file `.github/workflows/ci.yml`
+   - Konfigurasi: trigger on push, build step, test step
+   - Push dan verifikasi workflow jalan di GitHub Actions
+3. Test dan fix (20 menit)
+   - Pastikan Docker build berhasil
+   - Pastikan CI pipeline pass
+   - Fix error jika ada
+
+---
+
+### Track: Creative Technology
+
+**Materi Presentasi (30 menit)**
+
+1. Animation (10 menit)
+   - Jenis animasi: CSS animation, JavaScript animation, library (GSAP, Framer Motion)
+   - Prinsip animasi yang baik: tujuan jelas, tidak berlebihan, performa baik
+   - Contoh: fade-in saat scroll, hover effect, loading animation
+   - Accessibility: prefers-reduced-motion
+
+2. Interactive Media (10 menit)
+   - Web interactivity: click, hover, scroll, drag
+   - Canvas API dan WebGL: intro untuk visual interaktif
+   - Audio/Video API: kontrol media di browser
+   - Contoh: interactive infographic untuk tema Economic
+
+3. Accessibility (10 menit)
+   - Apa itu web accessibility? Memastikan semua orang bisa akses, termasuk disabilitas
+   - WCAG standar: Perceivable, Operable, Understandable, Robust
+   - Praktik dasar: alt text, keyboard navigation, color contrast, semantic HTML
+   - Tools: Lighthouse audit, axe DevTools
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Tambahkan animasi pada Mini Project (40 menit)
+   - Pilih 2-3 elemen yang perlu animasi
+   - Implementasikan dengan CSS atau library
+   - Pastikan animasi tidak mengganggu usability
+2. Buat elemen interaktif (30 menit)
+   - Tambahkan minimal 1 elemen interaktif (quiz, chart interaktif, drag-and-drop)
+   - Pastikan berfungsi di mobile dan desktop
+3. Jalankan accessibility audit (30 menit)
+   - Pakai Lighthouse di Chrome DevTools
+   - Fix issue yang ditemukan
+   - Tambahkan alt text, label, dan ARIA attributes
+
+---
+
+### Track: Digital Product
+
+**Materi Presentasi (30 menit)**
+
+1. Business Model Canvas (15 menit)
+   - 9 blok BMC: Customer Segments, Value Propositions, Channels, Customer Relationships, Revenue Streams, Key Resources, Key Activities, Key Partners, Cost Structure
+   - Contoh untuk app Education: siapa user-nya? value apa yang ditawarkan? bagaimana monetisasi?
+   - BMC bukan hanya untuk startup. Untuk Mini Project, BMC membantu pikirkan sustainability.
+
+2. Competitive Analysis (15 menit)
+   - Kenapa competitive analysis? Tahu siapa kompetitor, apa kekuatan dan kelemahan mereka
+   - Template: 5-10 kompetitor, fitur utama, pricing, strength, weakness
+   - Tools: Google search, SimilarWeb, Product Hunt
+   - Differentiation: apa yang bikin project kamu berbeda?
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Buat Business Model Canvas untuk Mini Project (40 menit)
+   - Isi semua 9 blok
+   - Fokus pada Value Proposition dan Customer Segments
+   - Presentasikan ke 1 teman untuk feedback
+2. Lakukan competitive analysis (40 menit)
+   - Cari 5 produk serupa di tema Economic/Education
+   - Isi template competitive analysis
+   - Identifikasi gap dan opportunity
+3. Tulis positioning statement (20 menit)
+   - Format: "Untuk [target user] yang [need], [project] adalah [category] yang [benefit]. Tidak seperti [competitor], kami [differentiator]."
+   - Tambahkan ke Notion project doc
+
+---
+
+### Track: Technology Collaboration
+
+**Materi Presentasi (30 menit)**
+
+1. Git Workflow untuk Tim (15 menit)
+   - Branching strategy: Git Flow vs GitHub Flow
+   - Rekomendasi YYZU: GitHub Flow (lebih sederhana)
+     - `main`: branch produksi, selalu deployable
+     - `feature/[nama]`: branch untuk setiap fitur
+     - Pull Request: review sebelum merge ke main
+   - Convention: nama branch, commit message, PR description
+   - Conflict resolution: cara resolve merge conflict
+
+2. Code Review Standards (15 menit)
+   - Kenapa code review? Tangkap bug lebih awal, sharing knowledge, konsistensi kode
+   - Apa yang di-review? Logic, naming, structure, performance, security
+   - Cara memberikan feedback: spesifik, constructive, berikan alternatif
+   - Template PR description: apa yang diubah, kenapa, cara test
+
+**Hands-on (100 menit)**
+
+Instruksi untuk peserta:
+1. Praktik branching workflow (30 menit)
+   - Buat branch `feature/[nama-fitur]`
+   - Buat perubahan, push, buat PR
+   - Minta teman review PR kamu
+2. Lakukan code review untuk PR teman (30 menit)
+   - Baca kode, berikan komentar konstruktif
+   - Gunakan GitHub review feature
+   - Approve atau request changes
+3. Buat collaboration guide sederhana (40 menit)
+   - Tulis di Notion: branching strategy tim, commit convention, review process
+   - Include template PR description
+   - Share ke tim
+
+---
+
+### Checklist Pre-Workshop (untuk Fasilitator)
+
+- [ ] Koordinasi dengan mentor per track untuk ketersediaan H-7
+- [ ] Siapkan breakout room per track H-3
+- [ ] Kirim brief ke peserta: "Pilih track yang relevan, siapkan Mini Project" H-3
+- [ ] Siapkan slide/dokumen per track
+- [ ] Pastikan mentor/koordinator track sudah punya materi H-1
+- [ ] Test platform dan breakout room H-1
+- [ ] Kirim reminder di grup H-1
+
+### Checklist Post-Workshop
+
+- [ ] Kumpulkan progress update dari setiap track
+- [ ] Dokumentasikan pertanyaan yang belum terjawab
+- [ ] Kirim recap per track di grup
+- [ ] Follow up dengan peserta yang tidak hadir
+
+---
+
+---
+
+## Workshop #3: Persiapan Collaborative Project
+
+### Info Workshop
+
+| Field | Detail |
+|-------|--------|
+| **Tanggal** | 13 September 2026 |
+| **Waktu** | 16:00 - 18:30 WIB |
+| **Durasi** | 2.5 jam (150 menit) |
+| **Fase Batch** | Collaborative Project (Minggu 9, Foundation) |
+| **PIC** | Divisi Learning & Curriculum + Divisi Event & Planning |
+| **Platform** | Discord/Google Meet |
+
+### Tujuan Pembelajaran
+
+Setelah mengikuti workshop ini, talenta mampu:
+
+1. Merencanakan sprint yang efektif dalam tim
+2. Berkomunikasi secara async dengan tim menggunakan tools yang tepat
+3. Membagi task secara adil berdasarkan kapasitas dan kompetensi
+4. Melakukan design review dan code review lintas role
+5. Membuat sprint plan pertama untuk Collaborative Project
+
+### Agenda Detail
+
+| Waktu | Durasi | Materi | Aktivitas |
+|-------|--------|--------|-----------|
+| 16:00 - 16:05 | 5 menit | Pembukaan | Registrasi, brief agenda |
+| 16:05 - 16:35 | 30 menit | Sprint Planning Efektif | Presentasi + diskusi |
+| 16:35 - 17:05 | 30 menit | Komunikasi Tim | Presentasi + hands-on |
+| 17:05 - 17:25 | 20 menit | Pembagian Task | Presentasi + diskusi |
+| 17:25 - 17:55 | 30 menit | Design & Code Review Lintas Role | Presentasi + simulasi |
+| 17:55 - 18:25 | 30 menit | Hands-on: Sprint Plan | Tim kerja bersama |
+| 18:25 - 18:30 | 5 menit | Penutupan | Recap, checklist, next steps |
+
+---
+
+### Materi 1: Sprint Planning Efektif dalam Tim (30 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Apa itu Sprint Planning? (5 menit)**
+- Sprint planning adalah sesi di mana tim memutuskan apa yang akan dikerjakan dalam sprint berikutnya
+- Durasi sprint di YYZU: 1-2 minggu
+- Output: daftar task yang jelas, siapa mengerjakan apa, definisi selesai
+
+**Elemen Sprint Planning yang Baik (10 menit)**
+- Review backlog: apa yang sudah ada, apa yang prioritas
+- Estimasi task: berapa lama setiap task? Gunakan t-shirt size (S, M, L, XL) atau story point
+- Capacity planning: berapa jam setiap anggota bisa contribute minggu ini?
+- Commitment: tim sepakat target sprint, bukan dipaksakan dari atas
+
+**Common Mistakes (5 menit)**
+- Terlalu banyak task: lebih baik sedikit selesai daripada banyak setengah jalan
+- Tidak ada acceptance criteria: "sudah selesai" harus definisi jelas
+- Tidak review sprint sebelumnya: selalu mulai dengan retro sprint sebelumnya
+- Semua task untuk developer: desain, testing, dokumentasi juga masuk sprint
+
+**Sprint Ceremony di YYZU (10 menit)**
+- Sprint Planning: awal sprint, tentukan task
+- Daily Standup: update harian (async di grup, 3 pertanyaan)
+  1. Apa yang sudah dikerjakan kemarin?
+  2. Apa yang akan dikerjakan hari ini?
+  3. Ada blocker?
+- Sprint Review: akhir sprint, demo hasil kerja
+- Sprint Retrospective: akhir sprint, refleksi proses (what went well, what to improve)
+
+#### Diskusi (5 menit)
+
+Tanya ke peserta: "Dari pengalaman Mini Project, apa yang paling susah dalam mengatur waktu dan task? Apa yang ingin diperbaiki di Collab Project?"
+
+---
+
+### Materi 2: Komunikasi Tim (30 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Kenapa Komunikasi Itu Kunci? (5 menit)**
+- Tim yang hebat secara teknis bisa gagal kalau komunikasi buruk
+- Remote collaboration butuh effort lebih karena tidak ada bahasa tubuh
+- Komunikasi yang baik = proyek yang on track
+
+**Daily Standup Async (10 menit)**
+- Format async: update di grup chat setiap hari sebelum jam tertentu (contoh: 12:00 WIB)
+- Template standup:
+  ```
+  [Nama] | [Tanggal]
+  ✅ Done: [apa yang sudah selesai]
+  🔄 Today: [apa yang akan dikerjakan]
+  🚧 Blocker: [ada masalah?]
+  ```
+- Aturan: wajib update, tidak boleh skip, ringkas (3-5 baris maksimal)
+- Tools: Discord channel khusus tim, Notion update, atau WhatsApp group
+
+**Tools Komunikasi Tim (10 menit)**
+- Chat harian: Discord/WhatsApp (komunikasi cepat)
+- Dokumentasi: Notion (keputusan, meeting notes, progress)
+- Task management: Kanban Board (To Do, In Progress, Done)
+- Code: GitHub (PR, issue, review)
+- Design: Figma (sharing prototype, comment)
+- Video call: Discord/Google Meet (diskusi kompleks, sprint ceremony)
+
+**Aturan Komunikasi (5 menit)**
+- Response time: chat urgent (1 jam), chat biasa (4 jam), email (24 jam)
+- Escalation: kalau blocked lebih dari 1 hari, segera kabari tim
+- Documentation: setiap keputusan penting harus dicatat di Notion
+- Respect: kritik ide, bukan orang. Gunakan "Menurut saya..." bukan "Kamu salah..."
+
+#### Hands-on (5 menit)
+
+Instruksi untuk peserta:
+1. Buat channel/grup komunikasi untuk tim masing-masing (Discord/WhatsApp)
+2. Buat template daily standup di Notion
+3. Tentukan jam update standup harian (sepakati bersama)
+4. Buat page Notion untuk meeting notes tim
+
+---
+
+### Materi 3: Pembagian Task yang Adil (20 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Prinsip Pembagian Task (10 menit)**
+- Berdasarkan kompetensi: siapa yang paling bisa mengerjakan task ini?
+- Berdasarkan kapasitas: siapa yang punya waktu paling banyak minggu ini?
+- Berdasarkan growth: siapa yang perlu belajar skill baru? Beri task yang menantang tapi achievable
+- Berdasarkan beban: jangan satu orang kebanyakan task, distribusi harus merata
+
+**Role dalam Tim Collab Project (5 menit)**
+- Project Lead (PL): koordinasi, sprint planning, stakeholder update
+- Developer: coding, API, database
+- Designer: UI/UX, wireframe, prototype
+- PM: user story, acceptance criteria, product thinking
+- QA: testing, bug report, quality assurance
+- Catatan: satu orang bisa handle beberapa role jika tim kecil
+
+**Tips Pembagian Task (5 menit)**
+- Tulis semua task di Kanban board sebelum dibagi
+- Diskusikan bersama, jangan PL yang menentukan sendiri
+- Setiap task harus punya: deskripsi, acceptance criteria, deadline, assignee
+- Review beban kerja setiap sprint planning: siapa yang overloaded?
+
+#### Diskusi (5 menit)
+
+Minta setiap tim diskusi: "Siapa yang handle role apa? Apakah ada yang merasa keberatan atau butuh bantuan?"
+
+---
+
+### Materi 4: Design Review & Code Review Lintas Role (30 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Kenapa Review Lintas Role? (5 menit)**
+- Developer yang review desain = catch feasibility issue lebih awal
+- Designer yang review kode = catch UX issue lebih awal
+- PM yang review keduanya = pastikan sesuai requirement
+- QA yang review semua = pastikan bisa di-test
+
+**Design Review (10 menit)**
+- Siapa yang review? Minimal developer dan PM
+- Yang di-review: layout, flow, component consistency, responsive behavior
+- Format: designer presentasikan desain (5 menit), reviewer feedback (10 menit)
+- Feedback template:
+  - Yang sudah bagus: [sebutkan]
+  - Saran perbaikan: [sebutkan, dengan alasan]
+  - Pertanyaan: [apa yang belum jelas?]
+
+**Code Review (10 menit)**
+- Siapa yang review? Minimal 1 developer lain, idealnya PM juga
+- Yang di-review: logic, naming, structure, error handling, performance
+- Format: buka PR, reviewer baca kode, berikan komentar inline
+- Feedback template:
+  - Approve: kode sudah bagus, bisa merge
+  - Comment: ada pertanyaan atau saran, tidak blocking
+  - Request changes: ada issue yang harus diperbaiki sebelum merge
+
+**Simulasi Singkat (5 menit)**
+- Fasilitator tunjukkan contoh PR di GitHub
+- Demo cara memberikan review: comment inline, approve, request changes
+- Tunjukkan contoh feedback yang baik vs buruk
+
+#### Hands-on (5 menit)
+
+Setiap tim:
+1. Tentukan reviewer untuk setiap role (siapa review desain, siapa review kode)
+2. Buat template PR description yang akan dipakai tim
+3. Buat aturan review: minimal 1 approval sebelum merge
+
+---
+
+### Materi 5: Hands-on Sprint Plan Pertama (30 menit)
+
+#### Instruksi untuk Tim
+
+Setiap tim mengerjakan sprint plan pertama untuk Collaborative Project. Fasilitator dan mentor berkeliling membantu.
+
+**Langkah-langkah:**
+
+1. Review problem statement dan rencana project (5 menit)
+   - Apa yang ingin dibangun?
+   - Siapa target user?
+   - Apa tema: Economic atau Education?
+
+2. Break down project jadi fitur utama (10 menit)
+   - Minimal 5 fitur utama
+   - Prioritaskan: must-have (MVP), nice-to-have, bisa nanti
+   - Tulis di Kanban board
+
+3. Buat sprint plan untuk sprint pertama (10 menit)
+   - Sprint 1 (Minggu 9-10): apa yang harus selesai?
+   - Contoh target sprint 1: setup repo tim, buat wireframe, buat database schema, buat API skeleton
+   - Assign task ke anggota tim
+   - Set deadline per task
+
+4. Tentukan standup time dan review schedule (5 menit)
+   - Jam berapa daily standup?
+   - Kapan sprint review?
+   - Kapan sprint retrospective?
+
+#### Output yang Diharapkan
+
+Setiap tim harus punya:
+- [ ] Kanban board dengan task sprint 1 sudah diisi
+- [ ] Setiap task punya assignee dan deadline
+- [ ] Jadwal standup harian sudah disepakati
+- [ ] Jadwal sprint review sudah disepakati
+
+---
+
+### Checklist Pre-Workshop (untuk Fasilitator)
+
+- [ ] Pastikan semua tim sudah terbentuk H-7 (6 September)
+- [ ] Kirim brief: "Siapkan problem statement dan ide project" H-3
+- [ ] Siapkan template sprint plan di Notion H-3
+- [ ] Koordinasi dengan mentor untuk hadir H-1
+- [ ] Pastikan setiap tim punya breakout room H-1
+- [ ] Kirim reminder di grup H-1
+
+### Checklist Post-Workshop
+
+- [ ] Verifikasi semua tim punya Kanban board dengan task terisi
+- [ ] Verifikasi semua tim punya jadwal standup
+- [ ] Kumpulkan sprint plan dari semua tim
+- [ ] Follow up tim yang belum selesai sprint plan
+
+---
+
+---
+
+## Workshop #4: Lanjutan
+
+### Info Workshop
+
+| Field | Detail |
+|-------|--------|
+| **Tanggal** | 16 September 2026 |
+| **Waktu** | 20:00 - 22:30 WIB |
+| **Durasi** | 2.5 jam (150 menit) |
+| **Fase Batch** | Collaborative Project (Minggu 10, Foundation) |
+| **PIC** | Divisi Learning & Curriculum + Divisi Event & Planning |
+| **Platform** | Discord/Google Meet |
+
+### Tujuan Pembelajaran
+
+Setelah mengikuti workshop ini, talenta mampu:
+
+1. Mendesain API yang konsisten dan terdokumentasi
+2. Merancang database schema untuk project tim
+3. Menggunakan branching strategy yang tepat dalam tim
+4. Memahami dasar CI/CD pipeline
+
+### Agenda Detail
+
+| Waktu | Durasi | Materi | Aktivitas |
+|-------|--------|--------|-----------|
+| 20:00 - 20:05 | 5 menit | Pembukaan | Registrasi, brief agenda |
+| 20:05 - 20:50 | 45 menit | API Design & Integration | Presentasi + demo |
+| 20:50 - 21:20 | 30 menit | Database Schema Design | Presentasi + hands-on |
+| 21:20 - 21:50 | 30 menit | Version Control Branching Strategy | Presentasi + simulasi |
+| 21:50 - 22:15 | 25 menit | CI/CD Pipeline Dasar | Presentasi + demo |
+| 22:15 - 22:25 | 10 menit | Hands-on: Implementasi | Tim langsung terapkan |
+| 22:25 - 22:30 | 5 menit | Penutupan | Recap, next steps |
+
+---
+
+### Materi 1: API Design & Integration (45 menit)
+
+#### Talking Points untuk Fasilitator
+
+**API Design Principles (15 menit)**
+
+- RESTful API: standar industri untuk komunikasi client-server
+- Resource-based URL:
+  - `/api/v1/users` untuk data pengguna
+  - `/api/v1/courses` untuk data kursus (Education)
+  - `/api/v1/transactions` untuk data transaksi (Economic)
+- HTTP Methods:
+  - GET: ambil data (baca)
+  - POST: buat data baru
+  - PUT/PATCH: update data yang sudah ada
+  - DELETE: hapus data
+- Response format: JSON dengan struktur konsisten
+  ```json
+  {
+    "status": "success",
+    "data": { ... },
+    "message": "Data berhasil diambil"
+  }
+  ```
+- Error response:
+  ```json
+  {
+    "status": "error",
+    "data": null,
+    "message": "User tidak ditemukan"
+  }
+  ```
+
+**API Documentation (10 menit)**
+- Kenapa dokumentasi penting? Tim lain (frontend) butuh tahu cara pakai API
+- Tools: Swagger/OpenAPI (standar industri), Postman Collection (lebih mudah)
+- Minimal yang harus didokumentasikan: endpoint, method, parameter, response, contoh
+- Demo: buat Postman collection sederhana
+
+**API Integration Best Practices (10 menit)**
+- Loading state: tampilkan spinner/skeleton saat data sedang diambil
+- Error handling: tampilkan pesan error yang user-friendly, bukan stack trace
+- Caching: simpan data yang sering diakses untuk mengurangi request
+- Rate limiting: jangan terlalu banyak request sekaligus
+- Versioning: pakai `/v1/`, `/v2/` untuk backward compatibility
+
+**Demo: End-to-End API Flow (10 menit)**
+- Fasilitator mendemonstrasikan:
+  1. Buat endpoint GET `/api/v1/products`
+  2. Buat endpoint POST `/api/v1/products`
+  3. Test dengan Postman
+  4. Fetch dari frontend dengan JavaScript
+  5. Tampilkan data di halaman
+  6. Handle loading dan error
+
+---
+
+### Materi 2: Database Schema Design (30 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Database untuk Project Tim (10 menit)**
+- Pilihan database: PostgreSQL, MySQL (relational), MongoDB (non-relational)
+- Rekomendasi YYZU: PostgreSQL untuk project yang butuh relasi data (kebanyakan project Economic/Education)
+- Managed database: Supabase (gratis, PostgreSQL + API otomatis), PlanetScale, Neon
+
+**Schema Design Process (10 menit)**
+1. Identifikasi entitas: apa saja "benda" dalam project? (user, product, order, review)
+2. Tentukan atribut: apa saja data yang disimpan per entitas?
+3. Tentukan relasi: bagaimana entitas saling terhubung?
+   - One-to-many: satu user punya banyak order
+   - Many-to-many: satu siswa bisa ambil banyak kursus
+4. Normalisasi: hindari duplikasi data
+
+**Contoh Schema untuk Education Track (5 menit)**
+
+```
+users (id, name, email, role, created_at)
+courses (id, title, description, instructor_id, category, price)
+enrollments (id, user_id, course_id, enrolled_at, status)
+lessons (id, course_id, title, content, order)
+progress (id, user_id, lesson_id, completed_at)
+reviews (id, user_id, course_id, rating, comment)
+```
+
+**Contoh Schema untuk Economic Track (5 menit)**
+
+```
+users (id, name, email, created_at)
+products (id, name, description, price, category, seller_id)
+transactions (id, user_id, product_id, amount, status, created_at)
+budgets (id, user_id, category, amount, period)
+expenses (id, user_id, budget_id, amount, note, date)
+```
+
+#### Hands-on (langsung terapkan di materi terakhir)
+
+---
+
+### Materi 3: Version Control Branching Strategy dalam Tim (30 menit)
+
+#### Talking Points untuk Fasilitator
+
+**GitHub Flow untuk Tim Kecil (10 menit)**
+- Branch `main`: kode produksi, selalu dalam kondisi deployable
+- Branch `feature/[nama]`: satu branch per fitur, contoh: `feature/user-login`, `feature/course-list`
+- Alur kerja:
+  1. Buat branch dari `main`
+  2. Kerjakan fitur di branch tersebut
+  3. Push branch ke GitHub
+  4. Buat Pull Request ke `main`
+  5. Minta review dari minimal 1 tim
+  6. Merge setelah approve
+  7. Hapus branch yang sudah merge
+
+**Convention Tim (10 menit)**
+- Branch naming: `feature/`, `fix/`, `hotfix/`, `docs/`
+  - Contoh: `feature/add-course-page`, `fix/login-error`, `docs/update-readme`
+- Commit message: verb + deskripsi singkat
+  - Contoh: "add course list page", "fix login validation error"
+  - Jangan: "update", "fix", "asdfgh" (tidak deskriptif)
+- PR description:
+  ```
+  ## Apa yang diubah
+  - Menambahkan halaman daftar kursus
+
+  ## Kenapa
+  - User perlu bisa melihat kursus yang tersedia
+
+  ## Cara test
+  1. Buka halaman /courses
+  2. Pastikan daftar kursus muncul
+  3. Klik salah satu kursus, pastikan ke halaman detail
+  ```
+
+**Merge Conflict: Cara Handle (5 menit)**
+- Kenapa conflict terjadi? Dua orang edit file yang sama
+- Cara resolve:
+  1. Pull branch terbaru dari `main`
+  2. Buka file yang conflict
+  3. Cari marker `<<<<<<<`, `=======`, `>>>>>>>`
+  4. Pilih kode yang benar, hapus marker
+  5. Commit dan push
+- Pencegahan: pull `main` secara rutin, komunikasi siapa edit file apa
+
+**Demo (5 menit)**
+- Fasilitator mendemonstrasikan:
+  1. Buat branch `feature/demo`
+  2. Edit file, commit, push
+  3. Buat PR di GitHub
+  4. Minta 1 peserta review
+  5. Merge setelah approve
+
+---
+
+### Materi 4: CI/CD Pipeline Dasar (25 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Apa itu CI/CD? (5 menit)**
+- Continuous Integration (CI): setiap kali kode di-push, otomatis build dan test
+- Continuous Deployment (CD): setiap kali kode di-merge ke main, otomatis deploy
+- Manfaat: tangkap error lebih awal, deploy lebih sering, kurangi human error
+
+**GitHub Actions: CI Gratis untuk Tim (10 menit)**
+- GitHub Actions: fitur automasi bawaan GitHub
+- Gratis untuk public repo dan 2000 menit/bulan untuk private repo
+- Workflow ditulis dalam YAML
+- Trigger: on push, on pull request, on schedule
+
+**Contoh Workflow Sederhana (10 menit)**
+
+```yaml
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+```
+
+Penjelasan per step:
+1. Checkout: ambil kode dari repo
+2. Setup Node.js: install runtime
+3. Install dependencies: install package
+4. Run tests: jalankan test otomatis
+5. Build: build project untuk deployment
+
+#### Hands-on (langsung terapkan di materi terakhir)
+
+---
+
+### Materi 5: Hands-on Implementasi (10 menit)
+
+#### Instruksi untuk Tim
+
+Setiap tim langsung menerapkan materi yang sudah dipelajari. Fasilitator dan mentor berkeliling membantu.
+
+**Prioritas Implementasi (pilih yang paling relevan):**
+
+1. Tim dengan backend developer: buat API endpoint pertama + database schema
+2. Tim tanpa backend: setup Supabase atau mock API, buat database schema di dbdiagram.io
+3. Semua tim: pastikan branching strategy sudah disepakati dan PR template sudah dibuat
+4. Semua tim: buat file `.github/workflows/ci.yml` sederhana (bisa dummy dulu)
+
+**Output yang Diharapkan:**
+- [ ] Database schema (minimal di diagram, idealnya sudah diimplementasi)
+- [ ] API endpoint pertama (minimal 1 GET dan 1 POST)
+- [ ] Branching strategy tertulis di Notion
+- [ ] CI workflow file di repo (bisa belum jalan, yang penting struktur sudah ada)
+
+---
+
+### Checklist Pre-Workshop (untuk Fasilitator)
+
+- [ ] Kirim brief: "Siapkan repo tim, pastikan semua anggota punya access" H-3
+- [ ] Siapkan contoh schema dan API untuk demo H-1
+- [ ] Test CI workflow dummy H-1
+- [ ] Koordinasi dengan mentor H-1
+- [ ] Kirim reminder di grup H-1
+
+### Checklist Post-Workshop
+
+- [ ] Verifikasi semua tim punya database schema
+- [ ] Verifikasi semua tim punya minimal 1 API endpoint
+- [ ] Verifikasi branching strategy sudah diterapkan
+- [ ] Follow up tim yang butuh bantuan teknis
+
+---
+
+---
+
+## Workshop #5: Teknis Spesifik Track (Lanjutan)
+
+### Info Workshop
+
+| Field | Detail |
+|-------|--------|
+| **Tanggal** | 30 September 2026 |
+| **Waktu** | 20:00 - 22:30 WIB |
+| **Durasi** | 2.5 jam (150 menit) |
+| **Fase Batch** | Collaborative Project (Minggu 12, Execution) |
+| **PIC** | Divisi Learning & Curriculum + Divisi Event & Planning |
+| **Platform** | Discord/Google Meet |
+
+### Tujuan Pembelajaran
+
+Setelah mengikuti workshop ini, talenta mampu:
+
+1. Mengatasi tantangan teknis spesifik yang muncul selama Collaborative Project
+2. Mengimplementasikan fitur lanjutan sesuai tema track (Economic/Education)
+3. Menerapkan testing strategy, performance optimization, dan accessibility
+
+### Format Workshop
+
+Workshop ini berbeda dari Workshop #2. Peserta langsung implement di project tim, bukan lagi simulasi. Fasilitator dan mentor fokus pada troubleshooting dan guidance.
+
+| Bagian | Durasi | Keterangan |
+|--------|--------|------------|
+| Brief singkat | 10 menit | Overview materi, bagi ruang per tema |
+| Hands-on per tema track | 100 menit | Tim langsung implement di project |
+| Cross-cutting session | 20 menit | Testing, performance, accessibility |
+| Wrap-up | 20 menit | Presentasi progres, next steps |
+
+### Struktur Sesi
+
+| Waktu | Durasi | Aktivitas |
+|-------|--------|-----------|
+| 20:00 - 20:10 | 10 menit | Brief: overview materi, bagi ke breakout room |
+| 20:10 - 21:50 | 100 menit | Hands-on per tema track |
+| 21:50 - 22:10 | 20 menit | Cross-cutting: testing, performance, accessibility |
+| 22:10 - 22:25 | 15 menit | Wrap-up: setiap tim share 1 hal yang dicapai |
+| 22:25 - 22:30 | 5 menit | Penutupan, next steps |
+
+---
+
+### Economic Track: Materi & Hands-on
+
+**Tantangan yang Sering Muncul di Project Economic:**
+
+#### 1. Integrasi Data Dummy (30 menit)
+
+- Kenapa data dummy? API data ekonomi nyata belum tentu tersedia atau gratis
+- Tools: JSON Server, Faker.js, MockAPI.io
+- Cara kerja: buat file JSON atau endpoint palsu yang struktur datanya mirip data asli
+- Contoh data Economic: harga produk, riwayat transaksi, anggaran bulanan
+
+Hands-on:
+1. Buat file `db.json` dengan data dummy sesuai project
+2. Setup JSON Server: `npx json-server --watch db.json --port 3001`
+3. Fetch data dari JSON Server di frontend
+4. Pastikan data tampil dengan benar
+
+#### 2. Chart/Grafik Interaktif (40 menit)
+
+- Library: Chart.js (sederhana), Recharts (React), D3.js (advanced)
+- Jenis chart untuk project Economic:
+  - Line chart: tren pengeluaran per bulan
+  - Bar chart: perbandingan budget per kategori
+  - Pie chart: proporsi pengeluaran
+  - Doughnut: ringkasan alokasi dana
+- Interaktivitas: hover untuk detail, klik untuk filter, zoom untuk periode tertentu
+
+Hands-on:
+1. Install library chart (contoh: `npm install chart.js react-chartjs-2`)
+2. Buat komponen chart yang menerima data dari API
+3. Tambahkan interaksi: hover tooltip, legend, responsive sizing
+4. Pastikan chart responsif di mobile
+
+#### 3. Form Validation (30 menit)
+
+- Form di project Economic: input transaksi, edit budget, registrasi user
+- Validasi client-side: cek sebelum kirim ke server (instant feedback)
+- Validasi server-side: cek di backend (keamanan)
+- Library: React Hook Form + Zod, Formik + Yup, atau validasi manual
+- Contoh validasi: angka harus positif, format tanggal, email valid, field wajib diisi
+
+Hands-on:
+1. Buat form untuk input data (contoh: tambah transaksi)
+2. Tambahkan validasi: required field, format, range
+3. Tampilkan error message di bawah setiap field
+4. Disable tombol submit jika ada error
+
+---
+
+### Education Track: Materi & Hands-on
+
+**Tantangan yang Sering Muncul di Project Education:**
+
+#### 1. Real-time Features (40 menit)
+
+- Kenapa real-time? Kolaborasi belajar, notifikasi, chat, live update
+- Tools: Socket.io (WebSocket), Firebase Realtime Database, Supabase Realtime
+- Use case di Education:
+  - Notifikasi: "guru mengupload materi baru"
+  - Live progress: "siswa lain sedang mengerjakan quiz"
+  - Chat: diskusi antar siswa
+
+Hands-on:
+1. Pilih pendekatan: Socket.io (custom) atau Firebase (mudah)
+2. Setup koneksi real-time di backend
+3. Implementasi 1 fitur real-time (contoh: notifikasi saat ada materi baru)
+4. Test dengan membuka 2 browser/tab sekaligus
+
+#### 2. File Upload (30 menit)
+
+- Use case: upload materi, tugas, foto profil, sertifikat
+- Tools: multer (Node.js), FormData API (frontend)
+- Storage: local (development), cloud (Supabase Storage, Cloudinary, AWS S3)
+- Pertimbangan: ukuran file, tipe file, keamanan
+
+Hands-on:
+1. Buat form upload file di frontend
+2. Implementasi endpoint upload di backend
+3. Simpan file dan tampilkan link/preview
+4. Tambahkan validasi: tipe file (jpg, png, pdf), ukuran maksimal (5MB)
+
+#### 3. Responsive Lintas Device (30 menit)
+
+- Tantangan: Education platform dipakai di HP, tablet, dan laptop
+- Test di: mobile (375px), tablet (768px), desktop (1024px+)
+- Pattern: collapsible sidebar, bottom navigation di mobile, tab navigation di tablet
+- Font size: minimal 14px untuk body text di mobile
+
+Hands-on:
+1. Test project di 3 ukuran layar berbeda
+2. Catat layout yang rusak atau tidak nyaman
+3. Fix minimal 3 issue responsive
+4. Pastikan semua fitur bisa diakses di mobile
+
+---
+
+### Cross-Cutting: Semua Track (20 menit)
+
+Materi ini berlaku untuk semua tim, baik Economic maupun Education.
+
+#### 1. Testing Strategy (7 menit)
+
+- Unit test: test fungsi/logika individual (developer)
+- Integration test: test antar komponen/API (developer)
+- Manual test: test alur user end-to-end (QA + semua)
+- Prioritas test: fitur utama dulu, edge case belakangan
+- Target: minimal 50% fitur utama sudah di-test sebelum Demo Day
+
+#### 2. Performance Optimization (7 menit)
+
+- Lazy loading: load komponen/diagram hanya saat dibutuhkan
+- Image optimization: compress gambar, pakai format WebP
+- Minimize API call: caching, batch request
+- Lighthouse score: target minimal 70 untuk performance
+
+#### 3. Accessibility (6 menit)
+
+- Alt text untuk semua gambar
+- Keyboard navigation untuk semua interaksi
+- Color contrast ratio minimal 4.5:1
+- Label untuk semua form input
+- Semantic HTML: pakai heading, button, link yang benar
+
+---
+
+### Checklist Pre-Workshop (untuk Fasilitator)
+
+- [ ] Survey tantangan teknis tim H-7 (23 September). Kirim form: "Apa challenge terbesar di project kamu?"
+- [ ] Siapkan materi berdasarkan hasil survey H-3
+- [ ] Koordinasi dengan mentor per tema track H-1
+- [ ] Siapkan breakout room per tema (Economic, Education) H-1
+- [ ] Kirim reminder di grup H-1
+
+### Checklist Post-Workshop
+
+- [ ] Kumpulkan progres update dari semua tim
+- [ ] Dokumentasikan tantangan yang belum teratasi
+- [ ] Siapkan follow-up session jika diperlukan
+- [ ] Kirim recap di grup
+
+---
+
+---
+
+## Workshop #6: Persiapan Presentasi
+
+### Info Workshop
+
+| Field | Detail |
+|-------|--------|
+| **Tanggal** | 14 Oktober 2026 |
+| **Waktu** | 20:00 - 22:00 WIB |
+| **Durasi** | 2 jam (120 menit) |
+| **Fase Batch** | Collaborative Project (Minggu 14, Execution) |
+| **PIC** | Divisi PM + Divisi Event & Planning |
+| **Platform** | Discord/Google Meet |
+
+### Tujuan Pembelajaran
+
+Setelah mengikuti workshop ini, talenta mampu:
+
+1. Menyusun struktur presentasi yang efektif untuk Demo Day
+2. Menceritakan produk dengan storytelling yang menarik
+3. Mendemo produk secara live dengan percaya diri
+4. Menjawab pertanyaan dari juri atau audiens dengan tenang
+
+### Agenda Detail
+
+| Waktu | Durasi | Materi | Aktivitas |
+|-------|--------|--------|-----------|
+| 20:00 - 20:05 | 5 menit | Pembukaan | Registrasi, brief agenda |
+| 20:05 - 20:25 | 20 menit | Struktur Presentasi Efektif | Presentasi + contoh |
+| 20:25 - 20:45 | 20 menit | Storytelling untuk Produk | Presentasi + latihan |
+| 20:45 - 21:05 | 20 menit | Cara Demo yang Menarik | Presentasi + demo |
+| 21:05 - 21:20 | 15 menit | Tips Handling Pertanyaan | Presentasi + simulasi |
+| 21:20 - 21:50 | 30 menit | Hands-on: Buat Deck | Tim kerja bersama |
+| 21:50 - 22:00 | 10 menit | Rehearsal Singkat | 1-2 tim presentasi |
+
+---
+
+### Materi 1: Struktur Presentasi yang Efektif (20 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Kenapa Struktur Penting? (3 menit)**
+- Audiens (juri, mentor, peserta lain) punya waktu terbatas
+- Struktur yang jelas membantu audiens mengikuti alur cerita
+- Format yang teruji: Problem, Solution, Demo, Impact
+
+**Problem (5 menit)**
+- Buka dengan masalah yang ingin diselesaikan
+- Tunjukkan bahwa masalah ini nyata dan relevan
+- Contoh: "Di Indonesia, 60% UMKM tidak punya akses ke literasi keuangan yang memadai. Mereka kesulitan mengatur cashflow dan akhirnya bangkrut di tahun pertama."
+- Tips: pakai data, cerita personal, atau studi kasus
+
+**Solution (5 menit)**
+- Jelaskan solusi yang kamu tawarkan
+- Tunjukkan bagaimana solusi ini menyelesaikan masalah
+- Contoh: "Kami membangun aplikasi budgeting sederhana yang dirancang khusus untuk UMKM. Dengan interface yang mudah dipahami dan fitur pencatatan otomatis."
+- Tips: fokus pada value, bukan fitur. "User bisa X" bukan "Kami punya fitur Y"
+
+**Demo (4 menit)**
+- Tunjukkan produk beraksi
+- Demo alur utama user, bukan semua fitur
+- Tips di materi selanjutnya
+
+**Impact (3 menit)**
+- Tunjukkan dampak potensial dari produk
+- Metrik: berapa user yang terbantu, efisiensi yang tercipta, skala yang mungkin
+- Contoh: "Jika 1000 UMKM menggunakan aplikasi ini, estimasi 30% dari mereka bisa bertahan lebih dari 1 tahun."
+- Selaraskan dengan tema batch: dampak di bidang Economic atau Education
+
+---
+
+### Materi 2: Storytelling untuk Produk (20 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Kenapa Storytelling? (5 menit)**
+- Manusia mengingat cerita 22x lebih baik daripada fakta (Stanford research)
+- Produk tanpa cerita = produk tanpa emosi = mudah dilupakan
+- Storytelling bukan berbohong. Ini tentang menyampaikan value dengan cara yang manusiawi.
+
+**Struktur Cerita Produk (10 menit)**
+
+1. **Karakter**: siapa user kamu? Beri nama, profil singkat
+   - Contoh: "Ini Bu Sari, pemilik warung di Medan. Setiap malam dia mencatat pengeluaran di buku tulis."
+2. **Konflik**: apa masalah yang dihadapi karakter?
+   - Contoh: "Tapi Bu Sari sering kehilangan buku catatannya. Dia tidak tahu berapa untung atau rugi bulan ini."
+3. **Resolusi**: bagaimana produk menyelesaikan masalah?
+   - Contoh: "Dengan aplikasi kami, Bu Sari cukup input pengeluaran lewat HP. Semua data tersimpan aman dan dia bisa lihat laporan kapan saja."
+4. **Transformasi**: apa yang berubah setelah pakai produk?
+   - Contoh: "Sekarang Bu Sari tahu persis berapa keuntungannya. Dia bisa ambil keputusan bisnis yang lebih baik."
+
+**Tips Storytelling (5 menit)**
+- Mulai dari user, bukan teknologi. "Bu Sari butuh..." bukan "Kami menggunakan React..."
+- Gunakan bahasa sederhana, hindari jargon teknis
+- Tunjukkan emosi: frustrasi (masalah), lega (solusi), senang (hasil)
+- Latihan: presentasikan cerita produk ke teman dalam 2 menit
+
+#### Latihan Singkat (dalam presentasi)
+
+Minta 2-3 volunteer menceritakan produk mereka dalam 2 menit. Feedback dari peserta lain.
+
+---
+
+### Materi 3: Cara Demo yang Menarik (20 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Prinsip Demo yang Baik (5 menit)**
+- Demo bukan walkthrough semua fitur. Demo adalah bukti bahwa solusi bekerja.
+- Fokus pada 1-2 alur utama user, bukan semua halaman
+- Latihan demo minimal 3 kali sebelum hari H
+- Siapkan backup: rekam demo sebagai video cadangan jika live demo gagal
+
+**Persiapan Demo (5 menit)**
+- Siapkan data dummy yang realistis (bukan "test123" atau "lorem ipsum")
+- Bersihkan UI: hapus console log, perbaiki typo, pastikan loading cepat
+- Tentukan alur:
+  1. Mulai dari masalah (1 menit)
+  2. Buka aplikasi, login (30 detik)
+  3. Tunjukkan fitur utama (2-3 menit)
+  4. Tunjukkan hasil/impact (30 detik)
+- Total: 4-5 menit per demo
+
+**Tips Saat Demo (5 menit)**
+- Bicara ke audiens, bukan ke layar
+- Jelaskan apa yang sedang dilakukan: "Sekarang saya klik tombol untuk menambah transaksi..."
+- Jika error terjadi: tenang, jelaskan, coba fix atau skip ke bagian berikutnya
+- Zoom in: perbesar font atau zoom browser agar audiens bisa lihat detail
+- Gunakan cursor highlight atau zoom tool
+
+**Demo Day Format di YYZU (5 menit)**
+- Waktu per tim: 8-10 menit presentasi + 5 menit Q&A
+- Urutan presentasi: Problem (2 menit) > Solution (2 menit) > Demo (4 menit) > Impact (2 menit)
+- Penilaian: MVP functionality, teamwork evidence, presentation quality, thematic relevance
+
+---
+
+### Materi 4: Tips Handling Pertanyaan (15 menit)
+
+#### Talking Points untuk Fasilitator
+
+**Jenis Pertanyaan yang Sering Muncul (5 menit)**
+- Teknis: "Kenapa pakai tech stack X?" "Bagaimana handle error Y?"
+- Produk: "Siapa target user?" "Bagaimana monetisasinya?"
+- Tim: "Bagaimana pembagian kerja?" "Apa tantangan terbesar?"
+- Reflektif: "Apa yang akan dilakukan berbeda jika mulai lagi?"
+
+**Cara Menjawab (5 menit)**
+- Dengarkan pertanyaan sampai selesai, jangan potong
+- Jika tidak yakin: "Itu pertanyaan bagus. Untuk saat ini kami belum explore area itu, tapi ke depannya..."
+- Jika tidak tahu: "Kami belum riset mendalam soal itu. Bisa diberi saran?" (lebih baik jujur daripada mengarang)
+- Berikan jawaban singkat dan langsung, tidak perlu cerita panjang
+- Gunakan data atau contoh konkret
+
+**Simulasi (5 menit)**
+- Fasilitator ajukan 3 pertanyaan contoh ke peserta
+- Peserta menjawab secara spontan
+- Feedback dari peserta lain: jawaban sudah jelas? Terlalu panjang? Tidak relevan?
+
+---
+
+### Materi 5: Hands-on Buat Deck (30 menit)
+
+#### Instruksi untuk Tim
+
+Setiap tim mulai menyusun deck presentasi untuk Demo Day. Fasilitator dan mentor berkeliling membantu.
+
+**Template Slide:**
+
+| Slide | Konten | Durasi |
+|-------|--------|--------|
+| 1. Cover | Judul project, nama tim, tagline | - |
+| 2. Problem | Masalah yang ingin diselesaikan, data pendukung | 2 menit |
+| 3. Solution | Solusi yang ditawarkan, value proposition | 2 menit |
+| 4. Demo | Live demo alur utama (link ke live app) | 4 menit |
+| 5. Impact | Dampak potensial, metrik, visi ke depan | 2 menit |
+| 6. Team | Nama anggota, role, kontribusi masing-masing | - |
+| 7. Q&A | "Terima kasih. Ada pertanyaan?" | - |
+
+**Tips Membuat Deck:**
+- Minimal 1 ide per slide, jangan overload
+- Gunakan visual: screenshot, diagram, data chart
+- Font besar: minimal 24pt untuk body, 36pt untuk judul
+- Warna konsisten dengan tema project
+- Jangan baca slide, slide sebagai panduan visual
+
+**Tools yang Bisa Dipakai:**
+- Google Slides (gratis, kolaborasi real-time)
+- Canva (template menarik)
+- Figma (untuk tim yang sudah terbiasa)
+- Notion (jika ingin lebih sederhana)
+
+**Yang Harus Selesai Malam Ini:**
+- [ ] Struktur deck sudah jadi (7 slide)
+- [ ] Problem statement sudah ditulis
+- [ ] Solution description sudah ditulis
+- [ ] Impact/metrics sudah ditulis
+- [ ] Siap untuk rehearsal
+
+---
+
+### Materi 6: Rehearsal Singkat (10 menit)
+
+#### Instruksi
+
+- Pilih 1-2 tim yang siap untuk presentasi singkat (3 menit: problem + solution)
+- Tim lain berikan feedback:
+  - Apakah masalahnya jelas?
+  - Apakah solusinya mudah dipahami?
+  - Apakah ada bagian yang membingungkan?
+- Fasilitator berikan tips umum setelah rehearsal
+
+#### Catatan Fasilitator
+
+- Rehearsal penuh seharusnya dilakukan sebelum Demo Day (di luar workshop ini)
+- Minta setiap tim latihan minimal 3 kali sebelum hari H
+- Rekam video latihan untuk evaluasi diri
+
+---
+
+### Checklist Pre-Workshop (untuk Fasilitator)
+
+- [ ] Kirim brief: "Siapkan progress project, pikirkan cerita produk" H-3
+- [ ] Siapkan contoh deck presentasi yang baik H-1
+- [ ] Siapkan pertanyaan simulasi untuk sesi handling Q&A H-1
+- [ ] Koordinasi dengan Divisi Event untuk format Demo Day H-1
+- [ ] Kirim reminder di grup H-1
+
+### Checklist Post-Workshop
+
+- [ ] Kumpulkan draft deck dari semua tim
+- [ ] Review deck dan berikan feedback tertulis
+- [ ] Kirim template final deck di grup
+- [ ] Ingatkan tim untuk latihan presentasi minimal 3 kali
+- [ ] Koordinasi dengan Divisi Event untuk jadwal rehearsal sebelum Demo Day
+
+---
+
+---
+
+## Panduan Umum untuk Fasilitator
+
+### Sebelum Workshop
+
+1. **H-7**: Kirim undangan dan brief ke semua peserta
+2. **H-3**: Kirim materi persiapan (install tools, buat akun, baca referensi)
+3. **H-1**: Kirim reminder di grup, test platform, siapkan backup plan
+
+### Saat Workshop
+
+1. Tepat waktu. Mulai dan selesai sesuai jadwal.
+2. Buka dengan energi. Jelaskan kenapa materi ini penting.
+3. Fokus pada hands-on. Presentasi maksimal 30% dari waktu.
+4. Beri ruang untuk pertanyaan. Jangan monopoli pembicaraan.
+5. Libatkan semua peserta. Tanya yang diam, jangan hanya yang aktif.
+6. Jika ada yang stuck, minta peer help dulu sebelum fasilitator turun tangan.
+
+### Setelah Workshop
+
+1. Kirim recap dan link rekaman (jika ada) di grup
+2. Kumpulkan feedback singkat: "Apa yang paling berguna? Apa yang perlu diperbaiki?"
+3. Follow up peserta yang tidak hadir
+4. Update progress tracker di Notion
+
+### Tips Menghadapi Situasi Sulit
+
+| Situasi | Solusi |
+|---------|--------|
+| Peserta tidak hadir | Kirim ringkasan dan rekaman, minta peer untuk briefing |
+| Platform down | Siapkan backup platform (Discord > Google Meet > Zoom) |
+| Peserta ketinggalan | Breakout room 1-on-1 dengan mentor atau peer |
+| Waktu tidak cukup | Pangkas Q&A, lanjutkan di grup chat |
+| Peserta pasif | Tanya langsung, minta pendapat, berikan task spesifik |
+| Pertanyaan di luar scope | Catat, arahkan ke mentoring session atau Study Group |
+
+---
+
+## Daftar Referensi untuk Peserta
+
+### Git & GitHub
+- GitHub Docs: https://docs.github.com
+- Learn Git Branching (interaktif): https://learngitbranching.js.org
+
+### Figma
+- Figma Tutorial: https://help.figma.com
+- Figma for Beginners (YouTube): cari "Figma tutorial bahasa Indonesia"
+
+### Notion
+- Notion Help: https://www.notion.so/help
+- Notion Template Gallery: https://www.notion.so/templates
+
+### Web Development
+- MDN Web Docs: https://developer.mozilla.org
+- Tailwind CSS Docs: https://tailwindcss.com/docs
+- Netlify Docs: https://docs.netlify.com
+
+### Mobile Development
+- Flutter Docs: https://docs.flutter.dev
+- React Native Docs: https://reactnative.dev
+
+### Data & AI
+- Chart.js Docs: https://www.chartjs.org/docs
+- Public API List: https://github.com/public-apis/public-apis
+
+### DevOps
+- Docker Docs: https://docs.docker.com
+- GitHub Actions Docs: https://docs.github.com/en/actions
+
+### Presentasi
+- Tips presentasi dari TED: https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-basics/design-a-great-program/what-makes-a-great-talk
+
+---
+
+> **Dokumen ini dikelola oleh Divisi Learning & Curriculum YYZU Batch 1.**
+> **Terakhir diperbarui: Juli 2026**
+> **Untuk pertanyaan atau saran, hubungi Koordinator Divisi Learning & Curriculum.**
+
+
+## Referensi
+- [Curriculum](/docs/learning/curriculum)
+- [Learning Methodology](/docs/learning/methodology)

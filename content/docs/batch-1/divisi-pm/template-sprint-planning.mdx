@@ -1,0 +1,181 @@
+---
+title: "Template Sprint Planning Batch 1"
+description: "Template untuk menjalankan sesi Sprint Planning di YYZU Batch 1"
+---
+
+# Template Sprint Planning - YYZU Batch 1
+
+> Template untuk menjalankan sesi Sprint Planning secara konsisten di seluruh tim YYZU Batch 1.
+
+---
+
+## Format Sprint Planning
+
+Setiap sesi Sprint Planning mengikuti format berikut:
+
+```
+# Sprint [X] Planning - [Nama Tim]
+
+## Tanggal
+[Dater]
+
+## Sprint Goal
+[Satu kalimat yang menjelaskan apa yang ingin dicapai sprint ini]
+
+## Backlog Items (Prioritized)
+
+| No | Task | Assignee | Story Point | Due Date | Status |
+|----|------|----------|-------------|----------|--------|
+| 1  | ...  | ...      | ...         | ...      | To Do  |
+| 2  | ...  | ...      | ...         | ...      | To Do  |
+| 3  | ...  | ...      | ...         | ...      | To Do  |
+
+## Dependencies & Blockers
+
+| Item | Blocker/Dependency | Solusi |
+|------|--------------------|--------|
+| ...  | ...                | ...    |
+
+## Definition of Done (DoD)
+
+- [ ] Task selesai sesuai acceptance criteria
+- [ ] Kode/desain sudah di-review
+- [ ] Dokumentasi diperbarui
+- [ ] Testing selesai (jika ada)
+- [ ] Push ke repository / update board
+
+## Notes
+[Catatan tambahan dari sesi planning]
+```
+
+---
+
+## Durasi Sprint
+
+Sprint berdurasi **1 hingga 2 minggu**, tergantung fase batch.
+
+| Fase | Durasi Sprint | Keterangan |
+|------|---------------|------------|
+| Learning Sprint (W1-2) | 2 minggu | Sprint 0: Simulation |
+| Mini Project (W3-8) | 2 minggu | Sprint 1-3 |
+| Collab Project (W9-18) | 2 minggu | Sprint 4-8 |
+
+---
+
+## Sprint Mapping ke Batch Weeks
+
+| Sprint | Weeks | Fase | Focus |
+|--------|-------|------|-------|
+| Sprint 0 | W1-W2 (13 Jul - 26 Jul) | Learning Sprint | Onboarding, workflow simulation, tool setup |
+| Sprint 1 | W3-W4 (27 Jul - 9 Ags) | Mini Project | Ideation, riset, setup project |
+| Sprint 2 | W5-W6 (10 Ags - 23 Ags) | Mini Project | Development/design core features |
+| Sprint 3 | W7-W8 (24 Ags - 6 Sep) | Mini Project | Finishing, testing, deployment |
+| Sprint 4 | W9-W10 (7 Sep - 20 Sep) | Collab Project | Team formation, problem definition, planning |
+| Sprint 5 | W11-W12 (21 Sep - 4 Okt) | Collab Project | Core development/design |
+| Sprint 6 | W13-W14 (5 Okt - 18 Okt) | Collab Project | Feature completion, integration |
+| Sprint 7 | W15-W16 (19 Okt - 1 Nov) | Collab Project | Testing, polish, documentation |
+| Sprint 8 | W17-W18 (2 Nov - 15 Nov) | Collab Project | Demo prep, presentasi, retrospective |
+
+---
+
+## Contoh Pengisian: Sprint 1 - Tim Alpha (Mini Project)
+
+```
+# Sprint 1 Planning - Tim Alpha
+
+## Tanggal
+29 Juli 2026
+
+## Sprint Goal
+Menyelesaikan ideation, riset awal, dan setup project untuk Mini Project masing-masing.
+
+## Backlog Items (Prioritized)
+
+| No | Task                                    | Assignee    | SP | Due Date    | Labels           |
+|----|-----------------------------------------|-------------|-----|-------------|------------------|
+| 1  | [MP] Finalisasi ide project              | Ahmad       | 2   | 31 Jul 2026 | Economic, Sprint 1 |
+| 2  | [MP] Riset user dan validasi ide         | Sari        | 3   | 2 Agu 2026  | Education, Sprint 1 |
+| 3  | [MP] Setup repository GitHub             | Ahmad       | 1   | 30 Jul 2026 | Economic, Sprint 1 |
+| 4  | [MP] Buat wireframe awal                 | Sari        | 3   | 4 Agu 2026  | Education, Sprint 1 |
+| 5  | [MP] Setup development environment       | Rizal       | 2   | 31 Jul 2026 | Economic, Sprint 1 |
+| 6  | [MP] Tulis project plan di Notion        | Ahmad       | 2   | 1 Agu 2026  | Economic, Sprint 1 |
+| 7  | [MP] Kumpulkan dataset untuk analisis    | Rizal       | 3   | 3 Agu 2026  | Economic, Sprint 1 |
+| 8  | [MP] Presentasi ide ke tim (standup)     | Semua       | 1   | 4 Agu 2026  | Mini Project, Sprint 1 |
+
+**Total Story Points:** 17
+
+## Dependencies & Blockers
+
+| Item                              | Blocker/Dependency                  | Solusi                                  |
+|-----------------------------------|-------------------------------------|-----------------------------------------|
+| Buat wireframe awal               | Riset user selesai                  | Selesaikan riset di hari pertama        |
+| Setup repository                  | Finalisasi ide                      | Buat repo kosong dulu, isi nanti        |
+| Kumpulkan dataset                 | Akses API/data source               | Cek ketersediaan data sebelum sprint    |
+
+## Definition of Done (DoD)
+
+- [ ] Task selesai sesuai acceptance criteria
+- [ ] Kode/desain sudah di-review minimal 1 orang
+- [ ] Dokumentasi di Notion diperbarui
+- [ ] Push ke GitHub (jika ada kode)
+- [ ] Update Kanban Board (card dipindahkan ke Done)
+- [ ] Standup log tercatat
+
+## Notes
+- Setiap orang fokus pada project tim masing-masing (Mini Project = tim 2-4 orang, bisa 1 track saja).
+- Gunakan standup harian untuk update progres.
+- Jika ada blocker, angkat di standup agar bisa dibantu.
+```
+
+---
+
+## Tips Sprint Planning yang Efektif
+
+1. **Tentukan Sprint Goal dulu sebelum masuk task.** Goal memberi arah dan membantu memprioritaskan. Tanpa goal, sprint mudah kehilangan fokus.
+
+2. **Break down task menjadi unit kecil.** Satu task seharusnya bisa selesai dalam 1-3 hari. Jika lebih besar, pecah menjadi beberapa task.
+
+3. **Estimasi story point secara kolektif.** Gunakan Planning Poker atau diskusi singkat. Jangan biarkan satu orang menentukan semua estimasi.
+
+4. **Identifikasi blocker di awal.** Jangan tunda diskusi tentang ketergantungan atau hambatan. Semakin cepat diidentifikasi, semakin cepat dicari solusi.
+
+5. **Jangan over-commit.** Lebih baik selesaikan 5 task dengan kualitas baik daripada 8 task setengah jadi. Gunakan velocity sprint sebelumnya sebagai acuan.
+
+6. **Set timebox untuk planning.** Sprint planning idealnya berlangsung 30-60 menit. Lebih dari itu biasanya menandakan kurangnya persiapan backlog.
+
+7. **Review sprint sebelumnya sebelum planning baru.** Lihat apa yang berhasil, apa yang terhambat, dan pelajaran yang bisa diambil.
+
+8. **Pastikan setiap task punya acceptance criteria.** Task tanpa kriteria yang jelas akan membingungkan saat review.
+
+9. **Libatkan seluruh anggota tim.** Sprint planning bukan monolog. Setiap orang harus memahami dan setuju dengan rencana sprint.
+
+10. **Dokumentasikan hasil planning.** Simpan di Notion atau tempat yang bisa diakses seluruh tim. Ini menjadi acuan sepanjang sprint.
+
+---
+
+## Checklist Sebelum Sprint Planning
+
+- [ ] Backlog sudah di-prioritaskan
+- [ ] Task sudah di-estimasi story point
+- [ ] Blocker dari sprint sebelumnya sudah di-resolve atau punya plan
+- [ ] Seluruh anggota tim hadir
+- [ ] Board Kanban sudah di-update (card sprint sebelumnya sudah di-close)
+
+---
+
+## Checklist Setelah Sprint Planning
+
+- [ ] Sprint Goal tertulis dan dipahami seluruh tim
+- [ ] Semua task masuk Kanban Board di kolom To Do
+- [ ] Assignee dan due date sudah terisi
+- [ ] Dependencies dan blocker tercatat
+- [ ] DoD disepakati bersama
+- [ ] Notulensi planning disimpan
+
+---
+
+*Dokumen ini dibuat oleh Divisi PM YYZU Batch 1.*
+
+
+## Referensi
+- [Project Workflow](/docs/operations/project/workflow)
