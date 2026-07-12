@@ -112,8 +112,8 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
     color: "from-white/5 to-white/5 border-white/10 text-white/60",
   };
 
-  const isAdmin = session.role === "SYSTEM_ADMIN";
-  const isBph = session.role === "BPH";
+  const isAdmin = session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM";
+  const isBph = session.role === "KEPALA_DIVISI";
   const userMembership = division.memberships.find((m) => m.userId === session.userId);
   const isDivisionMember = !!userMembership || isAdmin;
   const isDivisionHead = userMembership?.role === "HEAD";

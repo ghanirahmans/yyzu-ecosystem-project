@@ -68,8 +68,8 @@ const NAV_ITEMS: NavItem[] = [
 export default function DashboardShell({ children, user }: DashboardShellProps) {
   const pathname = usePathname();
   const router = useRouter();
-  const isAdmin = user.role === "SYSTEM_ADMIN";
-  const isBph = user.role === "SYSTEM_ADMIN" || user.role === "BPH";
+  const isAdmin = user.role === "FOUNDER" || user.role === "KOORDINATOR_UMUM";
+  const isBph = user.role === "KOORDINATOR_UMUM" || user.role === "KEPALA_DIVISI";
   const isKetuaDewanMentor = user.role === "KETUA_DEWAN_MENTOR";
   const isMentor = isKetuaDewanMentor || user.role === "MENTOR";
   const [theme, setTheme] = useState<"light" | "dark">("dark");
@@ -266,12 +266,17 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
               <p className="text-[13px] font-semibold text-white truncate leading-tight">{user.fullName}</p>
               <p className="text-[11px] text-white/35 truncate">@{user.username}</p>
             </div>
-            {user.role === "BPH" && (
+            {user.role === "FOUNDER" && (
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-purple-600/10 text-purple-400/70 border border-purple-600/10 flex-shrink-0">
+                Founder
+              </span>
+            )}
+            {user.role === "KEPALA_DIVISI" && (
               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-yellow-400/10 text-yellow-400/70 border border-yellow-400/10 flex-shrink-0">
                 Ketua Divisi
               </span>
             )}
-            {user.role === "SYSTEM_ADMIN" && (
+            {user.role === "KOORDINATOR_UMUM" && (
               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-rose-500/10 text-rose-400/70 border border-rose-500/10 flex-shrink-0">
                 BPH
               </span>

@@ -33,7 +33,7 @@ export default async function ProgramCreatePage({ searchParams }: { searchParams
       },
     },
   });
-  const isManager = session.role === "SYSTEM_ADMIN" || !!isDivMember;
+  const isManager = session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM" || !!isDivMember;
 
   if (!canCreate) {
     return (

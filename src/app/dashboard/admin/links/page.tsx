@@ -14,7 +14,7 @@ export default async function AdminLinksPage() {
     redirect("/dashboard/login");
   }
 
-  if (session.role !== "SYSTEM_ADMIN" && session.role !== "BPH") {
+  if (session.role !== "FOUNDER" && session.role !== "KOORDINATOR_UMUM" && session.role !== "KEPALA_DIVISI") {
     redirect("/dashboard");
   }
 

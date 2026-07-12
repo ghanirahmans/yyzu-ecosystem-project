@@ -16,8 +16,8 @@ export default async function CreateTeamPage() {
     redirect("/dashboard/teams");
   }
 
-  // Check if current user is already in a team (skip for SYSTEM_ADMIN)
-  if (session.role !== "SYSTEM_ADMIN") {
+  // Check if current user is already in a team (skip for admin/Founder)
+  if (session.role !== "FOUNDER" && session.role !== "KOORDINATOR_UMUM") {
     const membership = await prisma.teamMembership.findFirst({
       where: { userId: session.userId, leftAt: null },
     });

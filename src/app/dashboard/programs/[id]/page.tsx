@@ -42,7 +42,7 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
     notFound();
   }
 
-  const isAdmin = session.role === "SYSTEM_ADMIN";
+  const isAdmin = session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM";
   const isAuthor = program.authorId === session.userId;
 
   // Fetch all active division memberships of the logged-in user

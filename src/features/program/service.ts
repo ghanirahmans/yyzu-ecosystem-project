@@ -33,7 +33,7 @@ export async function updateProgram(actor: ActiveUser, programId: string, data: 
   const existing = await dbFindProgramById(programId);
   if (!existing) return { success: false as const, error: "PROGRAM_NOT_FOUND" as const };
 
-  const isAdmin = actor.role === UserRole.SYSTEM_ADMIN;
+  const isAdmin = actor.role === UserRole.KOORDINATOR_UMUM;
   const isAuthor = existing.authorId === actor.id;
 
   const memberships = await dbFindDivisionMembershipsByUser(actor.id);
@@ -86,7 +86,7 @@ export async function updateProgramStatus(actor: ActiveUser, programId: string, 
     return { success: false as const, error: "PROGRAM_NOT_APPROVED_YET" as const };
   }
 
-  const isAdmin = actor.role === UserRole.SYSTEM_ADMIN;
+  const isAdmin = actor.role === UserRole.KOORDINATOR_UMUM;
   const isAuthor = existing.authorId === actor.id;
   const isPic = existing.picUserId === actor.id;
 
@@ -116,7 +116,7 @@ export async function approveProgram(actor: ActiveUser, programId: string, appro
   const program = await dbFindProgramById(programId);
   if (!program) return { success: false as const, error: "PROGRAM_NOT_FOUND" as const };
 
-  const isAdmin = actor.role === UserRole.SYSTEM_ADMIN;
+  const isAdmin = actor.role === UserRole.KOORDINATOR_UMUM;
   let isDivHead = false;
   if (program.divisions.length > 0) {
     const membership = await dbFindDivisionHeadInDivisions(

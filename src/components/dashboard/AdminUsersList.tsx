@@ -159,7 +159,7 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
                           <div>
                             <div className="flex items-center gap-2">
                               <p className="font-semibold text-white">{u.fullName}</p>
-                              {u.role === "SYSTEM_ADMIN" && (
+                              {u.role === "FOUNDER" || u.role === "KOORDINATOR_UMUM" && (
                                 <span className="flex items-center gap-0.5 text-[10px] bg-rose-500/15 text-rose-400 px-1.5 py-0.5 rounded-full">
                                   <Shield size={9} />
                                   Admin
@@ -234,7 +234,7 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
                                 </button>
                               </>
                             )}
-                            {u.status === "ACTIVE" && u.role !== "SYSTEM_ADMIN" && (
+                            {u.status === "ACTIVE" && u.role !== "FOUNDER" && u.role !== "KOORDINATOR_UMUM" && (
                               <>
                                 <button
                                   disabled={loadingId !== null}
@@ -255,7 +255,7 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
                                 />
                               </>
                             )}
-                            {u.status === "SUSPENDED" && u.role !== "SYSTEM_ADMIN" && (
+                            {u.status === "SUSPENDED" && u.role !== "FOUNDER" && u.role !== "KOORDINATOR_UMUM" && (
                               <button
                                 disabled={loadingId !== null}
                                 onClick={() => handleToggleSuspension(u.id)}
@@ -269,7 +269,7 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
                                 Reactivate
                               </button>
                             )}
-                            {u.status !== "ACTIVE" && u.status !== "SUSPENDED" && u.status !== "PENDING_APPROVAL" && u.role !== "SYSTEM_ADMIN" && (
+                            {u.status !== "ACTIVE" && u.status !== "SUSPENDED" && u.status !== "PENDING_APPROVAL" && u.role !== "FOUNDER" && u.role !== "KOORDINATOR_UMUM" && (
                               <span className="text-xs text-white/25 italic">-</span>
                             )}
                           </div>
@@ -305,10 +305,11 @@ function RoleSelect({
   const [selected, setSelected] = useState(currentRole);
 
   const ALL_ROLES = [
-    { value: "MEMBER", label: "Talenta" },
+    { value: "TALENTA", label: "Talenta" },
+    { value: "TALENTA_INTI", label: "Talenta Inti" },
     { value: "MENTOR", label: "Mentor" },
     { value: "KETUA_DEWAN_MENTOR", label: "Ketua Mentor" },
-    { value: "BPH", label: "Ketua Divisi" },
+    { value: "KEPALA_DIVISI", label: "Ketua Divisi" },
   ];
 
   const handleChange = async (newRole: string) => {
@@ -374,11 +375,13 @@ function RoleSelect({
 
 /** Role badge matching the rest of the dashboard. */
 const ROLE_BADGE_META: Record<string, { label: string; color: string }> = {
-  SYSTEM_ADMIN: { label: "Koordinator Umum", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" },
-  BPH: { label: "Ketua Divisi", color: "bg-yellow-500/15 text-yellow-400 border-yellow-500/20" },
+  FOUNDER: { label: "Founder", color: "bg-purple-600/15 text-purple-400 border-purple-600/20" },
+  KOORDINATOR_UMUM: { label: "Koordinator Umum", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" },
+  KEPALA_DIVISI: { label: "Ketua Divisi", color: "bg-yellow-500/15 text-yellow-400 border-yellow-500/20" },
   KETUA_DEWAN_MENTOR: { label: "Ketua Mentor", color: "bg-violet-500/15 text-violet-400 border-violet-500/20" },
   MENTOR: { label: "Mentor", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" },
-  MEMBER: { label: "Talenta", color: "bg-white/8 text-white/50 border-white/10" },
+  TALENTA_INTI: { label: "Talenta Inti", color: "bg-cyan-500/15 text-cyan-400 border-cyan-500/20" },
+  TALENTA: { label: "Talenta", color: "bg-white/8 text-white/50 border-white/10" },
 };
 
 function RoleBadge({ role }: { role: string }) {

@@ -195,12 +195,16 @@ export default function ProfileForm({
   // Build role badges
   const roleBadges: { label: string; color: string }[] = [];
 
-  if (user.role === "SYSTEM_ADMIN") {
+  if (user.role === "FOUNDER") {
+    roleBadges.push({ label: "Founder", color: "bg-purple-600/15 text-purple-400 border-purple-600/20" });
+  } else if (user.role === "KOORDINATOR_UMUM") {
     roleBadges.push({ label: "Koordinator Umum · BPH", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" });
-  } else if (user.role === "BPH") {
+  } else if (user.role === "KEPALA_DIVISI") {
     roleBadges.push({ label: "Ketua Divisi · BPH", color: "bg-yellow-500/15 text-yellow-400 border-yellow-500/20" });
   } else if (user.role === "KETUA_DEWAN_MENTOR") {
     roleBadges.push({ label: "Ketua Dewan Mentor", color: "bg-violet-500/15 text-violet-400 border-violet-500/20" });
+  } else if (user.role === "TALENTA_INTI") {
+    roleBadges.push({ label: "Talenta Inti", color: "bg-cyan-500/15 text-cyan-400 border-cyan-500/20" });
   } else if (user.role === "MENTOR") {
     roleBadges.push({ label: "Mentor", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" });
   } else {

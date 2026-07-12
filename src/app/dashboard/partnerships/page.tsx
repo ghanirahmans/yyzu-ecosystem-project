@@ -47,7 +47,7 @@ export default async function PartnershipsPage({
 
   // Check if partnership manager (admin or PARTNERSHIP division member)
   const isManager = async () => {
-    if (session.role === "SYSTEM_ADMIN") return true;
+    if (session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM") return true;
     const pDiv = await prisma.division.findUnique({ where: { name: "PARTNERSHIP" } });
     if (pDiv) {
       const membership = await prisma.divisionMembership.findFirst({

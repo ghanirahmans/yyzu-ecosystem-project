@@ -10,7 +10,7 @@ import {
 } from "./repository";
 
 async function verifyPartnershipManager(actor: ActiveUser) {
-  if (actor.role === UserRole.SYSTEM_ADMIN) return;
+  if (actor.role === UserRole.KOORDINATOR_UMUM) return;
 
   const partnershipDiv = await dbFindPartnershipDivision();
   if (partnershipDiv) {

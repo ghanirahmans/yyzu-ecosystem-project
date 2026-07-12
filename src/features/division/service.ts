@@ -25,10 +25,10 @@ async function verifyDivisionManager(actorId: string, divisionId: string) {
   }
 
   // SYSTEM_ADMIN can manage any division
-  if (dbUser.role === UserRole.SYSTEM_ADMIN) return;
+  if (dbUser.role === UserRole.FOUNDER || dbUser.role === UserRole.KOORDINATOR_UMUM) return;
 
   // BPH can manage if they are HEAD of this division
-  if (dbUser.role === UserRole.BPH) {
+  if (dbUser.role === UserRole.KEPALA_DIVISI) {
     const membership = await dbFindIsDivisionHead(actorId, divisionId);
     if (membership?.role === "HEAD") return;
   }

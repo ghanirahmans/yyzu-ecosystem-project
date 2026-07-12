@@ -14,7 +14,7 @@ model User {
   passwordHash                   String
   fullName                       String
   status                         UserStatus           @default(PENDING_APPROVAL)
-  role                           UserRole             @default(MEMBER)
+  role                           UserRole             @default(TALENTA)
   approvedBy                     String?
   approvedAt                     DateTime?
   createdAt                      DateTime             @default(now())
@@ -237,11 +237,13 @@ enum UserStatus {
 }
 
 enum UserRole {
-  MEMBER
-  MENTOR
+  FOUNDER
+  KOORDINATOR_UMUM
+  KEPALA_DIVISI
+  TALENTA_INTI
   KETUA_DEWAN_MENTOR
-  BPH
-  SYSTEM_ADMIN
+  MENTOR
+  TALENTA
 }
 
 enum TeamRole {

@@ -18,8 +18,8 @@ export default async function DashboardPage() {
   const user = await prisma.user.findUnique({ where: { id: session.userId } });
   if (!user) redirect("/dashboard/login");
 
-  const isAdmin = user.role === UserRole.SYSTEM_ADMIN;
-  const isBph = user.role === UserRole.SYSTEM_ADMIN || user.role === UserRole.BPH;
+  const isAdmin = user.role === UserRole.KOORDINATOR_UMUM;
+  const isBph = user.role === UserRole.FOUNDER || user.role === UserRole.KOORDINATOR_UMUM || user.role === UserRole.KEPALA_DIVISI;
 
   // ── Data containers ────────────────────────────────────────
   let currentTeam: any = null;

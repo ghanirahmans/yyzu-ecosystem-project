@@ -28,7 +28,7 @@ export default async function TeamSettingsPage() {
 
   const team = membership.team;
   const isLeader = membership.role === "TEAM_LEADER";
-  const isAdmin = session.role === "SYSTEM_ADMIN";
+  const isAdmin = session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM";
 
   if (!isLeader && !isAdmin) {
     return (

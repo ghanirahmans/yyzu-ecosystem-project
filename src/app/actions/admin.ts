@@ -19,7 +19,7 @@ async function requireAdmin() {
     select: { role: true, status: true },
   });
 
-  if (!dbUser || dbUser.status !== UserStatus.ACTIVE || dbUser.role !== UserRole.SYSTEM_ADMIN) {
+  if (!dbUser || dbUser.status !== UserStatus.ACTIVE || dbUser.role !== UserRole.FOUNDER && dbUser.role !== UserRole.KOORDINATOR_UMUM) {
     throw new Error("UNAUTHORIZED");
   }
 
@@ -90,7 +90,7 @@ export async function toggleUserSuspensionAction(userId: string) {
 
     const user = await prisma.user.findUnique({ where: { id: userId } });
     if (!user) return { success: false, error: "USER_NOT_FOUND" };
-    if (user.role === UserRole.SYSTEM_ADMIN) return { success: false, error: "CANNOT_SUSPEND_ADMIN" };
+    if (user.role === UserRole.FOUNDER || user.role === UserRole.KOORDINATOR_UMUM) return { success: false, error: "CANNOT_SUSPEND_ADMIN" };
 
     const nextStatus = user.status === UserStatus.SUSPENDED ? UserStatus.ACTIVE : UserStatus.SUSPENDED;
 
@@ -191,7 +191,7 @@ export async function updateUserRoleAction(userId: string, newRole: string) {
 
     const user = await prisma.user.findUnique({ where: { id: userId } });
     if (!user) return { success: false, error: "USER_NOT_FOUND" };
-    if (user.role === UserRole.SYSTEM_ADMIN) {
+    if (user.role === UserRole.FOUNDER || user.role === UserRole.KOORDINATOR_UMUM) {
       return { success: false, error: "CANNOT_CHANGE_ADMIN_ROLE" };
     }
     if (admin.userId === userId) {

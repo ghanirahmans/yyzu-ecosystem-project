@@ -37,7 +37,7 @@ export async function dbCreateUser(data: {
       email: data.email,
       passwordHash: data.passwordHash,
       status: UserStatus.PENDING_APPROVAL,
-      role: UserRole.MEMBER,
+      role: UserRole.TALENTA,
       profile: {
         create: {},
       },

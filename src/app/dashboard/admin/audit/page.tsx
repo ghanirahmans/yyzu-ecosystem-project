@@ -13,7 +13,7 @@ export default async function AdminAuditLogPage({
 }) {
   const session = await getSession();
 
-  if (!session || session.role !== UserRole.SYSTEM_ADMIN) {
+  if (!session || session.role !== UserRole.FOUNDER && session.role !== UserRole.KOORDINATOR_UMUM) {
     redirect("/dashboard");
   }
 

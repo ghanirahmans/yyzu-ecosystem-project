@@ -29,7 +29,7 @@ export default async function PartnershipDetailPage({ params }: { params: Promis
     notFound();
   }
 
-  const isAdmin = session.role === "SYSTEM_ADMIN";
+  const isAdmin = session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM";
   let isPartnerMember = false;
 
   const pDiv = await prisma.division.findUnique({ where: { name: "PARTNERSHIP" } });

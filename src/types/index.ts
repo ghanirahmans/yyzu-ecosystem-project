@@ -6,7 +6,7 @@
 // ── Enums ────────────────────────────────────────────────────
 
 export type UserStatus = "PENDING_APPROVAL" | "ACTIVE" | "SUSPENDED" | "REJECTED";
-export type UserRole = "MEMBER" | "MENTOR" | "SYSTEM_ADMIN";
+export type UserRole = "FOUNDER" | "KOORDINATOR_UMUM" | "KEPALA_DIVISI" | "TALENTA_INTI" | "KETUA_DEWAN_MENTOR" | "MENTOR" | "TALENTA";
 
 export type TeamStatus = "ACTIVE" | "SUSPENDED" | "ARCHIVED";
 

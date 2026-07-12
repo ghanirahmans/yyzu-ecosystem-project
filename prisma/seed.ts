@@ -35,7 +35,7 @@ async function main() {
       email: "admin@yyzu.tech",
       passwordHash: adminPassword,
       status: UserStatus.ACTIVE,
-      role: UserRole.SYSTEM_ADMIN,
+      role: UserRole.FOUNDER,
       approvedAt: new Date(),
       profile: { create: { bio: "Founder & System Administrator YYZU Ecosystem." } },
     },
@@ -59,7 +59,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Partnership Division. Passionate about building strategic alliances." } },
-        role: UserRole.BPH,
+        role: UserRole.KEPALA_DIVISI,
       },
     }),
     prisma.user.upsert({
@@ -74,7 +74,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of SDM Management. Building the talent pipeline." } },
-        role: UserRole.BPH,
+        role: UserRole.KEPALA_DIVISI,
       },
     }),
     prisma.user.upsert({
@@ -89,7 +89,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Event Organizer. Making every YYZU event memorable." } },
-        role: UserRole.BPH,
+        role: UserRole.KEPALA_DIVISI,
       },
     }),
     prisma.user.upsert({
@@ -104,7 +104,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Product & Project Management." } },
-        role: UserRole.BPH,
+        role: UserRole.KEPALA_DIVISI,
       },
     }),
     prisma.user.upsert({
@@ -119,7 +119,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Learning & Curriculum. Designing the YYZU learning paths." } },
-        role: UserRole.BPH,
+        role: UserRole.KEPALA_DIVISI,
       },
     }),
     prisma.user.upsert({
@@ -134,7 +134,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Media & Branding." } },
-        role: UserRole.BPH,
+        role: UserRole.KEPALA_DIVISI,
       },
     }),
     // Regular active members

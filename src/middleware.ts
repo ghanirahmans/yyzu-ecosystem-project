@@ -73,7 +73,7 @@ export async function middleware(request: NextRequest) {
 
       // Admin routes gating
       const isAdminRoute = pathname.startsWith("/dashboard/admin");
-      if (isAdminRoute && payload.role !== "SYSTEM_ADMIN") {
+      if (isAdminRoute && payload.role !== "FOUNDER" && payload.role !== "KOORDINATOR_UMUM") {
         return NextResponse.redirect(new URL("/dashboard", request.url));
       }
     }

@@ -164,7 +164,7 @@ export async function createTeam(
     return { success: false, error: "DESCRIPTION_TOO_LONG" };
   }
 
-  if (actor.role !== UserRole.SYSTEM_ADMIN) {
+  if (actor.role !== UserRole.KOORDINATOR_UMUM) {
     const existing = await dbFindActiveMembership(actor.id);
     if (existing) {
       return { success: false, error: "ALREADY_IN_TEAM" };
@@ -377,7 +377,7 @@ export async function addOrgLink(
   actor: ActiveUser,
   data: { title: string; url: string; category: string; notes?: string }
 ): Promise<{ success: true } | { success: false; error: string }> {
-  if (actor.role !== UserRole.SYSTEM_ADMIN && actor.role !== UserRole.BPH) {
+  if (actor.role !== UserRole.FOUNDER && actor.role !== UserRole.KOORDINATOR_UMUM && actor.role !== UserRole.KEPALA_DIVISI) {
     return { success: false, error: "UNAUTHORIZED" };
   }
 
@@ -401,7 +401,7 @@ export async function deleteOrgLink(
   actor: ActiveUser,
   linkId: string
 ): Promise<{ success: true } | { success: false; error: string }> {
-  if (actor.role !== UserRole.SYSTEM_ADMIN && actor.role !== UserRole.BPH) {
+  if (actor.role !== UserRole.FOUNDER && actor.role !== UserRole.KOORDINATOR_UMUM && actor.role !== UserRole.KEPALA_DIVISI) {
     return { success: false, error: "UNAUTHORIZED" };
   }
 
@@ -427,7 +427,7 @@ export async function addDivisionLink(
   data: { title: string; url: string; category: string; notes?: string }
 ): Promise<{ success: true } | { success: false; error: string }> {
   // Admin, BPH, or Division HEAD can manage division links
-  const isPrivileged = actor.role === UserRole.SYSTEM_ADMIN || actor.role === UserRole.BPH;
+  const isPrivileged = actor.role === UserRole.FOUNDER || actor.role === UserRole.KOORDINATOR_UMUM || actor.role === UserRole.KEPALA_DIVISI;
 
   if (!isPrivileged) {
     // Check if they are the division head
@@ -460,7 +460,7 @@ export async function deleteDivisionLink(
   linkId: string,
   divisionId: string
 ): Promise<{ success: true } | { success: false; error: string }> {
-  const isPrivileged = actor.role === UserRole.SYSTEM_ADMIN || actor.role === UserRole.BPH;
+  const isPrivileged = actor.role === UserRole.FOUNDER || actor.role === UserRole.KOORDINATOR_UMUM || actor.role === UserRole.KEPALA_DIVISI;
 
   if (!isPrivileged) {
     const membership = await dbFindDivisionHeadMembership(actor.id, divisionId);
@@ -553,7 +553,7 @@ export async function updateTeamInfo(
 
   const callerMembership = await dbFindActiveMembership(actor.id);
   const isLeader = callerMembership?.role === "TEAM_LEADER";
-  const isAdmin = actor.role === UserRole.SYSTEM_ADMIN;
+  const isAdmin = actor.role === UserRole.KOORDINATOR_UMUM;
 
   if (!isLeader && !isAdmin) {
     return { success: false, error: "UNAUTHORIZED" };
@@ -634,7 +634,7 @@ export async function reviewSubmission(
   feedback?: string
 ): Promise<{ success: true } | { success: false; error: string }> {
   const isMentor = actor.role === UserRole.MENTOR || actor.role === UserRole.KETUA_DEWAN_MENTOR;
-  const isAdmin = actor.role === UserRole.SYSTEM_ADMIN;
+  const isAdmin = actor.role === UserRole.KOORDINATOR_UMUM;
   if (!isMentor && !isAdmin) {
     return { success: false, error: "UNAUTHORIZED" };
   }

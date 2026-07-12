@@ -19,7 +19,7 @@ export default async function PartnershipCreatePage() {
   }
 
   const checkManager = async () => {
-    if (session.role === "SYSTEM_ADMIN") return true;
+    if (session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM") return true;
     const pDiv = await prisma.division.findUnique({ where: { name: "PARTNERSHIP" } });
     if (pDiv) {
       const membership = await prisma.divisionMembership.findFirst({

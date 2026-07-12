@@ -81,7 +81,7 @@ export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, se
             <h1 className="text-2xl font-bold text-white">Browse Teams</h1>
             <p className="text-sm text-white/40 mt-0.5">Discover and join an active team</p>
           </div>
-          {(session.role === "SYSTEM_ADMIN" || !currentTeam) && session.role !== "MENTOR" && (
+          {(session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM" || !currentTeam) && session.role !== "MENTOR" && (
             <Link
               href="/dashboard/teams/create"
               className="flex items-center gap-2 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl transition-colors self-start sm:self-auto"
@@ -202,7 +202,7 @@ export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, se
                         >
                           Open <ChevronRight size={13} />
                         </Link>
-                      ) : session.role === "SYSTEM_ADMIN" || session.role === "MENTOR" ? (
+                      ) : session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM" || session.role === "MENTOR" ? (
                         <Link
                           href={`/dashboard/teams/${team.id}`}
                           className="flex items-center gap-1.5 px-4 py-2 bg-[#2f1f47] hover:bg-[#3d275c] text-indigo-300 text-sm font-medium rounded-xl transition-colors"

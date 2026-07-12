@@ -187,7 +187,7 @@ export default function TeamWorkspace({
   const [error, setError] = useState<string | null>(null);
 
   const isLeader = userRole === "TEAM_LEADER";
-  const isAdmin = session.role === "SYSTEM_ADMIN";
+  const isAdmin = session.role === "FOUNDER" || session.role === "KOORDINATOR_UMUM";
   const isMentor = session.role === "MENTOR" || session.role === "KETUA_DEWAN_MENTOR";
   const isSuspended = team.status === "SUSPENDED";
   const isArchived = team.status === "ARCHIVED";
