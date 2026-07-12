@@ -281,6 +281,11 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
                 KETUA MENTOR
               </span>
             )}
+            {user.role === "MEMBER" && (
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-sky-500/10 text-sky-400/70 border border-sky-500/10 flex-shrink-0">
+                Staff Divisi
+              </span>
+            )}
             <button
               onClick={handleLogout}
               className="text-white/25 hover:text-rose-400 transition-colors flex-shrink-0 p-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"

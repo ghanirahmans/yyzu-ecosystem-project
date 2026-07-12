@@ -301,7 +301,7 @@ function RoleSelect({
   const [selected, setSelected] = useState(currentRole);
 
   const ALL_ROLES = [
-    { value: "MEMBER", label: "Member" },
+    { value: "MEMBER", label: "Staff Divisi" },
     { value: "MENTOR", label: "Mentor" },
     { value: "KETUA_DEWAN_MENTOR", label: "Ketua Mentor" },
     { value: "BPH", label: "Ketua Divisi" },
