@@ -49,13 +49,13 @@ export default function LoginPage() {
   const DEMO_ACCOUNTS = [
     // Admin
     { label: "System Admin", username: "ghanirahmans", password: "Admin@YYZU2024" },
-    // BPH
-    { label: "BPH · Partnership", username: "arjun_pratama", password: "Member@YYZU2024" },
-    { label: "BPH · SDM", username: "siti_nurhaliza", password: "Member@YYZU2024" },
-    { label: "BPH · Event", username: "budi_santoso", password: "Member@YYZU2024" },
-    { label: "BPH · PM", username: "dewi_kartika", password: "Member@YYZU2024" },
-    { label: "BPH · Learning", username: "fajar_nugroho", password: "Member@YYZU2024" },
-    { label: "BPH · Media", username: "indah_permata", password: "Member@YYZU2024" },
+    // BPH → Ketua Divisi
+    { label: "Ketua Divisi · Partnership", username: "arjun_pratama", password: "Member@YYZU2024" },
+    { label: "Ketua Divisi · SDM", username: "siti_nurhaliza", password: "Member@YYZU2024" },
+    { label: "Ketua Divisi · Event", username: "budi_santoso", password: "Member@YYZU2024" },
+    { label: "Ketua Divisi · PM", username: "dewi_kartika", password: "Member@YYZU2024" },
+    { label: "Ketua Divisi · Learning", username: "fajar_nugroho", password: "Member@YYZU2024" },
+    { label: "Ketua Divisi · Media", username: "indah_permata", password: "Member@YYZU2024" },
     // Mentors
     { label: "Ketua Dewan Mentor", username: "mentor_review", password: "Mentor@YYZU2024" },
     { label: "Mentor · Frontend", username: "mentor_andi", password: "Mentor@YYZU2024" },

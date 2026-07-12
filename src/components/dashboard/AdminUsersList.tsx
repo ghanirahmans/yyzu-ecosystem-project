@@ -304,7 +304,7 @@ function RoleSelect({
     { value: "MEMBER", label: "Member" },
     { value: "MENTOR", label: "Mentor" },
     { value: "KETUA_DEWAN_MENTOR", label: "Ketua Mentor" },
-    { value: "BPH", label: "BPH" },
+    { value: "BPH", label: "Ketua Divisi" },
   ];
 
   const handleChange = async (newRole: string) => {

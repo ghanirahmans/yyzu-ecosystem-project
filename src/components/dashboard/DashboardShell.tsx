@@ -268,7 +268,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
             </div>
             {user.role === "BPH" && (
               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-yellow-400/10 text-yellow-400/70 border border-yellow-400/10 flex-shrink-0">
-                BPH
+                Ketua Divisi
               </span>
             )}
             {user.role === "SYSTEM_ADMIN" && (
