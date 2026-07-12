@@ -300,3 +300,85 @@ export async function reviewSubmissionAction(
     return { success: false, error: "UNAUTHORIZED" };
   }
 }
+
+// ---------------------------------------------------------------------------
+// Org link actions
+// ---------------------------------------------------------------------------
+
+export async function addOrgLinkAction(data: {
+  title: string;
+  url: string;
+  category: string;
+  notes?: string;
+}) {
+  try {
+    const actor = await validateActiveUser();
+
+    const validation = usefulLinkSchema.safeParse(data);
+    if (!validation.success) {
+      return { success: false, error: "INVALID_INPUTS" };
+    }
+
+    const result = await teamService.addOrgLink(actor, validation.data);
+    if (result.success) {
+      revalidatePath("/dashboard");
+      revalidatePath("/dashboard/admin/links");
+    }
+    return result;
+  } catch {
+    return { success: false, error: "UNAUTHORIZED" };
+  }
+}
+
+export async function deleteOrgLinkAction(linkId: string) {
+  try {
+    const actor = await validateActiveUser();
+    const result = await teamService.deleteOrgLink(actor, linkId);
+    if (result.success) {
+      revalidatePath("/dashboard");
+      revalidatePath("/dashboard/admin/links");
+    }
+    return result;
+  } catch {
+    return { success: false, error: "UNAUTHORIZED" };
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Division link actions
+// ---------------------------------------------------------------------------
+
+export async function addDivisionLinkAction(
+  divisionId: string,
+  data: { title: string; url: string; category: string; notes?: string }
+) {
+  try {
+    const actor = await validateActiveUser();
+
+    const validation = usefulLinkSchema.safeParse(data);
+    if (!validation.success) {
+      return { success: false, error: "INVALID_INPUTS" };
+    }
+
+    const result = await teamService.addDivisionLink(actor, divisionId, validation.data);
+    if (result.success) {
+      revalidatePath(`/dashboard/divisions/${divisionId}`);
+    }
+    return result;
+  } catch {
+    return { success: false, error: "UNAUTHORIZED" };
+  }
+}
+
+export async function deleteDivisionLinkAction(linkId: string, divisionId: string) {
+  try {
+    const actor = await validateActiveUser();
+    const result = await teamService.deleteDivisionLink(actor, linkId, divisionId);
+    if (result.success) {
+      revalidatePath(`/dashboard/divisions/${divisionId}`);
+    }
+    return result;
+  } catch {
+    return { success: false, error: "UNAUTHORIZED" };
+  }
+}

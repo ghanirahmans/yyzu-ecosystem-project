@@ -2,7 +2,7 @@ import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Calendar, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Calendar, ShieldCheck, ArrowRight } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import DivisionMemberManager from "@/components/dashboard/DivisionMemberManager";
 import { DivisionName } from "@prisma/client";
@@ -94,6 +94,9 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
         orderBy: { joinedAt: "asc" },
       },
       programs: {
+        orderBy: { createdAt: "desc" },
+      },
+      usefulLinks: {
         orderBy: { createdAt: "desc" },
       },
     },
@@ -203,6 +206,36 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
             )}
           </div>
         </div>
+
+        {/* Division Useful Links */}
+        {division.usefulLinks.length > 0 && (
+          <div className="bg-[#161b22] border border-white/8 rounded-2xl p-5 space-y-3">
+            <h3 className="text-[11px] font-semibold text-white/40 uppercase tracking-widest">
+              Link Divisi ({division.usefulLinks.length})
+            </h3>
+            <div className="space-y-2">
+              {division.usefulLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 px-3 py-2 rounded-xl border border-white/5 bg-white/2 hover:bg-white/4 hover:border-white/10 transition-all group"
+                >
+                  <span className="text-[12px] font-medium text-white/60 group-hover:text-white truncate flex-1">
+                    {link.title}
+                  </span>
+                  {link.notes && (
+                    <span className="text-[10px] text-white/30 hidden sm:inline truncate max-w-[120px]">
+                      {link.notes}
+                    </span>
+                  )}
+                  <ArrowRight size={10} className="text-white/20 group-hover:text-indigo-400 flex-shrink-0" />
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </DashboardShell>
   );

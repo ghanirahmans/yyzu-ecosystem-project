@@ -44,6 +44,7 @@ interface NavItem {
   label: string;
   icon: React.ReactNode;
   adminOnly?: boolean;
+  bphOnly?: boolean;
 }
 
 const NAV_ITEMS: NavItem[] = [
@@ -58,12 +59,14 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/dashboard/admin/users", label: "Manage Users", icon: <Shield size={16} />, adminOnly: true },
   { href: "/dashboard/admin/teams", label: "Manage Teams", icon: <Settings size={16} />, adminOnly: true },
   { href: "/dashboard/admin/audit", label: "Audit Log", icon: <ScrollText size={16} />, adminOnly: true },
+  { href: "/dashboard/admin/links", label: "Org Links", icon: <Layers size={16} />, bphOnly: true },
 ];
 
 export default function DashboardShell({ children, user }: DashboardShellProps) {
   const pathname = usePathname();
   const router = useRouter();
   const isAdmin = user.role === "SYSTEM_ADMIN";
+  const isBph = user.role === "SYSTEM_ADMIN" || user.role === "BPH";
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
@@ -100,7 +103,11 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
     }
   };
 
-  const visibleNav = NAV_ITEMS.filter((item) => !item.adminOnly || isAdmin);
+  const visibleNav = NAV_ITEMS.filter((item) => {
+    if (item.adminOnly && !isAdmin) return false;
+    if (item.bphOnly && !isBph) return false;
+    return true;
+  });
 
   const isActive = (href: string) => {
     if (href === "/dashboard") return pathname === "/dashboard";
@@ -130,14 +137,14 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
 
         {/* Nav */}
         <nav className="flex-1 px-2.5 py-3 space-y-0.5 overflow-y-auto" aria-label="Sidebar navigation">
-          {isAdmin && (
+          {(isAdmin || isBph) && (
             <p className="px-2 mb-2 pt-1 text-[10px] font-semibold tracking-widest text-white/25 uppercase select-none">
               General
             </p>
           )}
 
           {visibleNav
-            .filter((item) => !item.adminOnly)
+            .filter((item) => !item.adminOnly && !item.bphOnly)
             .map((item) => (
               <Link
                 key={item.href}
@@ -164,6 +171,43 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
                 )}
               </Link>
             ))}
+
+          {/* BPH Section */}
+          {isBph && visibleNav.filter((item) => item.bphOnly).length > 0 && (
+            <>
+              <p className="px-2 mt-5 mb-2 text-[10px] font-semibold tracking-widest text-yellow-400/40 uppercase select-none">
+                BPH
+              </p>
+              {visibleNav
+                .filter((item) => item.bphOnly)
+                .map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={cn(
+                      "flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-[13px] font-medium transition-all duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-1 focus-visible:ring-offset-[#161b22]",
+                      isActive(item.href)
+                        ? "bg-yellow-500/12 text-yellow-400"
+                        : "text-white/45 hover:text-white/90 hover:bg-white/5"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "flex-shrink-0 transition-colors",
+                        isActive(item.href) ? "text-yellow-400" : "text-white/25 group-hover:text-white/55"
+                      )}
+                    >
+                      {item.icon}
+                    </span>
+                    {item.label}
+                    {isActive(item.href) && (
+                      <ChevronRight size={11} className="ml-auto text-yellow-400/60" />
+                    )}
+                  </Link>
+                ))}
+            </>
+          )}
 
           {isAdmin && (
             <>
@@ -216,6 +260,16 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
               <p className="text-[13px] font-semibold text-white truncate leading-tight">{user.fullName}</p>
               <p className="text-[11px] text-white/35 truncate">@{user.username}</p>
             </div>
+            {user.role === "BPH" && (
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-yellow-400/10 text-yellow-400/70 border border-yellow-400/10 flex-shrink-0">
+                BPH
+              </span>
+            )}
+            {user.role === "SYSTEM_ADMIN" && (
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-rose-500/10 text-rose-400/70 border border-rose-500/10 flex-shrink-0">
+                ADMIN
+              </span>
+            )}
             <button
               onClick={handleLogout}
               className="text-white/25 hover:text-rose-400 transition-colors flex-shrink-0 p-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"

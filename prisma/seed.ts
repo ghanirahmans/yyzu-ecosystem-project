@@ -59,6 +59,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Partnership Division. Passionate about building strategic alliances." } },
+        role: UserRole.BPH,
       },
     }),
     prisma.user.upsert({
@@ -73,6 +74,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of SDM Management. Building the talent pipeline." } },
+        role: UserRole.BPH,
       },
     }),
     prisma.user.upsert({
@@ -87,6 +89,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Event Organizer. Making every YYZU event memorable." } },
+        role: UserRole.BPH,
       },
     }),
     prisma.user.upsert({
@@ -101,6 +104,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Product & Project Management." } },
+        role: UserRole.BPH,
       },
     }),
     prisma.user.upsert({
@@ -115,6 +119,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Learning & Curriculum. Designing the YYZU learning paths." } },
+        role: UserRole.BPH,
       },
     }),
     prisma.user.upsert({
@@ -129,6 +134,7 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "Head of Media & Branding." } },
+        role: UserRole.BPH,
       },
     }),
     // Regular active member
@@ -298,6 +304,124 @@ async function main() {
     }
   }
   console.log("✓ Divisions: 7 created with heads");
+
+  // ── 5a. Org-Wide Useful Links ────────────────────────────
+  const orgLinks = [
+    { title: "YYZU Website", url: "https://yyzu.tech", category: "DOCUMENTATION" as const, notes: "Portal utama informasi YYZU." },
+    { title: "Discord Server", url: "https://discord.gg/yyzu", category: "DISCORD" as const, notes: "Komunikasi harian seluruh anggota." },
+    { title: "GitHub Organization", url: "https://github.com/yyzu-ecosystem", category: "GITHUB" as const, notes: "Kode dan dokumentasi teknis." },
+    { title: "Notion Workspace", url: "https://notion.so/yyzu", category: "NOTION" as const, notes: "Knowledge base, wiki, meeting notes." },
+    { title: "Figma Team", url: "https://figma.com/@yyzu", category: "FIGMA" as const, notes: "Desain UI/UX dan aset visual." },
+    { title: "Google Drive", url: "https://drive.google.com/drive/folders/yyzu", category: "GOOGLE_DRIVE" as const, notes: "Arsip file dan backup dokumen." },
+    { title: "Google Meet", url: "https://meet.google.com/yyzu-hq", category: "GOOGLE_DRIVE" as const, notes: "Link meeting utama YYZU." },
+    { title: "Email Resmi", url: "mailto:yyzuecosystem@gmail.com", category: "OTHER" as const, notes: "Kontak resmi untuk kemitraan dan informasi." },
+    { title: "Instagram", url: "https://instagram.com/yyzu.ecosystem", category: "OTHER" as const, notes: "Publikasi kegiatan dan showcase." },
+    { title: "LinkedIn", url: "https://linkedin.com/company/yyzu", category: "OTHER" as const, notes: "Artikel profesional dan networking." },
+  ];
+
+  for (const link of orgLinks) {
+    await prisma.usefulLink.create({
+      data: {
+        scope: "ORG",
+        title: link.title,
+        url: link.url,
+        category: link.category,
+        notes: link.notes,
+        createdBy: admin.id,
+      },
+    });
+  }
+  console.log(`✓ Org-wide Useful Links: ${orgLinks.length} created`);
+
+  // ── 5b. Division-Specific Useful Links ───────────────────
+  const divisionLinkDefs: Array<{
+    divisionName: DivisionName;
+    links: Array<{ title: string; url: string; category: string; notes: string }>;
+  }> = [
+    {
+      divisionName: DivisionName.PARTNERSHIP,
+      links: [
+        { title: "Template Proposal Kemitraan", url: "https://notion.so/yyzu/template-proposal", category: "DOCUMENTATION", notes: "Template proposal untuk penjajakan mitra baru." },
+        { title: "Template MoU/PKS", url: "https://notion.so/yyzu/template-mou", category: "DOCUMENTATION", notes: "Draf standar Nota Kesepahaman dan Perjanjian Kerja Sama." },
+        { title: "Database Mitra", url: "https://notion.so/yyzu/mitra-db", category: "NOTION", notes: "Database semua calon mitra, prospek, dan mitra aktif." },
+        { title: "Email Outreach Kit", url: "https://drive.google.com/drive/folders/yyzu-partnership", category: "GOOGLE_DRIVE", notes: "Template email dan WhatsApp untuk komunikasi mitra." },
+      ],
+    },
+    {
+      divisionName: DivisionName.SDM_MANAGEMENT,
+      links: [
+        { title: "Formulir Pendaftaran Mentor", url: "https://yyzu.community/mentor-join", category: "OTHER", notes: "Form pendaftaran untuk calon mentor eksternal." },
+        { title: "Template Assessment Member", url: "https://notion.so/yyzu/template-assessment", category: "NOTION", notes: "Rubrik penilaian dan template evaluasi anggota." },
+        { title: "Onboarding Kit", url: "https://notion.so/yyzu/onboarding", category: "NOTION", notes: "Panduan dan checklist onboarding anggota baru." },
+        { title: "Survei Kepuasan", url: "https://forms.google.com/yyzu-survey", category: "DOCUMENTATION", notes: "Template survei kepuasan anggota dan mentor." },
+      ],
+    },
+    {
+      divisionName: DivisionName.EVENT_ORGANIZER,
+      links: [
+        { title: "Template Undangan Event", url: "https://notion.so/yyzu/template-undangan", category: "DOCUMENTATION", notes: "Template undangan resmi untuk narasumber dan peserta." },
+        { title: "Template Absensi", url: "https://notion.so/yyzu/template-absensi", category: "DOCUMENTATION", notes: "Form absensi dan dokumentasi kehadiran event." },
+        { title: "Template Rundown", url: "https://notion.so/yyzu/template-rundown", category: "DOCUMENTATION", notes: "Template run-of-show untuk perencanaan acara." },
+        { title: "SOP Dokumentasi Event", url: "https://notion.so/yyzu/sop-dokumentasi", category: "NOTION", notes: "Panduan dokumentasi foto, video, dan recap event." },
+      ],
+    },
+    {
+      divisionName: DivisionName.PRODUCT_PROJECT_MANAGEMENT,
+      links: [
+        { title: "Kanban Board Template", url: "https://notion.so/yyzu/kanban-template", category: "NOTION", notes: "Template Notion Board untuk sprint management." },
+        { title: "Sprint Ceremony Template", url: "https://notion.so/yyzu/sprint-ceremony", category: "DOCUMENTATION", notes: "Template Sprint Planning, Review, dan Retrospective." },
+        { title: "Project Brief Template", url: "https://notion.so/yyzu/project-brief", category: "DOCUMENTATION", notes: "Template dokumen brief untuk setiap project." },
+        { title: "Deployment Guide", url: "https://notion.so/yyzu/deploy-guide", category: "DOCUMENTATION", notes: "Panduan deploy staging dan production." },
+      ],
+    },
+    {
+      divisionName: DivisionName.LEARNING_CURRICULUM,
+      links: [
+        { title: "Materi Workshop Batch 1", url: "https://notion.so/yyzu/materi-workshop", category: "NOTION", notes: "Kumpulan materi workshop dan learning sprint." },
+        { title: "Kurikulum & Learning Path", url: "https://notion.so/yyzu/kurikulum", category: "DOCUMENTATION", notes: "Roadmap pembelajaran per track dan level." },
+        { title: "Study Group Guide", url: "https://notion.so/yyzu/study-group-guide", category: "DOCUMENTATION", notes: "Panduan fasilitasi study group." },
+        { title: "Evaluasi Kurikulum", url: "https://notion.so/yyzu/evaluasi-kurikulum", category: "DOCUMENTATION", notes: "Template evaluasi dan feedback kurikulum." },
+      ],
+    },
+    {
+      divisionName: DivisionName.MEDIA_BRANDING,
+      links: [
+        { title: "Brand Guidelines", url: "https://notion.so/yyzu/brand-guidelines", category: "DOCUMENTATION", notes: "Panduan identitas visual, warna, dan tipografi." },
+        { title: "Template Caption IG", url: "https://notion.so/yyzu/template-caption", category: "NOTION", notes: "Template caption untuk Instagram dan LinkedIn." },
+        { title: "Content Calendar", url: "https://notion.so/yyzu/content-calendar", category: "NOTION", notes: "Kalender konten mingguan dan bulanan." },
+        { title: "Asset Visual", url: "https://drive.google.com/drive/folders/yyzu-media", category: "GOOGLE_DRIVE", notes: "Logo, template poster, dan aset desain." },
+      ],
+    },
+    {
+      divisionName: DivisionName.KOORDINATOR_UMUM,
+      links: [
+        { title: "Notulensi Rapat BPH", url: "https://notion.so/yyzu/notulensi-bph", category: "NOTION", notes: "Arsip notulensi rapat koordinasi BPH." },
+        { title: "Laporan Keuangan", url: "https://drive.google.com/drive/folders/yyzu-finance", category: "GOOGLE_DRIVE", notes: "Laporan keuangan berkala dan anggaran." },
+        { title: "KPI Dashboard", url: "https://notion.so/yyzu/kpi", category: "DOCUMENTATION", notes: "Indikator kinerja utama organisasi per batch." },
+        { title: "Template Laporan Batch", url: "https://notion.so/yyzu/laporan-batch", category: "DOCUMENTATION", notes: "Template laporan akhir batch untuk Founder dan DWA." },
+      ],
+    },
+  ];
+
+  for (const def of divisionLinkDefs) {
+    const division = await prisma.division.findUnique({ where: { name: def.divisionName } });
+    if (!division) continue;
+
+    for (const link of def.links) {
+      await prisma.usefulLink.create({
+        data: {
+          scope: "DIVISION",
+          divisionId: division.id,
+          title: link.title,
+          url: link.url,
+          category: link.category as any,
+          notes: link.notes,
+          createdBy: admin.id,
+        },
+      });
+    }
+  }
+  console.log("✓ Division-specific Useful Links: created for all 7 divisions");
 
   // ── 5. Teams ──────────────────────────────────────────────
   const teamNexus = await prisma.team.upsert({
@@ -514,10 +638,12 @@ async function main() {
   console.log("\n✅ Seed complete!");
   console.log("\nDemo credentials:");
   console.log("  System Admin : username=ghanirahmans  password=Admin@YYZU2024");
+  console.log("  BPH          : username=arjun_pratama  password=Member@YYZU2024  (Head of Partnership)");
+  console.log("  BPH          : username=siti_nurhaliza  password=Member@YYZU2024  (Head of SDM)");
+  console.log("  BPH          : username=budi_santoso    password=Member@YYZU2024  (Head of Event)");
   console.log("  Mentor       : username=mentor_review  password=Mentor@YYZU2024");
-  console.log("  Team Leader  : username=arjun_pratama  password=Member@YYZU2024");
-  console.log("  Member       : username=rizky_ramadan  password=Member@YYZU2024");
-  console.log("  Pending      : username=pending_user_1  password=Member@YYZU2024");
+  console.log("  Team Leader  : username=rizky_ramadan  password=Member@YYZU2024");
+  console.log("  Member       : username=pending_user_1  password=Member@YYZU2024");
 }
 
 main()

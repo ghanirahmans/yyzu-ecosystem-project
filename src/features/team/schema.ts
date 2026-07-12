@@ -47,6 +47,39 @@ export const usefulLinkSchema = z.object({
 export type UsefulLinkSchemaInput = z.infer<typeof usefulLinkSchema>;
 
 // ---------------------------------------------------------------------------
+// Org/Division link schemas
+// ---------------------------------------------------------------------------
+
+export const linkScopeSchema = z.enum(["ORG", "DIVISION", "TEAM"]);
+
+export const createOrgLinkSchema = z.object({
+  title: z.string().min(2, "Title must be at least 2 characters").max(100),
+  url: z.string().url("Must be a valid URL"),
+  category: linkCategorySchema,
+  notes: z
+    .string()
+    .max(200, "Notes cannot exceed 200 characters")
+    .optional()
+    .or(z.literal("")),
+});
+
+export type CreateOrgLinkInput = z.infer<typeof createOrgLinkSchema>;
+
+export const createDivisionLinkSchema = z.object({
+  divisionId: z.string().uuid("Invalid division ID"),
+  title: z.string().min(2, "Title must be at least 2 characters").max(100),
+  url: z.string().url("Must be a valid URL"),
+  category: linkCategorySchema,
+  notes: z
+    .string()
+    .max(200, "Notes cannot exceed 200 characters")
+    .optional()
+    .or(z.literal("")),
+});
+
+export type CreateDivisionLinkInput = z.infer<typeof createDivisionLinkSchema>;
+
+// ---------------------------------------------------------------------------
 // Submission
 // ---------------------------------------------------------------------------
 

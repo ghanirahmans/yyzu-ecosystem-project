@@ -30,11 +30,14 @@ import {
   dbCreateUsefulLink,
   dbFindUsefulLinkById,
   dbDeleteUsefulLink,
+  dbFindOrgUsefulLinks,
+  dbFindDivisionUsefulLinks,
   dbFindLatestSubmission,
   dbCreateSubmission,
   dbUpdateSubmission,
   dbReviewSubmission,
   dbFindActiveUserByUsername,
+  dbFindDivisionHeadMembership,
 } from "./repository";
 
 // ---------------------------------------------------------------------------
@@ -347,6 +350,10 @@ export async function deleteUsefulLink(
   const link = await dbFindUsefulLinkById(linkId);
   if (!link) return { success: false, error: "LINK_NOT_FOUND" };
 
+  if (!link.teamId || link.scope !== "TEAM") {
+    return { success: false, error: "INVALID_SCOPE" };
+  }
+
   const callerMembership = await dbFindLeaderMembershipInTeam(actor.id, link.teamId);
   if (!callerMembership) return { success: false, error: "NOT_TEAM_LEADER" };
   if (callerMembership.team.status === TeamStatus.ARCHIVED) {
@@ -356,6 +363,119 @@ export async function deleteUsefulLink(
   await dbDeleteUsefulLink(linkId);
   await createAuditLog(actor.id, "TEAM_LINK_DELETE", "Team", link.teamId, {
     linkId,
+    title: link.title,
+  });
+
+  return { success: true };
+}
+
+// ---------------------------------------------------------------------------
+// Org-wide link management (admin/BPH only)
+// ---------------------------------------------------------------------------
+
+export async function addOrgLink(
+  actor: ActiveUser,
+  data: { title: string; url: string; category: string; notes?: string }
+): Promise<{ success: true } | { success: false; error: string }> {
+  if (actor.role !== UserRole.SYSTEM_ADMIN && actor.role !== UserRole.BPH) {
+    return { success: false, error: "UNAUTHORIZED" };
+  }
+
+  const link = await dbCreateUsefulLink({
+    scope: "ORG",
+    title: data.title,
+    url: data.url,
+    category: data.category,
+    notes: data.notes ?? null,
+    createdBy: actor.id,
+  });
+
+  await createAuditLog(actor.id, "ORG_LINK_ADD", "UsefulLink", link.id, {
+    title: data.title,
+  });
+
+  return { success: true };
+}
+
+export async function deleteOrgLink(
+  actor: ActiveUser,
+  linkId: string
+): Promise<{ success: true } | { success: false; error: string }> {
+  if (actor.role !== UserRole.SYSTEM_ADMIN && actor.role !== UserRole.BPH) {
+    return { success: false, error: "UNAUTHORIZED" };
+  }
+
+  const link = await dbFindUsefulLinkById(linkId);
+  if (!link) return { success: false, error: "LINK_NOT_FOUND" };
+  if (link.scope !== "ORG") return { success: false, error: "INVALID_SCOPE" };
+
+  await dbDeleteUsefulLink(linkId);
+  await createAuditLog(actor.id, "ORG_LINK_DELETE", "UsefulLink", linkId, {
+    title: link.title,
+  });
+
+  return { success: true };
+}
+
+// ---------------------------------------------------------------------------
+// Division link management (admin/BPH/division head)
+// ---------------------------------------------------------------------------
+
+export async function addDivisionLink(
+  actor: ActiveUser,
+  divisionId: string,
+  data: { title: string; url: string; category: string; notes?: string }
+): Promise<{ success: true } | { success: false; error: string }> {
+  // Admin, BPH, or Division HEAD can manage division links
+  const isPrivileged = actor.role === UserRole.SYSTEM_ADMIN || actor.role === UserRole.BPH;
+
+  if (!isPrivileged) {
+    // Check if they are the division head
+    const membership = await dbFindDivisionHeadMembership(actor.id, divisionId);
+    if (!membership || membership.role !== "HEAD") {
+      return { success: false, error: "UNAUTHORIZED" };
+    }
+  }
+
+  const link = await dbCreateUsefulLink({
+    scope: "DIVISION",
+    divisionId,
+    title: data.title,
+    url: data.url,
+    category: data.category,
+    notes: data.notes ?? null,
+    createdBy: actor.id,
+  });
+
+  await createAuditLog(actor.id, "DIVISION_LINK_ADD", "UsefulLink", link.id, {
+    divisionId,
+    title: data.title,
+  });
+
+  return { success: true };
+}
+
+export async function deleteDivisionLink(
+  actor: ActiveUser,
+  linkId: string,
+  divisionId: string
+): Promise<{ success: true } | { success: false; error: string }> {
+  const isPrivileged = actor.role === UserRole.SYSTEM_ADMIN || actor.role === UserRole.BPH;
+
+  if (!isPrivileged) {
+    const membership = await dbFindDivisionHeadMembership(actor.id, divisionId);
+    if (!membership || membership.role !== "HEAD") {
+      return { success: false, error: "UNAUTHORIZED" };
+    }
+  }
+
+  const link = await dbFindUsefulLinkById(linkId);
+  if (!link) return { success: false, error: "LINK_NOT_FOUND" };
+  if (link.scope !== "DIVISION") return { success: false, error: "INVALID_SCOPE" };
+
+  await dbDeleteUsefulLink(linkId);
+  await createAuditLog(actor.id, "DIVISION_LINK_DELETE", "UsefulLink", linkId, {
+    divisionId,
     title: link.title,
   });
 

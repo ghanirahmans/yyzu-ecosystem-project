@@ -39,6 +39,7 @@ export default async function DashboardPage() {
   }
 
   const isAdmin = user.role === UserRole.SYSTEM_ADMIN;
+  const isBph = user.role === UserRole.SYSTEM_ADMIN || user.role === UserRole.BPH;
 
   // ── Gather Data based on Role ───────────────────────────────
   let currentTeam = null;
@@ -80,7 +81,27 @@ export default async function DashboardPage() {
         },
       },
     });
-  } else {
+  }
+
+  // ── Shared data for all authenticated users ──────────────
+  const orgLinks = await prisma.usefulLink.findMany({
+    where: { scope: "ORG" },
+    orderBy: { createdAt: "desc" },
+    select: { id: true, title: true, url: true, category: true, notes: true, createdAt: true },
+  });
+
+  // ── BPH/Admin stats ──────────────────────────────────────
+  let totalDivisions = 0;
+  let totalPrograms = 0;
+  let totalOrgLinks = 0;
+
+  if (isBph) {
+    totalDivisions = await prisma.division.count();
+    totalPrograms = await prisma.program.count();
+    totalOrgLinks = orgLinks.length;
+  }
+
+  if (!isAdmin) {
     // Regular member data gathering
     const membership = await prisma.teamMembership.findFirst({
       where: { userId: user.id, leftAt: null },
@@ -184,6 +205,41 @@ export default async function DashboardPage() {
         type: "warning",
       });
     }
+  } else if (isBph) {
+    // BPH users see cross-division alerts
+    const sevenDaysFromNow = new Date();
+    sevenDaysFromNow.setDate(sevenDaysFromNow.getDate() + 7);
+    const endingPrograms = await prisma.program.count({
+      where: {
+        endDate: { lte: sevenDaysFromNow, gte: new Date() },
+        status: { notIn: ["SELESAI", "DIBATALKAN"] },
+      },
+    });
+    if (endingPrograms > 0) {
+      todaysFocus.push({
+        title: "Monitoring Program Kerja",
+        desc: `${endingPrograms} program lintas divisi akan berakhir dalam 7 hari. Pastikan evaluasi tepat waktu.`,
+        href: "/dashboard/programs",
+        type: "info",
+      });
+    }
+
+    const fourteenDaysAgo = new Date();
+    fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
+    const stalePartnerships = await prisma.partnership.count({
+      where: {
+        status: { in: ["CONTACTED", "NEGOTIATING"] },
+        updatedAt: { lte: fourteenDaysAgo },
+      },
+    });
+    if (stalePartnerships > 0) {
+      todaysFocus.push({
+        title: "Tindak Lanjut Kemitraan",
+        desc: `${stalePartnerships} kemitraan perlu ditindaklanjuti.`,
+        href: "/dashboard/partnerships",
+        type: "warning",
+      });
+    }
   } else {
     if (currentTeam) {
       if (isLeader && pendingRequestsCount > 0) {
@@ -250,6 +306,48 @@ export default async function DashboardPage() {
             : "You're not in a team yet."}
         </p>
       </div>
+
+      {/* ── Org-Wide Useful Links ───────────────────────────── */}
+      {orgLinks.length > 0 && (
+        <div className="mb-6 bg-[#161b22] border border-white/8 rounded-2xl p-5 animate-slide-in-up stagger-1">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-[11px] font-semibold text-white/40 uppercase tracking-widest">
+              Link Penting YYZU
+            </h2>
+            <span className="text-[10px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded-md font-mono font-semibold">
+              Single Source of Truth
+            </span>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {orgLinks.map((link) => {
+              const categoryColors: Record<string, string> = {
+                GITHUB: "bg-gray-700/50 text-gray-300 border-gray-600/30",
+                DISCORD: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+                NOTION: "bg-white/10 text-white border-white/15",
+                FIGMA: "bg-green-500/10 text-green-400 border-green-500/20",
+                GOOGLE_DRIVE: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
+                DOCUMENTATION: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+                OTHER: "bg-white/5 text-white/60 border-white/10",
+              };
+              const borderColor = categoryColors[link.category] || categoryColors.OTHER;
+              return (
+                <a
+                  key={link.id}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl border ${borderColor} hover:bg-white/5 transition-all duration-150 group`}
+                >
+                  <span className="text-[11px] font-medium truncate group-hover:text-white transition-colors">
+                    {link.title}
+                  </span>
+                  <ArrowRight size={10} className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity ml-auto" />
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Today's Focus Widget */}
       {todaysFocus.length > 0 && (
@@ -365,8 +463,53 @@ export default async function DashboardPage() {
         </div>
       )}
 
+      {/* ── BPH Overview State ────────────────────────────────── */}
+      {!isAdmin && isBph && (
+        <div className="space-y-5">
+          {/* Stat Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <StatCard
+              label="Total Divisions"
+              value={totalDivisions}
+              icon={<Users size={15} />}
+              color="indigo"
+              href="/dashboard/divisions"
+              delay="stagger-1"
+            />
+            <StatCard
+              label="Active Programs"
+              value={totalPrograms}
+              icon={<Settings size={15} />}
+              color="amber"
+              href="/dashboard/programs"
+              delay="stagger-2"
+            />
+            <StatCard
+              label="Org-Wide Links"
+              value={totalOrgLinks}
+              icon={<Link2 size={15} />}
+              color="violet"
+              href="/dashboard/admin/links"
+              delay="stagger-3"
+            />
+          </div>
+
+          {/* Quick Actions */}
+          <div className="bg-[#161b22] border border-white/8 rounded-2xl p-5 animate-slide-in-up stagger-3">
+            <h2 className="text-[11px] font-semibold text-white/40 uppercase tracking-widest mb-3.5">
+              BPH Actions
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <QuickLink href="/dashboard/divisions" icon={<Users size={14} />} label="Manage Divisions" />
+              <QuickLink href="/dashboard/programs" icon={<Settings size={14} />} label="View Programs" />
+              <QuickLink href="/dashboard/admin/links" icon={<Link2 size={14} />} label="Org Links" />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ── No Team State ─────────────────────────────────────── */}
-      {!currentTeam && !isAdmin && (
+      {!currentTeam && !isAdmin && !isBph && (
         <div className="space-y-4">
           {/* Invitations list */}
           <InboundInvitations invitations={inboundInvites} />

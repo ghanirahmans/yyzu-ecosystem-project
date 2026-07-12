@@ -114,19 +114,24 @@ model Invitation {
 }
 
 model UsefulLink {
-  id        String       @id @default(uuid())
-  teamId    String
-  title     String
-  url       String
-  category  LinkCategory
-  notes     String?
-  createdBy String
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
-  creator   User         @relation(fields: [createdBy], references: [id])
-  team      Team         @relation(fields: [teamId], references: [id])
+  id         String       @id @default(uuid())
+  scope      LinkScope    @default(TEAM)
+  teamId     String?
+  divisionId String?
+  title      String
+  url        String
+  category   LinkCategory
+  notes      String?
+  createdBy  String
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  creator    User         @relation(fields: [createdBy], references: [id])
+  team       Team?        @relation(fields: [teamId], references: [id])
+  division   Division?    @relation(fields: [divisionId], references: [id])
 
+  @@index([scope])
   @@index([teamId])
+  @@index([divisionId])
 }
 
 model Submission {
@@ -155,6 +160,7 @@ model Division {
   description String?
   memberships DivisionMembership[]
   programs    Program[]            @relation("ProgramDivisions")
+  usefulLinks UsefulLink[]
 }
 
 model DivisionMembership {
@@ -233,6 +239,7 @@ enum UserStatus {
 enum UserRole {
   MEMBER
   MENTOR
+  BPH
   SYSTEM_ADMIN
 }
 
@@ -277,6 +284,12 @@ enum SubmissionStatus {
   SUBMITTED
   APPROVED
   REVISION
+}
+
+enum LinkScope {
+  ORG
+  DIVISION
+  TEAM
 }
 
 enum DivisionName {

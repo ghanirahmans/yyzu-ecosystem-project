@@ -315,30 +315,63 @@ export async function dbRejectJoinRequest(requestId: string, processedBy: string
 // ---------------------------------------------------------------------------
 
 export async function dbCreateUsefulLink(data: {
-  teamId: string;
+  teamId?: string;
+  scope?: string;
+  divisionId?: string;
   title: string;
   url: string;
   category: string;
   notes: string | null;
   createdBy: string;
-}): Promise<{ id: string; teamId: string; title: string }> {
+}): Promise<{ id: string; teamId: string | null; title: string }> {
   return prisma.usefulLink.create({
-    data: data as Parameters<typeof prisma.usefulLink.create>[0]["data"],
+    data: {
+      scope: (data.scope as any) ?? "TEAM",
+      teamId: data.teamId ?? null,
+      divisionId: data.divisionId ?? null,
+      title: data.title,
+      url: data.url,
+      category: data.category as any,
+      notes: data.notes,
+      createdBy: data.createdBy,
+    },
     select: { id: true, teamId: true, title: true },
   });
 }
 
 export async function dbFindUsefulLinkById(
   linkId: string
-): Promise<{ id: string; teamId: string; title: string } | null> {
+): Promise<{ id: string; teamId: string | null; title: string; scope: string } | null> {
   return prisma.usefulLink.findUnique({
     where: { id: linkId },
-    select: { id: true, teamId: true, title: true },
+    select: { id: true, teamId: true, title: true, scope: true },
   });
 }
 
 export async function dbDeleteUsefulLink(linkId: string): Promise<void> {
   await prisma.usefulLink.delete({ where: { id: linkId } });
+}
+
+export async function dbFindOrgUsefulLinks(): Promise<
+  Array<{ id: string; title: string; url: string; category: string; notes: string | null; createdAt: Date }>
+> {
+  return prisma.usefulLink.findMany({
+    where: { scope: "ORG" },
+    orderBy: { createdAt: "desc" },
+    select: { id: true, title: true, url: true, category: true, notes: true, createdAt: true },
+  });
+}
+
+export async function dbFindDivisionUsefulLinks(
+  divisionId: string
+): Promise<
+  Array<{ id: string; title: string; url: string; category: string; notes: string | null; createdAt: Date }>
+> {
+  return prisma.usefulLink.findMany({
+    where: { scope: "DIVISION", divisionId },
+    orderBy: { createdAt: "desc" },
+    select: { id: true, title: true, url: true, category: true, notes: true, createdAt: true },
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -416,5 +449,19 @@ export async function dbFindActiveUserByUsername(
   return prisma.user.findUnique({
     where: { username, deletedAt: null },
     select: { id: true, status: true },
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Division membership queries (needed for division link auth)
+// ---------------------------------------------------------------------------
+
+export async function dbFindDivisionHeadMembership(
+  userId: string,
+  divisionId: string
+): Promise<{ id: string; role: string } | null> {
+  return prisma.divisionMembership.findUnique({
+    where: { userId_divisionId: { userId, divisionId } },
+    select: { id: true, role: true },
   });
 }

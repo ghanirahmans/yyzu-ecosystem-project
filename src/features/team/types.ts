@@ -1,4 +1,4 @@
-import type { TeamRole, TeamStatus, InvitationStatus, RequestStatus, LinkCategory } from "@prisma/client";
+import type { TeamRole, TeamStatus, InvitationStatus, RequestStatus, LinkCategory, LinkScope } from "@prisma/client";
 
 // ---------------------------------------------------------------------------
 // Action result wrapper
