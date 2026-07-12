@@ -179,6 +179,43 @@ export async function forceDeleteTeamAction(teamId: string) {
   }
 }
 
+export async function updateUserRoleAction(userId: string, newRole: string) {
+  try {
+    const admin = await requireAdmin();
+
+    // Validate role against enum
+    const validRoles = Object.values(UserRole);
+    if (!validRoles.includes(newRole as UserRole)) {
+      return { success: false, error: "INVALID_ROLE" };
+    }
+
+    const user = await prisma.user.findUnique({ where: { id: userId } });
+    if (!user) return { success: false, error: "USER_NOT_FOUND" };
+    if (user.role === UserRole.SYSTEM_ADMIN) {
+      return { success: false, error: "CANNOT_CHANGE_ADMIN_ROLE" };
+    }
+    if (admin.userId === userId) {
+      return { success: false, error: "CANNOT_CHANGE_OWN_ROLE" };
+    }
+
+    await prisma.user.update({
+      where: { id: userId },
+      data: { role: newRole as UserRole },
+    });
+
+    await createAuditLog(admin.userId, "ADMIN_CHANGE_USER_ROLE", "User", userId, {
+      oldRole: user.role,
+      newRole,
+    });
+
+    revalidatePath("/dashboard/admin/users");
+    return { success: true };
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : "SERVER_ERROR";
+    return { success: false, error: errMsg };
+  }
+}
+
 export async function forceTransferTeamLeadershipAction(teamId: string, newLeaderUserId: string) {
   try {
     const admin = await requireAdmin();

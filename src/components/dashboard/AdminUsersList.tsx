@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Search, Shield, UserX, UserCheck, ChevronDown, Check, X, AlertCircle } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate, getInitials, stringToColor } from "@/lib/utils";
-import { approveUserAction, rejectUserAction, toggleUserSuspensionAction } from "@/app/actions/admin";
+import { approveUserAction, rejectUserAction, toggleUserSuspensionAction, updateUserRoleAction } from "@/app/actions/admin";
 import type { JWTSessionPayload } from "@/lib/auth";
 
 interface UserItem {
@@ -206,7 +206,7 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
                       <td className="px-5 py-4 text-right">
                         {!isSelf && (
                           <div className="flex items-center justify-end gap-2">
-                            {u.status === "PENDING_APPROVAL" ? (
+                            {u.status === "PENDING_APPROVAL" && (
                               <>
                                 <button
                                   disabled={loadingId !== null}
@@ -229,28 +229,44 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
                                   Reject
                                 </button>
                               </>
-                            ) : (
-                              u.role !== "SYSTEM_ADMIN" && (
+                            )}
+                            {u.status === "ACTIVE" && u.role !== "SYSTEM_ADMIN" && (
+                              <>
                                 <button
                                   disabled={loadingId !== null}
                                   onClick={() => handleToggleSuspension(u.id)}
-                                  className={cn(
-                                    "inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all border",
-                                    u.status === "ACTIVE"
-                                      ? "bg-white/5 hover:bg-rose-500/15 text-white/50 hover:text-rose-400 border-white/8 hover:border-rose-500/20"
-                                      : "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border-emerald-500/20"
-                                  )}
+                                  className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all border bg-white/5 hover:bg-rose-500/15 text-white/50 hover:text-rose-400 border-white/8 hover:border-rose-500/20"
                                 >
                                   {loadingId === u.id ? (
                                     <span className="w-3 h-3 border border-white/30 border-t-white rounded-full animate-spin" />
-                                  ) : u.status === "ACTIVE" ? (
-                                    <UserX size={11} />
                                   ) : (
-                                    <UserCheck size={11} />
+                                    <UserX size={11} />
                                   )}
-                                  {u.status === "ACTIVE" ? "Suspend" : "Reactivate"}
+                                  Suspend
                                 </button>
-                              )
+                                <RoleSelect
+                                  userId={u.id}
+                                  currentRole={u.role}
+                                  onError={setError}
+                                />
+                              </>
+                            )}
+                            {u.status === "SUSPENDED" && u.role !== "SYSTEM_ADMIN" && (
+                              <button
+                                disabled={loadingId !== null}
+                                onClick={() => handleToggleSuspension(u.id)}
+                                className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all border bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border-emerald-500/20"
+                              >
+                                {loadingId === u.id ? (
+                                  <span className="w-3 h-3 border border-white/30 border-t-white rounded-full animate-spin" />
+                                ) : (
+                                  <UserCheck size={11} />
+                                )}
+                                Reactivate
+                              </button>
+                            )}
+                            {u.status !== "ACTIVE" && u.status !== "SUSPENDED" && u.status !== "PENDING_APPROVAL" && u.role !== "SYSTEM_ADMIN" && (
+                              <span className="text-xs text-white/25 italic">-</span>
                             )}
                           </div>
                         )}
@@ -267,5 +283,87 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
         </div>
       </div>
     </DashboardShell>
+  );
+}
+
+/** Inline role selector for admin users table */
+function RoleSelect({
+  userId,
+  currentRole,
+  onError,
+}: {
+  userId: string;
+  currentRole: string;
+  onError: (msg: string | null) => void;
+}) {
+  const [saving, setSaving] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [selected, setSelected] = useState(currentRole);
+
+  const ALL_ROLES = [
+    { value: "MEMBER", label: "Member" },
+    { value: "MENTOR", label: "Mentor" },
+    { value: "KETUA_DEWAN_MENTOR", label: "Ketua Mentor" },
+    { value: "BPH", label: "BPH" },
+  ];
+
+  const handleChange = async (newRole: string) => {
+    if (newRole === currentRole) {
+      setEditing(false);
+      return;
+    }
+    setSaving(true);
+    onError(null);
+    try {
+      const res = await updateUserRoleAction(userId, newRole);
+      if (res.success) {
+        setSelected(newRole);
+        setEditing(false);
+      } else {
+        onError(res.error || "Failed to change role.");
+      }
+    } catch {
+      onError("An unexpected error occurred.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (editing) {
+    return (
+      <select
+        value={currentRole}
+        onChange={(e) => handleChange(e.target.value)}
+        disabled={saving}
+        className="bg-[#0d1117] border border-indigo-500/30 rounded-lg px-1.5 py-1 text-[10px] font-medium text-white focus:outline-none focus:ring-1 focus:ring-indigo-500/40 cursor-pointer max-w-[80px]"
+        autoFocus
+        onBlur={() => !saving && setEditing(false)}
+      >
+        {ALL_ROLES.map((r) => (
+          <option key={r.value} value={r.value}>
+            {r.label}
+          </option>
+        ))}
+      </select>
+    );
+  }
+
+  return (
+    <button
+      onClick={() => setEditing(true)}
+      disabled={saving}
+      className="inline-flex items-center gap-1 px-2 py-1 text-[10px] font-medium rounded-lg border border-white/8 bg-white/3 text-white/40 hover:text-white/70 hover:border-white/15 transition-all"
+      title="Change role"
+    >
+      {saving ? (
+        <span className="w-3 h-3 border border-white/30 border-t-white rounded-full animate-spin" />
+      ) : (
+        <>
+          <Shield size={9} />
+          {ALL_ROLES.find((r) => r.value === currentRole)?.label || currentRole}
+          <ChevronDown size={9} />
+        </>
+      )}
+    </button>
   );
 }
