@@ -265,8 +265,8 @@ async function main() {
       status: UserStatus.ACTIVE,
       approvedBy: admin.id,
       approvedAt: new Date(),
-      role: UserRole.MENTOR,
-      profile: { create: { bio: "Ecosystem Mentor and Project Reviewer." } },
+      role: UserRole.KETUA_DEWAN_MENTOR,
+      profile: { create: { bio: "Ketua Dewan Mentor YYZU." } },
     },
   });
   console.log(`✓ Mentor: ${mentor.username}`);
@@ -277,16 +277,14 @@ async function main() {
     update: {},
     create: {
       username: "mentor_andi",
-      fullName: "Andi Prabowo",
-      email: "andi.mentor@yyzu.tech",
+      fullName: "Andi Pratama",
+      email: "mentor.andi@yyzu.org",
       passwordHash: mentorPassword,
-      status: UserStatus.ACTIVE,
-      approvedBy: admin.id,
-      approvedAt: new Date(),
       role: UserRole.MENTOR,
-      profile: { create: { bio: "Frontend mentor. 6+ years in React ecosystem & design systems." } },
+      status: UserStatus.ACTIVE,
     },
   });
+
   const mentor3 = await prisma.user.upsert({
     where: { username: "mentor_dian" },
     update: {},
@@ -756,7 +754,7 @@ async function main() {
   console.log("  BPH          : username=dewi_kartika    password=Member@YYZU2024  (Head of PM)");
   console.log("  BPH          : username=fajar_nugroho   password=Member@YYZU2024  (Head of Learning)");
   console.log("  BPH          : username=indah_permata   password=Member@YYZU2024  (Head of Media)");
-  console.log("  Mentor       : username=mentor_review   password=Mentor@YYZU2024  (Ecosystem Mentor)");
+  console.log("  Ketua Mentor : username=mentor_review   password=Mentor@YYZU2024  (Ketua Dewan Mentor)");
   console.log("  Mentor       : username=mentor_andi     password=Mentor@YYZU2024  (Frontend Mentor)");
   console.log("  Mentor       : username=mentor_dian     password=Mentor@YYZU2024  (Backend Mentor)");
   console.log("  Team Leader  : username=rizky_ramadan   password=Member@YYZU2024  (Nexus - Fullstack)");

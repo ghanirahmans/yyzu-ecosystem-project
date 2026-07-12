@@ -57,7 +57,7 @@ export default function LoginPage() {
     { label: "BPH · Learning", username: "fajar_nugroho", password: "Member@YYZU2024" },
     { label: "BPH · Media", username: "indah_permata", password: "Member@YYZU2024" },
     // Mentors
-    { label: "Mentor · Ecosystem", username: "mentor_review", password: "Mentor@YYZU2024" },
+    { label: "Ketua Dewan Mentor", username: "mentor_review", password: "Mentor@YYZU2024" },
     { label: "Mentor · Frontend", username: "mentor_andi", password: "Mentor@YYZU2024" },
     { label: "Mentor · Backend", username: "mentor_dian", password: "Mentor@YYZU2024" },
     // Members

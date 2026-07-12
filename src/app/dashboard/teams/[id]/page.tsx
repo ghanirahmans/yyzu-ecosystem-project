@@ -24,7 +24,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ id:
 
   // 2. Check if user is allowed to view this team
   const isAdmin = session.role === UserRole.SYSTEM_ADMIN;
-  const isMentor = session.role === UserRole.MENTOR;
+  const isMentor = session.role === UserRole.MENTOR || session.role === UserRole.KETUA_DEWAN_MENTOR;
 
   const membership = await prisma.teamMembership.findFirst({
     where: { teamId: team.id, userId: session.userId, leftAt: null },

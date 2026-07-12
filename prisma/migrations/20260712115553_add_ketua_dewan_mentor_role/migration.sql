@@ -1,0 +1,2 @@
+-- AlterEnum
+ALTER TYPE "UserRole" ADD VALUE 'KETUA_DEWAN_MENTOR';

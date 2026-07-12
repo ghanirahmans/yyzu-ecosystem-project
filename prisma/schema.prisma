@@ -239,6 +239,7 @@ enum UserStatus {
 enum UserRole {
   MEMBER
   MENTOR
+  KETUA_DEWAN_MENTOR
   BPH
   SYSTEM_ADMIN
 }

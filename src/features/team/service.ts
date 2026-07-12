@@ -633,7 +633,7 @@ export async function reviewSubmission(
   status: "APPROVED" | "REVISION",
   feedback?: string
 ): Promise<{ success: true } | { success: false; error: string }> {
-  const isMentor = actor.role === UserRole.MENTOR;
+  const isMentor = actor.role === UserRole.MENTOR || actor.role === UserRole.KETUA_DEWAN_MENTOR;
   const isAdmin = actor.role === UserRole.SYSTEM_ADMIN;
   if (!isMentor && !isAdmin) {
     return { success: false, error: "UNAUTHORIZED" };
