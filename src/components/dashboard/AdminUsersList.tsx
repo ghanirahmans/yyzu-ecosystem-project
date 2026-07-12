@@ -132,6 +132,7 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
               <thead>
                 <tr className="border-b border-white/8 bg-white/1 text-left">
                   <th className="px-5 py-3.5 text-xs font-semibold text-white/30 uppercase tracking-wider">User</th>
+                  <th className="px-5 py-3.5 text-xs font-semibold text-white/30 uppercase tracking-wider hidden sm:table-cell">Role</th>
                   <th className="px-5 py-3.5 text-xs font-semibold text-white/30 uppercase tracking-wider hidden md:table-cell">Team</th>
                   <th className="px-5 py-3.5 text-xs font-semibold text-white/30 uppercase tracking-wider hidden lg:table-cell">Joined</th>
                   <th className="px-5 py-3.5 text-xs font-semibold text-white/30 uppercase tracking-wider">Status</th>
@@ -169,6 +170,9 @@ export default function AdminUsersList({ users, session }: AdminUsersListProps) 
                             <p className="text-xs text-white/40">@{u.username} {u.email ? `· ${u.email}` : ""}</p>
                           </div>
                         </div>
+                      </td>
+                      <td className="px-5 py-4 hidden sm:table-cell">
+                        <RoleBadge role={u.role} />
                       </td>
                       <td className="px-5 py-4 hidden md:table-cell">
                         <p className="text-sm text-white/60">
@@ -365,5 +369,26 @@ function RoleSelect({
         </>
       )}
     </button>
+  );
+}
+
+/** Role badge matching the rest of the dashboard. */
+const ROLE_BADGE_META: Record<string, { label: string; color: string }> = {
+  SYSTEM_ADMIN: { label: "Koordinator Umum", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" },
+  BPH: { label: "Ketua Divisi", color: "bg-yellow-500/15 text-yellow-400 border-yellow-500/20" },
+  KETUA_DEWAN_MENTOR: { label: "Ketua Mentor", color: "bg-violet-500/15 text-violet-400 border-violet-500/20" },
+  MENTOR: { label: "Mentor", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" },
+  MEMBER: { label: "Staff Divisi", color: "bg-sky-500/12 text-sky-300 border-sky-500/15" },
+};
+
+function RoleBadge({ role }: { role: string }) {
+  const meta = ROLE_BADGE_META[role] ?? { label: role, color: "bg-white/5 text-white/30 border-white/5" };
+  return (
+    <span className={cn(
+      "text-[11px] font-bold px-2 py-0.5 rounded-full border inline-block whitespace-nowrap",
+      meta.color
+    )}>
+      {meta.label}
+    </span>
   );
 }
