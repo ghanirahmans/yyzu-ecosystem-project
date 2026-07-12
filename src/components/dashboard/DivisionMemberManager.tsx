@@ -19,10 +19,10 @@ interface Membership {
 interface DivisionMemberManagerProps {
   divisionId: string;
   memberships: Membership[];
-  isAdmin: boolean;
+  canManage: boolean;
 }
 
-export default function DivisionMemberManager({ divisionId, memberships, isAdmin }: DivisionMemberManagerProps) {
+export default function DivisionMemberManager({ divisionId, memberships, canManage }: DivisionMemberManagerProps) {
   const router = useRouter();
   const [newUsername, setNewUsername] = useState("");
   const [newRole, setNewRole] = useState<"HEAD" | "STAFF">("STAFF");
@@ -113,8 +113,8 @@ export default function DivisionMemberManager({ divisionId, memberships, isAdmin
         </div>
       )}
 
-      {/* Admin Panel: Add Member */}
-      {isAdmin && (
+      {/* Manager Panel: Add Member */}
+      {canManage && (
         <form onSubmit={handleAddMember} className="bg-[#161b22] border border-white/8 rounded-2xl p-5 space-y-4">
           <h3 className="font-semibold text-white text-sm">Tambah Anggota Divisi</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -194,7 +194,7 @@ export default function DivisionMemberManager({ divisionId, memberships, isAdmin
                     </div>
                   </div>
 
-                  {isAdmin && (
+                  {canManage && (
                     <div className="flex items-center gap-2">
                       <select
                         value={m.role}

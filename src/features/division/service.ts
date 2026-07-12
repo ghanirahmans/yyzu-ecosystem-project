@@ -11,21 +11,33 @@ import {
   dbFindUserByUsername,
   dbFindDivisionMembership,
   dbFindDivisionMembershipById,
+  dbFindIsDivisionHead,
   dbReactivateDivisionMembership,
   dbCreateDivisionMembership,
   dbSoftDeleteDivisionMembership,
   dbUpdateDivisionMembershipRole,
 } from "./repository";
 
-async function verifyAdmin(actorId: string) {
+async function verifyDivisionManager(actorId: string, divisionId: string) {
   const dbUser = await dbFindUserRoleAndStatus(actorId);
-  if (!dbUser || dbUser.role !== UserRole.SYSTEM_ADMIN || dbUser.status !== "ACTIVE") {
+  if (!dbUser || dbUser.status !== "ACTIVE") {
     throw new Error("UNAUTHORIZED");
   }
+
+  // SYSTEM_ADMIN can manage any division
+  if (dbUser.role === UserRole.SYSTEM_ADMIN) return;
+
+  // BPH can manage if they are HEAD of this division
+  if (dbUser.role === UserRole.BPH) {
+    const membership = await dbFindIsDivisionHead(actorId, divisionId);
+    if (membership?.role === "HEAD") return;
+  }
+
+  throw new Error("UNAUTHORIZED");
 }
 
 export async function addDivisionMember(actor: ActiveUser, data: AddDivisionMemberInput) {
-  await verifyAdmin(actor.id);
+  await verifyDivisionManager(actor.id, data.divisionId);
 
   const user = await dbFindUserByUsername(data.username);
   if (!user) {
@@ -60,7 +72,7 @@ export async function addDivisionMember(actor: ActiveUser, data: AddDivisionMemb
 }
 
 export async function removeDivisionMember(actor: ActiveUser, data: RemoveDivisionMemberInput) {
-  await verifyAdmin(actor.id);
+  await verifyDivisionManager(actor.id, data.divisionId);
 
   const membership = await dbFindDivisionMembershipById(data.membershipId);
   if (!membership) {
@@ -77,7 +89,7 @@ export async function removeDivisionMember(actor: ActiveUser, data: RemoveDivisi
 }
 
 export async function changeDivisionRole(actor: ActiveUser, data: ChangeDivisionRoleInput) {
-  await verifyAdmin(actor.id);
+  await verifyDivisionManager(actor.id, data.divisionId);
 
   const membership = await dbFindDivisionMembershipById(data.membershipId);
   if (!membership) {

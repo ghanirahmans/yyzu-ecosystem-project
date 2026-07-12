@@ -20,6 +20,13 @@ export async function dbFindDivisionMembership(userId: string, divisionId: strin
   });
 }
 
+export async function dbFindIsDivisionHead(userId: string, divisionId: string) {
+  return prisma.divisionMembership.findUnique({
+    where: { userId_divisionId: { userId, divisionId } },
+    select: { role: true },
+  });
+}
+
 export async function dbFindDivisionMembershipById(membershipId: string) {
   return prisma.divisionMembership.findUnique({
     where: { id: membershipId },

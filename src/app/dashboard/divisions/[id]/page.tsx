@@ -113,8 +113,11 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
   };
 
   const isAdmin = session.role === "SYSTEM_ADMIN";
+  const isBph = session.role === "BPH";
   const userMembership = division.memberships.find((m) => m.userId === session.userId);
   const isDivisionMember = !!userMembership || isAdmin;
+  const isDivisionHead = userMembership?.role === "HEAD";
+  const canManage = isAdmin || (isBph && isDivisionHead);
 
   return (
     <DashboardShell user={session}>
@@ -150,7 +153,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Member Management (2/3 width on desktop) */}
           <div className="lg:col-span-2 space-y-6">
-            <DivisionMemberManager divisionId={division.id} memberships={division.memberships} isAdmin={isAdmin} />
+            <DivisionMemberManager divisionId={division.id} memberships={division.memberships} canManage={canManage} />
           </div>
 
           {/* Programs Sidebar (1/3 width) */}
