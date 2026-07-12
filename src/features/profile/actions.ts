@@ -39,3 +39,18 @@ export async function actionUpdateProfile(data: ProfileInput) {
     return { success: false as const, error: "SERVER_ERROR" as const };
   }
 }
+
+export async function actionChangePassword(data: { currentPassword: string; newPassword: string }) {
+  try {
+    const actor = await validateActiveUser();
+    const result = await profileService.changePassword(actor, data);
+    if (!result.success) {
+      return result;
+    }
+    revalidatePath("/dashboard/profile");
+    return { success: true as const };
+  } catch (error) {
+    console.error("Change password error:", error);
+    return { success: false as const, error: "SERVER_ERROR" as const };
+  }
+}

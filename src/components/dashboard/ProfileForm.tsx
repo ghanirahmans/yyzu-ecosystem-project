@@ -14,11 +14,16 @@ import {
   AlertCircle,
   Users,
   Star,
+  Lock,
+  Eye,
+  EyeOff,
+  ChevronDown,
 } from "lucide-react";
 import type { JWTSessionPayload } from "@/lib/auth";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { cn, formatDate, getInitials, stringToColor } from "@/lib/utils";
 import { actionUpdateProfile } from "@/features/profile/actions";
+import { actionChangePassword } from "@/features/profile/actions";
 
 const DIVISION_LABELS: Record<string, string> = {
   PARTNERSHIP: "Partnership",
@@ -73,6 +78,14 @@ export default function ProfileForm({
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [serverError, setServerError] = useState<string | null>(null);
 
+  // Change password state
+  const [showChangePassword, setShowChangePassword] = useState(false);
+  const [pwForm, setPwForm] = useState({ currentPassword: "", newPassword: "", confirmPassword: "" });
+  const [pwLoading, setPwLoading] = useState(false);
+  const [pwError, setPwError] = useState<string | null>(null);
+  const [pwSuccess, setPwSuccess] = useState(false);
+  const [showPw, setShowPw] = useState(false);
+
   const initials = getInitials(user.fullName);
   const avatarColor = stringToColor(user.username);
 
@@ -113,6 +126,58 @@ export default function ProfileForm({
       setServerError("An unexpected error occurred.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleChangePassword = async () => {
+    // Validate
+    if (!pwForm.currentPassword) {
+      setPwError("Current password is required.");
+      return;
+    }
+    if (!pwForm.newPassword || pwForm.newPassword.length < 6) {
+      setPwError("New password must be at least 6 characters.");
+      return;
+    }
+    if (pwForm.newPassword !== pwForm.confirmPassword) {
+      setPwError("Passwords do not match.");
+      return;
+    }
+    if (pwForm.newPassword === pwForm.currentPassword) {
+      setPwError("New password must be different from current password.");
+      return;
+    }
+
+    setPwLoading(true);
+    setPwError(null);
+    setPwSuccess(false);
+
+    try {
+      const res = await actionChangePassword({
+        currentPassword: pwForm.currentPassword,
+        newPassword: pwForm.newPassword,
+      });
+      if (res.success) {
+        setPwSuccess(true);
+        setPwForm({ currentPassword: "", newPassword: "", confirmPassword: "" });
+        setShowPw(false);
+        setTimeout(() => {
+          setPwSuccess(false);
+          setShowChangePassword(false);
+        }, 3000);
+      } else {
+        setPwError(
+          res.error === "CURRENT_PASSWORD_INCORRECT"
+            ? "Current password is incorrect."
+            : res.error === "INVALID_NEW_PASSWORD"
+            ? "New password must be between 6 and 100 characters."
+            : "Failed to change password."
+        );
+      }
+    } catch {
+      setPwError("An unexpected error occurred.");
+    } finally {
+      setPwLoading(false);
     }
   };
 
@@ -354,8 +419,113 @@ export default function ProfileForm({
             <InfoRow label="Account Role" value={user.role} />
             <InfoRow label="Account Created" value={formatDate(user.createdAt)} />
           </div>
-        </div>
-      </div>
+          </div>
+
+          {/* Change Password */}
+          <div className="bg-[#161b22] border border-white/8 rounded-2xl p-5">
+          <button
+            onClick={() => {
+              setShowChangePassword(!showChangePassword);
+              setPwError(null);
+              setPwSuccess(false);
+            }}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <Lock size={14} className="text-white/30" />
+              <h3 className="text-sm font-semibold text-white/60 uppercase tracking-wider">Change Password</h3>
+            </div>
+            <ChevronDown
+              size={14}
+              className={`text-white/30 transition-transform ${showChangePassword ? "rotate-180" : ""}`}
+            />
+          </button>
+
+          {showChangePassword && (
+            <div className="mt-4 space-y-4 border-t border-white/5 pt-4">
+              {pwSuccess && (
+                <div className="flex items-center gap-2.5 bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-4 py-3 text-sm text-emerald-400">
+                  <CheckCircle2 size={15} />
+                  Password changed successfully.
+                </div>
+              )}
+
+              {pwError && (
+                <div className="flex items-center gap-2.5 bg-rose-500/10 border border-rose-500/20 rounded-xl px-4 py-3 text-sm text-rose-400">
+                  <AlertCircle size={15} />
+                  {pwError}
+                </div>
+              )}
+
+              {/* Current Password */}
+              <div>
+                <label className="block text-xs font-semibold text-white/40 uppercase tracking-wider mb-1.5">
+                  Current Password
+                </label>
+                <div className="relative">
+                  <input
+                    type={showPw ? "text" : "password"}
+                    value={pwForm.currentPassword}
+                    onChange={(e) => setPwForm((f) => ({ ...f, currentPassword: e.target.value }))}
+                    placeholder="Enter current password"
+                    className="w-full bg-[#0d1117] border border-white/10 rounded-xl pl-3 pr-10 py-2.5 text-sm text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPw(!showPw)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60"
+                  >
+                    {showPw ? <EyeOff size={14} /> : <Eye size={14} />}
+                  </button>
+                </div>
+              </div>
+
+              {/* New Password */}
+              <div>
+                <label className="block text-xs font-semibold text-white/40 uppercase tracking-wider mb-1.5">
+                  New Password
+                </label>
+                <div className="relative">
+                  <input
+                    type={showPw ? "text" : "password"}
+                    value={pwForm.newPassword}
+                    onChange={(e) => setPwForm((f) => ({ ...f, newPassword: e.target.value }))}
+                    placeholder="Min 6 characters"
+                    className="w-full bg-[#0d1117] border border-white/10 rounded-xl pl-3 pr-10 py-2.5 text-sm text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+                  />
+                </div>
+              </div>
+
+              {/* Confirm New Password */}
+              <div>
+                <label className="block text-xs font-semibold text-white/40 uppercase tracking-wider mb-1.5">
+                  Confirm New Password
+                </label>
+                <input
+                  type={showPw ? "text" : "password"}
+                  value={pwForm.confirmPassword}
+                  onChange={(e) => setPwForm((f) => ({ ...f, confirmPassword: e.target.value }))}
+                  placeholder="Re-enter new password"
+                  className="w-full bg-[#0d1117] border border-white/10 rounded-xl pl-3 pr-4 py-2.5 text-sm text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+                />
+              </div>
+
+              <button
+                onClick={handleChangePassword}
+                disabled={pwLoading}
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-semibold rounded-xl transition-colors"
+              >
+                {pwLoading ? (
+                  <span className="w-4 h-4 border border-white/30 border-t-white rounded-full animate-spin" />
+                ) : (
+                  <Lock size={14} />
+                )}
+                Update Password
+              </button>
+            </div>
+          )}
+          </div>
+          </div>
     </DashboardShell>
   );
 }

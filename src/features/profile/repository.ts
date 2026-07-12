@@ -30,3 +30,10 @@ export async function dbUpdateProfile(
     return updatedUser;
   });
 }
+
+export async function dbUpdatePassword(userId: string, newHash: string) {
+  return prisma.user.update({
+    where: { id: userId },
+    data: { passwordHash: newHash },
+  });
+}
