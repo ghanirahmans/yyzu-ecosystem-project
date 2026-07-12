@@ -47,10 +47,28 @@ export default function LoginPage() {
   };
 
   const DEMO_ACCOUNTS = [
+    // Admin
     { label: "System Admin", username: "ghanirahmans", password: "Admin@YYZU2024" },
-    { label: "Team Leader (Nexus)", username: "arjun_pratama", password: "Member@YYZU2024" },
-    { label: "Member (Nexus)", username: "rizky_ramadan", password: "Member@YYZU2024" },
+    // BPH
+    { label: "BPH · Partnership", username: "arjun_pratama", password: "Member@YYZU2024" },
+    { label: "BPH · SDM", username: "siti_nurhaliza", password: "Member@YYZU2024" },
+    { label: "BPH · Event", username: "budi_santoso", password: "Member@YYZU2024" },
+    { label: "BPH · PM", username: "dewi_kartika", password: "Member@YYZU2024" },
+    { label: "BPH · Learning", username: "fajar_nugroho", password: "Member@YYZU2024" },
+    { label: "BPH · Media", username: "indah_permata", password: "Member@YYZU2024" },
+    // Mentors
+    { label: "Mentor · Ecosystem", username: "mentor_review", password: "Mentor@YYZU2024" },
+    { label: "Mentor · Frontend", username: "mentor_andi", password: "Mentor@YYZU2024" },
+    { label: "Mentor · Backend", username: "mentor_dian", password: "Mentor@YYZU2024" },
+    // Members
+    { label: "Team Leader (Nexus)", username: "rizky_ramadan", password: "Member@YYZU2024" },
+    { label: "Member · Media Staff", username: "maya_anggraini", password: "Member@YYZU2024" },
+    { label: "Member · PM Staff", username: "doni_wicaksono", password: "Member@YYZU2024" },
+    { label: "Member · Learning", username: "sari_dewi", password: "Member@YYZU2024" },
+    { label: "Member · Partnership", username: "adi_saputra", password: "Member@YYZU2024" },
+    // Special
     { label: "Pending Approval", username: "pending_user_1", password: "Member@YYZU2024" },
+    { label: "Suspended", username: "suspended_user", password: "Member@YYZU2024" },
   ];
 
   return (
@@ -174,7 +192,7 @@ export default function LoginPage() {
               <p className="text-[10px] text-white/40 text-center mb-3 font-semibold uppercase tracking-wider">
                 Demo accounts (click to fill)
               </p>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-[280px] overflow-y-auto pr-0.5 scrollbar-thin">
                 {DEMO_ACCOUNTS.map((acc) => (
                   <button
                     key={acc.username}

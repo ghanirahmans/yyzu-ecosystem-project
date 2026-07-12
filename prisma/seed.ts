@@ -137,7 +137,7 @@ async function main() {
         role: UserRole.BPH,
       },
     }),
-    // Regular active member
+    // Regular active members
     prisma.user.upsert({
       where: { username: "rizky_ramadan" },
       update: {},
@@ -164,6 +164,49 @@ async function main() {
         approvedBy: admin.id,
         approvedAt: new Date(),
         profile: { create: { bio: "UI/UX Designer." } },
+      },
+    }),
+    // Extra members
+    prisma.user.upsert({
+      where: { username: "doni_wicaksono" },
+      update: {},
+      create: {
+        username: "doni_wicaksono",
+        fullName: "Doni Wicaksono",
+        email: "doni@yyzu.tech",
+        passwordHash: memberPassword,
+        status: UserStatus.ACTIVE,
+        approvedBy: admin.id,
+        approvedAt: new Date(),
+        profile: { create: { bio: "Backend & API enthusiast. Go and Node.js." } },
+      },
+    }),
+    prisma.user.upsert({
+      where: { username: "sari_dewi" },
+      update: {},
+      create: {
+        username: "sari_dewi",
+        fullName: "Sari Dewi",
+        email: "sari@yyzu.tech",
+        passwordHash: memberPassword,
+        status: UserStatus.ACTIVE,
+        approvedBy: admin.id,
+        approvedAt: new Date(),
+        profile: { create: { bio: "Data & analytics enthusiast. Python, SQL, and visualization." } },
+      },
+    }),
+    prisma.user.upsert({
+      where: { username: "adi_saputra" },
+      update: {},
+      create: {
+        username: "adi_saputra",
+        fullName: "Adi Saputra",
+        email: "adi@yyzu.tech",
+        passwordHash: memberPassword,
+        status: UserStatus.ACTIVE,
+        approvedBy: admin.id,
+        approvedAt: new Date(),
+        profile: { create: { bio: "Mobile dev exploring Flutter & Kotlin Multiplatform." } },
       },
     }),
   ]);
@@ -228,7 +271,57 @@ async function main() {
   });
   console.log(`✓ Mentor: ${mentor.username}`);
 
-  const [arjun, siti, budi, dewi, fajar, indah, rizky, maya] = members;
+  // ── 3c. Extra Mentors ────────────────────────────────────
+  const mentor2 = await prisma.user.upsert({
+    where: { username: "mentor_andi" },
+    update: {},
+    create: {
+      username: "mentor_andi",
+      fullName: "Andi Prabowo",
+      email: "andi.mentor@yyzu.tech",
+      passwordHash: mentorPassword,
+      status: UserStatus.ACTIVE,
+      approvedBy: admin.id,
+      approvedAt: new Date(),
+      role: UserRole.MENTOR,
+      profile: { create: { bio: "Frontend mentor. 6+ years in React ecosystem & design systems." } },
+    },
+  });
+  const mentor3 = await prisma.user.upsert({
+    where: { username: "mentor_dian" },
+    update: {},
+    create: {
+      username: "mentor_dian",
+      fullName: "Dian Puspita",
+      email: "dian.mentor@yyzu.tech",
+      passwordHash: mentorPassword,
+      status: UserStatus.ACTIVE,
+      approvedBy: admin.id,
+      approvedAt: new Date(),
+      role: UserRole.MENTOR,
+      profile: { create: { bio: "Backend & distributed systems mentor. Go, Rust, and cloud infra." } },
+    },
+  });
+  console.log(`✓ Extra Mentors: ${mentor2.username}, ${mentor3.username}`);
+
+  // ── 3d. Suspended User (for testing) ─────────────────────
+  await prisma.user.upsert({
+    where: { username: "suspended_user" },
+    update: {},
+    create: {
+      username: "suspended_user",
+      fullName: "Bambang Supeno",
+      email: "suspended@yyzu.tech",
+      passwordHash: memberPassword,
+      status: UserStatus.SUSPENDED,
+      approvedBy: admin.id,
+      approvedAt: new Date(),
+      profile: { create: { bio: "Account suspended for testing." } },
+    },
+  });
+  console.log("✓ Suspended user created");
+
+  const [arjun, siti, budi, dewi, fajar, indah, rizky, maya, doni, sari, adi] = members;
 
   // ── 4. Divisions (7 BPH) ──────────────────────────────────
   const divisionDefs: Array<{
@@ -287,12 +380,31 @@ async function main() {
       create: { userId: def.headId, divisionId: division.id, role: DivisionRole.HEAD },
     });
 
-    // Add a couple of staff members to some divisions
+    // Add staff members to divisions
     if (def.name === DivisionName.PARTNERSHIP) {
       await prisma.divisionMembership.upsert({
         where: { userId_divisionId: { userId: rizky.id, divisionId: division.id } },
         update: {},
         create: { userId: rizky.id, divisionId: division.id, role: DivisionRole.STAFF },
+      });
+      await prisma.divisionMembership.upsert({
+        where: { userId_divisionId: { userId: adi.id, divisionId: division.id } },
+        update: {},
+        create: { userId: adi.id, divisionId: division.id, role: DivisionRole.STAFF },
+      });
+    }
+    if (def.name === DivisionName.PRODUCT_PROJECT_MANAGEMENT) {
+      await prisma.divisionMembership.upsert({
+        where: { userId_divisionId: { userId: doni.id, divisionId: division.id } },
+        update: {},
+        create: { userId: doni.id, divisionId: division.id, role: DivisionRole.STAFF },
+      });
+    }
+    if (def.name === DivisionName.LEARNING_CURRICULUM) {
+      await prisma.divisionMembership.upsert({
+        where: { userId_divisionId: { userId: sari.id, divisionId: division.id } },
+        update: {},
+        create: { userId: sari.id, divisionId: division.id, role: DivisionRole.STAFF },
       });
     }
     if (def.name === DivisionName.MEDIA_BRANDING) {
@@ -641,9 +753,19 @@ async function main() {
   console.log("  BPH          : username=arjun_pratama  password=Member@YYZU2024  (Head of Partnership)");
   console.log("  BPH          : username=siti_nurhaliza  password=Member@YYZU2024  (Head of SDM)");
   console.log("  BPH          : username=budi_santoso    password=Member@YYZU2024  (Head of Event)");
-  console.log("  Mentor       : username=mentor_review  password=Mentor@YYZU2024");
-  console.log("  Team Leader  : username=rizky_ramadan  password=Member@YYZU2024");
-  console.log("  Member       : username=pending_user_1  password=Member@YYZU2024");
+  console.log("  BPH          : username=dewi_kartika    password=Member@YYZU2024  (Head of PM)");
+  console.log("  BPH          : username=fajar_nugroho   password=Member@YYZU2024  (Head of Learning)");
+  console.log("  BPH          : username=indah_permata   password=Member@YYZU2024  (Head of Media)");
+  console.log("  Mentor       : username=mentor_review   password=Mentor@YYZU2024  (Ecosystem Mentor)");
+  console.log("  Mentor       : username=mentor_andi     password=Mentor@YYZU2024  (Frontend Mentor)");
+  console.log("  Mentor       : username=mentor_dian     password=Mentor@YYZU2024  (Backend Mentor)");
+  console.log("  Team Leader  : username=rizky_ramadan   password=Member@YYZU2024  (Nexus - Fullstack)");
+  console.log("  Member       : username=maya_anggraini  password=Member@YYZU2024  (Media-Branding Staff)");
+  console.log("  Member       : username=doni_wicaksono  password=Member@YYZU2024  (PM Division Staff)");
+  console.log("  Member       : username=sari_dewi       password=Member@YYZU2024  (Learning Staff)");
+  console.log("  Member       : username=adi_saputra     password=Member@YYZU2024  (Partnership Staff)");
+  console.log("  Pending      : username=pending_user_1  password=Member@YYZU2024");
+  console.log("  Suspended    : username=suspended_user  password=Member@YYZU2024");
 }
 
 main()
