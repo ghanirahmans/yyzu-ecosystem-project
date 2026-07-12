@@ -25,6 +25,7 @@ import {
   Briefcase,
   Sun,
   Moon,
+  GraduationCap,
 } from "lucide-react";
 import { cn, getInitials, stringToColor } from "@/lib/utils";
 
@@ -45,6 +46,7 @@ interface NavItem {
   icon: React.ReactNode;
   adminOnly?: boolean;
   bphOnly?: boolean;
+  mentorOnly?: boolean;
 }
 
 const NAV_ITEMS: NavItem[] = [
@@ -56,6 +58,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/dashboard/team", label: "My Team", icon: <Users size={16} /> },
   { href: "/dashboard/teams", label: "Browse Teams", icon: <Home size={16} /> },
   { href: "/dashboard/profile", label: "My Profile", icon: <User size={16} /> },
+  { href: "/dashboard/mentor", label: "Mentor", icon: <GraduationCap size={16} />, mentorOnly: true },
   { href: "/dashboard/admin/users", label: "Manage Users", icon: <Shield size={16} />, adminOnly: true },
   { href: "/dashboard/admin/teams", label: "Manage Teams", icon: <Settings size={16} />, adminOnly: true },
   { href: "/dashboard/admin/audit", label: "Audit Log", icon: <ScrollText size={16} />, adminOnly: true },
@@ -68,6 +71,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
   const isAdmin = user.role === "SYSTEM_ADMIN";
   const isBph = user.role === "SYSTEM_ADMIN" || user.role === "BPH";
   const isKetuaDewanMentor = user.role === "KETUA_DEWAN_MENTOR";
+  const isMentor = isKetuaDewanMentor || user.role === "MENTOR";
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
@@ -107,6 +111,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
   const visibleNav = NAV_ITEMS.filter((item) => {
     if (item.adminOnly && !isAdmin) return false;
     if (item.bphOnly && !isBph) return false;
+    if (item.mentorOnly && !isMentor) return false;
     return true;
   });
 
