@@ -22,7 +22,7 @@ const DIVISION_LABELS: Record<string, string> = {
 };
 
 function getRoleBadge(role: string) {
-  if (role === "SYSTEM_ADMIN") return { label: "System Admin", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" };
+  if (role === "SYSTEM_ADMIN") return { label: "Koordinator Umum", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" };
   if (role === "BPH") return { label: "Ketua Divisi", color: "bg-yellow-500/15 text-yellow-400 border-yellow-500/20" };
   if (role === "MENTOR") return { label: "Mentor", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" };
   return { label: "Staff Divisi", color: "bg-sky-500/12 text-sky-300 border-sky-500/15" };

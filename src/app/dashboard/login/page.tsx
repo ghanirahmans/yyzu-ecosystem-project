@@ -48,7 +48,7 @@ export default function LoginPage() {
 
   const DEMO_ACCOUNTS = [
     // Admin
-    { label: "System Admin", username: "ghanirahmans", password: "Admin@YYZU2024" },
+    { label: "Koordinator Umum", username: "ghanirahmans", password: "Admin@YYZU2024" },
     // BPH → Ketua Divisi
     { label: "Ketua Divisi · Partnership", username: "arjun_pratama", password: "Member@YYZU2024" },
     { label: "Ketua Divisi · SDM", username: "siti_nurhaliza", password: "Member@YYZU2024" },

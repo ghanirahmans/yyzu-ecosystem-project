@@ -196,11 +196,15 @@ export default function ProfileForm({
   const roleBadges: { label: string; color: string }[] = [];
 
   if (user.role === "SYSTEM_ADMIN") {
-    roleBadges.push({ label: "System Admin", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" });
+    roleBadges.push({ label: "Koordinator Umum · BPH", color: "bg-rose-500/15 text-rose-400 border-rose-500/20" });
+  } else if (user.role === "BPH") {
+    roleBadges.push({ label: "Ketua Divisi · BPH", color: "bg-yellow-500/15 text-yellow-400 border-yellow-500/20" });
+  } else if (user.role === "KETUA_DEWAN_MENTOR") {
+    roleBadges.push({ label: "Ketua Dewan Mentor", color: "bg-violet-500/15 text-violet-400 border-violet-500/20" });
   } else if (user.role === "MENTOR") {
     roleBadges.push({ label: "Mentor", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" });
   } else {
-    roleBadges.push({ label: "Member", color: "bg-white/8 text-white/50 border-white/10" });
+    roleBadges.push({ label: "Staff Divisi", color: "bg-sky-500/12 text-sky-300 border-sky-500/15" });
   }
 
   if (teamRole === "TEAM_LEADER") {

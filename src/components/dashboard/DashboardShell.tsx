@@ -273,7 +273,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
             )}
             {user.role === "SYSTEM_ADMIN" && (
               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-rose-500/10 text-rose-400/70 border border-rose-500/10 flex-shrink-0">
-                ADMIN
+                BPH
               </span>
             )}
             {isKetuaDewanMentor && (
