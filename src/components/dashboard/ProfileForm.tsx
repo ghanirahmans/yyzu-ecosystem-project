@@ -204,7 +204,7 @@ export default function ProfileForm({
   } else if (user.role === "MENTOR") {
     roleBadges.push({ label: "Mentor", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" });
   } else {
-    roleBadges.push({ label: "Member", color: "bg-white/8 text-white/50 border-white/10" });
+    roleBadges.push({ label: "Talenta", color: "bg-white/8 text-white/50 border-white/10" });
   }
 
   if (teamRole === "TEAM_LEADER") {

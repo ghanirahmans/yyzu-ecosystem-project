@@ -305,7 +305,7 @@ function RoleSelect({
   const [selected, setSelected] = useState(currentRole);
 
   const ALL_ROLES = [
-    { value: "MEMBER", label: "Member" },
+    { value: "MEMBER", label: "Talenta" },
     { value: "MENTOR", label: "Mentor" },
     { value: "KETUA_DEWAN_MENTOR", label: "Ketua Mentor" },
     { value: "BPH", label: "Ketua Divisi" },
@@ -378,7 +378,7 @@ const ROLE_BADGE_META: Record<string, { label: string; color: string }> = {
   BPH: { label: "Ketua Divisi", color: "bg-yellow-500/15 text-yellow-400 border-yellow-500/20" },
   KETUA_DEWAN_MENTOR: { label: "Ketua Mentor", color: "bg-violet-500/15 text-violet-400 border-violet-500/20" },
   MENTOR: { label: "Mentor", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" },
-  MEMBER: { label: "Member", color: "bg-white/8 text-white/50 border-white/10" },
+  MEMBER: { label: "Talenta", color: "bg-white/8 text-white/50 border-white/10" },
 };
 
 function RoleBadge({ role }: { role: string }) {
