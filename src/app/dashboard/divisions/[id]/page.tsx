@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, ShieldCheck, ArrowRight } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import DivisionMemberManager from "@/components/dashboard/DivisionMemberManager";
+import { EmptyState } from "@/components/dashboard/EmptyState";
 import { DivisionName } from "@prisma/client";
 
 const DIVISION_LABELS: Record<DivisionName, { label: string; description: string; color: string }> = {
@@ -171,9 +172,21 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
             </div>
             
             {division.programs.length === 0 ? (
-              <div className="bg-[#161b22] border border-white/8 rounded-2xl p-5 text-center text-white/30 text-xs italic">
-                Belum ada program untuk divisi ini.
-              </div>
+              <EmptyState>
+                <EmptyState.Icon><Calendar size={48} /></EmptyState.Icon>
+                <EmptyState.Heading>Belum ada program</EmptyState.Heading>
+                <EmptyState.Description>
+                  Jadilah yang pertama membuat program kerja untuk divisi ini.
+                </EmptyState.Description>
+                <EmptyState.Actions>
+                  <Link
+                    href={`/dashboard/programs/create?divisionId=${division.id}`}
+                    className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl transition-colors"
+                  >
+                    ✨ Buat Program
+                  </Link>
+                </EmptyState.Actions>
+              </EmptyState>
             ) : (
               <div className="grid gap-3">
                 {division.programs.map((prog) => {

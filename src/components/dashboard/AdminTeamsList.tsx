@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Search, Users, AlertTriangle, CheckCircle2, Trash2, AlertCircle, Clock } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
+import { EmptyState } from "@/components/dashboard/EmptyState";
 import { cn, formatDate } from "@/lib/utils";
 import { toggleTeamSuspensionAction, forceDeleteTeamAction } from "@/app/actions/admin";
 import type { JWTSessionPayload } from "@/lib/auth";
@@ -204,9 +205,13 @@ export default function AdminTeamsList({ teams, session }: AdminTeamsListProps) 
             );
           })}
           {filtered.length === 0 && (
-            <div className="text-center py-12 text-white/30 text-sm bg-[#161b22] border border-white/8 rounded-2xl">
-              No teams found.
-            </div>
+                          <EmptyState>
+                            <EmptyState.Icon><Users size={48} /></EmptyState.Icon>
+                            <EmptyState.Heading>Tim tidak ditemukan</EmptyState.Heading>
+                            <EmptyState.Description>
+                              Tidak ada tim yang sesuai dengan filter ini.
+                            </EmptyState.Description>
+                          </EmptyState>
           )}
         </div>
       </div>

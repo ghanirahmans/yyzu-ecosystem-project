@@ -143,17 +143,63 @@ export default async function DashboardPage() {
 
   return (
     <DashboardShell user={session}>
-      {/* Welcome */}
-      <div className="mb-6 animate-slide-in-up">
-        <h1 className="text-[22px] font-bold text-white leading-snug">
-          Welcome back, <span className="text-indigo-400">{user.fullName.split(" ")[0]}</span> 👋
-        </h1>
-        <p className="text-[13px] text-white/40 mt-1.5">
-          {isAdmin ? "Platform Administrator Overview"
-            : currentTeam ? `You're in ${currentTeam.name} as ${isLeader ? "Team Leader" : "Member"}`
-            : "You're not in a team yet."}
-        </p>
-      </div>
+      {/* Welcome + Quick Actions Grid */}
+            <div className="mb-6 animate-slide-in-up">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+                <div>
+                  <h1 className="text-[22px] font-bold text-white leading-snug">
+                    Welcome back, <span className="text-indigo-400">{user.fullName.split(" ")[0]}</span> 👋
+                  </h1>
+                  <p className="text-[13px] text-white/40 mt-1.5">
+                    {isAdmin ? "Platform Administrator Overview"
+                      : currentTeam ? `You're in ${currentTeam.name} as ${isLeader ? "Team Leader" : "Member"}`
+                      : "You're not in a team yet."}
+                  </p>
+                </div>
+
+                {/* Quick Actions — contextual per role */}
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  {isAdmin && (
+                    <>
+                      <Link href="/dashboard/admin/users"
+                        className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20 hover:bg-rose-500/20 rounded-lg transition-colors">
+                        Manage Users
+                      </Link>
+                      <Link href="/dashboard/admin/approvals"
+                        className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 hover:bg-amber-500/20 rounded-lg transition-colors">
+                        {pendingApprovals > 0 ? `${pendingApprovals} Pending` : "Approvals"}
+                      </Link>
+                    </>
+                  )}
+                  {isBph && (
+                    <>
+                      <Link href="/dashboard/programs/create"
+                        className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 hover:bg-indigo-500/20 rounded-lg transition-colors">
+                        + Program
+                      </Link>
+                      {isAdmin && (
+                        <Link href="/dashboard/partnerships/create"
+                          className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 rounded-lg transition-colors">
+                          + Partnership
+                        </Link>
+                      )}
+                    </>
+                  )}
+                  {!currentTeam && !isBph && (
+                    <Link href="/dashboard/teams/create"
+                      className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 hover:bg-indigo-500/20 rounded-lg transition-colors">
+                      + Create Team
+                    </Link>
+                  )}
+                  {currentTeam && (
+                    <Link href="/dashboard/team"
+                      className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold bg-white/5 text-white/70 border border-white/10 hover:bg-white/8 rounded-lg transition-colors">
+                      Open Workspace →
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
 
       <OrgLinksWidget links={orgLinks} />
 

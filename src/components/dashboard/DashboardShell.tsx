@@ -8,6 +8,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { Breadcrumbs } from "@/components/dashboard/Breadcrumbs";
+import { CommandPalette } from "@/components/dashboard/CommandPalette";
 import {
   LayoutDashboard,
   Users,
@@ -338,6 +340,9 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
               <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-indigo-500 rounded-full" aria-hidden="true" />
             </button>
 
+            {/* Cmd+K quick search */}
+            <CommandPalette role={user.role} />
+
             {/* Avatar */}
             <Link
               href="/dashboard/profile"
@@ -356,7 +361,10 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-4 lg:p-5 overflow-auto animate-fade-in">{children}</main>
+        <main className="flex-1 p-4 lg:p-5 overflow-auto animate-fade-in">
+          <Breadcrumbs className="mb-2" />
+          {children}
+        </main>
       </div>
 
       {/* ── Bottom Nav (Mobile only, <768px) ─────────────────── */}

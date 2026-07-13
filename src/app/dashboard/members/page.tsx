@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Users, AtSign, Shield, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { EmptyState } from "@/components/dashboard/EmptyState";
 import DashboardShell from "@/components/dashboard/DashboardShell";
 import { getInitials, stringToColor, cn } from "@/lib/utils";
 
@@ -163,10 +164,13 @@ export default async function MembersPage({
         </div>
 
         {users.length === 0 && (
-          <div className="text-center py-20 text-white/30">
-            <Users size={32} className="mx-auto mb-3 opacity-30" />
-            <p className="text-sm">Belum ada anggota aktif.</p>
-          </div>
+          <EmptyState>
+                      <EmptyState.Icon><Users size={48} /></EmptyState.Icon>
+                      <EmptyState.Heading>Belum ada anggota</EmptyState.Heading>
+                      <EmptyState.Description>
+                        Anggota baru yang mendaftar akan muncul di sini setelah disetujui.
+                      </EmptyState.Description>
+                    </EmptyState>
         )}
 
         {totalPages > 1 && (

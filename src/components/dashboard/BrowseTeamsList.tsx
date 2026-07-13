@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Search, Plus, Users, Calendar, ChevronRight, AlertTriangle, Send, AlertCircle, XCircle } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
+import { EmptyState } from "@/components/dashboard/EmptyState";
 import { cn, formatDate } from "@/lib/utils";
 import { sendJoinRequestAction, cancelJoinRequestAction } from "@/features/team/actions";
 import type { JWTSessionPayload } from "@/lib/auth";
@@ -121,10 +122,13 @@ export default function BrowseTeamsList({ teams, pendingRequest, currentTeam, se
 
         {/* Teams list */}
         {teams.length === 0 ? (
-          <div className="text-center py-16 text-white/30 bg-[#161b22] border border-white/8 rounded-2xl">
-            <Users size={32} className="mx-auto mb-3 opacity-30" />
-            <p className="text-sm">No teams found matching &quot;{searchQuery}&quot;</p>
-          </div>
+                    <EmptyState>
+                      <EmptyState.Icon><Search size={48} /></EmptyState.Icon>
+                      <EmptyState.Heading>Tim tidak ditemukan</EmptyState.Heading>
+                      <EmptyState.Description>
+                        Tidak ada tim yang cocok dengan "{searchQuery}". Coba kata kunci lain.
+                      </EmptyState.Description>
+                    </EmptyState>
         ) : (
           <div className="space-y-3">
             {teams.map((team) => {
