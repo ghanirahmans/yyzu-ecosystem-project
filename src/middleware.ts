@@ -3,15 +3,26 @@ import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 import { JWT_SECRET } from "@/lib/config";
 import type { JWTSessionPayload } from "@/lib/auth";
+import { rateLimit } from "@/lib/rate-limit";
 
 const key = new TextEncoder().encode(JWT_SECRET);
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // 0. If clear parameter is present, delete session cookie and redirect to login
+  // 0. Rate limit: 100 dashboard requests per minute per IP
+  const ip = request.headers.get("x-forwarded-for") ?? "anonymous";
+  const { allowed } = rateLimit(`mw:${ip}`, 100, 60_000);
+  if (!allowed) {
+    return new NextResponse("Too Many Requests", {
+      status: 429,
+      headers: { "Retry-After": "60" },
+    });
+  }
+
+  // 1. If clear parameter is present, delete session cookie and redirect to login
   if (request.nextUrl.searchParams.get("clear") === "1") {
-    console.log("[Middleware] Stale session detected via clear parameter. Clearing cookie and redirecting.");
+    // Stale session detected — clear and redirect (no log in production)
     const response = NextResponse.redirect(new URL("/dashboard/login", request.url));
     response.cookies.delete("session");
     return response;

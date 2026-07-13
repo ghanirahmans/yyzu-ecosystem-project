@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { logger } from "@/lib/logger";
 
 export async function GET(request: Request) {
   // Verify that the request is authorized by Vercel Cron
@@ -18,7 +19,7 @@ export async function GET(request: Request) {
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
-    console.error("Cron Database Ping Failed:", error);
+    logger.error("Cron database ping failed", { err: String(error) });
     return NextResponse.json(
       { success: false, error: error.message || "Failed to ping database" },
       { status: 500 }

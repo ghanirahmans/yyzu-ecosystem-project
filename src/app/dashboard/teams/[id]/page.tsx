@@ -96,7 +96,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ id:
       members={members}
       pendingRequests={pendingRequests}
       outboundInvites={outboundInvites}
-      usefulLinks={usefulLinks as any}
+      usefulLinks={usefulLinks as unknown as any[]}
       submissions={submissions}
       userRole={membership?.role ?? null}
       session={session}

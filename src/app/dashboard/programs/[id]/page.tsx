@@ -101,7 +101,7 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
   return (
     <DashboardShell user={session}>
       <ProgramDetailView
-        program={program as any}
+        program={program as unknown as Parameters<typeof ProgramDetailView>[0]["program"]}
         divisions={divisions}
         users={users}
         canEdit={canEdit}

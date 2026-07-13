@@ -131,7 +131,7 @@ export default function DivisionMemberManager({ divisionId, memberships, canMana
             <div>
               <select
                 value={newRole}
-                onChange={(e) => setNewRole(e.target.value as any)}
+                onChange={(e) => setNewRole(e.target.value as unknown as "HEAD" | "STAFF")}
                 disabled={loading}
                 className="w-full bg-[#0d1117] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
               >
@@ -199,7 +199,7 @@ export default function DivisionMemberManager({ divisionId, memberships, canMana
                       <select
                         value={m.role}
                         disabled={loading}
-                        onChange={(e) => handleChangeRole(m.id, e.target.value as any, m.user.username)}
+                        onChange={(e) => handleChangeRole(m.id, e.target.value as unknown as "HEAD" | "STAFF", m.user.username)}
                         className="bg-[#0d1117] border border-white/10 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none"
                       >
                         <option value="STAFF">Staff</option>

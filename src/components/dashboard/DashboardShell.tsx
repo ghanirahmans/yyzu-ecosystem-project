@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Breadcrumbs } from "@/components/dashboard/Breadcrumbs";
+import { logger } from "@/lib/logger";
 import { CommandPalette } from "@/components/dashboard/CommandPalette";
 import {
   LayoutDashboard,
@@ -106,7 +107,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
         router.refresh();
       }
     } catch (error) {
-      console.error("Logout failed:", error);
+      logger.error("Logout failed", { err: String(error) });
     }
   };
 

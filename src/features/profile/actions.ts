@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { validateActiveUser } from "@/lib/guards";
+import { logger } from "@/lib/logger";
 import { setSession, getSession } from "@/lib/auth";
 import { profileSchema } from "./schema";
 import type { ProfileInput } from "./types";
@@ -35,7 +36,7 @@ export async function actionUpdateProfile(data: ProfileInput) {
 
     return { success: true as const };
   } catch (error) {
-    console.error("Update profile error:", error);
+    logger.error("Update profile error", { err: String(error) });
     return { success: false as const, error: "SERVER_ERROR" as const };
   }
 }
@@ -50,7 +51,7 @@ export async function actionChangePassword(data: { currentPassword: string; newP
     revalidatePath("/dashboard/profile");
     return { success: true as const };
   } catch (error) {
-    console.error("Change password error:", error);
+    logger.error("Change password error", { err: String(error) });
     return { success: false as const, error: "SERVER_ERROR" as const };
   }
 }

@@ -85,7 +85,7 @@ export default async function TeamWorkspacePage() {
       members={members}
       pendingRequests={pendingRequests}
       outboundInvites={outboundInvites}
-      usefulLinks={usefulLinks as any}
+      usefulLinks={usefulLinks as unknown as any[]}
       submissions={submissions}
       userRole={membership.role}
       session={session}

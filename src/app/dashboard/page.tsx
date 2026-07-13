@@ -1,11 +1,13 @@
 import { getSession } from "@/lib/auth";
+import { Suspense } from "react";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { ArrowRight, Plus, Search } from "lucide-react";
 import DashboardShell from "@/components/dashboard/DashboardShell";
-import { UserRole, TeamRole } from "@prisma/client";
+import { UserRole, TeamRole, UserStatus, LinkScope } from "@prisma/client";
 import InboundInvitations from "@/components/dashboard/InboundInvitations";
 import OrgLinksWidget from "@/components/dashboard/OrgLinksWidget";
+import { StreamingAdminStats } from "@/components/dashboard/StreamingAdminStats";
 import AdminOverview from "@/components/dashboard/AdminOverview";
 import BphOverview from "@/components/dashboard/BphOverview";
 import TeamOverview from "@/components/dashboard/TeamOverview";
@@ -32,25 +34,18 @@ export default async function DashboardPage() {
   let inboundInvites: { id: string; expiresAt: Date; team: { name: string }; invitedByUser: { fullName: string } }[] = [];
 
   // Admin
-  let totalUsers = 0, totalTeams = 0, pendingApprovals = 0, recentLogs: any[] = [];
+  let pendingApprovals = 0;
   // BPH
   let totalDivisions = 0, totalPrograms = 0;
 
-  // ── Admin stats ────────────────────────────────────────────
+  // ── Admin: pending approvals only (rest streamed via Suspense) ──
   if (isAdmin) {
-    totalUsers = await prisma.user.count({ where: { deletedAt: null } });
-    totalTeams = await prisma.team.count({ where: { deletedAt: null } });
-    pendingApprovals = await prisma.user.count({ where: { status: "PENDING_APPROVAL" as any } });
-    recentLogs = await prisma.auditLog.findMany({
-      take: 5,
-      orderBy: { createdAt: "desc" },
-      include: { actor: { select: { username: true, fullName: true } } },
-    });
+    pendingApprovals = await prisma.user.count({ where: { status: "PENDING_APPROVAL" as UserStatus } });
   }
 
   // ── Org links (shared) ─────────────────────────────────────
   const orgLinks = await prisma.usefulLink.findMany({
-    where: { scope: "ORG" as any },
+    where: { scope: "ORG" as LinkScope },
     orderBy: { createdAt: "desc" },
     select: { id: true, title: true, url: true, category: true },
   });
@@ -226,7 +221,12 @@ export default async function DashboardPage() {
         </div>
       )}
 
-      {isAdmin && <AdminOverview totalUsers={totalUsers} totalTeams={totalTeams} pendingApprovals={pendingApprovals} recentLogs={recentLogs} />}
+      {/* Admin stats — streamed via Suspense */}
+      {isAdmin && (
+        <Suspense fallback={<div className="animate-pulse bg-white/5 rounded-2xl h-48" />}>
+          <StreamingAdminStats />
+        </Suspense>
+      )}
       {!isAdmin && isBph && <BphOverview totalDivisions={totalDivisions} totalPrograms={totalPrograms} totalOrgLinks={orgLinks.length} />}
 
       {/* No Team */}

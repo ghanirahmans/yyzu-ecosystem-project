@@ -4,6 +4,8 @@ import {
   InvitationStatus,
   RequestStatus,
   TeamStatus,
+  LinkScope,
+  LinkCategory,
 } from "@prisma/client";
 import type {
   TeamBasic,
@@ -326,12 +328,12 @@ export async function dbCreateUsefulLink(data: {
 }): Promise<{ id: string; teamId: string | null; title: string }> {
   return prisma.usefulLink.create({
     data: {
-      scope: (data.scope as any) ?? "TEAM",
+      scope: (data.scope ?? "TEAM") as unknown as LinkScope,
       teamId: data.teamId ?? null,
       divisionId: data.divisionId ?? null,
       title: data.title,
       url: data.url,
-      category: data.category as any,
+      category: data.category as unknown as LinkCategory,
       notes: data.notes,
       createdBy: data.createdBy,
     },
