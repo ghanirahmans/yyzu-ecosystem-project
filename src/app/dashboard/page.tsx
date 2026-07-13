@@ -8,6 +8,7 @@ import { UserRole, TeamRole, UserStatus, LinkScope } from "@prisma/client";
 import InboundInvitations from "@/components/dashboard/InboundInvitations";
 import OrgLinksWidget from "@/components/dashboard/OrgLinksWidget";
 import { StreamingAdminStats } from "@/components/dashboard/StreamingAdminStats";
+import { TalentaIntiBadge } from "@/components/dashboard/TalentaIntiBadge";
 import AdminOverview from "@/components/dashboard/AdminOverview";
 import BphOverview from "@/components/dashboard/BphOverview";
 import TeamOverview from "@/components/dashboard/TeamOverview";
@@ -195,6 +196,8 @@ export default async function DashboardPage() {
                 </div>
               </div>
             </div>
+
+      {user.role === "TALENTA_INTI" && <TalentaIntiBadge />}
 
       <OrgLinksWidget links={orgLinks} />
 

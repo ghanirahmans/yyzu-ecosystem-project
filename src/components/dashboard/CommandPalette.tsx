@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import { Command } from "cmdk";
 import { useRouter } from "next/navigation";
 
@@ -14,11 +14,17 @@ interface QuickAction {
   section: "Navigate" | "Create" | "Admin";
 }
 
+interface SearchResult {
+  type: "member" | "team" | "program";
+  label: string;
+  sub: string;
+  href: string;
+}
+
 // ── Action registry ──────────────────────────────────────────
 
 function buildActions(): QuickAction[] {
   return [
-    // Navigate
     { label: "Overview", href: "/dashboard", section: "Navigate", shortcut: "G H" },
     { label: "My Team", href: "/dashboard/team", section: "Navigate" },
     { label: "Browse Teams", href: "/dashboard/teams", section: "Navigate", shortcut: "G T" },
@@ -28,12 +34,8 @@ function buildActions(): QuickAction[] {
     { label: "Partnerships", href: "/dashboard/partnerships", section: "Navigate" },
     { label: "My Profile", href: "/dashboard/profile", section: "Navigate" },
     { label: "Mentor Dashboard", href: "/dashboard/mentor", section: "Navigate" },
-
-    // Create
     { label: "Create Team", href: "/dashboard/teams/create", section: "Create", icon: "👥" },
     { label: "Create Program", href: "/dashboard/programs/create", section: "Create", icon: "📋" },
-
-    // Admin
     { label: "Manage Users", href: "/dashboard/admin/users", section: "Admin" },
     { label: "Manage Teams", href: "/dashboard/admin/teams", section: "Admin" },
     { label: "Approvals", href: "/dashboard/admin/approvals", section: "Admin" },
@@ -42,16 +44,27 @@ function buildActions(): QuickAction[] {
   ];
 }
 
+const TYPE_ICONS: Record<string, string> = {
+  member: "👤",
+  team: "👥",
+  program: "📋",
+};
+
 // ── Props ────────────────────────────────────────────────────
 
 interface CommandPaletteProps {
-  /** Optionally filter actions by role */
   role?: string;
 }
 
-// ── Sections ─────────────────────────────────────────────────
+// ── Item Component ───────────────────────────────────────────
 
-function ActionItem({ action, onSelect }: { action: QuickAction; onSelect: (a: QuickAction) => void }) {
+function ActionItem({
+  action,
+  onSelect,
+}: {
+  action: QuickAction;
+  onSelect: (a: QuickAction) => void;
+}) {
   return (
     <Command.Item
       value={action.label}
@@ -73,11 +86,14 @@ function ActionItem({ action, onSelect }: { action: QuickAction; onSelect: (a: Q
 
 export function CommandPalette({ role }: CommandPaletteProps) {
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [searching, setSearching] = useState(false);
   const router = useRouter();
+  const debounceRef = useRef<NodeJS.Timeout | null>(null);
 
   const actions = useMemo(() => {
     const all = buildActions();
-    // Filter out admin actions for non-admin roles
     if (role && !["FOUNDER", "KOORDINATOR_UMUM"].includes(role)) {
       return all.filter((a) => a.section !== "Admin");
     }
@@ -85,14 +101,44 @@ export function CommandPalette({ role }: CommandPaletteProps) {
   }, [role]);
 
   const handleSelect = useCallback(
-    (action: QuickAction) => {
+    (action: QuickAction | SearchResult) => {
       setOpen(false);
-      if (action.href) {
+      if ("href" in action && action.href) {
         router.push(action.href);
       }
     },
     [router],
   );
+
+  // ── Real-time search ───────────────────────────────────────
+  useEffect(() => {
+    if (query.length < 2) {
+      setSearchResults([]);
+      return;
+    }
+
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(async () => {
+      setSearching(true);
+      try {
+        const res = await fetch(
+          `/api/search?q=${encodeURIComponent(query)}`,
+        );
+        if (res.ok) {
+          const data = await res.json();
+          setSearchResults(data.results ?? []);
+        }
+      } catch {
+        setSearchResults([]);
+      } finally {
+        setSearching(false);
+      }
+    }, 200);
+
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, [query]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -100,18 +146,17 @@ export function CommandPalette({ role }: CommandPaletteProps) {
         e.preventDefault();
         setOpen((prev) => !prev);
       }
-      // Close on Escape
-      if (e.key === "Escape") {
-        setOpen(false);
-      }
+      if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  const hasSearchResults = searchResults.length > 0;
+
   return (
     <>
-      {/* Trigger hint — shown in topbar */}
+      {/* Trigger button */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
@@ -119,37 +164,58 @@ export function CommandPalette({ role }: CommandPaletteProps) {
           aria-label="Open command palette"
         >
           <span>Search</span>
-          <kbd className="font-mono text-[10px] px-1.5 py-0.5 bg-white/5 rounded text-white/25">
-            ⌘K
-          </kbd>
+          <kbd className="font-mono text-[10px] px-1.5 py-0.5 bg-white/5 rounded text-white/25">⌘K</kbd>
         </button>
       )}
 
-      {/* Command Dialog */}
+      {/* Dialog */}
       <Command.Dialog
         open={open}
         onOpenChange={setOpen}
         label="YYZU Command Palette"
         className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh]"
       >
-        {/* Backdrop */}
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
-
-        {/* Modal */}
         <div className="relative z-50 w-full max-w-lg mx-4 bg-[#0d1117] border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
           <Command.Input
-            placeholder="Type a command or search..."
+            placeholder="Search members, teams, programs..."
             autoFocus
+            value={query}
+            onValueChange={setQuery}
             className="w-full bg-transparent border-b border-white/8 px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none"
           />
 
           <Command.List className="max-h-72 overflow-y-auto p-2 scrollbar-thin">
             <Command.Empty className="px-4 py-8 text-center text-sm text-white/25">
-              No results found.
+              {searching ? "Searching..." : "No results found."}
             </Command.Empty>
 
+            {/* Search Results (dynamic) */}
+            {hasSearchResults && (
+              <Command.Group
+                heading="Search Results"
+                className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:text-white/25 [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
+              >
+                {searchResults.map((r) => (
+                  <Command.Item
+                    key={r.href}
+                    value={`search:${r.label}`}
+                    onSelect={() => handleSelect(r)}
+                    className="flex items-center gap-3 px-3 py-2.5 text-sm text-white/80 aria-selected:bg-indigo-500/20 aria-selected:text-white rounded-lg cursor-pointer transition-colors mx-1"
+                  >
+                    <span className="text-base flex-shrink-0">{TYPE_ICONS[r.type]}</span>
+                    <span className="flex-1">{r.label}</span>
+                    <span className="text-[10px] text-white/25 font-mono">{r.sub}</span>
+                  </Command.Item>
+                ))}
+              </Command.Group>
+            )}
+
             {/* Navigate */}
-            <Command.Group heading="Navigate" className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:text-white/25 [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase">
+            <Command.Group
+              heading="Navigate"
+              className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:text-white/25 [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
+            >
               {actions
                 .filter((a) => a.section === "Navigate")
                 .map((a) => (
@@ -158,7 +224,10 @@ export function CommandPalette({ role }: CommandPaletteProps) {
             </Command.Group>
 
             {/* Create */}
-            <Command.Group heading="Create" className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:text-white/25 [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase">
+            <Command.Group
+              heading="Create"
+              className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:text-white/25 [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
+            >
               {actions
                 .filter((a) => a.section === "Create")
                 .map((a) => (
@@ -168,7 +237,10 @@ export function CommandPalette({ role }: CommandPaletteProps) {
 
             {/* Admin */}
             {actions.some((a) => a.section === "Admin") && (
-              <Command.Group heading="Admin" className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:text-white/25 [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase">
+              <Command.Group
+                heading="Admin"
+                className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-[10px] [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:text-white/25 [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
+              >
                 {actions
                   .filter((a) => a.section === "Admin")
                   .map((a) => (

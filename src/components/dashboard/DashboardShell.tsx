@@ -11,6 +11,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Breadcrumbs } from "@/components/dashboard/Breadcrumbs";
 import { logger } from "@/lib/logger";
 import { CommandPalette } from "@/components/dashboard/CommandPalette";
+import { NotificationBell } from "@/components/dashboard/NotificationBell";
 import {
   LayoutDashboard,
   Users,
@@ -20,7 +21,7 @@ import {
   UserRound,
   Settings,
   ChevronRight,
-  Bell,
+
   Home,
   ScrollText,
   Layers,
@@ -29,6 +30,7 @@ import {
   Sun,
   Moon,
   GraduationCap,
+  Plus,
 } from "lucide-react";
 import { cn, getInitials, stringToColor } from "@/lib/utils";
 
@@ -129,6 +131,13 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
 
   return (
     <div className="yyzu-dashboard min-h-screen bg-[#0d1117] text-white flex flex-col md:flex-row">
+      {/* ── Skip to content (a11y) ──────────────────────────── */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-indigo-600 focus:text-white focus:text-sm focus:font-semibold focus:rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-[#0d1117]"
+      >
+        Skip to content
+      </a>
       {/* ── Sidebar (Desktop only, ≥768px) ─────────────────── */}
       <aside
         className="hidden md:flex md:w-60 md:flex-col bg-[#161b22] border-r border-white/8 flex-shrink-0 h-screen sticky top-0"
@@ -332,14 +341,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
             </button>
 
             {/* Notification bell */}
-            <button
-              className="relative p-2 rounded-lg text-white/35 hover:text-white hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-              aria-label="Notifications — 1 unread"
-              title="Notifications"
-            >
-              <Bell size={16} />
-              <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-indigo-500 rounded-full" aria-hidden="true" />
-            </button>
+            <NotificationBell />
 
             {/* Cmd+K quick search */}
             <CommandPalette role={user.role} />
@@ -362,7 +364,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-4 lg:p-5 overflow-auto animate-fade-in">
+        <main id="main-content" className="flex-1 p-4 lg:p-5 overflow-auto animate-fade-in" tabIndex={-1}>
           <Breadcrumbs className="mb-2" />
           {children}
         </main>
@@ -448,6 +450,35 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
           </Link>
         )}
       </nav>
+
+      {/* ── Mobile FAB (Floating Action Button) ──────────────── */}
+      <div className="md:hidden fixed bottom-20 right-4 z-50 flex flex-col gap-2">
+        {isAdmin ? (
+          <Link
+            href="/dashboard/admin/users"
+            className="flex items-center justify-center w-12 h-12 bg-rose-500/90 hover:bg-rose-500 text-white rounded-2xl shadow-lg shadow-rose-500/25 transition-all active:scale-95"
+            aria-label="Manage Users"
+          >
+            <Shield size={22} />
+          </Link>
+        ) : isBph ? (
+          <Link
+            href="/dashboard/programs/create"
+            className="flex items-center justify-center w-12 h-12 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl shadow-lg shadow-indigo-500/25 transition-all active:scale-95"
+            aria-label="Create Program"
+          >
+            <Plus size={22} />
+          </Link>
+        ) : (
+          <Link
+            href="/dashboard/teams/create"
+            className="flex items-center justify-center w-12 h-12 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl shadow-lg shadow-indigo-500/25 transition-all active:scale-95"
+            aria-label="Create Team"
+          >
+            <Plus size={22} />
+          </Link>
+        )}
+      </div>
     </div>
   );
 }
