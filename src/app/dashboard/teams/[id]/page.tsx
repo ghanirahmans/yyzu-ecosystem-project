@@ -23,7 +23,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ id:
   }
 
   // 2. Check if user is allowed to view this team
-  const isAdmin = session.role === UserRole.KOORDINATOR_UMUM;
+  const isAdmin = session.role === UserRole.FOUNDER || session.role === UserRole.KOORDINATOR_UMUM;
   const isMentor = session.role === UserRole.MENTOR || session.role === UserRole.KETUA_DEWAN_MENTOR;
 
   const membership = await prisma.teamMembership.findFirst({

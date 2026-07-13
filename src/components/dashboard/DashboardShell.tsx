@@ -71,7 +71,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
   const isAdmin = user.role === "FOUNDER" || user.role === "KOORDINATOR_UMUM";
   const isBph = user.role === "KOORDINATOR_UMUM" || user.role === "KEPALA_DIVISI";
   const isKetuaDewanMentor = user.role === "KETUA_DEWAN_MENTOR";
-  const isMentor = isKetuaDewanMentor || user.role === "MENTOR";
+  const isMentor = isKetuaDewanMentor || user.role === "MENTOR" || isAdmin;
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {

@@ -17,7 +17,7 @@ export default async function MentorPage() {
   }
 
   const isMentor = session.role === UserRole.MENTOR || session.role === UserRole.KETUA_DEWAN_MENTOR;
-  if (!isMentor && session.role !== UserRole.KOORDINATOR_UMUM) {
+  if (!isMentor && session.role !== UserRole.FOUNDER && session.role !== UserRole.KOORDINATOR_UMUM) {
     redirect("/dashboard");
   }
 
